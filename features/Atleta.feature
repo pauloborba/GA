@@ -19,7 +19,7 @@ Feature: Atleta
 		When eu preencher todas as informações do atleta, exceto o campo nome
 		And eu opto por criar o artigo
 		Then uma mensagem de erro é mostrada
-		
+
 	Scenario: Adicionar atleta inválido (nome campo em branco) 
 		Given o sistema não tem nenhum atleta com o CPF “09812304954”
 		When eu adicionar o atleta com o CPF “09812304954” com o campo “nome” em branco
@@ -29,3 +29,15 @@ Feature: Atleta
 		Given o sistema tenha o atleta com o CPF “08976898765”
 		When eu adicionar o atleta com o CPF “08976898765”
 		Then o atleta com o CPF “08976898765” não é armazenado duas vezes
+
+	Scenario: Classificar atleta inválido web
+		Given estou na página de classificar atleta
+		When eu preencher os dados do atleta que é para ser Júnior
+		And preencho o campo com Profissional
+		And eu opto por classificar o atleta
+		Then uma mensagem de erro é mostrada
+
+	Scenario: Classificar atleta web
+		Given estou no menu de Atletas
+		When eu selecionar a opção “Classificar” no menu de Atletas
+		Then eu posso preencher os dados para classificar o atleta
