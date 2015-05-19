@@ -18,7 +18,7 @@ Feature: Atleta
 		Then eu verei os dados atualizados
 
 	Scenario: Atualizar dados de atleta existente 
-		Given O sistema tenha o com o cpf “12190871234” 
+		Given O sistema tenha o atleta com o cpf “12190871234” 
 		And  os dados do atleta  não estão atualizados 
 		When eu atualizo os dados do atleta com cpf “12190871234”
 		Then os dados do atleta com cpf “12190871234” está devidamente atualizado no sistema
