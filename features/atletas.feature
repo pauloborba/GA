@@ -28,3 +28,14 @@ Feature: Atleta
 		When eu busco os dados do atleta com o cpf “09934567391” 
 		Then os dados não serão atualizados porque o atleta é inválido
 
+	Scenario: Classificar um atleta não existente
+		Given o atleta com o cpf “09912345442” não está cadastrado  no sistema 
+		When eu classificar o atleta como “Júnior”
+		Then a classificação não será salva no sistema porque o atleta é inválido
+
+	Scenario: Classificar atleta de forma errada 
+		Given o atleta com o cpf “09912345442” é Júnior
+		And eu o classifico com Profissional
+		When eu classificar o atleta
+		Then a classificação não será salva no sistema porque está classificado de forma errada
+
