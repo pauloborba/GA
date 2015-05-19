@@ -22,3 +22,10 @@ Feature: Atleta
 		And  os dados do atleta  não estão atualizados 
 		When eu atualizo os dados do atleta com cpf “12190871234”
 		Then os dados do atleta com cpf “12190871234” está devidamente atualizado no sistema
+
+	Scenario: Atualizar dados de Atleta não existente 
+		Given Eu tento atualizar dados do atleta  com cpf  “09934567391” que  não está cadastrado no sistema
+		When eu busco os dados do atleta com o cpf “09934567391” 
+		Then os dados não serão atualizados porque o atleta é inválido
+
+	
