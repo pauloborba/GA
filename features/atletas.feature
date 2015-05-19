@@ -28,4 +28,3 @@ Feature: Atleta
 		When eu busco os dados do atleta com o cpf “09934567391” 
 		Then os dados não serão atualizados porque o atleta é inválido
 
-	
