@@ -20,3 +20,7 @@ Given que existe uma partida com data "12/03/2015", com nome "Nautico VS Sport",
 When  eu crio uma partida com data "12/03/2015",  com nome "Nautico VS Sport", com tag "Serie A".
 Then  a partida nao e salva duas vezes.
 
+Scenario: buscar partida inexistente
+Given que nao exista no sistema a partida com data "12/03/2015", com nome "Nautico VS Sport", com tag "Serie A".
+When eu busco uma partida com a data "12/03/2015", nome que contenha a palavra "Sport" e que tenha  a tag "Serie A".
+Then o sistema nao exibe nenhuma partida.
