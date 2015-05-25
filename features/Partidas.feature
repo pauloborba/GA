@@ -8,9 +8,3 @@ Given estou na pagina principal do time
 When eu clico na opcao "nova partida"
 Then a pagina de "nova partida" e exibida
 And eu posso preencher o formulario de cadastro.
-
-Scenario: clicar na opcao listar partidas 
-Given estou na pagina principal do time
-When eu clico na opcao "listar partidas"
-Then uma nova pagina e aberta
-And e exibida a lista com todas as partidas realacionadas ao time.
