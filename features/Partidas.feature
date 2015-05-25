@@ -14,3 +14,9 @@ Given estou na pagina principal do time
 When eu clico na opcao "listar partidas"
 Then uma nova pagina e aberta
 And e exibida a lista com todas as partidas realacionadas ao time.
+
+Scenario: duplicata de partida
+Given que existe uma partida com data "12/03/2015", com nome "Nautico VS Sport", com tag "Serie A".
+When  eu crio uma partida com data "12/03/2015",  com nome "Nautico VS Sport", com tag "Serie A".
+Then  a partida nao e salva duas vezes.
+
