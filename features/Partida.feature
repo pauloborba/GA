@@ -18,3 +18,9 @@ Scenario:  Listar partidas por data
 Given estou visualizando a lista de partidas
 When eu clico no campo “data”
 Then serão exibidas as partidas ordenadas pela sua data
+
+Scenario:  Clicar na opção alterar partida
+Given estou visualizando uma partida
+When eu clico na opção “alterar partida”
+Then uma nova pagina é aberta
+And é exibido um formulário para alterar as informações da partidas
