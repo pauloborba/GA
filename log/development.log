@@ -10,3 +10,9 @@ Started GET "/" for 127.0.0.1 at 2015-05-05 19:56:59 -0300
 Processing by Rails::WelcomeController#index as HTML
   Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
 Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-25 22:34:07 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 116ms (Views: 56.0ms | ActiveRecord: 0.0ms)
