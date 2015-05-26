@@ -14,3 +14,32 @@ atleta = Atletas.new("nome", "email", "telefone", "data_nascimento", "cpf", "rg"
 resul1 = atleta.find_cpf(arg1)
 resul1 == true
 end
+
+Given(/^estou no menu de Atletas$/) do
+visit LoginPage
+fill_in "Login", :with => @supervisor.login
+fill_in "Password", :with => @supervisor.password
+visit GerenciamentoAtletasPage
+click_button "Atletas"
+visit AtletasPage
+end 
+
+When(/^eu selecionar a opcao "Adicionar" no menu de Atletas$/) do
+visit AtletasPage
+click_button "Adicionar"
+end
+
+Then(/^eu posso preencher os dados do atleta$/) do
+visit AdicionarAtletaPage
+fill_in 'Nome', :with => 'Nome'
+fill_in "Email", :with => 'Email'
+fill_in 'Telefone', :with => 'Telefone'
+fill_in 'Data_Nascimento', :with => 'Data de Nascimento'
+fill_in 'CPF', :with => 'CPF'
+fill_in 'RG', :with => 'RG'
+fill_in 'Altura', :with => 'Altura'
+fill_in 'Peso', :with => 'Peso'
+fill_in 'Posicao_Joga', :with => 'Posicao_Joga'
+fill_in 'Categoria', :with => 'Categoria'
+fill_in 'Alojamento_Clube', :with => 'Alojamento_Clube'
+end
