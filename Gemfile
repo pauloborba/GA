@@ -35,6 +35,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'tzinfo-data' para solucionar bug no deploy para windows
 gem 'tzinfo-data'
 
+group "test" do
+	gem "cucumber"
+	gem "rspec"
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
