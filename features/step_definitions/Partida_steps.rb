@@ -73,4 +73,6 @@ Then(/^eu posso preencher o formulario de cadastro$/) do
   fill_in 'Data', :with => 'Data'
   fill_in 'Nome', :with => 'Nome'
   fill_in 'Tag', :with => 'Tag'
+  fill_in 'Placar', :with => 'Placar'
+  fill_in 'Descricao', :with => 'Descricao'
 end
