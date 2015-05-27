@@ -4,7 +4,7 @@
 # scenario: criar contrato novo
 Given (/^que nao existe um contrato entre contratante "Nautico" e contratada "([^"]*)"$/) do |atleta|
 	contrato = Contrato.find(:contratada => atleta)
-	assert_equal(contrato, nil)
+	contrato == nil
 end
 
 When (/^eu crio um contrato entre contratante "Nautico" e contratada "([^"]*)"$/) do |atleta|
