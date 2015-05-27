@@ -18,7 +18,15 @@ class Atletas
 
 	end
 
+
+	#def mensagemAtualizar
+		#message = "Dado(s) atualizado(s) com sucesso!"
+		#@output.puts message
+	#end
+
+
 	def find_cpf(cpf)
+
 		atletasHash = Hash.new 
 		out = false
 		atletasHash.each do |i|
@@ -40,4 +48,29 @@ class Atletas
 			end
 		end
 	end
+
+	def atualizar(cpf)
+			retorna = false
+			@atletas = Atletas.find(params[:cpf])
+			if @atleta.atualizar(cpf)
+				retorna = true
+			end
+
+			return retorna
+	end
+
+	def atualizado(cpf)
+		atletasHash = Hash.new 
+		retorno = false
+		atletasHash.each do |i|
+			if atletasHash[i].cpf == cpf
+				if atletasHash[i].atualizar(cpf) == true
+					retorno = true
+				end
+			end
+		end
+		return retorno
+	end
+
+	
 end
