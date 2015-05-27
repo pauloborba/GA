@@ -7,7 +7,8 @@ Scenario: Opções antes de remover um atleta existente no sistema
 
     Given que o sistema mostra o cpf "10905365429" como existente
     When eu clicar em remover o cpf “10905365429”
-    Then o sistema exibe uma mensagem “Tem certeza que deseja remover o atleta?” com as opções "Sim" "Não"
+    Then o sistema exibe uma mensagem “Tem certeza que deseja remover o atleta?” 
+    And mostra opções de escolha "Sim" "Não"
 
 Scenario: Remover atleta não existente
 
