@@ -1,29 +1,34 @@
 Given(/^estou visualizando a lista de partidas$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  	visit LoginPage
+	fill_in "Login", :with => @supervisor.login
+	fill_in "Password", :with => @supervisor.password
+	visit ListaPartidasPage
 end
 
 When(/^eu clico no campo "data"$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	click_button "Data"
 end
 
 Then(/^serão exibidas as partidas ordenadas pela sua data$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  	Partida.order;
+  	visit ListaPartidasPage;
 end
 
 
-    
-Given(/^estou visualizando uma partida$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+
+Given(/^estou cadastrando uma partida&/) do |arg1|
+	partida = Partida.new("nome", "tag", "data", nil, "descricao")
+
 end
 
-When(/^eu clico na opção "alterar partida"$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^eu tento confirmar o cadastro de uma partida com campos faltando$/) do
+	vazio = partida.temCampoFaltando?
 end
 
-Then(/^uma nova pagina é aberta$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^é exibido um formulário para alterar as informações da partidas$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^uma mensagem de erro aparece para o usuário$/) do
+	if vazio
+		visit CampoFaltandoPartidaPage
+	else
+		click_button "Cadastra"
+	end
 end
