@@ -1,13 +1,15 @@
 class Partida
 	
 
-	attr_reader :data, :nome, :tag
+	attr_reader :data, :nome, :tag, :placar, :descricao
 
 
-	def intialize(data, nome, tag)
+	def intialize(data, nome, tag, placar, descricao)
 		@data = data
 		@nome = nome
 		@tag = tag
+		@placar = placar
+		@descricao = descricao
 	end
 
 	def find(data, nome, tag)
