@@ -1,20 +1,19 @@
-Given(/^que existe uma partida com data "([^"]*)", com nome "([^"]*)", com tag "
-([^"]*)"$/) do |arg1, arg2, arg3|
-  partida = Partida.new("data", "nome", "Tag")
+Given(/^que existe uma partida com data "([^"]*)", com nome "([^"]*)", com tag "([^"]*)"$/) do |arg1, arg2, arg3|
+  partida = Partida.new()
   find = partida.find(arg1,arg2,arg3)
   find == true
 end
 
-When(/^eu crio uma partida com data "([^"]*)",  com nome "([^"]*)", com tag "([^
-"]*)"$/) do |arg1, arg2, arg3|
-  partida = Partida.new("data", "nome", "Tag")
-  partida.adicionarPartida(arg1, arg2, arg3)
+When(/^eu crio uma partida com data "([^"]*)",  com nome "([^"]*)", com tag "([^"]*)"$/) do |arg1, arg2, arg3|
+  partida = Partida.new()
+  result = partida.adicionarPartida(arg1, arg2, arg3)
+  result == true
 end
 
-Then(/^apartida com data "([^"]*)",  com nome "([^"]*)", com tag "([^
-"]*)" nao e salva duas vezes\.$/) do |arg1, arg2, arg3|
-  partida = Partida.new("data", "nome", "tag")
-  partida.adicionarPartida(arg1, arg2, arg3)
+Then(/^a partida com data "([^"]*)",  com nome "([^"]*)", com tag "([^"]*)" nao e salva duas vezes$/) do |arg1, arg2, arg3|
+  partida = Partida.new()
+  result = partida.adicionarPartida(arg1, arg2, arg3)
+  result == false
 end
 
 Given(/^estou na pagina principal do time$/) do
@@ -37,7 +36,7 @@ Then(/^a pagina de "Nova Partida" e exibida$/) do
   visit NovaPartidaPage
 end
 
-Then(/^eu posso preencher o formulario de cadastro\.$/) do
+Then(/^eu posso preencher o formulario de cadastro$/) do
   visit NovaPartidaPage
   fill_in 'Data', :with => 'Data'
   fill_in 'Nome', :with => 'Nome'

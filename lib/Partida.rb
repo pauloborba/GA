@@ -26,8 +26,9 @@ class Partida
 		partidasHash.each do |i|
 			if find(data, nome, tag) == false
 				partidasHash[i] = Partida.new(data, nome, tag)
-			else
-				puts "Partida existente"
+				return true
+			else #não adicionou
+				return false
 			end
 		end
 	end
