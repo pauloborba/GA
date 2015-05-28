@@ -1,48 +1,79 @@
 class Partida
+	
 
-	def initialize(nome, tag, data, placar, descricao)
+	attr_reader :data, :nome, :tag, :placar, :descricao, :order, :output
+
+
+	def intialize(data, nome, tag, placar, descricao, output)
+		@data = data
 		@nome = nome
 		@tag = tag
-		@data = data
 		@placar = placar
 		@descricao = descricao
+		@output = output
 		@order = false
 	end
 
-	def temCampoFaltando?
-		if @nome.nil?
-			return true
-		elsif @tag.nil? 
-			return true
-		elsif @data.nil?
-			return true
-		elsif @placar.nil?
-			return true
-		elsif @descricao.nil?
-			return true
-		else
-			return false
+	def find(data, nome, tag)
+		partidasHash = Hash.new
+		out = false
+		partidasHash.each do |i|
+			if partidasHash[i].data == data && partidasHash[i].nome == nome && partidasHash[i].tag == tag
+				out = true
+			end
+		end
+		return out
+	end
+
+	def adicionarPartida(data, nome, tag, placar, descricao, output)
+		partidasHash = Hash.new
+		partidasHash.each do |i|
+			if find(data, nome, tag) == false
+				partidasHash[i] = Partida.new(data, nome, tag, placar, descricao, output)
+				return true
+			else #não adicionou
+				return false
+			end
 		end
 	end
 
-	def order
-		partidaHash = Hash.new
-		partidaHash[@nome] = Partida.new(@nome, @tag, @data, @placar, @descricao)
-		partidaHash["teste"] = Partida.new("teste", "tag", "14/04/1995", "placar", "descricao")
-		if @order == false
-			partidaHash.sort{
-				|x, y| if x.data > y.data
-				 x <=> y 
-				end
-			}
-			@order = true
-		else
-			partidaHash.reverse{
-				|x, y| if x.data < y.data
-					x <=> y 
-				end
-			}
-			@order = false
+	def temCampoFaltando?(output)
+		out = false;
+		if @nome.nil?
+			out = true
+		elsif @tag.nil? 
+			out = true
+		elsif @data.nil?
+			out = true
+		elsif @placar.nil?
+			out = true
+		elsif @descricao.nil?
+			out = true
 		end
+
+		if out == true
+			error_message = "Partida nao sera cadastrada"
+			output.puts error_message
+		end
+		return out
 	end
+
+	def valida?
+		out = true
+		if hasNumber?(@nome)
+			out = false
+		end
+
+		if out == false
+			error_message = "Partida nao sera cadastrada"
+			output.puts error_message
+		end
+		return out
+	end
+
+	def hasNumber?(nome)
+    	true if Float(nome) rescue false
+	end
+
 end
+	
