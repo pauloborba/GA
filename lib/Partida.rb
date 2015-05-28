@@ -1,7 +1,7 @@
 class Partida
 	attr_reader :data, :nome, :tag, :placar, :descricao, :order, :output
 
-	def intialize(data, nome, tag, placar, descricao, output)
+	def initialize(data, nome, tag, placar, descricao, output)
 		@data = data
 		@nome = nome
 		@tag = tag
