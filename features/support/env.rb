@@ -6,7 +6,7 @@
 
 require 'cucumber/rails'
 require File.join(File.dirname(__FILE__), "..", "..", "lib", "atletas")
-require File.join(File.dirname(__FILE__), "..", "..", "lib", "partida")
+require File.join(File.dirname(__FILE__), "..", "..", "lib", "Partida")
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
