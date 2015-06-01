@@ -6,7 +6,6 @@ end
 
 When(/^eu crio uma partida com data “(\d+)\/(\d+)\/(\d+)”,  com nome “Nautico VS Sport”, com tag “Serie A”\.$/) do |data, nome, tag|
     @new_partida = Partida.create_partida(data, nome, tag)
-    @new_partida.criou
     @new_partida != nil
 end
 
