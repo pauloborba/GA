@@ -11,9 +11,11 @@ Scenario: clicar na opcao criar partida
 
 Scenario: clicar na opcao listar partidas 
 	Given estou na pagina principal do time
-	When eu clico na opcao "listar partidas"
-	Then uma nova pagina e aberta
-	And e exibida a lista com todas as partidas realacionadas ao time
+	And foi criada uma partida com nome "Sport VS Nautico", data "13/03/2005" e tag "serie A"
+	And foi criada uma partida com nome "Sport VS Santa Cruz", data "15/03/2005" e tag "Pernambucano"
+	And foi criada uma partida com nome "Sport VS Nautico", data "20/04/2005" e tag "Pernambucano"
+	When eu listar as partidas
+	Then é exibida a lista com as três partidas criadas
 
 Scenario: duplicata de partida
 	Given que existe uma partida com data "12/03/2015", com nome "Nautico VS Sport", com tag "Serie A"

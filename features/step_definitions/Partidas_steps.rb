@@ -38,7 +38,7 @@ end
 
 Then(/^eu posso preencher o formulario de cadastro$/) do
   visit NovaPartidaPage
-  fill_in 'Data', :with => 'Data'
-  fill_in 'Nome', :with => 'Nome'
-  fill_in 'Tag', :with => 'Tag'
+  fill_in 'Data', :with => '13/03/2005'
+  fill_in 'Nome', :with => 'Sport Vs Nautico'
+  fill_in 'Tag', :with => 'Pernambucano'
 end
