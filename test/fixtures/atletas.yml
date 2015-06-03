@@ -7,8 +7,8 @@ one:
   data_nascimento: MyString
   cpf: MyString
   rg: MyString
-  altura: MyString
-  peso: MyString
+  altura: 1.5
+  peso: 1.5
   posicao_joga: MyString
   categoria: MyString
   alojamento_clube: MyString
@@ -20,8 +20,8 @@ two:
   data_nascimento: MyString
   cpf: MyString
   rg: MyString
-  altura: MyString
-  peso: MyString
+  altura: 1.5
+  peso: 1.5
   posicao_joga: MyString
   categoria: MyString
   alojamento_clube: MyString
