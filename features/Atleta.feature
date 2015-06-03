@@ -11,7 +11,11 @@ Feature: Atleta
 	Scenario: Adicionar Atleta novo web 
 		Given estou no menu de Atletas
 		When eu selecionar a opcao "Adicionar" no menu de Atletas
-		Then eu posso preencher os dados do atleta
+		And eu preencher os dados do atleta
+		And o atleta nao esta armazenado no sistema
+		And eu selecionar a opcao "Cadastrar"
+		Then o atleta será armazenado no sistema
+		And a mensagem de sucesso ira aparecer
 
 	Scenario: Adicionar atleta invalido web (nome campo em branco) 
 		Given estou na pagina de adicionar novo atleta
@@ -28,15 +32,3 @@ Feature: Atleta
 		Given o sistema tenha o atleta com o CPF "08976898765"
 		When eu adicionar o atleta com o CPF "08976898765"
 		Then o atleta com o CPF "08976898765" nao e armazenado duas vezes
-
-	Scenario: Classificar atleta inválido web
-		Given estou na página de classificar atleta
-		When eu preencher os dados do atleta que é para ser Júnior
-		And preencho o campo com Profissional
-		And eu opto por classificar o atleta
-		Then uma mensagem de erro é mostrada
-
-	Scenario: Classificar atleta web
-		Given estou no menu de Atletas
-		When eu selecionar a opção “Classificar” no menu de Atletas
-		Then eu posso preencher os dados para classificar o atleta
