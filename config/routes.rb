@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contratos
   resources :atletas
   resources :partidas
   # The priority is based upon order of creation: first created -> highest priority.
