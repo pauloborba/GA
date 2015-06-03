@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clausulas
   resources :contratos
   resources :atletas
   resources :partidas

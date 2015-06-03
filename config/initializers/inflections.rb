@@ -5,6 +5,8 @@
 # locales as you wish. All of these examples are active by default:
 ActiveSupport::Inflector.inflections(:en) do |inflect|
     inflect.irregular 'atleta', 'atletas'
+    inflect.irregular 'clausula', 'clausulas'
+
 end
 
 # These inflection rules are supported but not enabled by default:
