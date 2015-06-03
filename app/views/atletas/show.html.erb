@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @atleta.nome %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @atleta.email %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @atleta.telefone %>
+</p>
+
+<p>
+  <strong>Data nascimento:</strong>
+  <%= @atleta.data_nascimento %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @atleta.cpf %>
+</p>
+
+<p>
+  <strong>Rg:</strong>
+  <%= @atleta.rg %>
+</p>
+
+<p>
+  <strong>Altura:</strong>
+  <%= @atleta.altura %>
+</p>
+
+<p>
+  <strong>Peso:</strong>
+  <%= @atleta.peso %>
+</p>
+
+<p>
+  <strong>Posicao joga:</strong>
+  <%= @atleta.posicao_joga %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @atleta.categoria %>
+</p>
+
+<p>
+  <strong>Alojamento clube:</strong>
+  <%= @atleta.alojamento_clube %>
+</p>
+
+<%= link_to 'Edit', edit_atleta_path(@atleta) %> |
+<%= link_to 'Back', atletas_path %>

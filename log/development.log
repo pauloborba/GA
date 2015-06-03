@@ -20,3 +20,216 @@ Migrating to CreatePartidas (20150601184340)
   [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150601184340"]]
   [1m[35m (164.9ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 15:54:22 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.9ms)
+Completed 200 OK in 78ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 15:55:57 -0300
+Processing by PartidasController#index as HTML
+  [1m[35mPartida Load (0.5ms)[0m  SELECT "partidas".* FROM "partidas"
+  Rendered partidas/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 2282ms (Views: 2275.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-02 15:55:59 -0300
+
+
+Started GET "/assets/scaffolds.self-a597683d591c539c409d4fcae922b4ef5799c3ef274068ffb4a4795abf8d52a6.css?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-02 15:56:00 -0300
+
+
+Started GET "/partidas/new" for 127.0.0.1 at 2015-06-02 15:56:04 -0300
+Processing by PartidasController#new as HTML
+  Rendered partidas/_form.html.erb (105.4ms)
+  Rendered partidas/new.html.erb within layouts/application (148.2ms)
+Completed 200 OK in 350ms (Views: 329.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/partidas/new" for 127.0.0.1 at 2015-06-02 15:56:08 -0300
+Processing by PartidasController#new as HTML
+  Rendered partidas/_form.html.erb (9.9ms)
+  Rendered partidas/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 211ms (Views: 209.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 16:01:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 34ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:01:24 -0300
+Processing by PartidasController#index as HTML
+  [1m[35mPartida Load (0.6ms)[0m  SELECT "partidas".* FROM "partidas"
+  Rendered partidas/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 391ms (Views: 384.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/partidas/new" for 127.0.0.1 at 2015-06-02 16:01:26 -0300
+Processing by PartidasController#new as HTML
+  Rendered partidas/_form.html.erb (77.4ms)
+  Rendered partidas/new.html.erb within layouts/application (92.2ms)
+Completed 200 OK in 250ms (Views: 237.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/partidas" for 127.0.0.1 at 2015-06-02 16:01:47 -0300
+Processing by PartidasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uIE74wo6tj+MaBrqZJrnkLJ4zlex/0Aj0DNKQpRou5asJ/CWZSUsOin6WcQk2Tey7T01OvysSs9XprZBJ8J8Vw==", "partida"=>{"nome"=>"Nauti e Sport", "tag"=>"Serie A", "data(1i)"=>"2015", "data(2i)"=>"6", "data(3i)"=>"2", "data(4i)"=>"19", "data(5i)"=>"01"}, "commit"=>"Create Partida"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "partidas" ("nome", "tag", "data", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["nome", "Nauti e Sport"], ["tag", "Serie A"], ["data", "2015-06-02 19:01:00.000000"], ["created_at", "2015-06-02 19:01:47.278648"], ["updated_at", "2015-06-02 19:01:47.278648"]]
+  [1m[36m (337.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/partidas/1
+Completed 302 Found in 406ms (ActiveRecord: 339.1ms)
+
+
+Started GET "/partidas/1" for 127.0.0.1 at 2015-06-02 16:01:47 -0300
+Processing by PartidasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPartida Load (0.5ms)[0m  SELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partidas/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 233ms (Views: 172.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:02:02 -0300
+Processing by PartidasController#index as HTML
+  [1m[36mPartida Load (0.7ms)[0m  [1mSELECT "partidas".* FROM "partidas"[0m
+  Rendered partidas/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 204ms (Views: 202.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/partidas/1" for 127.0.0.1 at 2015-06-02 16:02:06 -0300
+Processing by PartidasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPartida Load (0.9ms)[0m  SELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partidas/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 199ms (Views: 194.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:02:08 -0300
+Processing by PartidasController#index as HTML
+  [1m[36mPartida Load (0.9ms)[0m  [1mSELECT "partidas".* FROM "partidas"[0m
+  Rendered partidas/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 185ms (Views: 181.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/partidas/1/edit" for 127.0.0.1 at 2015-06-02 16:04:28 -0300
+Processing by PartidasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPartida Load (0.9ms)[0m  SELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partidas/_form.html.erb (13.8ms)
+  Rendered partidas/edit.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 189ms (Views: 186.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:04:54 -0300
+Processing by PartidasController#index as HTML
+  [1m[36mPartida Load (1.3ms)[0m  [1mSELECT "partidas".* FROM "partidas"[0m
+  Rendered partidas/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 181ms (Views: 178.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:05:07 -0300
+Processing by PartidasController#index as HTML
+  [1m[35mPartida Load (0.7ms)[0m  SELECT "partidas".* FROM "partidas"
+  Rendered partidas/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 170ms (Views: 168.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/partidas/1" for 127.0.0.1 at 2015-06-02 16:05:21 -0300
+Processing by PartidasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPartida Load (0.6ms)[0m  [1mSELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered partidas/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 160ms (Views: 157.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/partidas/1/edit" for 127.0.0.1 at 2015-06-02 16:06:10 -0300
+Processing by PartidasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPartida Load (0.9ms)[0m  SELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered partidas/_form.html.erb (11.9ms)
+  Rendered partidas/edit.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 173ms (Views: 169.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/partidas/1" for 127.0.0.1 at 2015-06-02 16:06:12 -0300
+Processing by PartidasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPartida Load (0.7ms)[0m  [1mSELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered partidas/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 174ms (Views: 171.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:06:30 -0300
+Processing by PartidasController#index as HTML
+  [1m[35mPartida Load (0.8ms)[0m  SELECT "partidas".* FROM "partidas"
+  Rendered partidas/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 167ms (Views: 164.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-02 16:16:55 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:17:06 -0300
+Processing by PartidasController#index as HTML
+  [1m[36mPartida Load (0.8ms)[0m  [1mSELECT "partidas".* FROM "partidas"[0m
+  Rendered partidas/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 149ms (Views: 146.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/partidas/new" for 127.0.0.1 at 2015-06-02 16:17:07 -0300
+Processing by PartidasController#new as HTML
+  Rendered partidas/_form.html.erb (24.2ms)
+  Rendered partidas/new.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 205ms (Views: 203.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/partidas" for 127.0.0.1 at 2015-06-02 16:17:17 -0300
+Processing by PartidasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bOFU3qPZvWOIBzlCi70pZQnkMTM6Nf9zIXk3CqYQSr94R5+rzMYnZi2VemzL/vlHVqHKXndm9Z+m7MsJFbqNfg==", "partida"=>{"nome"=>"jh", "tag"=>"kjhkj", "data(1i)"=>"2015", "data(2i)"=>"6", "data(3i)"=>"2", "data(4i)"=>"19", "data(5i)"=>"17"}, "commit"=>"Create Partida"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "partidas" ("nome", "tag", "data", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "jh"], ["tag", "kjhkj"], ["data", "2015-06-02 19:17:00.000000"], ["created_at", "2015-06-02 19:17:17.432825"], ["updated_at", "2015-06-02 19:17:17.432825"]]
+  [1m[35m (339.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/partidas/2
+Completed 302 Found in 349ms (ActiveRecord: 341.4ms)
+
+
+Started GET "/partidas/2" for 127.0.0.1 at 2015-06-02 16:17:17 -0300
+Processing by PartidasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPartida Load (0.7ms)[0m  [1mSELECT  "partidas".* FROM "partidas" WHERE "partidas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered partidas/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 162ms (Views: 159.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/partidas" for 127.0.0.1 at 2015-06-02 16:17:21 -0300
+Processing by PartidasController#index as HTML
+  [1m[35mPartida Load (0.7ms)[0m  SELECT "partidas".* FROM "partidas"
+  Rendered partidas/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 164ms (Views: 160.9ms | ActiveRecord: 0.7ms)
