@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601184340) do
+ActiveRecord::Schema.define(version: 20150603230640) do
+
+  create_table "atletas", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "email"
+    t.string   "telefone"
+    t.string   "data_nascimento"
+    t.string   "cpf"
+    t.string   "rg"
+    t.float    "altura"
+    t.float    "peso"
+    t.string   "posicao_joga"
+    t.string   "categoria"
+    t.string   "alojamento_clube"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "clausulas", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contratos", force: :cascade do |t|
+    t.datetime "data_Inicio"
+    t.datetime "data_Termino"
+    t.integer  "atleta_id"
+    t.string   "contrata"
+    t.float    "valor"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "contratos", ["atleta_id"], name: "index_contratos_on_atleta_id"
 
   create_table "partidas", force: :cascade do |t|
     t.string   "nome"
