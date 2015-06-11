@@ -1,0 +1,61 @@
+<%= form_for(@atleta) do |f| %>
+  <% if @atleta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@atleta.errors.count, "error") %> prohibited this atleta from being saved:</h2>
+
+      <ul>
+      <% @atleta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br>
+    <%= f.text_field :telefone %>
+  </div>
+  <div class="field">
+    <%= f.label :data_nascimento %><br>
+    <%= f.text_field :data_nascimento %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :rg %><br>
+    <%= f.text_field :rg %>
+  </div>
+  <div class="field">
+    <%= f.label :altura %><br>
+    <%= f.text_field :altura %>
+  </div>
+  <div class="field">
+    <%= f.label :peso %><br>
+    <%= f.text_field :peso %>
+  </div>
+  <div class="field">
+    <%= f.label :posicao_joga %><br>
+    <%= f.text_field :posicao_joga %>
+  </div>
+  <div class="field">
+    <%= f.label :categoria %><br>
+    <%= f.text_field :categoria %>
+  </div>
+  <div class="field">
+    <%= f.label :alojamento_clube %><br>
+    <%= f.text_field :alojamento_clube %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

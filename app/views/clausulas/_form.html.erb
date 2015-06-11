@@ -1,0 +1,25 @@
+<%= form_for(@clausula) do |f| %>
+  <% if @clausula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clausula.errors.count, "error") %> prohibited this clausula from being saved:</h2>
+
+      <ul>
+      <% @clausula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

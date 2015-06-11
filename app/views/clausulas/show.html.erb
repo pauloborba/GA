@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @clausula.titulo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @clausula.descricao %>
+</p>
+
+<%= link_to 'Edit', edit_clausula_path(@clausula) %> |
+<%= link_to 'Back', clausulas_path %>

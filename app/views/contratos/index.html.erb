@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contratos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data inicio</th>
+      <th>Data termino</th>
+      <th>Atleta</th>
+      <th>Contrata</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contratos.each do |contrato| %>
+      <tr>
+        <td><%= contrato.data_Inicio %></td>
+        <td><%= contrato.data_Termino %></td>
+        <td><%= contrato.atleta %></td>
+        <td><%= contrato.contrata %></td>
+        <td><%= contrato.valor %></td>
+        <td><%= link_to 'Show', contrato %></td>
+        <td><%= link_to 'Edit', edit_contrato_path(contrato) %></td>
+        <td><%= link_to 'Destroy', contrato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contrato', new_contrato_path %>

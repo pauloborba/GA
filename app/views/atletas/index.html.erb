@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Atletas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Data nascimento</th>
+      <th>Cpf</th>
+      <th>Rg</th>
+      <th>Altura</th>
+      <th>Peso</th>
+      <th>Posicao joga</th>
+      <th>Categoria</th>
+      <th>Alojamento clube</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atletas.each do |atleta| %>
+      <tr>
+        <td><%= atleta.nome %></td>
+        <td><%= atleta.email %></td>
+        <td><%= atleta.telefone %></td>
+        <td><%= atleta.data_nascimento %></td>
+        <td><%= atleta.cpf %></td>
+        <td><%= atleta.rg %></td>
+        <td><%= atleta.altura %></td>
+        <td><%= atleta.peso %></td>
+        <td><%= atleta.posicao_joga %></td>
+        <td><%= atleta.categoria %></td>
+        <td><%= atleta.alojamento_clube %></td>
+        <td><%= link_to 'Show', atleta %></td>
+        <td><%= link_to 'Edit', edit_atleta_path(atleta) %></td>
+        <td><%= link_to 'Destroy', atleta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atleta', new_atleta_path %>

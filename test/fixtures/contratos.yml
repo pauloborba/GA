@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_Inicio: 2015-06-03 19:55:47
+  data_Termino: 2015-06-03 19:55:47
+  atleta_id: 
+  contrata: MyString
+  valor: 1.5
+
+two:
+  data_Inicio: 2015-06-03 19:55:47
+  data_Termino: 2015-06-03 19:55:47
+  atleta_id: 
+  contrata: MyString
+  valor: 1.5
