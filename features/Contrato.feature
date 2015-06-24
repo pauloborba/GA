@@ -44,3 +44,27 @@ Given there is a contract between the contractor "Náutico" and the contracted "
 When I try to set the athlete to "Steve Jobs"
 And there is no athlete named "Steve Jobs"
 Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved
+
+Scenario: Create a contract with a blank start date
+Given there is no contract between the contractor "Náutico" and the contracted "Taylor Swift"
+When I try to create a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+And I gave a blank start date
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not created
+
+Scenario: Edit an existing contract setting a blank start date
+Given there is a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+When I try to edit the existing contract between the contractor "Náutico" and the contracted "Taylor Swift"
+And I gave a blank start date
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved
+
+Scenario: Create a contract with a blank end date
+Given there is no contract between the contractor "Náutico" and the contracted "Taylor Swift"
+When I try to create a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+And I gave a blank end date
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not created
+
+Scenario: Edit an existing contract setting a blank end date
+Given there is a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+When I try to edit the existing contract between the contractor "Náutico" and the contracted "Taylor Swift"
+And I gave a blank end date
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved
