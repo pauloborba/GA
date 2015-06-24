@@ -11,3 +11,10 @@ When I try to create a contract between the contractor "Náutico" and the contra
 And I gave a start date of 2015-02-11
 And I gave an end date of 2014-02-11
 Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved
+
+Scenario: Edit a contract setting the end date prior to the start date
+Given there a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+When I try to edit the existing contract between the contractor "Náutico" and the contracted "Taylor Swift"
+And I gave a start date of 2015-02-11
+And I gave an end date of 2014-02-11
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved

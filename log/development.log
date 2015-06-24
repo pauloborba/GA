@@ -682,3 +682,20 @@ Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dd
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/contratos" for 127.0.0.1 at 2015-06-24 13:45:43 -0300
+Processing by ContratosController#index as HTML
+  [1m[35mContrato Load (0.2ms)[0m  SELECT "contratos".* FROM "contratos"
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered contratos/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/contratos/1/edit" for 127.0.0.1 at 2015-06-24 13:45:45 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mContrato Load (0.2ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contratos/_form.html.erb (9.2ms)
+  Rendered contratos/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 139ms (Views: 136.9ms | ActiveRecord: 0.2ms)
