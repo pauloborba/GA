@@ -982,3 +982,70 @@ Processing by ContratosController#show as HTML
   [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 0]]
   Rendered contratos/show.html.erb within layouts/application (5.4ms)
 Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:53:46 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContrato Load (0.1ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered contratos/_form.html.erb (9.7ms)
+  Rendered contratos/edit.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/contratos/2" for 127.0.0.1 at 2015-06-24 13:53:50 -0300
+Processing by ContratosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KiyIkC8OVGnW1i2MKBzDr3la+fIWfEqBjN6ilX75lL6iQSjumFSpmrQsuJVZ7G411eSx267r7Ld4g+GydMot8A==", "contrato"=>{"data_Inicio(1i)"=>"2015", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"52", "data_Termino(1i)"=>"2016", "data_Termino(2i)"=>"8", "data_Termino(3i)"=>"27", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"52", "atleta_id"=>"Taylor Swift", "contrata"=>"", "valor"=>""}, "commit"=>"Update Contrato", "id"=>"2"}
+  [1m[35mContrato Load (0.1ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "contratos" SET "atleta_id" = ?, "updated_at" = ? WHERE "contratos"."id" = ?  [["atleta_id", 0], ["updated_at", "2015-06-24 16:53:50.475285"], ["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/contratos/2
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/contratos/2" for 127.0.0.1 at 2015-06-24 13:53:50 -0300
+Processing by ContratosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mContrato Load (0.1ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAtleta Load (0.1ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered contratos/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 126ms (Views: 124.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:53:52 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mContrato Load (0.1ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered contratos/_form.html.erb (7.8ms)
+  Rendered contratos/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/contratos/2" for 127.0.0.1 at 2015-06-24 13:53:54 -0300
+Processing by ContratosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wxHGlm6R5wgXOflBB+TL9nAyuKtggOYlDm4uBvbPnvBLfGbo2csa+3XDbFh2FGZs3IzwgtgXQBP6M20h/Pwnvg==", "contrato"=>{"data_Inicio(1i)"=>"2015", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"52", "data_Termino(1i)"=>"2016", "data_Termino(2i)"=>"8", "data_Termino(3i)"=>"27", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"52", "atleta_id"=>"1", "contrata"=>"", "valor"=>""}, "commit"=>"Update Contrato", "id"=>"2"}
+  [1m[36mContrato Load (0.1ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "contratos" SET "atleta_id" = ?, "updated_at" = ? WHERE "contratos"."id" = ?[0m  [["atleta_id", 1], ["updated_at", "2015-06-24 16:53:55.002314"], ["id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/contratos/2
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/contratos/2" for 127.0.0.1 at 2015-06-24 13:53:55 -0300
+Processing by ContratosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContrato Load (0.1ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contratos/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:53:57 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContrato Load (0.1ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered contratos/_form.html.erb (8.7ms)
+  Rendered contratos/edit.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.1ms)
