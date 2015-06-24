@@ -386,3 +386,299 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
             FROM sqlite_temp_master
             WHERE name='index_contratos_on_atleta_id' AND type='index'
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-24 13:21:00 -0300
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  vender/bundle/ruby/2.0.0/gems/activerecord-4.2.1/lib/active_record/migration.rb:393:in `check_pending!'
+  vender/bundle/ruby/2.0.0/gems/activerecord-4.2.1/lib/active_record/migration.rb:374:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:88:in `call'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/callbacks.rb:81:in `run_callbacks'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/middleware.rb:37:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  vender/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+  vender/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `block in call'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:26:in `tagged'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/tagged_logging.rb:68:in `tagged'
+  vender/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/rack/logger.rb:20:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/methodoverride.rb:22:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/runtime.rb:18:in `call'
+  vender/bundle/ruby/2.0.0/gems/activesupport-4.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/lock.rb:17:in `call'
+  vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/static.rb:113:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/sendfile.rb:113:in `call'
+  vender/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/engine.rb:518:in `call'
+  vender/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/application.rb:164:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/lock.rb:17:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/content_length.rb:15:in `call'
+  vender/bundle/ruby/2.0.0/gems/rack-1.6.0/lib/rack/handler/webrick.rb:89:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.2ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (3.2ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (101.2ms)
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePartidas (20150601184340)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "partidas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "tag" varchar, "data" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150601184340"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateAtletas (20150603221244)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "atletas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "email" varchar, "telefone" varchar, "data_nascimento" varchar, "cpf" varchar, "rg" varchar, "altura" float, "peso" float, "posicao_joga" varchar, "categoria" varchar, "alojamento_clube" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150603221244"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateContratos (20150603225547)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "contratos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data_Inicio" datetime, "data_Termino" datetime, "atleta_id" integer, "contrata" varchar, "valor" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_contratos_on_atleta_id" ON "contratos" ("atleta_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150603225547"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateClausulas (20150603230640)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "clausulas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar, "descricao" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150603230640"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-24 13:21:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered vender/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 33ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contratos" for 127.0.0.1 at 2015-06-24 13:22:37 -0300
+Processing by ContratosController#index as HTML
+  [1m[35mContrato Load (0.2ms)[0m  SELECT "contratos".* FROM "contratos"
+  Rendered contratos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 2882ms (Views: 2872.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/scaffolds.self-520b5d8dc884d843ca7a2b9defb0a40f8ccb16fb2ec296a92697e478180577e2.css?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-24 13:22:40 -0300
+
+
+Started GET "/contratos/new" for 127.0.0.1 at 2015-06-24 13:22:43 -0300
+Processing by ContratosController#new as HTML
+  Rendered contratos/_form.html.erb (107.7ms)
+  Rendered contratos/new.html.erb within layouts/application (111.8ms)
+Completed 200 OK in 192ms (Views: 177.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/contratos" for 127.0.0.1 at 2015-06-24 13:23:01 -0300
+Processing by ContratosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6649rXNY2aiVfkgQG3gekmPyIKjWwV7lbFt4p58vCRFjw53TxAIkW/eE3QlqiLMIz0xogW5W+NOYBjuAlRywXw==", "contrato"=>{"data_Inicio(1i)"=>"2015", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"22", "data_Termino(1i)"=>"2013", "data_Termino(2i)"=>"6", "data_Termino(3i)"=>"24", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"22", "atleta_id"=>"teste", "contrata"=>"dsada", "valor"=>"2000"}, "commit"=>"Create Contrato"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "contratos" ("atleta_id", "contrata", "valor", "data_Inicio", "data_Termino", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["atleta_id", 0], ["contrata", "dsada"], ["valor", 2000.0], ["data_Inicio", "2015-06-24 16:22:00.000000"], ["data_Termino", "2013-06-24 16:22:00.000000"], ["created_at", "2015-06-24 16:23:01.354550"], ["updated_at", "2015-06-24 16:23:01.354550"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/contratos/1
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/contratos/1" for 127.0.0.1 at 2015-06-24 13:23:01 -0300
+Processing by ContratosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mContrato Load (0.3ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAtleta Load (0.5ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered contratos/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 64ms (Views: 56.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contratos" for 127.0.0.1 at 2015-06-24 13:42:14 -0300
+Processing by ContratosController#index as HTML
+  [1m[35mContrato Load (0.5ms)[0m  SELECT "contratos".* FROM "contratos"
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 0]]
+  Rendered contratos/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 78ms (Views: 72.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/contratos/new" for 127.0.0.1 at 2015-06-24 13:42:15 -0300
+Processing by ContratosController#new as HTML
+  Rendered contratos/_form.html.erb (9.1ms)
+  Rendered contratos/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 69ms (Views: 68.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contratos" for 127.0.0.1 at 2015-06-24 13:42:22 -0300
+Processing by ContratosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y052qZjTY7gV3ylTTfTGe11SSKbKL4wLD2zVYza78HjrI9bXL4meS3clvEo8BGvh8ewAj3K4Kj37MZZEPIhJNg==", "contrato"=>{"data_Inicio(1i)"=>"2013", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"42", "data_Termino(1i)"=>"2015", "data_Termino(2i)"=>"6", "data_Termino(3i)"=>"24", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"42", "atleta_id"=>"dasdas", "contrata"=>"dsada", "valor"=>"dasdsa"}, "commit"=>"Create Contrato"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+NameError (undefined local variable or method `record' for #<Contrato:0x007f9899758210>):
+  app/models/contrato.rb:7:in `end_date_must_be_greater_than_start_date'
+  app/controllers/contratos_controller.rb:30:in `block in create'
+  app/controllers/contratos_controller.rb:29:in `create'
+
+
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started POST "/contratos" for 127.0.0.1 at 2015-06-24 13:42:33 -0300
+Processing by ContratosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y052qZjTY7gV3ylTTfTGe11SSKbKL4wLD2zVYza78HjrI9bXL4meS3clvEo8BGvh8ewAj3K4Kj37MZZEPIhJNg==", "contrato"=>{"data_Inicio(1i)"=>"2013", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"42", "data_Termino(1i)"=>"2015", "data_Termino(2i)"=>"6", "data_Termino(3i)"=>"24", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"42", "atleta_id"=>"dasdas", "contrata"=>"dsada", "valor"=>"dasdsa"}, "commit"=>"Create Contrato"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `The start date must be prior to the end date' for #<Contrato:0x007f989b6cb020>):
+  app/models/contrato.rb:7:in `end_date_must_be_greater_than_start_date'
+  app/controllers/contratos_controller.rb:30:in `block in create'
+  app/controllers/contratos_controller.rb:29:in `create'
+
+
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.6ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (20.8ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (43.9ms)
+
+
+Started POST "/contratos" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+Processing by ContratosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y052qZjTY7gV3ylTTfTGe11SSKbKL4wLD2zVYza78HjrI9bXL4meS3clvEo8BGvh8ewAj3K4Kj37MZZEPIhJNg==", "contrato"=>{"data_Inicio(1i)"=>"2013", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"42", "data_Termino(1i)"=>"2015", "data_Termino(2i)"=>"6", "data_Termino(3i)"=>"24", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"42", "atleta_id"=>"dasdas", "contrata"=>"dsada", "valor"=>"dasdsa"}, "commit"=>"Create Contrato"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered contratos/_form.html.erb (13.8ms)
+  Rendered contratos/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 154ms (Views: 67.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/scaffolds.self-520b5d8dc884d843ca7a2b9defb0a40f8ccb16fb2ec296a92697e478180577e2.css?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-24 13:43:09 -0300
