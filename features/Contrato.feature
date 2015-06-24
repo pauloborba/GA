@@ -32,3 +32,15 @@ Given there is a contract between the contractor "Náutico" and "Taylor Swift"
 When I try to edit the existing contract between the contractor "Náutico" and the contracted "Taylor Swift"
 And I gave a value less than zero
 Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved
+
+Scenario: Create a contract with an non existing athelete
+Given there is no contract between the contractor "Náutico" and the contracted "Taylor Swift"
+And there is no athlete named "Taylor Swift"
+When I try to create a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not created
+
+Scenario: Edit an existing contract setting an non existing athelete
+Given there is a contract between the contractor "Náutico" and the contracted "Taylor Swift"
+When I try to set the athlete to "Steve Jobs"
+And there is no athlete named "Steve Jobs"
+Then the contract between the contractor "Náutico" and the contracted "Taylor Swift" is not saved
