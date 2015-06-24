@@ -26,4 +26,18 @@ class ContratoTest < ActiveSupport::TestCase
 
   	assert not(contract.valid?) and contract.errors[:atleta].length > 0
   end
+
+  test "a contract with a blank start date should not be valid" do
+  	contract = Contrato.new
+  	contract.data_Inicio = nil
+
+  	assert not(contract.valid?) and contract.errors[:data_Inicio].length > 0
+  end
+
+  test "a contract with a blank end date should not be valid" do
+  	contract = Contrato.new
+  	contract.data_Termino = nil
+
+  	assert not(contract.valid?) and contract.errors[:data_Termino].length > 0
+  end
 end
