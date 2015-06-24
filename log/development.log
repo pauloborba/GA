@@ -1049,3 +1049,164 @@ Processing by ContratosController#edit as HTML
   Rendered contratos/_form.html.erb (8.7ms)
   Rendered contratos/edit.html.erb within layouts/application (9.6ms)
 Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/contratos/2" for 127.0.0.1 at 2015-06-24 13:56:40 -0300
+Processing by ContratosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m6z9aTeGsKlJglrvAEvKX/vfJ+qDIjGQUp8cEGyk4LUTwV0XgNxNWit4z/Zxu2fFV2Fvwzu1l6amwl83ZpdZ+w==", "contrato"=>{"data_Inicio(1i)"=>"2015", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"52", "data_Termino(1i)"=>"2016", "data_Termino(2i)"=>"8", "data_Termino(3i)"=>"27", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"52", "atleta_id"=>"1", "contrata"=>"", "valor"=>"-10"}, "commit"=>"Update Contrato", "id"=>"2"}
+  [1m[35mContrato Load (0.1ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "contratos" SET "valor" = ?, "updated_at" = ? WHERE "contratos"."id" = ?  [["valor", -10.0], ["updated_at", "2015-06-24 16:56:40.252487"], ["id", 2]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/contratos/2
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/contratos/2" for 127.0.0.1 at 2015-06-24 13:56:40 -0300
+Processing by ContratosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mContrato Load (0.2ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAtleta Load (0.1ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contratos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:57:10 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mContrato Load (0.1ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered contratos/_form.html.erb (8.9ms)
+  Rendered contratos/edit.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/contratos/2" for 127.0.0.1 at 2015-06-24 13:57:12 -0300
+Processing by ContratosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gs2Xz1N7spOoML7sxX4wZ10uS+9wlYLDsYo+wiFUWtwKoDex5CFPYMrKK/W0jp398ZADxsgCJPVF133lK2fjkg==", "contrato"=>{"data_Inicio(1i)"=>"2015", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"52", "data_Termino(1i)"=>"2016", "data_Termino(2i)"=>"8", "data_Termino(3i)"=>"27", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"52", "atleta_id"=>"1", "contrata"=>"", "valor"=>"dsads"}, "commit"=>"Update Contrato", "id"=>"2"}
+  [1m[36mContrato Load (0.2ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "contratos" SET "valor" = ?, "updated_at" = ? WHERE "contratos"."id" = ?[0m  [["valor", 0.0], ["updated_at", "2015-06-24 16:57:12.906610"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/contratos/2
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/contratos/2" for 127.0.0.1 at 2015-06-24 13:57:12 -0300
+Processing by ContratosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContrato Load (0.1ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contratos/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:58:26 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown key: :numericality. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  app/models/contrato.rb:5:in `<class:Contrato>'
+  app/models/contrato.rb:1:in `<top (required)>'
+  app/controllers/contratos_controller.rb:67:in `set_contrato'
+
+
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.8ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (22.1ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (47.2ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:58:26 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown key: :numericality. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?):
+  app/models/contrato.rb:5:in `<class:Contrato>'
+  app/models/contrato.rb:1:in `<top (required)>'
+  app/controllers/contratos_controller.rb:67:in `set_contrato'
+
+
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered vender/bundle/ruby/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (44.0ms)
+
+
+Started GET "/contratos/2/edit" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+Processing by ContratosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mContrato Load (0.2ms)[0m  [1mSELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered contratos/_form.html.erb (80.0ms)
+  Rendered contratos/edit.html.erb within layouts/application (81.6ms)
+Completed 200 OK in 154ms (Views: 140.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+
+
+Started GET "/assets/scaffolds.self-520b5d8dc884d843ca7a2b9defb0a40f8ccb16fb2ec296a92697e478180577e2.css?body=1" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-24 13:58:36 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-24 13:58:37 -0300
+
+
+Started PATCH "/contratos/2" for 127.0.0.1 at 2015-06-24 13:58:41 -0300
+Processing by ContratosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G6TLu0J1eRSfFHfA4N900lASaJyF8oWNQ7qOxUeLSUaTyWvF9S+E5/3u4tmRL9lI/KwgtT1lI7u3583iTbjwCA==", "contrato"=>{"data_Inicio(1i)"=>"2015", "data_Inicio(2i)"=>"6", "data_Inicio(3i)"=>"24", "data_Inicio(4i)"=>"16", "data_Inicio(5i)"=>"52", "data_Termino(1i)"=>"2016", "data_Termino(2i)"=>"8", "data_Termino(3i)"=>"27", "data_Termino(4i)"=>"16", "data_Termino(5i)"=>"52", "atleta_id"=>"1", "contrata"=>"", "valor"=>"-10"}, "commit"=>"Update Contrato", "id"=>"2"}
+  [1m[35mContrato Load (0.1ms)[0m  SELECT  "contratos".* FROM "contratos" WHERE "contratos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered contratos/_form.html.erb (13.0ms)
+  Rendered contratos/edit.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 0.3ms)
