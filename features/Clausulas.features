@@ -9,7 +9,7 @@ Scenario: Adicionar uma nova clausula a um contrato
   Then Eu posso checar a nova clausula associada ao contrato
 
 Scenario: Checar clausulas de contratos
-  Given Eu tenho algum contrato cadastrado no sistema
+  Given Eu tenho um contrato cadastrado
   And Eu tenha uma clausula associado ao contrato
   And Eu esteja na pagina de contratos
   When Eu clico no link "Show" do primeiro contrato
@@ -26,3 +26,13 @@ Scenario: Clausulas deverão ter titulos unicos
   And Eu preencho descrição com "10 Porcento do salario a cada 20 gols"
   And Eu clico no botão "Criar"
   Then Eu devo ver uma mensagem de erro "Já existe clausula com mesmo título!"
+
+Scenario: Associar uma clausula a um contrato
+  Given Eu tenho um contrato cadastrado no sistema
+  And Eu tenha uma clausula cadastrada no sistema
+  And Eu esteja na pagina de clausulas do contrato
+  When Eu clico no link "Adicionar Clausulas"
+  Then Eu devo estar na pagina de adicionar clausulas do contrato
+  When Eu clico no link "Adicionar"
+  Then Eu devo ver as clausulas do contrato
+  And Eu devo ver a nova clausula na lista de clausulas
