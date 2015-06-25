@@ -108,7 +108,48 @@ Then(/^minha lista de paridas contem a partida com data "([^"]*)”, com nome �
 end
 
 
+Given(/^que existe uma partida cadastrada no sistema com tag de valor "(.*?)"\.$/) do |tag|
+  @new_partida = Partida.new({data: "01/07/2013", nome: "Náutico Vs Santa Cruz", tag:tag })
+  @new_partida.save()
+  #puts @new_partida.nome
+  #puts @new_partida.tag
+  #puts @current_partida.data
+end
 
+Given(/^estou na pagina de detalhes da partida$/) do
+  visit partidas_path
+end
+
+When(/^eu clico em "(.*?)" a primeira partida$/) do |link|
+  find_link(link).click
+end
+
+Then(/^eu sou direcionado a pagina de editar partida$/) do
+  visit edit_partida_path(@new_partida)
+end
+
+When(/^Eu preencho a tag  com o valor "(.*?)"$/) do |tag|
+  fill_in "tag", with:tag
+  @current_tag = tag
+end
+
+When(/^clico em salvar$/) do
+  find_button("Salvar").click
+  @new_partida.tag = @current_tag
+  @new_partida.save()
+end
+
+Then(/^sou direcionado a página de detalhes da partida$/) do
+  visit partidas_path
+end
+
+Then(/^eu posso visualizar nos detalhes da partida, o novo valor da tag$/) do
+  @current_partida = find_or_include_partida("Náutico Vs Santa Cruz", "01/07/2013", @current_tag)
+  #puts @current_partida.nome
+  #puts @current_partida.tag
+  #puts @current_partida.data
+  @current_partida.should_not eq(nil)
+end
 
 
 # end @JoaoSantos
