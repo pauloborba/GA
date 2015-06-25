@@ -21,6 +21,13 @@ class ClausulasController < ApplicationController
   def edit
   end
 
+  # GET /contratos/1/clausulas
+  def list
+    @contrato = Contrato.find(params[:id])
+    @clausulas = @contrato.clausulas
+  end
+
+
   # POST /clausulas
   # POST /clausulas.json
   def create

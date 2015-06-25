@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de Clausulas </h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Titulo</th>
+    <th>Descricao</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @clausulas.each do |clausula| %>
+      <tr>
+        <td><%= clausula.titulo %></td>
+        <td><%= clausula.descricao %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', contrato_path(@contrato) %>

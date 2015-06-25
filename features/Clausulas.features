@@ -10,6 +10,7 @@ Scenario: Adicionar uma nova clausula a um contrato
 
 Scenario: Checar clausulas de contratos
   Given Eu tenho algum contrato cadastrado no sistema
+  And Eu tenha uma clausula associado ao contrato
   And Eu esteja na pagina de contratos
   When Eu clico no link "Show" do primeiro contrato
   Then Eu devo ver os detalhes do contrato

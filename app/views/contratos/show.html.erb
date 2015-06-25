@@ -25,5 +25,6 @@
   <%= @contrato.valor %>
 </p>
 
+<%= link_to "Ver Clausulas", list_clausulas_path(@contrato) %>
 <%= link_to 'Edit', edit_contrato_path(@contrato) %> |
 <%= link_to 'Back', contratos_path %>
