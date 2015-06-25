@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, placeholder: "nome" %>
   </div>
   <div class="field">
     <%= f.label :tag %><br>
-    <%= f.text_field :tag %>
+    <%= f.text_field :tag, placeholder: "tag" %>
   </div>
   <div class="field">
     <%= f.label :data %><br>
-    <%= f.datetime_select :data %>
+    <%= f.datetime_select :data, placeholder: "data" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salvar" %>
   </div>
 <% end %>
