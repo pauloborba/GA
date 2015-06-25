@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/contratos/:id/clausulas' => 'clausulas#list', as: :list_clausulas
   get '/contratos/:id/clausulas/add' => 'clausulas#list_add', as: :list_add_clausulas
   post '/contratos/:contrato/clausulas/:clausula/add' => 'clausulas#add', as: :add_clausulas
+  delete '/contratos/:contrato/clausulas/:clausula/remove' => 'clausulas#remove', as: :remove_clausula
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

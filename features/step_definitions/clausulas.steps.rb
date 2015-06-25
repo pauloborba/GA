@@ -142,3 +142,30 @@ end
 And(/^Eu posso visualizar nos dados da clausula a descricao "([^"]*)"$/) do |descricao|
   page.should have_content descricao
 end
+
+
+And(/^Eu tenha uma clausula com titulo "([^"]*)" associada ao contrato$/) do |titulo|
+  @clausula = FactoryGirl.create(:clausula)
+  @clausula.titulo = titulo
+  @clausula.save
+  tmp = Parte.new
+  tmp.contrato = @contrato
+  tmp.clausula = @clausula
+  tmp.save
+end
+
+And(/^Eu esteja na página de lista de clausulas do contrato$/) do
+  visit list_clausulas_path(@contrato)
+end
+
+When(/^Eu clico no link "([^"]*)" desta clausula$/) do |link|
+  find_link(link).click
+end
+
+Then(/^Eu sou direcionado para a pagina de lista de clausulas do contrato$/) do
+  expect(current_path).to eq(list_clausulas_path(@contrato))
+end
+
+And(/^Eu não tenho mais o a clausula com titulo "([^"]*)"$/) do |titulo|
+  page.should_not have_content titulo
+end

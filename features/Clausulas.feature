@@ -49,5 +49,10 @@ Scenario: Editar clausula
   And Eu posso visualizar nos dados da clausula o titulo "Desconto por atrasos"
   And Eu posso visualizar nos dados da clausula a descricao "1 Por cento a cada 10 horas de atraso acumuladas"
 
-
- Scenario:
+Scenario: Remover associação de clausula a um contrato
+  Given Eu tenho um contrato cadastrado no sistema
+  And Eu tenha uma clausula com titulo "Desconto por atrasos" associada ao contrato
+  And Eu esteja na página de lista de clausulas do contrato
+  When Eu clico no link "Remover" desta clausula
+  Then Eu sou direcionado para a pagina de lista de clausulas do contrato
+  And Eu não tenho mais o a clausula com titulo "Desconto por atrasos"

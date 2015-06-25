@@ -48,6 +48,18 @@ class ClausulasController < ApplicationController
     end
   end
 
+  def remove
+    @clausula = Clausula.find(params[:clausula])
+    @contrato = Contrato.find(params[:contrato])
+
+    # Apagando relação #
+    @parte = Parte.find_by contrato_id: @contrato, clausula_id: @clausula
+    @parte.destroy
+
+    redirect_to list_clausulas_path(@contrato)
+
+  end
+
 
   # POST /clausulas
   # POST /clausulas.json
