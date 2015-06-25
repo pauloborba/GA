@@ -1,6 +1,29 @@
 # -*- encoding : utf-8 -*-
 # begin @JoaoSantos
 
+def find_or_include_partida(nome, data, tag, list = nil)
+  result = nil
+  current_list = Partida.where(nome: nome, tag: tag)
+  if list != nil
+    current_list = list.where(nome: nome, tag: tag)
+  end
+  current_list.find_each do |partida|
+    data_corrente = partida.data
+
+    if (data_corrente.day.to_i == data[0..2].to_i) and (data_corrente.month.to_i == data[3..5].to_i) and (data_corrente.year.to_i == data[6..10].to_i)
+      result = partida
+      break
+    end
+  end
+  return result
+end
+
+def criandoPartida(data, nome, tag)
+  new_partida = Partida.new({data: data, nome: nome, tag: tag})
+  new_partida.save()
+  return new_partida
+endnew_partida
+
 Given(/^que nao existe uma partida com data “([^"]*)”, com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
     @result = find_or_include_partida(nome, data, tag)
 
@@ -17,8 +40,8 @@ end
 When(/^eu crio uma partida com data “([^"]*)”,  com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
     @new_partida = nil
     if @result == nil
-      @new_partida = Partida.new({data: data, nome: nome, tag: tag})
-      @new_partida.save()
+      @new_partida = criandoPartida(data, nome, tag)
+
     end
 
     @new_partida.should_not eq(nil)
@@ -44,33 +67,12 @@ Then(/^a partida com data “([^"]*)”, com nome “([^"]*)”, com tag “([^"
 end
 
 
-def find_or_include_partida(nome, data, tag, list = nil)
-  result = nil
-  current_list = Partida.where(nome: nome, tag: tag)
-  if list != nil
-    current_list = list.where(nome: nome, tag: tag)
-  end
-  current_list.find_each do |partida|
-    data_corrente = partida.data
-
-    if (data_corrente.day.to_i == data[0..2].to_i) and (data_corrente.month.to_i == data[3..5].to_i) and (data_corrente.year.to_i == data[6..10].to_i)
-      result = partida
-      break
-    end
-  end
-  return result
-end
-
-
 Given(/^que eu tenha no sistema a partida com data "([^"]*)”, com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
-    @new_partida = Partida.new({data: "01/07/2013", nome: "Náutico Vs Santa Cruz", tag: "Série C"})
-    @new_partida.save()
+    @new_partida = criandoPartida("01/07/2013", "Náutico Vs Santa Cruz", "Série C")
 
-    @new_partida = Partida.new({data: data, nome: nome, tag: tag})
-    @new_partida.save()
+    @new_partida = criandoPartida(data, nome, tag)
 
-    @new_partida = Partida.new({data: "20/01/2010", nome: "Náutico Vs Bahia", tag: "Série C"})
-    @new_partida.save()
+    @new_partida = criandoPartida("20/01/2010", "Náutico Vs Bahia", "Série C")
 
     @current_partida = find_or_include_partida(nome, data, tag)
 
@@ -109,8 +111,7 @@ end
 
 
 Given(/^que existe uma partida cadastrada no sistema com tag de valor "(.*?)"\.$/) do |tag|
-  @new_partida = Partida.new({data: "01/07/2013", nome: "Náutico Vs Santa Cruz", tag:tag })
-  @new_partida.save()
+  @new_partida = criandoPartida("01/07/2013", "Náutico Vs Santa Cruz", tag)
   #puts @new_partida.nome
   #puts @new_partida.tag
   #puts @current_partida.data
