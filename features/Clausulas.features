@@ -1,0 +1,10 @@
+Feature: Clausulas
+
+
+Scenario: Adicionar uma nova clausula a um contrato
+  Given Eu tenha um atleta com cpf "03828153491"
+  And O atleta com cpf "03828153491" tem um contrato associado
+  When Eu crio uma nova clausula
+  And Associo a clausula ao contrato do atleta
+  Then Eu posso checar a nova clausula associada ao contrato
+
