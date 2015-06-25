@@ -119,3 +119,26 @@ end
 And(/^Eu devo ver a nova clausula na lista de clausulas$/) do
   page.should have_css("td", @clausula.titulo)
 end
+
+
+
+Given(/^Eu tenho uma clausula cadastrada no sistema$/) do
+  @clausula = FactoryGirl.create(:clausula)
+  @clausula.save
+end
+
+Then(/^Eu sou direcionado pagina de editar clausula$/) do
+  expect(current_path).to eq(edit_clausula_path(@clausula))
+end
+
+Then(/^Eu sou direcionado para a pagina de exibicao de clausula$/) do
+  expect(current_path).to eq(clausula_path(@clausula))
+end
+
+And(/^Eu posso visualizar nos dados da clausula o titulo "([^"]*)"$/) do |titulo|
+  page.should have_content titulo
+end
+
+And(/^Eu posso visualizar nos dados da clausula a descricao "([^"]*)"$/) do |descricao|
+  page.should have_content descricao
+end
