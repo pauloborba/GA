@@ -10,18 +10,12 @@ Feature: Atleta
 
 	Scenario: Adicionar Atleta novo web 
 		Given estou no menu de Atletas
-		When eu selecionar a opcao "Adicionar" no menu de Atletas
+		When eu clico no botao "Adicionar" no menu de Atletas
 		And eu preencher os dados do atleta
 		And o atleta nao esta armazenado no sistema
-		And eu selecionar a opcao "Cadastrar"
-		Then o atleta será armazenado no sistema
-		And a mensagem de sucesso ira aparecer
-
-	Scenario: Adicionar atleta invalido web (nome campo em branco) 
-		Given estou na pagina de adicionar novo atleta
-		When eu preencher todas as informacoes do atleta, exceto o campo nome
-		And eu opto por criar o artigo
-		Then uma mensagem de erro e mostrada
+		And eu clico no botao "Cadastrar"
+		Then o atleta sera armazenado no sistema
+		And a mensagem de sucesso ira aparecer "Atleta cadastrado com sucesso"
 
 	Scenario: Adicionar atleta inválido (nome campo em branco) 
 		Given o sistema nao tem nenhum atleta com o CPF "09812304954"
