@@ -34,7 +34,7 @@ end
 
 
 # Checar clausulas de contratos #
-Given /^Eu tenho algum contrato cadastrado no sistema$/ do
+Given /^Eu tenho um contrato cadastrado no sistema$/ do
   @contrato = FactoryGirl.create(:contrato)
   @contrato.save
 end
@@ -77,7 +77,7 @@ Given(/^Eu esteja na pagina de clausulas$/) do
   visit :clausulas
 end
 
-And(/^Eu tenha uma clausa com titulo "([^"]*)"$/) do |title|
+And(/^Eu tenha uma clausula com titulo "([^"]*)"$/) do |title|
   @clausula = FactoryGirl.create(:clausula, titulo: title)
   @clausula.save
 end
@@ -102,3 +102,20 @@ Then(/^Eu devo ver uma mensagem de erro "([^"]*)"$/) do |msg|
   page.should have_content  msg
 end
 
+# Associar uma clausula a um contrato #
+And(/^Eu tenha uma clausula cadastrada no sistema$/) do
+  @clausula = FactoryGirl.create(:clausula)
+  @clausula.save
+end
+
+And(/^Eu esteja na pagina de clausulas do contrato$/) do
+  visit list_clausulas_path(@contrato)
+end
+
+Then(/^Eu devo estar na pagina de adicionar clausulas do contrato$/) do
+  expect(current_path).to eq(add_clausulas_path(@contrato))
+end
+
+And(/^Eu devo ver a nova clausula na lista de clausulas$/) do
+  page.should have_css("<td>", @clausula.title)
+end

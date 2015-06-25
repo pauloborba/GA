@@ -9,7 +9,7 @@ Scenario: Adicionar uma nova clausula a um contrato
   Then Eu posso checar a nova clausula associada ao contrato
 
 Scenario: Checar clausulas de contratos
-  Given Eu tenho um contrato cadastrado
+  Given Eu tenho um contrato cadastrado no sistema
   And Eu tenha uma clausula associado ao contrato
   And Eu esteja na pagina de contratos
   When Eu clico no link "Show" do primeiro contrato
@@ -19,7 +19,7 @@ Scenario: Checar clausulas de contratos
 
 Scenario: Clausulas deverão ter titulos unicos
   Given Eu esteja na pagina de clausulas
-  And Eu tenha uma clausa com titulo "Remuneração extra por gols"
+  And Eu tenha uma clausula com titulo "Remuneração extra por gols"
   When Eu clico no link "Nova Clausula"
   Then Eu devo estar na pagina de criação de uma nova clausula
   When Eu preencho titulo com "Remuneração extra por gols"
