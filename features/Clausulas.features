@@ -9,9 +9,9 @@ Scenario: Adicionar uma nova clausula a um contrato
   Then Eu posso checar a nova clausula associada ao contrato
 
 Scenario: Checar clausulas de contratos
-  Given Eu esteja na pagina de contratos
-  And Eu tenha um contrato com id "1"
-  When Eu clico no contrato id "1"
+  Given Eu tenho algum contrato cadastrado no sistema
+  And Eu esteja na pagina de contratos
+  When Eu clico no link "Show" do primeiro contrato
   Then Eu devo ver os detalhes do contrato
-  When Eu clico no butão "Ver Clausulas"
-  Then Eu devo ver as clausulas do contrato com id "1"
+  When Eu clico no link "Ver Clausulas"
+  Then Eu devo ver as clausulas do contrato
