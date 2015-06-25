@@ -71,3 +71,29 @@ Then /^Eu devo ver as clausulas do contrato$/ do
   page.should have_css("td", :text => @clausula.descricao)
 end
 
+
+# Clausulas deverão ter titulos unicos #
+Given(/^Eu esteja na pagina de clausulas$/) do
+  visit :clausulas
+end
+
+And(/^Eu tenha uma clausa com titulo "([^"]*)"$/) do |title|
+  @clausula = FactoryGirl.create(:clausula, titulo: title)
+  @clausula.save
+end
+
+Then(/^Eu devo estar na pagina de criação de uma nova clausula$/) do
+  expect(current_path).to eq(new_clausula_path)
+end
+
+When(/^Eu preencho titulo com "([^"]*)"$/) do |titulo|
+  fill_in "Titulo", with: titulo
+end
+
+And(/^Eu preencho descrição com "([^"]*)"$/) do |descricao|
+  fill_in "Descrição", with:descricao
+end
+
+Then(/^Eu devo ver uma mensagem de erro "([^"]*)"$/) do |msg|
+  page.should have_ccs("div", msg)
+end
