@@ -3,18 +3,20 @@ Feature: Atleta
 	I want adicionar, remover, atualizar e classificar atletas.
 	So that eu possa gerar páginas da web e relatórios contendo as informações dos atletas
 
-	Scenario: Atualizar dados de um Atleta que não está no sistema 
+	Scenario: Atualizar dados web de um Atleta que não está no sistema 
 		Given eu estou na página de atualização de atleta
-		And eu quero atualizar os dados o atleta com o cpf “09934567391” que não está cadastrado no sistema
-		When eu busco os dados atualizados do atleta
-		Then  aparecerá uma mensagem  “O atleta não existe no sistema”
+		And  o atleta com o cpf “09934567391” não está cadastrado no sistema
+		When eu busco os dados do atleta
+		Then aparecerá uma mensagem de erro na tela
 
 	Scenario: Atualizar dados web de atleta existente 
-		Given eu estou na pagina de atualizacao de atleta
-		And o atleta com o cpf "12190871234" esta cadastrado no sistema
-		And eu mudo os dados do atleta com o cpf "12190871234"
-		And eu seleciono a opcao "Atualizar"
-		Then ira aparecer uma mensagem de confirmacao na tela
+		Given eu estou na página de atualização de atleta
+		And o atleta com o cpf "12190871234" está cadastrado no sistema
+		And eu vizualizo os dados do atleta com o cpf "12190871234"
+		When eu mudo o peso do atleta  com o cpf "12190871234" de "65kg" para "69kg"
+		And eu seleciono a opção "Atualizar"
+		Then irá aparecer uma mensagem de confirmacao na tela
+
 
 	Scenario: Atualizar dados de atleta existente 
 		Given o sistema tenha o atleta com o cpf "12190871234" 
