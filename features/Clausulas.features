@@ -24,5 +24,5 @@ Scenario: Clausulas deverão ter titulos unicos
   Then Eu devo estar na pagina de criação de uma nova clausula
   When Eu preencho titulo com "Remuneração extra por gols"
   And Eu preencho descrição com "10 Porcento do salario a cada 20 gols"
-  And Eu clico no link "Criar"
+  And Eu clico no botão "Criar"
   Then Eu devo ver uma mensagem de erro "Já existe clausula com mesmo título!"

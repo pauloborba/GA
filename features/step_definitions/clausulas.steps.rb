@@ -94,6 +94,11 @@ And(/^Eu preencho descrição com "([^"]*)"$/) do |descricao|
   fill_in "Descrição", with:descricao
 end
 
-Then(/^Eu devo ver uma mensagem de erro "([^"]*)"$/) do |msg|
-  page.should have_ccs("div", msg)
+And(/^Eu clico no botão "([^"]*)"$/) do |botao|
+  click_button(botao)
 end
+
+Then(/^Eu devo ver uma mensagem de erro "([^"]*)"$/) do |msg|
+  page.should have_content  msg
+end
+
