@@ -17,24 +17,14 @@ Feature: Atleta
 		And eu seleciono a opção "Atualizar"
 		Then irá aparecer uma mensagem de confirmacao na tela
 
-
 	Scenario: Atualizar dados de atleta existente 
-		Given o sistema tenha o atleta com o cpf "12190871234" 
-		When eu modifico os dados do atleta com o cpf "12190871234"
-		Then os dados do atleta com o cpf "12190871234"estao devidamente atualizado no sistema
+		Given o sistema tem o atleta com o cpf “12190871234” 
+		And  o peso do atleta não está atualizado
+		When eu mudo o peso do atleta com cpf “12190871234” de "65kg" para "70kg"
+		Then o peso do atleta com cpf “12190871234” está devidamente atualizado no sistema
 
 	Scenario: Atualizar dados de Atleta não existente 
-		Given Eu tento atualizar dados do atleta  com cpf  “09934567391” que  não está cadastrado no sistema
-		When eu busco os dados do atleta com o cpf “09934567391” 
-		Then os dados não serão atualizados porque o atleta é inválido
-
-	Scenario: Classificar um atleta não existente
-		Given o atleta com o cpf “09912345442” não está cadastrado  no sistema 
-		When eu classificar o atleta como “Júnior”
-		Then a classificação não será salva no sistema porque o atleta é inválido
-
-	Scenario: Classificar atleta de forma errada 
-		Given o atleta com o cpf “09912345442” é Júnior
-		And eu o classifico com Profissional
-		When eu classificar o atleta
-		Then a classificação não será salva no sistema porque está classificado de forma errada
+		Given eu estou na pagina de atualizacao e atleta
+		And o atleta com o cpf “09934567391” não está cadastrado no sistema
+		When eu mudo o peso do atleta com o cpf “09934567391” de "70kg" para "72kg"
+		Then o peso do atleta não será atualizados porque o atleta é inválido
