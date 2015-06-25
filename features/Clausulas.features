@@ -30,7 +30,7 @@ Scenario: Clausulas deverão ter titulos unicos
 Scenario: Associar uma clausula a um contrato
   Given Eu tenho um contrato cadastrado no sistema
   And Eu tenha uma clausula cadastrada no sistema
-  And Eu esteja na pagina de clausulas do contrato
+  And Eu esteja na pagina de detalhes do contrato
   When Eu clico no link "Adicionar Clausulas"
   Then Eu devo estar na pagina de adicionar clausulas do contrato
   When Eu clico no link "Adicionar"

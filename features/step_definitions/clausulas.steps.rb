@@ -108,14 +108,14 @@ And(/^Eu tenha uma clausula cadastrada no sistema$/) do
   @clausula.save
 end
 
-And(/^Eu esteja na pagina de clausulas do contrato$/) do
-  visit list_clausulas_path(@contrato)
+And(/^Eu esteja na pagina de detalhes do contrato$/) do
+  visit contrato_path(@contrato)
 end
 
 Then(/^Eu devo estar na pagina de adicionar clausulas do contrato$/) do
-  expect(current_path).to eq(add_clausulas_path(@contrato))
+  expect(current_path).to eq(list_add_clausulas_path(@contrato))
 end
 
 And(/^Eu devo ver a nova clausula na lista de clausulas$/) do
-  page.should have_css("<td>", @clausula.title)
+  page.should have_css("td", @clausula.titulo)
 end

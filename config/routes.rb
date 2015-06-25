@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :partidas
 
   get '/contratos/:id/clausulas' => 'clausulas#list', as: :list_clausulas
+  get '/contratos/:id/clausulas/add' => 'clausulas#list_add', as: :list_add_clausulas
+  post '/contratos/:contrato/clausulas/:clausula/add' => 'clausulas#add', as: :add_clausulas
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
