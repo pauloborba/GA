@@ -62,6 +62,54 @@ def find_or_include_partida(nome, data, tag, list = nil)
 end
 
 
+Given(/^que eu tenha no sistema a partida com data "([^"]*)”, com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
+    @new_partida = Partida.new({data: "01/07/2013", nome: "Náutico Vs Santa Cruz", tag: "Série C"})
+    @new_partida.save()
+
+    @new_partida = Partida.new({data: data, nome: nome, tag: tag})
+    @new_partida.save()
+
+    @new_partida = Partida.new({data: "20/01/2010", nome: "Náutico Vs Bahia", tag: "Série C"})
+    @new_partida.save()
+
+    @current_partida = find_or_include_partida(nome, data, tag)
+
+    @current_partida.should_not eq(nil)
+
+    #if @current_partida  == nil
+    #  puts "Partida não existente."
+    #else
+    #  puts @current_partida.nome
+    #  puts @current_partida.data
+    #  puts @current_partida.tag
+    #end
+end
+
+When(/^eu vejo a lista de partidas existentes\.$/) do
+    @current_list_partidas = Partida.all
+
+    expect(@current_list_partidas.any?).to eq(true)
+    #if @current_list_partidas.any?
+    #  puts "existe uma lista"
+    #else
+    #  puts "não existe uma lista"
+    #end
+end
+
+Then(/^minha lista de paridas contem a partida com data "([^"]*)”, com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
+    @current_partida = find_or_include_partida(nome, data, tag, @current_list_partidas)
+
+    #if @existe
+    #  puts "Lista contem Partida específica"
+    #else
+    #  puts "Lista não contem Partida específica"
+    #end
+    @current_partida.should_not eq(nil)
+end
+
+
+
+
 
 # end @JoaoSantos
 
