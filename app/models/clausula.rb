@@ -6,5 +6,5 @@ class Clausula < ActiveRecord::Base
   validates :titulo, presence: true
   validates :descricao, presence: true
 
-  validates :titulo, uniqueness: {message: "Já existe clausula com mesmo título!"}
+  validates :titulo, uniqueness: {message: 'Já existe clausula com mesmo título!'}
 end

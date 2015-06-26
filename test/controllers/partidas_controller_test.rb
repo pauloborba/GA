@@ -5,18 +5,18 @@ class PartidasControllerTest < ActionController::TestCase
     @partida = partidas(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:partidas)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create partida" do
+  test 'should create partida' do
     assert_difference('Partida.count') do
       post :create, partida: { data: @partida.data, nome: @partida.nome, tag: @partida.tag }
     end
@@ -24,17 +24,17 @@ class PartidasControllerTest < ActionController::TestCase
     assert_redirected_to partida_path(assigns(:partida))
   end
 
-  test "should show partida" do
+  test 'should show partida' do
     get :show, id: @partida
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @partida
     assert_response :success
   end
 
-  test "should update partida" do
+  test 'should update partida' do
     patch :update, id: @partida, partida: { data: @partida.data, nome: @partida.nome, tag: @partida.tag }
     assert_redirected_to partida_path(assigns(:partida))
   end

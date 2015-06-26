@@ -20,7 +20,8 @@ class Partida
 				out = true
 			end
 		end
-		return out
+
+		out
 	end
 
 	def self.find_partida(data, nome, tag)
@@ -35,27 +36,11 @@ class Partida
 	end
 
 	def adicionarPartida(data, nome, tag)
-		partidasHash = Hash.new
-		partidasHash.each do |i|
-			if find(data, nome, tag) == false
-				partidasHash[i] = Partida.new(data, nome, tag)
-				return true
-			else #não adicionou
-				return false
-			end
-		end
+		novo(data, nome, tag)
 	end
 
 	def self.create_partida(data, nome, tag)
-		partidasHash = Hash.new
-		partidasHash.each do |i|
-			if find(data, nome, tag) == false
-				partidasHash[i] = Partida.new(data, nome, tag)
-				return true
-			else #não adicionou
-				return false
-			end
-		end
+		novo(data, nome, tag)
 	end
 
 	def self.listPartidas()
@@ -67,4 +52,22 @@ class Partida
 
 		return listPartidas
 	end
+
+
+	private
+		# Trecho do codigo está sendo utilizado duplicado #
+		def
+			self.novo(data, nome, tag)
+				partidasHash = Hash.new
+				partidasHash.each do |i|
+					if find(data, nome, tag) == false
+						partidasHash[i] = Partida.new(:data => data,
+																					:nome => nome,
+																					:tag => tag)
+						return true
+					else #não adicionou
+						return false
+					end
+				end
+		end
 end
