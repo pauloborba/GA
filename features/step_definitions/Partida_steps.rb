@@ -22,7 +22,7 @@ def criandoPartida(data, nome, tag)
   new_partida = Partida.new({data: data, nome: nome, tag: tag})
   new_partida.save()
   return new_partida
-endnew_partida
+end
 
 Given(/^que nao existe uma partida com data “([^"]*)”, com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
     @result = find_or_include_partida(nome, data, tag)
