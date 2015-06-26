@@ -17,7 +17,7 @@
         <td><%= clausula.titulo %></td>
         <td><%= clausula.descricao %></td>
         <td><%= link_to 'Show', clausula %></td>
-        <td><%= link_to 'Edit', edit_clausula_path(clausula) %></td>
+        <td><%= link_to 'Editar', edit_clausula_path(clausula) %></td>
         <td><%= link_to 'Destroy', clausula, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Clausula', new_clausula_path %>
+<%= link_to 'Nova Clausula', new_clausula_path %>

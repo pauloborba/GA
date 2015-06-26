@@ -5,8 +5,9 @@
 # files.
 
 require 'cucumber/rails'
-require File.join(File.dirname(__FILE__), "..", "..", "lib", "atletas")
-require File.join(File.dirname(__FILE__), "..", "..", "lib", "Partida")
+
+#require File.join(File.dirname(__FILE__), "..", "..", "lib", "atletas")
+#require File.join(File.dirname(__FILE__), "..", "..", "lib", "Partida")
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -35,7 +36,7 @@ ActionController::Base.allow_rescue = false
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
-  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+  raise 'You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it.'
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.

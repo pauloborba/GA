@@ -21,7 +21,7 @@ Given(/^que eu tenha no sistema a partida com data "(\d+)\/(\d+)\/(\d+)”, com 
 end
 
 When(/^eu vejo a lista de partidas existentes\.$/) do
-    @current_list_partidas = Partida.listPartidas()
+    @current_list_partidas = Partida.list_partidas
 end
 
 Then(/^minha lista de paridas contem a partida com data "(\d+)\/(\d+)\/(\d+)”, com nome “Nautico VS Sport”, com tag “Serie A”\.$/) do |data, nome, tag|
@@ -30,20 +30,20 @@ Then(/^minha lista de paridas contem a partida com data "(\d+)\/(\d+)\/(\d+)”,
 end
 
 Given(/^que existe uma partida com data "([^"]*)", com nome "([^"]*)", com tag "([^"]*)"$/) do |arg1, arg2, arg3|
-  partida = Partida.new()
+  partida = Partida.new
   find = partida.find(arg1,arg2,arg3)
   find == true
 end
 
 When(/^eu crio uma partida com data "([^"]*)",  com nome "([^"]*)", com tag "([^"]*)"$/) do |arg1, arg2, arg3|
-  partida = Partida.new()
-  result = partida.adicionarPartida(arg1, arg2, arg3)
+  partida = Partida.new
+  result = partida.adicionar_partida(arg1, arg2, arg3)
   result == true
 end
 
 Then(/^a partida com data "([^"]*)",  com nome "([^"]*)", com tag "([^"]*)" nao e salva duas vezes$/) do |arg1, arg2, arg3|
-  partida = Partida.new()
-  result = partida.adicionarPartida(arg1, arg2, arg3)
+  partida = Partida.new
+  result = partida.adicionar_partida(arg1, arg2, arg3)
   result == false
 end
 
