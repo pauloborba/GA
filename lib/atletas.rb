@@ -25,9 +25,9 @@ class Atletas
 	#end
 
 
-	def find_cpf(cpf)
+	def self.find_cpf(cpf)
 
-		atletasHash = Hash.new 
+		atletasHash = Hash.new
 		out = false
 		atletasHash.each do |i|
 			if atletasHash[i].cpf == cpf
@@ -37,9 +37,13 @@ class Atletas
 		return out
 	end
 
+	def save()
+		return Atletas.new
+	end
+
 
 	def adicionarAtleta(atleta)
-		atletasHash = Hash.new 
+		atletasHash = Hash.new
 		atletasHash.each do |i|
 			if find_cpf(atleta.cpf) == false
 			atletasHash[i] = atleta
@@ -60,7 +64,7 @@ class Atletas
 	end
 
 	def atualizado(cpf)
-		atletasHash = Hash.new 
+		atletasHash = Hash.new
 		retorno = false
 		atletasHash.each do |i|
 			if atletasHash[i].cpf == cpf
@@ -72,5 +76,5 @@ class Atletas
 		return retorno
 	end
 
-	
+
 end
