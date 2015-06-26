@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class ContratoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
   test "a contract with an end date prior to the status date should not be valid" do
   	contract = Contrato.new
   	contract.data_Inicio = DateTime.new(2015, 06, 24)
