@@ -1,7 +1,7 @@
 <%= form_for(@atleta) do |f| %>
   <% if @atleta.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@atleta.errors.count, "error") %> prohibited this atleta from being saved:</h2>
+      <h2><%= pluralize(@atleta.errors.count, 'error') %> prohibited this atleta from being saved:</h2>
 
       <ul>
       <% @atleta.errors.full_messages.each do |message| %>

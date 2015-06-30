@@ -21,6 +21,45 @@ class ClausulasController < ApplicationController
   def edit
   end
 
+  # GET /contratos/1/clausulas
+  def list
+    @contrato = Contrato.find(params[:id])
+    @clausulas = @contrato.clausulas
+  end
+
+  def list_add
+    @contrato = Contrato.find(params[:id])
+    @clausulas = Clausula.all
+  end
+
+  def add
+    @clausula = Clausula.find(params[:clausula])
+    @contrato = Contrato.find(params[:contrato])
+
+    # Criando relação #
+    tmp = Parte.new
+    tmp.contrato = @contrato
+    tmp.clausula = @clausula
+
+    if tmp.save
+      redirect_to list_clausulas_path(@contrato)
+    else
+      redirect_to list_add_clausulas_path(@contrato), notice: 'Ocorreu um erro!.'
+    end
+  end
+
+  def remove
+    @clausula = Clausula.find(params[:clausula])
+    @contrato = Contrato.find(params[:contrato])
+
+    # Apagando relação #
+    @parte = Parte.find_by contrato_id: @contrato, clausula_id: @clausula
+    @parte.destroy
+
+    redirect_to list_clausulas_path(@contrato)
+
+  end
+
   # POST /clausulas
   # POST /clausulas.json
   def create

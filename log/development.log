@@ -16,7 +16,7 @@ Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
   [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 Migrating to CreatePartidas (20150601184340)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (2.3ms)[0m  CREATE TABLE "partidas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "tag" varchar, "data" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[35m (2.3ms)[0m  CREATE TABLE "partidas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "tag" varchar, "data" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
   [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150601184340"]]
   [1m[35m (164.9ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -386,3 +386,804 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
             FROM sqlite_temp_master
             WHERE name='index_contratos_on_atleta_id' AND type='index'
 [0m
+  [1m[36m (104.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (99.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePartidas (20150601184340)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "partidas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "tag" varchar, "data" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150601184340"]]
+  [1m[35m (139.9ms)[0m  commit transaction
+Migrating to CreateAtletas (20150603221244)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "atletas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "email" varchar, "telefone" varchar, "data_nascimento" varchar, "cpf" varchar, "rg" varchar, "altura" float, "peso" float, "posicao_joga" varchar, "categoria" varchar, "alojamento_clube" varchar, "escalado_para_selecao" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150603221244"]]
+  [1m[35m (150.1ms)[0m  commit transaction
+Migrating to CreateContratos (20150603225547)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "contratos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data_Inicio" datetime, "data_Termino" datetime, "atleta_id" integer, "contrata" varchar, "valor" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_contratos_on_atleta_id" ON "contratos" ("atleta_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150603225547"]]
+  [1m[36m (116.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateClausulas (20150603230640)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "clausulas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar, "descricao" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150603230640"]]
+  [1m[36m (118.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePartes (20150624235105)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "partes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "clausula_id" integer, "contrato_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_partes_on_clausula_id" ON "partes" ("clausula_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_partes_on_contrato_id" ON "partes" ("contrato_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150624235105"]]
+  [1m[35m (186.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_contrato_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_contrato_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 19:29:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AtletasController#index as HTML
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT "atletas".* FROM "atletas"
+  Rendered atletas/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 1327ms (Views: 1277.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:29:06 -0300
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:29:06 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/trigger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/scaffolds.self-143fdc8130eef3471c847468148975213ac176f7118a8b12a48b1243fc1c892b.css?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/assets/trigger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:29:07 -0300
+
+
+Started GET "/atletas/new" for 127.0.0.1 at 2015-06-25 19:29:09 -0300
+Processing by AtletasController#new as HTML
+  Rendered atletas/_form.html.erb (66.2ms)
+  Rendered atletas/new.html.erb within layouts/application (131.2ms)
+Completed 200 OK in 222ms (Views: 196.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/atletas" for 127.0.0.1 at 2015-06-25 19:29:32 -0300
+Processing by AtletasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vzhFtNDnrIAtV4h8DzEZugHRg7Fkt3SCcM+UbwH4MoBT+K7hs53kZ4GWfj8RO00Nio2M/N1MAD8al2lUr/w2VQ==", "atleta"=>{"nome"=>"; cdlsknz", "email"=>"lcjsnljscnd", "telefone"=>"lcksnxl", "data_nascimento"=>"lkcn xl", "cpf"=>"765876578657", "rg"=>"657659659", "altura"=>"65", "peso"=>"7596", "posicao_joga"=>"976597", "categoria"=>"95tigjkj", "alojamento_clube"=>"hvkjhvb,", "escalado_para_selecao"=>"1"}, "commit"=>"Create Atleta"}
+Unpermitted parameter: escalado_para_selecao
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "atletas" ("nome", "email", "telefone", "data_nascimento", "cpf", "rg", "altura", "peso", "posicao_joga", "categoria", "alojamento_clube", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["nome", "; cdlsknz"], ["email", "lcjsnljscnd"], ["telefone", "lcksnxl"], ["data_nascimento", "lkcn xl"], ["cpf", "765876578657"], ["rg", "657659659"], ["altura", 65.0], ["peso", 7596.0], ["posicao_joga", "976597"], ["categoria", "95tigjkj"], ["alojamento_clube", "hvkjhvb,"], ["created_at", "2015-06-25 22:29:32.782321"], ["updated_at", "2015-06-25 22:29:32.782321"]]
+  [1m[36m (321.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:8080/atletas/1
+Completed 302 Found in 332ms (ActiveRecord: 322.0ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 19:29:33 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 95ms (Views: 70.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 19:29:35 -0300
+Processing by AtletasController#index as HTML
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT "atletas".* FROM "atletas"[0m
+  Rendered atletas/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:29:42 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/_form.html.erb (9.0ms)
+  Rendered atletas/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/atletas/1" for 127.0.0.1 at 2015-06-25 19:29:48 -0300
+Processing by AtletasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BXPIClikfbVz/p5LEY8dPGP280RPcMw/4JPzx8bcz6PpsyNfO941Ut8/aAgPhUmL6Kr8CfaLuIKKyw78aNjLdg==", "atleta"=>{"nome"=>"; cdlsknz", "email"=>"lcjsnljscnd", "telefone"=>"lcksnxl", "data_nascimento"=>"lkcn xl", "cpf"=>"765876578657", "rg"=>"657659659", "altura"=>"65.0", "peso"=>"7596.0", "posicao_joga"=>"976597", "categoria"=>"95tigjkj", "alojamento_clube"=>"hvkjhvb,", "escalado_para_selecao"=>"1"}, "commit"=>"Update Atleta", "id"=>"1"}
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: escalado_para_selecao
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:8080/atletas/1
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 19:29:48 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 61ms (Views: 60.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 19:29:50 -0300
+Processing by AtletasController#index as HTML
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT "atletas".* FROM "atletas"[0m
+  Rendered atletas/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:29:52 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/_form.html.erb (10.1ms)
+  Rendered atletas/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 71ms (Views: 68.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:31:20 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/_form.html.erb (62.2ms)
+  Rendered atletas/edit.html.erb within layouts/application (63.7ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    57:   </div>
+    58:     <div class="field">
+    59:       <%= f.label :escalado_para_selecao %><br>
+    60:       <%= f.check_box :escalado_para_selecao, checked_value =  true, unchecked_value= false %>
+    61:     </div>
+    62:   <div class="actions">
+    63:     <%= f.submit %>
+  app/views/atletas/_form.html.erb:60:in `block in _app_views_atletas__form_html_erb___2027934423083447485_69993860145180'
+  app/views/atletas/_form.html.erb:1:in `_app_views_atletas__form_html_erb___2027934423083447485_69993860145180'
+  app/views/atletas/edit.html.erb:3:in `_app_views_atletas_edit_html_erb__1323345713719836244_69993860133060'
+
+
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.2ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (43.0ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:31:40 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/_form.html.erb (7.5ms)
+  Rendered atletas/edit.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `merge' for true:TrueClass):
+    57:   </div>
+    58:     <div class="field">
+    59:       <%= f.label :escalado_para_selecao %><br>
+    60:       <%= f.check_box :escalado_para_selecao, checked_value= true, unchecked_value= false %>
+    61:     </div>
+    62:   <div class="actions">
+    63:     <%= f.submit %>
+  app/views/atletas/_form.html.erb:60:in `block in _app_views_atletas__form_html_erb___2027934423083447485_37075400'
+  app/views/atletas/_form.html.erb:1:in `_app_views_atletas__form_html_erb___2027934423083447485_37075400'
+  app/views/atletas/edit.html.erb:3:in `_app_views_atletas_edit_html_erb__1323345713719836244_69993860133060'
+
+
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.5ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (16.3ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/paulo/.rvm/gems/ruby-2.2.2/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.4ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/_form.html.erb (13.3ms)
+  Rendered atletas/edit.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 83ms (Views: 79.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/scaffolds.self-143fdc8130eef3471c847468148975213ac176f7118a8b12a48b1243fc1c892b.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/trigger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/trigger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-25 19:31:57 -0300
+
+
+Started PATCH "/atletas/1" for 127.0.0.1 at 2015-06-25 19:32:00 -0300
+Processing by AtletasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EkImnjuWjGDPn6FQhcK+xi6nax/PS0nbIPG/Nz8uR4b+gs3LWOzEh2NeVxObyOpxpftkUnawPWZKqUIMkSpDUw==", "atleta"=>{"nome"=>"; cdlsknz", "email"=>"lcjsnljscnd", "telefone"=>"lcksnxl", "data_nascimento"=>"lkcn xl", "cpf"=>"765876578657", "rg"=>"657659659", "altura"=>"65.0", "peso"=>"7596.0", "posicao_joga"=>"976597", "categoria"=>"95tigjkj", "alojamento_clube"=>"hvkjhvb,", "escalado_para_selecao"=>"1"}, "commit"=>"Update Atleta", "id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: escalado_para_selecao
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:8080/atletas/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 19:32:00 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.1ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 19:32:02 -0300
+Processing by AtletasController#index as HTML
+  [1m[35mAtleta Load (0.3ms)[0m  SELECT "atletas".* FROM "atletas"
+  Rendered atletas/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 59ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:32:04 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.3ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/_form.html.erb (7.5ms)
+  Rendered atletas/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 75ms (Views: 72.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/_form.html.erb (12.1ms)
+  Rendered atletas/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 72ms (Views: 70.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/scaffolds.self-143fdc8130eef3471c847468148975213ac176f7118a8b12a48b1243fc1c892b.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/trigger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/trigger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:55 -0300
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.2ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/_form.html.erb (7.6ms)
+  Rendered atletas/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 70ms (Views: 68.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/clausulas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/partidas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/scaffolds.self-143fdc8130eef3471c847468148975213ac176f7118a8b12a48b1243fc1c892b.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/atletas.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/trigger.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/contratos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/atletas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/clausulas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/contratos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/partidas.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/trigger.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-25 19:35:56 -0300
+
+
+Started PATCH "/atletas/1" for 127.0.0.1 at 2015-06-25 19:35:59 -0300
+Processing by AtletasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8J7enkjJfqdD79KO6l0DzhSuFw1P6zXV9XEKzOB5O1IcXjXLK7M2QO8uJM30V1d5n/IYQPYQQWifKff3Tn0/hw==", "atleta"=>{"nome"=>"; cdlsknz", "email"=>"lcjsnljscnd", "telefone"=>"lcksnxl", "data_nascimento"=>"lkcn xl", "cpf"=>"765876578657", "rg"=>"657659659", "altura"=>"65.0", "peso"=>"7596.0", "posicao_joga"=>"976597", "categoria"=>"95tigjkj", "alojamento_clube"=>"hvkjhvb,", "escalado_para_selecao"=>"1"}, "commit"=>"Update Atleta", "id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+Unpermitted parameter: escalado_para_selecao
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:8080/atletas/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 19:35:59 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.1ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 19:36:01 -0300
+Processing by AtletasController#index as HTML
+  [1m[35mAtleta Load (0.3ms)[0m  SELECT "atletas".* FROM "atletas"
+  Rendered atletas/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:36:03 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.3ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/_form.html.erb (12.9ms)
+  Rendered atletas/edit.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:37:50 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.3ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/_form.html.erb (12.7ms)
+  Rendered atletas/edit.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/atletas/1" for 127.0.0.1 at 2015-06-25 19:38:03 -0300
+Processing by AtletasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X2vAlaD8BPaCQamBPImCvhyiLO89PTe/xB6MgV8oRwezqyvAw4ZMES6AX8Iig9YJl/4jooTGQwKuRnG68SxD0g==", "atleta"=>{"nome"=>"; cdlsknz", "email"=>"lcjsnljscnd", "telefone"=>"lcksnxl", "data_nascimento"=>"lkcn xl", "cpf"=>"765876578657", "rg"=>"657659659", "altura"=>"65.0", "peso"=>"7596.0", "posicao_joga"=>"976597", "categoria"=>"95tigjkj", "alojamento_clube"=>"hvkjhvb,", "escalado_para_selecao"=>"1"}, "commit"=>"Update Atleta", "id"=>"1"}
+  [1m[36mAtleta Load (0.1ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: escalado_para_selecao
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:8080/atletas/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 19:38:03 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 19:38:04 -0300
+Processing by AtletasController#index as HTML
+  [1m[36mAtleta Load (0.3ms)[0m  [1mSELECT "atletas".* FROM "atletas"[0m
+  Rendered atletas/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/atletas/1/edit" for 127.0.0.1 at 2015-06-25 19:38:07 -0300
+Processing by AtletasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.1ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/_form.html.erb (5.5ms)
+  Rendered atletas/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 23:49:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AtletasController#index as HTML
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT "atletas".* FROM "atletas"
+  Rendered atletas/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 477ms (Views: 400.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 23:49:47 -0300
+Processing by AtletasController#index as HTML
+  [1m[36mAtleta Load (0.6ms)[0m  [1mSELECT "atletas".* FROM "atletas"[0m
+  Rendered atletas/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 97ms (Views: 95.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 23:49:47 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 65ms (Views: 54.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 23:49:47 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.3ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-da45f9f2a2e4cc02c672688a217d611f5a14c716f390d9a1c8d26bdf7c5465ec.css?body=1" for 127.0.0.1 at 2015-06-25 23:49:47 -0300
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 23:49:49 -0300
+Processing by AtletasController#index as HTML
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT "atletas".* FROM "atletas"
+  Rendered atletas/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/atletas/1" for 127.0.0.1 at 2015-06-25 23:49:52 -0300
+Processing by AtletasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAtleta Load (0.1ms)[0m  [1mSELECT  "atletas".* FROM "atletas" WHERE "atletas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered atletas/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/atletas" for 127.0.0.1 at 2015-06-25 23:49:54 -0300
+Processing by AtletasController#index as HTML
+  [1m[35mAtleta Load (0.2ms)[0m  SELECT "atletas".* FROM "atletas"
+  Rendered atletas/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-30 00:22:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.1) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.1) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /home/joaosantos/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/joaosantos/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/joaosantos/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.2ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (29.7ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (72.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePartes (20150624235105)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE "partes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "clausula_id" integer, "contrato_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_partes_on_clausula_id" ON "partes" ("clausula_id")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_partes_on_contrato_id" ON "partes" ("contrato_id")[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150624235105"]]
+  [1m[36m (211.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_contrato_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_contrato_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-30 00:23:44 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 70ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-30 00:23:45 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/joaosantos/.rvm/gems/ruby-2.2.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contratos" for 127.0.0.1 at 2015-06-30 00:23:50 -0300
+Processing by ContratosController#index as HTML
+  [1m[35mContrato Load (0.8ms)[0m  SELECT "contratos".* FROM "contratos"
+  Rendered contratos/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 806ms (Views: 728.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/scaffolds.self-579fb36ac3d20fdf6b315180579a2a8ceeebdaf9ff6c2703c9f5f40a711a7a5c.css?body=1" for 127.0.0.1 at 2015-06-30 00:23:51 -0300
+
+
+Started GET "/clausulas" for 127.0.0.1 at 2015-06-30 00:24:06 -0300
+Processing by ClausulasController#index as HTML
+  [1m[36mClausula Load (0.9ms)[0m  [1mSELECT "clausulas".* FROM "clausulas"[0m
+  Rendered clausulas/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 272ms (Views: 260.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/clausulas" for 127.0.0.1 at 2015-06-30 00:24:32 -0300
+Processing by ClausulasController#index as HTML
+  [1m[35mClausula Load (1.6ms)[0m  SELECT "clausulas".* FROM "clausulas"
+  Rendered clausulas/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 250ms (Views: 245.9ms | ActiveRecord: 1.6ms)
+  [1m[36m (173.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (202.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePartidas (20150601184340)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (22.3ms)[0m  CREATE TABLE "partidas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "tag" varchar, "data" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150601184340"]]
+  [1m[35m (170.6ms)[0m  commit transaction
+Migrating to CreateAtletas (20150603221244)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "atletas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "email" varchar, "telefone" varchar, "data_nascimento" varchar, "cpf" varchar, "rg" varchar, "altura" float, "peso" float, "posicao_joga" varchar, "categoria" varchar, "alojamento_clube" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150603221244"]]
+  [1m[35m (162.9ms)[0m  commit transaction
+Migrating to CreateContratos (20150603225547)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "contratos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "data_Inicio" datetime, "data_Termino" datetime, "atleta_id" integer, "contrata" varchar, "valor" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mCREATE  INDEX "index_contratos_on_atleta_id" ON "contratos" ("atleta_id")[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150603225547"]]
+  [1m[36m (198.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateClausulas (20150603230640)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (21.0ms)[0m  [1mCREATE TABLE "clausulas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar, "descricao" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150603230640"]]
+  [1m[36m (190.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePartes (20150624235105)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (11.8ms)[0m  [1mCREATE TABLE "partes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "clausula_id" integer, "contrato_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  CREATE  INDEX "index_partes_on_clausula_id" ON "partes" ("clausula_id")
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_partes_on_contrato_id" ON "partes" ("contrato_id")
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150624235105"]]
+  [1m[35m (194.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contratos_on_atleta_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_contrato_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_contrato_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_partes_on_clausula_id' AND type='index'
+
