@@ -13,58 +13,61 @@ class Partida
 	end
 
 	def find(data, nome, tag)
-		partidasHash = Hash.new
+		partidas_hash = Hash.new
 		out = false
-		partidasHash.each do |i|
-			if partidasHash[i].data == data && partidasHash[i].nome == nome && partidasHash[i].tag == tag
+		partidas_hash.each do |i|
+			if partidas_hash[i].data == data && partidas_hash[i].nome == nome && partidas_hash[i].tag == tag
 				out = true
 			end
 		end
-		return out
+
+		out
 	end
 
 	def self.find_partida(data, nome, tag)
-		partidasHash = Hash.new
+		partidas_hash = Hash.new
 		retorno = nil
-		partidasHash.each do |i|
-			if partidasHash[i].data == data && partidasHash[i].nome == nome && partidasHash[i].tag == tag
-				retorno = partidasHash[i]
+		partidas_hash.each do |i|
+			if partidas_hash[i].data == data && partidas_hash[i].nome == nome && partidas_hash[i].tag == tag
+				retorno = partidas_hash[i]
 			end
 		end
 		return retorno
 	end
 
-	def adicionarPartida(data, nome, tag)
-		partidasHash = Hash.new
-		partidasHash.each do |i|
-			if find(data, nome, tag) == false
-				partidasHash[i] = Partida.new(data, nome, tag)
-				return true
-			else #não adicionou
-				return false
-			end
-		end
+	def adicionar_partida(data, nome, tag)
+		novo(data, nome, tag)
 	end
 
 	def self.create_partida(data, nome, tag)
-		partidasHash = Hash.new
-		partidasHash.each do |i|
-			if find(data, nome, tag) == false
-				partidasHash[i] = Partida.new(data, nome, tag)
-				return true
-			else #não adicionou
-				return false
-			end
-		end
+		novo(data, nome, tag)
 	end
 
-	def self.listPartidas()
-		partidasHash = Hash.new
-		listPartidas = Array.new
-		partidasHash.each do |i|
-			listPartidas.push(partidasHash[i])
+	def self.list_partidas
+		partidas_hash = Hash.new
+		list_partidas = Array.new
+		partidas_hash.each do |i|
+			list_partidas.push(partidas_hash[i])
 		end
 
-		return listPartidas
+		return list_partidas
 	end
+
+
+	private
+		# Trecho do codigo está sendo utilizado duplicado #
+		def
+			self.novo(data, nome, tag)
+				partidas_hash = Hash.new
+				partidas_hash.each do |i|
+					if !find(data, nome, tag)
+						partidas_hash[i] = Partida.new(:data => data,
+																					:nome => nome,
+																					:tag => tag)
+						return true
+					else #não adicionou
+						return false
+					end
+				end
+		end
 end
