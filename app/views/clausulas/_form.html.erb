@@ -1,7 +1,8 @@
 <%= form_for(@clausula) do |f| %>
   <% if @clausula.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@clausula.errors.count, "error") %> prohibited this clausula from being saved:</h2>
+
+      <h2><%= pluralize(@clausula.errors.count, 'error') %> prohibited this clausula from being saved:</h2>
 
       <ul>
       <% @clausula.errors.full_messages.each do |message| %>
@@ -13,13 +14,14 @@
 
   <div class="field">
     <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+
+    <%= f.text_field :titulo, placeholder: 'Título' %>
   </div>
   <div class="field">
     <%= f.label :descricao %><br>
-    <%= f.text_field :descricao %>
+    <%= f.text_field :descricao, placeholder: 'Descrição' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar' %>
   </div>
 <% end %>
