@@ -27,19 +27,30 @@ Then a lista de partidas buscadas, que cotem a data " 12/03/2015", e/ou com o no
 Scenario: clicar na opcao editar partida
    Given que existe uma partida cadastrada no sistema com tag de valor "Série A".
    And estou na pagina de detalhes da partida
-   When eu clico em "Edit" a primeira partida
+   When eu clico em Edit a primeira partida
    Then eu sou direcionado a pagina de editar partida
    When Eu preencho a tag  com o valor "Serie B"
    And clico em salvar
    Then sou direcionado a página de detalhes da partida
    And eu posso visualizar nos detalhes da partida, o novo valor da tag
 
-Scenario: pontuação negativa no cadastro de partidasGiven estou cadastrando uma partidaWhen eu tento confirmar o cadastro de uma partida com um dos campos de pontuação negativaThen uma mensagem de erro aparece para o usuárioScenario: alterar placar na partidaAs a supervisor cadastrado no sistema.Given estou visualizando uma partidaWhen eu adiciono um ponto para o "Nautico" na partida "Nautico VS Sport" com placar "0" x "4"Then o novo placar da partida é "1" para o "Náutico" e "4" para o "Sport"Scenario: listar jogadores de um dos times de uma partidaGiven estou visualizando uma partida do "Nautico VS Sport"When eu clico no botão Expandir dos jogadores do "Náutico"Then serão exibidos os jogadores do "Náutico"
+Scenario: pontuação negativa no cadastro de partidas
+   Given estou cadastrando uma partidaWhen eu tento confirmar o cadastro de uma partida com um dos campos de pontuação negativa
+   Then uma mensagem de erro aparece para o usuárioScenario: alterar placar na partidaAs a supervisor cadastrado no sistema.
+   Given estou visualizando uma partida
+   When eu adiciono um ponto para o "Nautico" na partida "Nautico VS Sport" com placar "0" x "4"
+   Then o novo placar da partida é "1" para o "Náutico" e "4" para o "Sport"
+
+Scenario: listar jogadores de um dos times de uma partida
+   Given estou visualizando uma partida do "Nautico VS Sport"
+   When eu clico no botão Expandir dos jogadores do "Náutico"
+   Then serão exibidos os jogadores do "Náutico"
+
 Scenario: mudar time de partida
-Given estou visualizando a página de edição de uma partida
-When eu clico na opção "alterar time visitante"
-Then uma seleção de times cadastrados é mostrada com um seletor
-And é removida a lista de jogadores do time visitante da partida
+   Given estou visualizando a página de edição de uma partida
+   When eu clico na opção "alterar time visitante"
+   Then uma seleção de times cadastrados é mostrada com um seletor
+   And é removida a lista de jogadores do time visitante da partida
 
 Scenario: clicar na opcao criar partida
    Given estou na pagina principal do time

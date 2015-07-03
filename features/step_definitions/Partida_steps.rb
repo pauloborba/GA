@@ -4,23 +4,27 @@
 def find_or_include_partida(nome, data, tag, list = nil)
   result = nil
   current_list = Partida.where(nome: nome, tag: tag)
-  if list != nil
+  unless list.nil?
     current_list = list.where(nome: nome, tag: tag)
   end
   current_list.find_each do |partida|
     data_corrente = partida.data
 
-    if (data_corrente.day.to_i == data[0..2].to_i) and (data_corrente.month.to_i == data[3..5].to_i) and (data_corrente.year.to_i == data[6..10].to_i)
+    if same_data(data_corrente, data)
       result = partida
       break
     end
   end
-  return result
+  result
+end
+
+def same_data(data_corrente, data)
+  (data_corrente.day.to_i == data[0..2].to_i) and (data_corrente.month.to_i == data[3..5].to_i) and (data_corrente.year.to_i == data[6..10].to_i)
 end
 
 def criandoPartida(data, nome, tag)
   new_partida = Partida.new({data: data, nome: nome, tag: tag})
-  new_partida.save()
+  new_partida.save
   return new_partida
 end
 
@@ -38,8 +42,7 @@ Given(/^que nao existe uma partida com data “([^"]*)”, com nome “([^"]*)�
 end
 
 When(/^eu crio uma partida com data “([^"]*)”,  com nome “([^"]*)”, com tag “([^"]*)”\.$/) do |data, nome, tag|
-    @new_partida = nil
-    if @result == nil
+    if @result.nil?
       @new_partida = criandoPartida(data, nome, tag)
 
     end
@@ -121,8 +124,8 @@ Given(/^estou na pagina de detalhes da partida$/) do
   visit partidas_path
 end
 
-When(/^eu clico em "(.*?)" a primeira partida$/) do |link|
-  find_link(link).click
+When(/^eu clico em Edit a primeira partida$/) do
+  find_link("Edit").click
 end
 
 Then(/^eu sou direcionado a pagina de editar partida$/) do
@@ -136,8 +139,6 @@ end
 
 When(/^clico em salvar$/) do
   find_button("Salvar").click
-  @new_partida.tag = @current_tag
-  @new_partida.save()
 end
 
 Then(/^sou direcionado a página de detalhes da partida$/) do
