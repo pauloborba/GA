@@ -1,30 +1,28 @@
-Feature: Controle de Acesso.
+Feature: Controle de Acesso
 
-	As a member of an Athletic Group.
-	I want to acess the Athletic management system
-	So that i can use all system functions
+	As a membro de um grupo de atletas
+	I want acessar o sistema de gerenciamento de atletas
+	So that eu posso usar todas as funcionalidades
 
-	Scenario: Tentando logar usando credenciais corretas.
-		Given: Estou na página de Login.
-		When: Eu tento logar com credenciais corretas.
-		Then: Eu serei redirecionado para a página inicial.
+	Scenario: Tentando logar usando credenciais corretas web
+		Given estou na página de Login
+		And eu preenchdo o campo de login e senha com "joaoluiz" e "senha123" respectivamente  
+		When eu seleciono a opçao entrar
+		Then eu serei redirecionado para a página inicial
 
-	Scenario: Tentando logar usando credenciais erradas.
-		Given: Estou na página de Login.
-		when: Eu tento logar com credenciais erradas.
-		Then: Uma mensagem de erro aparece na tela.
-		and: Eu sou redirecionado para a tela de login.
+	Scenario: Tentando logar usando credenciais erradas web
+		Given estou na página de Login
+		And eu preencho o campo de login e senha com "joaoluis" e "senha123" respectivamente
+		When eu seleciono a opçao entrar      
+        Then uma mensagem de erro aparece na tela
+		And eu sou redirecionado para a tela de login
 
-	Scenario: Tentando logar usando credenciais corretas.
-		Given: Eu tento logar
-		When: Os campos de "login" e senha estão preenchidos
-		Then: O sistema verifica "Login" e "Senha"
-		And: Os dados estão cadastradas no sistema
-		And: Eu entro no Sistema
+	Scenario: Tentando logar usando credenciais corretas
+		Given que o Login "joaoluiz" e Senha "senha123" estão cadastrados no sistema
+		When eu tento acessar com o login "joaoluiz" e senha "senha123"
+		Then eu consigo acessar o gerenciador de atletas 
 
-	Scenario: Tentando logar usando nome de usuário errado.
-		Given: Eu tento logar
-		When: O campo de login está preenchido errado
-		Then: O sistema verifica o "login"
-		And: O usuário não está cadastrado no
-		And: Eu sou redirecionado pra pagina de login
+	Scenario: Tentando logar usando nome de usuário errado
+		Given que o login "joaoluis" não esta cadastrado no sistema
+		When Eu tento acessar o sistema com o login "joaoluis" e senha "senha123"
+		Then eu não consigo acessar o gerenciador de atletas
