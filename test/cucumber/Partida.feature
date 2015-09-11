@@ -30,6 +30,6 @@ Then uma mensagem de erro e visualizada no topo da página
 Scenario: Registrar Modificacao de Numero de Jogadores
 
 Given que eu tenha a partida "10" salva no sistema
-And eu estou logado como administrador "Jose"
+And eu estou logado como administrador "Joao"
 When eu altero o numero de jogadores da partida "10" de "11" para "15"
-Then eu salvo a data e o nome do administrador "Jose" que fez as modificacoes no sistema
+Then eu salvo a data e o nome do administrador "Jao" que fez as modificacoes no sistema
