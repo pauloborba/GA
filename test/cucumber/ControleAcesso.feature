@@ -6,12 +6,14 @@ Feature: Controle de Acesso
 
 	Scenario: Tentando logar usando credenciais corretas web
 		Given estou na página de Login
-		And eu preenchdo o campo de login e senha com "joaoluiz" e "senha123" respectivamente  
+		And O login "joaoluiz" e senha "senha123" estão cadastrados no sistema
+		And eu preenchdo o campo de login e senha com "joaoluiz" e "senha123" respectivamente
 		When eu seleciono a opçao "entrar"
 		Then eu serei redirecionado para a página inicial
 
 	Scenario: Tentando logar usando credenciais erradas web
 		Given estou na página de Login
+		And O login "joaoluis" não está cadastrado no sistema
 		And eu preencho o campo de login e senha com "joaoluis" e "senha123" respectivamente
 		When eu seleciono a opçao "entrar"      
         	Then uma mensagem de erro aparece na tela
