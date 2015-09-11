@@ -33,3 +33,38 @@ Given que eu tenha a partida "10" salva no sistema
 And eu estou logado como administrador "Joao"
 When eu altero o numero de jogadores da partida "10" de "11" para "15"
 Then eu salvo a data e o nome do administrador "Jao" que fez as modificacoes no sistema
+
+
+Scenario: Registrar Nova Partida
+	Given que eu esteja no menu de “Adicionar Partida”
+	And eu estou logado como administrador “Bernardo”
+	When eu preencho todos os campos do formulário
+	And eu seleciono a opção “Salvar Partida”
+	Then uma mensagem de sucesso é exibida
+	And posso ver as informações da partida salva
+	And posso ver que foi adicionada por “Bernardo”
+
+Scenario: Informações Incompletas em Nova Partida
+	Given que eu esteja no menu de “Adicionar Partida”
+	And eu estou logado como administrador “Bernardo”
+	When eu deixo de preencher alguns campos do formulário
+	And eu seleciono a opção “Salvar Partida”
+	Then uma mensagem de erro é exibida
+	And os campos deixados em branco são destacados
+
+Scenario: Jogadores Insuficientes na Criação de Partida
+	Given que eu esteja no menu de “Adicionar Partida”
+	And eu estou logado como administrador “Bernardo”
+	When eu seleciono menos de “11” jogadores
+	And eu seleciono a opção “Salvar Partida”
+	Then uma mensagem de erro é exibida
+	And os campos deixados em branco são destacados
+
+Scenario: Placar Inválido
+	Given que eu esteja no menu de “Adicionar Partida”
+	And eu estou logado como administrador “Bernardo”
+	When eu deixo um número negativo como placar
+	And eu seleciono a opção “Salvar Partida”
+	Then uma mensagem de erro é exibida
+	And o campo do placar é destacado
+
