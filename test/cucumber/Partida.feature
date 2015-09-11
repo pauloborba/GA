@@ -1,8 +1,8 @@
-Feature: Match
+Feature: Partida
 
-As a admin member of an Athletes Group
-I want to add and modify matches of Athlete Management System
-So that I can add new matches and modify them
+As a membro administrador do Grupo de Atletas
+I want to adicionar e modificar partidas do Sistema de Gerenciamento de Atletas
+So that eu posso adicionar novas partidas e modificar seus jogadores, situacoes e placares
 
 Scenario: Registrar Modificacao de Placar
 
