@@ -26,7 +26,7 @@ class AtletaEditPage extends Page{
         $("form").peso = atleta.peso
         $("form").posicao = atleta.posicao
         $("form").categoria = atleta.categoria
-        $("form").alojamentoClube = atleta.alojamentoClube
+        $("form").alojamento = atleta.alojamento
 
     }
 
