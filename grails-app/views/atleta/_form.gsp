@@ -83,12 +83,21 @@
 
 </div>
 
+<<<<<<< HEAD
 <div class="fieldcontain ${hasErrors(bean: atletaInstance, field: 'alojamentoClube', 'error')} ">
 	<label for="alojamentoClube">
 		<g:message code="atleta.alojamentoClube.label" default="Alojamento Clube" />
 		
 	</label>
 	<g:checkBox name="alojamentoClube" value="${atletaInstance?.alojamentoClube}" />
+=======
+<div class="fieldcontain ${hasErrors(bean: atletaInstance, field: 'alojamento', 'error')} ">
+	<label for="alojamento">
+		<g:message code="atleta.alojamento.label" default="Alojamento" />
+		
+	</label>
+	<g:checkBox name="alojamento" value="${atletaInstance?.alojamento}" />
+>>>>>>> d926ac45d106c6b7f31effc90e68d37ac2a3f569
 
 </div>
 

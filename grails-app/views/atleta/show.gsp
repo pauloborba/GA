@@ -104,11 +104,19 @@
 				</li>
 				</g:if>
 			
+<<<<<<< HEAD
 				<g:if test="${atletaInstance?.alojamentoClube}">
 				<li class="fieldcontain">
 					<span id="alojamentoClube-label" class="property-label"><g:message code="atleta.alojamentoClube.label" default="Alojamento Clube" /></span>
 					
 						<span class="property-value" aria-labelledby="alojamentoClube-label"><g:formatBoolean boolean="${atletaInstance?.alojamentoClube}" /></span>
+=======
+				<g:if test="${atletaInstance?.alojamento}">
+				<li class="fieldcontain">
+					<span id="alojamento-label" class="property-label"><g:message code="atleta.alojamento.label" default="Alojamento" /></span>
+					
+						<span class="property-value" aria-labelledby="alojamento-label"><g:formatBoolean boolean="${atletaInstance?.alojamento}" /></span>
+>>>>>>> d926ac45d106c6b7f31effc90e68d37ac2a3f569
 					
 				</li>
 				</g:if>
