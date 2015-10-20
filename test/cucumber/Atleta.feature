@@ -2,7 +2,7 @@ Feature: Atleta
   As a usuario cadastrado no sistema
   I want adicionar e editar atletas
   So that eu possa gerenciar as informacoes dos atletas
-@ignore
+
   Scenario: Adicionar atleta novo
     Given o sistema nao tem o atleta com o CPF "09719992836"
     When eu adiciono o atleta com o CPF "09719992836"
@@ -14,13 +14,14 @@ Feature: Atleta
     When eu adicionar o atleta com o CPF "08976898765"
     Then o atleta com o CPF "08976898765" nao e armazenado duas vezes
 
-@ignore
+
+
   Scenario: Adicionar Atleta novo web
-    Given estou no menu de Atletas
+    Given estou no menu de Atleta
     And o atleta nao aparece na lista de atletas cadastrados
-    When eu seleciono a opcao "Adicionar"
-    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", data_nascimento "01/01/91", CPF "08976898765", RG "8765667", altura "1,75cm", peso "70kg", posicao_joga "atacante", categoria "sub 17" e alojamento_clube "sim"
-    And eu seleciono a opcao "Cadastrar"
+    When eu seleciono a opcao New Atleta
+    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true"
+    And eu seleciono a opcao Create
     Then poderei ver os detalhes do atleta salvo no sistema
 
   @ignore

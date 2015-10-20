@@ -10,7 +10,7 @@ class Atleta {
     double peso
     String posicao
     String categoria
-    boolean alojamentoClube
+    boolean alojamento
 
     static constraints = {
         cpf unique : true
@@ -22,7 +22,7 @@ class Atleta {
         peso null : false
         posicao null : false
         categoria null : false
-        alojamentoClube null : false
+        alojamento null : false
     }
 }
 
