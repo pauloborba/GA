@@ -50,7 +50,6 @@ grails.project.dependency.resolution = {
         test "org.gebish:geb-junit4:0.9.2"
         test "org.seleniumhq.selenium:selenium-support:2.39.0"
         test "org.seleniumhq.selenium:selenium-chrome-driver:2.39.0"
-        test "org.seleniumhq.selenium:selenium-firefox-driver:2.39.0"
     }
 
     plugins {
