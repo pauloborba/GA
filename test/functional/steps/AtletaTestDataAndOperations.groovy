@@ -9,6 +9,10 @@ import ga.AtletaController
 
 class AtletaTestDataAndOperations {
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> RaquelMaria-master
     static  atlets = [
 
             [nome: "lucas",
@@ -27,12 +31,26 @@ class AtletaTestDataAndOperations {
     public static createAtleta(String cpf) {
         def controller = new AtletaController();
         controller.params << [nome: "lucas", telefone: "8986712", email: "ghrm", cpf: cpf, rg: "898763", altura: 1.80,
+<<<<<<< HEAD
                               peso: 80, posicao: "goleiro", categoria: "sub 17", alojamento: true]
+=======
+                              peso: 80, posicao: "goleiro", categoria: "sub 17", alojamentoClube: true]
+=======
+    public static createAtleta(String cpf) {
+        def controller = new AtletaController();
+        controller.params << [nome: "Rafael", telefone: "9898374", email: "rrfo", cpf: cpf, rg: "87473823", altura: 1.80,
+                              peso: 80, posicao: "atacante", categoria: "sub 17", alojamento: false]
+>>>>>>> d926ac45d106c6b7f31effc90e68d37ac2a3f569
+>>>>>>> RaquelMaria-master
         controller.request.setContent(new byte[1000])
         controller.saveAtleta(controller.createAtleta())
         controller.response.reset()
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> RaquelMaria-master
     static public void editAtletaCpf(String cpf, def Atleta){
             def controller = new AtletaController()
             controller.params << [nome: "lucas"] << [email: "lucazartu@gmail.com"] <<
@@ -52,4 +70,11 @@ class AtletaTestDataAndOperations {
     static public def getAtleta(){
         return findAtletaByCpf("11281727371")
     }
+<<<<<<< HEAD
 }
+=======
+=======
+
+>>>>>>> d926ac45d106c6b7f31effc90e68d37ac2a3f569
+}
+>>>>>>> RaquelMaria-master

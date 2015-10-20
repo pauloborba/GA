@@ -110,6 +110,7 @@
 
 						<span class="property-value" aria-labelledby="alojamento-label"><g:formatBoolean boolean="${atletaInstance?.alojamento}" /></span>
 
+
 				</li>
 				</g:if>
 

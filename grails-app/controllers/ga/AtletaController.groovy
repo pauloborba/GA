@@ -76,6 +76,7 @@ class AtletaController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Atleta.label', default: 'Atleta'), atletaInstance.id])
+
                 redirect atletaInstance
             }
             '*'{ respond atletaInstance, [status: OK] }
@@ -110,5 +111,7 @@ class AtletaController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
 }
+
 
