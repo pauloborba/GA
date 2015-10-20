@@ -54,5 +54,3 @@ class AtletaTestDataAndOperations {
         return findAtletaByCpf("11281727371")
     }
 }
-
-
