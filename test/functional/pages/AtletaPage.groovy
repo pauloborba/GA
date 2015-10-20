@@ -6,9 +6,12 @@ import geb.Page
  */
 
 class AtletaPage extends Page{
-    static url = "/Ga/Atleta/index"
+
+    def tituloEng = "Atleta List"
+    def tituloPt = "Atleta Listagem"
+    static url = "/GA/Atleta"
 
     static at = {
-        title ==~ /Atleta List/
+        (title ==~ tituloEng) || (title ==~tituloPt)
     }
 }

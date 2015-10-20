@@ -27,7 +27,8 @@ class AtletaTestDataAndOperations {
     public static createAtleta(String cpf) {
         def controller = new AtletaController();
         controller.params << [nome: "lucas", telefone: "8986712", email: "ghrm", cpf: cpf, rg: "898763", altura: 1.80,
-                              peso: 80, posicao: "goleiro", categoria: "sub 17", alojamentoClube: true]
+                              peso: 80, posicao: "goleiro", categoria: "sub 17", alojamento: true]
+
         controller.request.setContent(new byte[1000])
         controller.saveAtleta(controller.createAtleta())
         controller.response.reset()
@@ -53,3 +54,5 @@ class AtletaTestDataAndOperations {
         return findAtletaByCpf("11281727371")
     }
 }
+
+
