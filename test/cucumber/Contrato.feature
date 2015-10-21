@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Feature: Contrato
   As a usuario do sistema
   I want adicionar e cancelar contrato
@@ -28,7 +27,6 @@ Feature: Contrato
     And  o contrato com o contratante "Nautico" e o contratado "Gabriel" com data de inicio "10/01/2016" e data de termino "10/01/2017" está na lista de contratos salvos
     When eu tento criar um contrato com contratante "Nautico" ,  contratado "Gabriel" ,data de início "10/12/2016", data de termino "10/12/2017",valor "1200"
     Then aparecera uma mensagem de erro na tela
-
 
   @ignore
 	Scenario: adicionar novo contrato com data de termino antes do prazo acabar  

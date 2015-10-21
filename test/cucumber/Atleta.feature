@@ -13,7 +13,6 @@ Feature: Atleta
     Given o atleta esta armazenado no sistema com o CPF "08976898765"
     When eu adicionar o atleta com o CPF "08976898765"
     Then o atleta com o CPF "08976898765" nao e armazenado duas vezes
-<<<<<<< HEAD
 
 @ignore
   Scenario: Adicionar Atleta novo web
