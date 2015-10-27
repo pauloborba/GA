@@ -3,7 +3,7 @@ package pages
 import geb.Page
 
 class CreateContratoPage extends Page{
-    def titulo = "Criar Contrato"
+    def titulo = "Create Contrato"
     static url = "/GA/contrato/create"
 
 

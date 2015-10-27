@@ -5,7 +5,7 @@ import geb.Page
  */
 class CreateAtletaPage extends Page {
 
-    def titulo = "Criar Atleta"
+    def titulo = "Create Atleta"
     static url = "/GA/atleta/create"
 
     static at = {
