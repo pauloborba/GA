@@ -9,6 +9,7 @@ class AtletaPage extends Page{
 
     def tituloEng = "Atleta List"
     def tituloPt = "Atleta Listagem"
+
     static url = "/GA/Atleta"
 
     static at = {
