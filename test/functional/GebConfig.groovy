@@ -29,4 +29,8 @@ environments {
             driverInstance.manage().window().maximize()
             driverInstance}
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> Travis test 4
