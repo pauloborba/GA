@@ -4,7 +4,7 @@ import steps.AtletaTestDataAndOperations
 
 class AtletaEditPage extends Page{
 
-    def titulo = "Editar Atleta"
+    def titulo = "Edit Atleta"
     static url = "/GA/atleta/edit/1"
 
     static at = {
