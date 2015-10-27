@@ -8,7 +8,6 @@ grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 
-
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -50,6 +49,7 @@ grails.project.dependency.resolution = {
         test "org.gebish:geb-junit4:0.9.2"
         test "org.seleniumhq.selenium:selenium-support:2.39.0"
         test "org.seleniumhq.selenium:selenium-chrome-driver:2.39.0"
+        test "org.seleniumhq.selenium:selenium-firefox-driver:2.39.0"
     }
 
     plugins {
