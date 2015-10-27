@@ -20,4 +20,5 @@ branches:
   only:
     - master
 
-script: grails test-app -Dgeb.env=firefox --non-interactive --stacktrace
+script: grails -Dgeb.env=firefox test-app --non-interactive --stacktrace 
+
