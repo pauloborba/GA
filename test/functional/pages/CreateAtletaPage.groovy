@@ -7,6 +7,7 @@ class CreateAtletaPage extends Page {
 
     def tituloEng = "Create Atleta"
     def tituloPt = "Criar Atleta"
+
     static url = "/GA/atleta/create"
 
     static at = {

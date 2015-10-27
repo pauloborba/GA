@@ -4,7 +4,7 @@ import geb.Page
 
 class AtletaShowPage extends Page{
 
-    def titulo = "Ver Atleta"
+    def titulo = "Show Atleta"
     static url = "/GA/atleta/show/1"
 
     static at = {
