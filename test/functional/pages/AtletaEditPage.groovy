@@ -4,11 +4,12 @@ import steps.AtletaTestDataAndOperations
 
 class AtletaEditPage extends Page{
 
-    def titulo = "Edit Atleta"
+    def tituloEng = "Edit Atleta"
+    def tituloPt = "Editar Atleta"
     static url = "/GA/atleta/edit/1"
 
     static at = {
-        title ==~ titulo
+        (title ==~ tituloEng) || (title ==~tituloPt)
     }
 
     def fillCpfField(String cpf){

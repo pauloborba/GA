@@ -4,11 +4,12 @@ import geb.Page
 
 class AtletaShowPage extends Page{
 
-    def titulo = "Show Atleta"
+    def tituloEng = "Show Atleta"
+    def tituloPt = "Ver Atleta"
     static url = "/GA/atleta/show/1"
 
     static at = {
-        title ==~ titulo
+        (title ==~ tituloEng) || (title ==~ tituloPt)
     }
 
     def boolean hasMessage(){

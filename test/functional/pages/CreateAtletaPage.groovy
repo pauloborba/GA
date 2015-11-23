@@ -7,7 +7,10 @@ class CreateAtletaPage extends Page {
 
     def tituloEng = "Create Atleta"
     def tituloPt = "Criar Atleta"
+<<<<<<< HEAD
 
+=======
+>>>>>>> Resolvido problema com titulos em portugues/ingles
     static url = "/GA/atleta/create"
 
     static at = {

@@ -6,11 +6,11 @@ package pages
 import geb.Page
 
 class LoginPage extends Page {
-    def titulo = "User Login"
+    def tituloEng = "User Login"
     static url = "/GA/user/login"
 
     static at = {
-        title ==~ titulo
+        title ==~ tituloEng
     }
 
     def fillLoginData(String username, String password) {

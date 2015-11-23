@@ -4,11 +4,12 @@ import geb.Page
 
 
     class ContratoPage extends Page{
-        def titulo = "Contrato List"
+        def tituloEng = "Contrato List"
+        def tituloPt = "Contrato Listagem"
         static url = "/GA/Contrato"
 
         static at  = {
-            title ==~ titulo
+            (title ==~ tituloEng) || (title ==~tituloPt)
         }
 
 
