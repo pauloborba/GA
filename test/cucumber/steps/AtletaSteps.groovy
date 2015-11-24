@@ -85,3 +85,13 @@ Then(~'^poderei ver os detalhes do atleta salvo no sistema$') { ->
     to AtletaPage
     at AtletaPage
 }
+
+Given(~/^o atleta esta armazenado no sistema com o CPF "([^"]*)"$/) { String arg1 ->
+  
+}
+When(~/^eu adicionar o atleta com o CPF "([^"]*)"$/) { String arg1 ->
+   
+}
+Then(~/^o atleta com o CPF "([^"]*)" nao e armazenado duas vezes$/) { String arg1 ->
+    
+}
