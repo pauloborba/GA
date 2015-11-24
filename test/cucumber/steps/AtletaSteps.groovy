@@ -87,13 +87,15 @@ Then(~'^poderei ver os detalhes do atleta salvo no sistema$') { ->
 }
 
 Given(~/^o atleta esta armazenado no sistema com o CPF "([^"]*)"$/) { String arg1 ->
-  
+    AtletaTestDataAndOperations.createAtleta(arg1)
+    assert Atleta.findByCpf(arg1) != null
 }
 When(~/^eu adicionar o atleta com o CPF "([^"]*)"$/) { String arg1 ->
-   
+    saved = AtletaTestDataAndOperations.createAtleta(arg1)
+
 }
 Then(~/^o atleta com o CPF "([^"]*)" nao e armazenado duas vezes$/) { String arg1 ->
-    
+    assert Atleta.findByCpf(arg1) != null && !saved
 }
 
 Given(~/^estou no menu de Atletas$/) { ->
