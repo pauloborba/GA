@@ -99,13 +99,18 @@ Then(~/^o atleta com o CPF "([^"]*)" nao e armazenado duas vezes$/) { String arg
 }
 
 Given(~/^estou no menu de Atletas$/) { ->
-   
+    to AtletaPage
+    at AtletaPage
+
 }
 Given(~/^o atleta aparece na lista de atletas cadastrados$/) { ->
-    
+    at AtletaPage
 
 }
 Then(~/^eu poderei ver uma mensagem de erro$/) { ->
-    
+    to CreateAtletaPage
+    at CreateAtletaPage
+    def hasMessage = page.hasMessage()
 
+    assert hasMessage != null
 }
