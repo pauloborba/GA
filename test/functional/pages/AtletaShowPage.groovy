@@ -14,7 +14,6 @@ class AtletaShowPage extends Page{
 
     def boolean hasMessage(){
         def message = $('.message')
-
         if(!message){
             return false
         } else {

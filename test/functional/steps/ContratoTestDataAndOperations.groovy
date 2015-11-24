@@ -14,6 +14,5 @@ class ContratoTestDataAndOperations{
         controller.saveContrato(controller.criarContrato())
         controller.response.reset()
     }
-
-    }
+}
 
