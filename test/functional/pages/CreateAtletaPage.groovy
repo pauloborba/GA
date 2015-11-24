@@ -4,11 +4,13 @@ import geb.Page
  * Created by ess on 05/10/15.
  */
 class CreateAtletaPage extends Page {
-    def titulo = "Criar Atleta"
+
+    def tituloEng = "Create Atleta"
+    def tituloPt = "Criar Atleta"
     static url = "/GA/atleta/create"
 
     static at = {
-        title ==~ titulo
+        (title ==~ tituloEng) || (title ==~ tituloPt)
     }
 
     def fillAtletaDetails(String nome, String email, String telefone, String cpf, String rg, String altura, String peso, String posicao, String categoria, boolean alojamento){
@@ -29,6 +31,4 @@ class CreateAtletaPage extends Page {
     def selectCreateAtleta(){
         $("input", name: "create").click()
     }
-
-
 }
