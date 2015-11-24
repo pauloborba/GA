@@ -13,20 +13,21 @@ Feature: Atleta
     When eu adicionar o atleta com o CPF "08976898765"
     Then o atleta com o CPF "08976898765" nao e armazenado duas vezes
 
-  Scenario: Adicionar Atleta novo web
-    Given estou no menu de Atletas
+   Scenario: Adicionar Atleta novo web
+    Given estou no menu de Atleta
     And o atleta nao aparece na lista de atletas cadastrados
-    When eu seleciono a opcao "Adicionar"
-    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", data_nascimento "01/01/91", CPF "08976898765", RG "8765667", altura "1,75cm", peso "70kg", posicao_joga "atacante", categoria "sub 17" e alojamento_clube "sim"
-    And eu seleciono a opcao "Cadastrar"
-
-  Scenario: Adicionar atleta duplicado web
+    When eu seleciono a opcao New Atleta
+    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true"
+    And eu seleciono a opcao Create
+    Then poderei ver os detalhes do atleta salvo no sistema
+    
+ Scenario: Adicionar atleta duplicado web
     Given estou no menu de Atletas
-    And o atleta de CPF "08976898765" nao aparece na lista de atletas cadastrados
-    When eu seleciono a opcao "Adicionar"
-    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", data_nascimento "01/01/91", CPF "08976898765", RG "8765667", altura "1,75cm", peso "70kg", posicao_joga "atacante", categoria "sub 17" e alojamento_clube "sim"
-    And eu seleciono a opcao "Cadastrar"
-    Then eu posso ver uma mensagem de erro
+    And o atleta aparece na lista de atletas cadastrados
+    When eu seleciono a opcao New Atleta
+    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true"
+    And eu seleciono a opcao Create
+    Then eu poderei ver uma mensagem de erro
 
   @ignore
   Scenario: Editar cpf Atleta
@@ -48,6 +49,7 @@ Feature: Atleta
     And eu preencho os campos requeridos corretamente
     And envio minhas mudancas
     Then eu devo ver uma mensagem indicando que as mudancas foram salvas corretamente
+    
 @ignore
   Scenario: Editar atleta e deixar campo obrigatorio em branco
     Given estou na pagina de Atletas
