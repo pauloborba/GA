@@ -95,3 +95,15 @@ When(~/^eu adicionar o atleta com o CPF "([^"]*)"$/) { String arg1 ->
 Then(~/^o atleta com o CPF "([^"]*)" nao e armazenado duas vezes$/) { String arg1 ->
     
 }
+
+Given(~/^estou no menu de Atletas$/) { ->
+   
+}
+Given(~/^o atleta aparece na lista de atletas cadastrados$/) { ->
+    
+
+}
+Then(~/^eu poderei ver uma mensagem de erro$/) { ->
+    
+
+}
