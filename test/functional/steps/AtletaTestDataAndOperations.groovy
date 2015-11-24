@@ -43,6 +43,7 @@ class AtletaTestDataAndOperations {
             controller.saveAtleta(controller.createAtleta())
             controller.response.reset()
     }
+<<<<<<< HEAD
 
     static public def findAtletaByCpf(String cpf) {
         atlets.find { atleta ->
@@ -54,3 +55,17 @@ class AtletaTestDataAndOperations {
         return findAtletaByCpf("11281727371")
     }
 }
+=======
+
+    static public def findAtletaByCpf(String cpf) {
+        atlets.find { atleta ->
+            atleta.cpf == cpf
+        }
+    }
+
+    static public def getAtleta(){
+        return findAtletaByCpf("11281727371")
+    }
+}
+
+>>>>>>> Atualizando arquivos
