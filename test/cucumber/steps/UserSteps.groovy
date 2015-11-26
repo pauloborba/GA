@@ -22,9 +22,18 @@ Then(~'^eu permaneco na pagina de login$'){ ->
 
 }
 
+Then(~'^eu serei redirecionado para a pagina inicial$'){ ->
+    at Home;
+}
+
 Given(~'^que o login "([^"]*)" nao esta cadastrado no sistema$'){String login ->
-    user = User.findByLogin(login)
-    assert user == null
+    user = User.findByLogin(login);
+    assert user == null;
+}
+
+Given(~'^que o login "([^"]*)" esta cadastrado no sistema$'){ String login ->
+    user = User.findByLogin(login);
+    assert user != null;
 }
 
 When(~'^eu tento acessar o sistema com o login "([^"]*)" e senha "([^"]*)"$'){ String login, String  senha ->
@@ -32,5 +41,9 @@ When(~'^eu tento acessar o sistema com o login "([^"]*)" e senha "([^"]*)"$'){ S
 }
 
 Then(~'^eu nao consigo acessar o gerenciador de atletas$'){->
+
+}
+
+Then(~'^eu consigo acessar o gerenciador de atletas$'){->
 
 }
