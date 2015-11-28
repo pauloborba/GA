@@ -66,5 +66,27 @@ Then(~'^poderei ver os detalhes do contrato salvos no sistema$') { ->
     at ContratoPage
 }
 
+Given(~'^existe o contrato com contratante "([^"]*)" e o contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)"$') {
+    String contratante, String contratado, String inicio, String fim  ->
+     ContratoTestDataAndOperations.createContrato(contratante,contratado,inicio,fim)
+    assert Contrato.findByContratado(contratado) != null
+    assert Contrato.findByContratante(contratante) !=null
+    assert Contrato.findByData_termino(fim) != null
+    assert Contrato.findByData_inicio(inicio) !=null
+
+}
+When(~'^eu adicionar o contrato com o contratante "([^"]*)" e o contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)"$') { String contratante, String contratado, String data_inicio, String data_fim ->
+   salvo = ContratoTestDataAndOperations.createContrato(contratante,contratado,data_inicio,data_fim)
+
+}
+
+Then(~/^o contrato nao sera salvo no sistema pois ja existe um contrato valido com o contratante "(.*?)" e contratado "(.*?)"com data de inicio "(.*?)" e data de termino "(.*?)"$/) { String arg1, String arg2, String arg3, String arg4 ->
+
+    assert Contrato.findByContratante(arg1) !=null && !salvo
+    assert Contrato.findByContratado(arg2) != null &&  !salvo
+    assert Contrato.findByData_inicio(arg3) !=null && !salvo
+    assert Contrato.findByData_termino(arg4) !=null && !salvo
+}
+
 
 
