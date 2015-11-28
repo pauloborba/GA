@@ -8,9 +8,10 @@ import geb.Page
 class Home extends Page {
 
     def tituloEng = "User List"
+    def tituloPt = "User Listagem"
     static url = "/GA/user/index"
 
     static at = {
-        title ==~ tituloEng
+        (title ==~ tituloEng) || (title ==~ tituloPt)
     }
 }
