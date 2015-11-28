@@ -88,5 +88,25 @@ Then(~/^o contrato nao sera salvo no sistema pois ja existe um contrato valido c
     assert Contrato.findByData_termino(arg4) !=null && !salvo
 }
 
+Given(~'^o contrato aparece na lista de contratos cadastrados$') { ->
+    at ContratoPage
+}
+When(~/^preencho os detalhes com contratante "([^"]*)", contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)",valor "([^"]*)"$/) { String contratante, String contratado, String inicio, String termino, String valor ->
+    at CreateContratoPage
+    page.fillContratoDetails(contratante,contratado,inicio,termino,valor)
+}
+When(~/^seleciono a opção Create$/) { ->
+    page.selectCreateContrato()
+}
+
+
+Then(~'^aparecera uma mensagem de erro na tela$') { ->
+
+    at CreateContratoPage
+    def hashMessage = page.hasMessage()
+    assert hashMessage !=null
+
+    }
+
 
 
