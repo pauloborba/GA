@@ -7,13 +7,7 @@ class CreateAtletaPage extends Page {
 
     def tituloEng = "Create Atleta"
     def tituloPt = "Criar Atleta"
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> Resolvido problema com titulos em portugues/ingles
-=======
->>>>>>> Atualizando arquivos
     static url = "/GA/atleta/create"
 
     static at = {

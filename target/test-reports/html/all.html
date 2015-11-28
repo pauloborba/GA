@@ -14,7 +14,9 @@
         Unit Test Results
      - All tests </h1>
 <p class="intro">
-                        A single test executed
+                        Executed
+                        16
+                        tests
                     
                         without a single error or failure!
                     </p>
@@ -41,19 +43,91 @@
 <div class="clear"></div>
 <div class="testsuite success">
 <div class="header">
-<h2>new book entry</h2>
+<h2>Atleta</h2>
 <h3>
-                        A single test executed
+                        Executed
+                        8
+                        tests
                     
                         without a single error or failure!
                     </h3>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="new book">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar atleta novo">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">new book</b>
+<span class="icon success"></span><b class="testname message success">Adicionar atleta novo</b>
 </p>
-<p class="summary">Executed in 5.377 seconds.</p>
+<p class="summary">Executed in 0.571 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar atleta duplicado">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adicionar atleta duplicado</b>
+</p>
+<p class="summary">Executed in 0.148 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar Atleta novo web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adicionar Atleta novo web</b>
+</p>
+<p class="summary">Executed in 15.108 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar atleta duplicado web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adicionar atleta duplicado web</b>
+</p>
+<p class="summary">Executed in 3.183 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Editar cpf Atleta">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Editar cpf Atleta</b>
+</p>
+<p class="summary">Executed in 0.136 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Editar atleta e deixar campos obrigatorios em branco">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Editar atleta e deixar campos obrigatorios em branco</b>
+</p>
+<p class="summary">Executed in 0.096 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Editar Atleta web sucesso">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Editar Atleta web sucesso</b>
+</p>
+<p class="summary">Executed in 4.423 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Edicao falha de dados do atleta">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Edicao falha de dados do atleta</b>
+</p>
+<p class="summary">Executed in 2.096 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -61,22 +135,280 @@
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">Feature: new book entry
-  As a book owner
-  I want to add books I own to the book tracker
-  so that I do not have to remember them by myself
+<pre class="stdout">Feature: Atleta
+  As a usuario cadastrado no sistema
+  I want adicionar e editar atletas
+  So that eu possa gerenciar as informacoes dos atletas
 
---Output from new book--
-  Scenario: new book                               # NewBook.feature:6
-    Given I open the book tracker                  # Book_Steps.groovy:5
-    When I add "Specification by Example"          # Book_Steps.groovy:10
-    Then I see "Specification by Example"s details # Book_Steps.groovy:14
+--Output from Adicionar atleta novo--
+--Output from Adicionar atleta duplicado--
+  Scenario: Adicionar atleta novo                                                  # Atleta.feature:6
+    Given o sistema nao tem o atleta com o CPF "09719992836"                       # AtletaSteps.groovy:13
+    When eu adiciono o atleta com o CPF "09719992836"                              # AtletaSteps.groovy:17
+    Then o atleta com o CPF "09719992836" esta devidamente armazenado pelo sistema # AtletaSteps.groovy:21
+
+--Output from Adicionar Atleta novo web--
+  Scenario: Adicionar atleta duplicado                                # Atleta.feature:11
+    Given o atleta esta armazenado no sistema com o CPF "08976898765" # AtletaSteps.groovy:111
+    When eu adicionar o atleta com o CPF "08976898765"                # AtletaSteps.groovy:115
+    Then o atleta com o CPF "08976898765" nao e armazenado duas vezes # AtletaSteps.groovy:119
+
+--Output from Adicionar atleta duplicado web--
+  Scenario: Adicionar Atleta novo web                                                                                                                                                                                           # Atleta.feature:16
+    Given estou no menu de Atleta                                                                                                                                                                                               # AtletaSteps.groovy:63
+    And o atleta nao aparece na lista de atletas cadastrados                                                                                                                                                                    # AtletaSteps.groovy:67
+    When eu seleciono a opcao New Atleta                                                                                                                                                                                        # AtletaSteps.groovy:71
+    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true" # AtletaSteps.groovy:76
+    And eu seleciono a opcao Create                                                                                                                                                                                             # AtletaSteps.groovy:81
+    Then poderei ver os detalhes do atleta salvo no sistema                                                                                                                                                                     # AtletaSteps.groovy:85
+
+--Output from Editar cpf Atleta--
+  Scenario: Adicionar atleta duplicado web                                                                                                                                                                                      # Atleta.feature:25
+    Given estou no menu de Atletas                                                                                                                                                                                              # AtletaSteps.groovy:123
+    And o atleta aparece na lista de atletas cadastrados                                                                                                                                                                        # AtletaSteps.groovy:128
+    When eu seleciono a opcao New Atleta                                                                                                                                                                                        # AtletaSteps.groovy:71
+    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true" # AtletaSteps.groovy:76
+    And eu seleciono a opcao Create                                                                                                                                                                                             # AtletaSteps.groovy:81
+    Then eu poderei ver uma mensagem de erro                                                                                                                                                                                    # AtletaSteps.groovy:132
+
+--Output from Editar atleta e deixar campos obrigatorios em branco--
+  Scenario: Editar cpf Atleta                                                             # Atleta.feature:33
+    Given o sistema possui um atleta com cpf "08976898765"                                # AtletaSteps.groovy:26
+    When eu edito o cpf para "08976898763"                                                # AtletaSteps.groovy:32
+    Then O sistema deve armazenar o atleta com a nova informacao de cpf no banco de dados # AtletaSteps.groovy:37
+
+--Output from Editar Atleta web sucesso--
+  Scenario: Editar atleta e deixar campos obrigatorios em branco # Atleta.feature:38
+    Given o sistema possui um atleta com cpf "08976898765"       # AtletaSteps.groovy:26
+    When eu nao preencho o campo cpf                             # AtletaSteps.groovy:92
+    And confirmo minhas mudancas                                 # AtletaSteps.groovy:96
+    Then O sistema nao devera armazenar as mudancas              # AtletaSteps.groovy:100
+
+--Output from Edicao falha de dados do atleta--
+  Scenario: Editar Atleta web sucesso                                                 # Atleta.feature:44
+    Given estou na pagina de editar atletas                                           # AtletaSteps.groovy:41
+    When eu preencho o campo de cpf com "11281727373"                                 # AtletaSteps.groovy:45
+    And eu preencho os campos requeridos corretamente                                 # AtletaSteps.groovy:48
+    And envio minhas mudancas                                                         # AtletaSteps.groovy:51
+    Then eu devo ver uma mensagem indicando que as mudancas foram salvas corretamente # AtletaSteps.groovy:54
+
+  Scenario: Edicao falha de dados do atleta                       # Atleta.feature:51
+    Given estou na pagina de editar atletas                       # AtletaSteps.groovy:41
+    When eu preencho o campo de cpf com ""                        # AtletaSteps.groovy:45
+    And eu preencho os campos requeridos corretamente             # AtletaSteps.groovy:48
+    And envio minhas mudancas                                     # AtletaSteps.groovy:51
+    Then eu devo ver uma mensagem indicando que um erro aconteceu # AtletaSteps.groovy:105
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
 <pre class="syserr">
---Output from new book--</pre>
+--Output from Adicionar atleta novo--
+--Output from Adicionar atleta duplicado--
+--Output from Adicionar Atleta novo web--
+--Output from Adicionar atleta duplicado web--
+--Output from Editar cpf Atleta--
+--Output from Editar atleta e deixar campos obrigatorios em branco--
+--Output from Editar Atleta web sucesso--
+--Output from Edicao falha de dados do atleta--</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testsuite success">
+<div class="header">
+<h2>Contrato</h2>
+<h3>
+                        Executed
+                        4
+                        tests
+                    
+                        without a single error or failure!
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="adicionar novo contrato">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">adicionar novo contrato</b>
+</p>
+<p class="summary">Executed in 0.159 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="adicionar novo contrato web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">adicionar novo contrato web</b>
+</p>
+<p class="summary">Executed in 4.18 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="adicionar novo contrato com data de termino antes do prazo acabar">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">adicionar novo contrato com data de termino antes do prazo acabar</b>
+</p>
+<p class="summary">Executed in 0.09 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="adicionar novo contrato com data de termino antes do prazo acabar web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">adicionar novo contrato com data de termino antes do prazo acabar web</b>
+</p>
+<p class="summary">Executed in 1.855 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">Feature: Contrato
+  As a usuario do sistema
+  I want adicionar e cancelar contrato
+  So that eu posso gerenciar os contratos dos atletas de um clube
+
+--Output from adicionar novo contrato--
+--Output from adicionar novo contrato web--
+  Scenario: adicionar novo contrato                                                                                                                   # Contrato.feature:7
+    Given nao existe o contrato com contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"     # ContratoSteps.groovy:11
+    When eu crio um novo contrato com o contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016" # ContratoSteps.groovy:20
+    Then o contrato sera salvo no sistema                                                                                                             # ContratoSteps.groovy:30
+
+--Output from adicionar novo contrato com data de termino antes do prazo acabar--
+  Scenario: adicionar novo contrato web                                                                                                             # Contrato.feature:12
+    Given eu estou na pagina de Contrato                                                                                                            # ContratoSteps.groovy:38
+    And eu visualizo a lista de todos os contratos                                                                                                  # ContratoSteps.groovy:43
+    When eu seleciono a op&ccedil;&atilde;o New Contrato                                                                                                          # ContratoSteps.groovy:48
+    And preencho os detalhes com contratante "Nautico",contratado "Arthur", data de in&iacute;cio "19/10/2015" ,data de termino "19/10/2016", valor "1200" # ContratoSteps.groovy:53
+    And eu seleciono a op&ccedil;&atilde;o Create                                                                                                                 # ContratoSteps.groovy:61
+    Then poderei ver os detalhes do contrato salvos no sistema                                                                                      # ContratoSteps.groovy:64
+
+--Output from adicionar novo contrato com data de termino antes do prazo acabar web--
+  Scenario: adicionar novo contrato com data de termino antes do prazo acabar                                                                                                                    # Contrato.feature:20
+    Given existe o contrato com contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"                                                    # ContratoSteps.groovy:69
+    When eu adicionar o contrato com o contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"                                             # ContratoSteps.groovy:78
+    Then o contrato nao sera salvo no sistema pois ja existe um contrato valido com o contratante "Nautico" e contratado "Gabriel"com data de inicio "21/01/2015" e data de termino "21/01/2016" # ContratoSteps.groovy:83
+
+  Scenario: adicionar novo contrato com data de termino antes do prazo acabar web                                                                        # Contrato.feature:26
+    Given eu estou na pagina de Contrato                                                                                                                 # ContratoSteps.groovy:38
+    And eu visualizo a lista de todos os contratos                                                                                                       # ContratoSteps.groovy:43
+    And o contrato aparece na lista de contratos cadastrados                                                                                             # ContratoSteps.groovy:91
+    When eu seleciono a op&ccedil;&atilde;o New Contrato                                                                                                               # ContratoSteps.groovy:48
+    And preencho os detalhes com contratante "Nautico", contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016",valor "1200" # ContratoSteps.groovy:94
+    And seleciono a op&ccedil;&atilde;o Create                                                                                                                         # ContratoSteps.groovy:98
+    Then aparecera uma mensagem de erro na tela                                                                                                          # ContratoSteps.groovy:103
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">
+--Output from adicionar novo contrato--
+--Output from adicionar novo contrato web--
+--Output from adicionar novo contrato com data de termino antes do prazo acabar--
+--Output from adicionar novo contrato com data de termino antes do prazo acabar web--</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testsuite success">
+<div class="header">
+<h2>User</h2>
+<h3>
+                        Executed
+                        4
+                        tests
+                    
+                        without a single error or failure!
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Tentando logar usando credenciais corretas web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Tentando logar usando credenciais corretas web</b>
+</p>
+<p class="summary">Executed in 1.603 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Tentando logar usando credenciais erradas web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Tentando logar usando credenciais erradas web</b>
+</p>
+<p class="summary">Executed in 0.924 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Tentando logar usando credenciais corretas">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Tentando logar usando credenciais corretas</b>
+</p>
+<p class="summary">Executed in 0.125 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Tentando logar usando nome de usu&aacute;rio errado">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Tentando logar usando nome de usu&aacute;rio errado</b>
+</p>
+<p class="summary">Executed in 0.01 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">Feature: User
+  
+  As a membro de um grupo de atletas
+  I want acessar o sistema de gerenciamento de atletas
+  So that eu posso usar todas as funcionalidades
+
+--Output from Tentando logar usando credenciais corretas web--
+--Output from Tentando logar usando credenciais erradas web--
+  Scenario: Tentando logar usando credenciais corretas web                                                 # User.feature:7
+    Given estou na pagina de login                                                                         # UserSteps.groovy:10
+    When eu aperto entrar apos preencher o campo de login e senha com "admin" e "senha123" respectivamente # UserSteps.groovy:15
+    Then eu serei redirecionado para a pagina inicial                                                      # UserSteps.groovy:25
+
+--Output from Tentando logar usando credenciais corretas--
+  Scenario: Tentando logar usando credenciais erradas web                                                  # User.feature:12
+    Given estou na pagina de login                                                                         # UserSteps.groovy:10
+    When eu aperto entrar apos preencher o campo de login e senha com "adnin" e "senha123" respectivamente # UserSteps.groovy:15
+    Then eu permaneco na pagina de login                                                                   # UserSteps.groovy:20
+
+--Output from Tentando logar usando nome de usu&aacute;rio errado--
+  Scenario: Tentando logar usando credenciais corretas                     # User.feature:18
+    Given que o login "admin" esta cadastrado no sistema                   # UserSteps.groovy:34
+    When eu tento acessar o sistema com o login "admin" e senha "senha123" # UserSteps.groovy:39
+    Then eu consigo acessar o gerenciador de atletas                       # UserSteps.groovy:47
+
+  Scenario: Tentando logar usando nome de usu&aacute;rio errado                   # User.feature:24
+    Given que o login "adnin" nao esta cadastrado no sistema               # UserSteps.groovy:29
+    When eu tento acessar o sistema com o login "adnin" e senha "senha123" # UserSteps.groovy:39
+    Then eu nao consigo acessar o gerenciador de atletas                   # UserSteps.groovy:43
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">
+--Output from Tentando logar usando credenciais corretas web--
+--Output from Tentando logar usando credenciais erradas web--
+--Output from Tentando logar usando credenciais corretas--
+--Output from Tentando logar usando nome de usu&aacute;rio errado--</pre>
 </div>
 </div>
 <div class="clear"></div>
