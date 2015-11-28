@@ -30,7 +30,7 @@ web-app/WEB-INF/tld/fmt.tld
 /eclipse
 
 # Itellij Idea Workspace
-<<<<<<< HEAD
+
 .idea/dictionaries/*
 .idea/libraries/*
 .idea/workspace.xml
@@ -39,5 +39,6 @@ web-app/WEB-INF/tld/fmt.tld
 
 
 # Gradle files
-/.gradle/*
+.gradle/*
 /build/
+/GA.iml
