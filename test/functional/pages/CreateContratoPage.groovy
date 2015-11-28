@@ -3,12 +3,13 @@ package pages
 import geb.Page
 
 class CreateContratoPage extends Page{
-    def titulo = "Criar Contrato"
+    def tituloEng = "Create Contrato"
+    def tituloPt = "Criar Contrato"
+    
     static url = "/GA/contrato/create"
 
-
     static at  = {
-        title ==~ titulo
+        (title ==~ tituloPt) || (title ==~ tituloEng)
     }
 
     def  fillContratoDetails(String contratante, String contratado,String datainicio,String datatermino,String valor){
