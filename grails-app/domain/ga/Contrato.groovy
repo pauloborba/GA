@@ -1,5 +1,6 @@
 package ga
 
+
 class Contrato {
 
     String contratado
@@ -9,11 +10,15 @@ class Contrato {
     double valor
 
     static constraints = {
-        contratado null : false
+        contratado unique : true
         contratante null : false
         data_inicio null : false
         data_termino null : false
         valor null : false
 
     }
+
+
+
+
 }
