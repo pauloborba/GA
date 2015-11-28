@@ -3,7 +3,6 @@ Feature: Contrato
   I want adicionar e cancelar contrato
   So that eu posso gerenciar os contratos dos atletas de um clube
 
-
   Scenario: adicionar novo contrato
     Given nao existe o contrato com contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"
     When eu crio um novo contrato com o contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"
