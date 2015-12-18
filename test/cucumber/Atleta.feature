@@ -8,20 +8,18 @@ Feature: Atleta
     When eu adiciono o atleta com o CPF "09719992836"
     Then o atleta com o CPF "09719992836" esta devidamente armazenado pelo sistema
 
-   Scenario: Adicionar atleta duplicado
+  Scenario: Adicionar atleta duplicado
     Given o atleta esta armazenado no sistema com o CPF "08976898765"
     When eu adicionar o atleta com o CPF "08976898765"
     Then o atleta com o CPF "08976898765" nao e armazenado duas vezes
 
-   Scenario: Adicionar Atleta novo web
+  Scenario: Adicionar Atleta novo web
     Given estou no menu de Atleta
-    And o atleta nao aparece na lista de atletas cadastrados
-    When eu seleciono a opcao New Atleta
-    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true"
-    And eu seleciono a opcao Create
+    And o atleta com o cpf "08976898765" nao aparece na lista de atletas cadastrados
+    When eu tento adicionar um novo atleta com CPF "08976898765"
     Then poderei ver os detalhes do atleta salvo no sistema
     
- Scenario: Adicionar atleta duplicado web
+  Scenario: Adicionar atleta duplicado web
     Given estou no menu de Atletas
     And o atleta aparece na lista de atletas cadastrados
     When eu seleciono a opcao New Atleta
