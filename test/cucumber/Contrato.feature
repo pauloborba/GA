@@ -25,9 +25,7 @@ Feature: Contrato
     Given eu estou na pagina de Contrato
     And  eu visualizo a lista de todos os contratos
     And  o contrato aparece na lista de contratos cadastrados
-    When eu seleciono a opção New Contrato
-    And preencho os detalhes com contratante "Nautico", contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016",valor "1200"
-    And seleciono a opção Create
+    When eu tento adicionar um contrato com contratante "Nautico", contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016",valor "1200"
     Then aparecera uma mensagem de erro na tela
 
 
