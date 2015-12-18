@@ -12,9 +12,7 @@ Feature: Contrato
   Scenario: adicionar novo contrato web
     Given eu estou na pagina de Contrato
     And eu visualizo a lista de todos os contratos
-    When eu seleciono a opção New Contrato
-    And preencho os detalhes com contratante "Nautico",contratado "Arthur", data de início "19/10/2015" ,data de termino "19/10/2016", valor "1200"
-    And eu seleciono a opção Create
+    When eu tento adicionar um contrato com contratante "Nautico",contratado "Arthur", data de início "19/10/2015" ,data de termino "19/10/2016", valor "1200"
     Then poderei ver os detalhes do contrato salvos no sistema
 
   Scenario: adicionar novo contrato com data de termino antes do prazo acabar
