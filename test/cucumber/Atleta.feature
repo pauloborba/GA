@@ -20,7 +20,7 @@ Feature: Atleta
     Then poderei ver os detalhes do atleta salvo no sistema
     
   Scenario: Adicionar atleta duplicado web
-    Given estou no menu de Atletas
+    Given estou no menu de Atleta
     And o atleta o cpf "08976898765" aparece na lista de atletas cadastrados
     When eu tento adicionar um atleta com CPF "08976898765"
     Then eu poderei ver uma mensagem de erro
