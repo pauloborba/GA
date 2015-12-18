@@ -21,10 +21,8 @@ Feature: Atleta
     
   Scenario: Adicionar atleta duplicado web
     Given estou no menu de Atletas
-    And o atleta aparece na lista de atletas cadastrados
-    When eu seleciono a opcao New Atleta
-    And eu preencho os dados do atleta com nome "Gabriel", email "ghdr@cin.ufpe.br", telefone "99878798", CPF "08976898765", RG "8765667", altura "1,75", peso "70", posicao "atacante", categoria "sub 17" e alojamento "true"
-    And eu seleciono a opcao Create
+    And o atleta o cpf "08976898765" aparece na lista de atletas cadastrados
+    When eu tento adicionar um atleta com CPF "08976898765"
     Then eu poderei ver uma mensagem de erro
 
   @ignore
