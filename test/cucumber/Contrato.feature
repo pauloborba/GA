@@ -18,7 +18,7 @@ Feature: Contrato
   Scenario: adicionar novo contrato com data de termino antes do prazo acabar
     Given existe o contrato com contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"
     When eu adicionar o contrato com o contratante "Nautico" e o contratado "Gabriel" com data de inicio "21/01/2015" e data de termino "21/01/2016"
-    Then o contrato nao sera salvo no sistema pois ja existe um contrato valido com o contratante "Nautico" e contratado "Gabriel"com data de inicio "21/01/2015" e data de termino "21/01/2016"
+    Then o contrato nao sera salvo no sistema pois o contrato já existe
 
 
   Scenario: adicionar novo contrato com data de termino antes do prazo acabar web
