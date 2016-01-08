@@ -17,12 +17,12 @@ Feature: Atleta
     Given estou no menu de Atleta
     And o atleta com o cpf "08976898765" nao aparece na lista de atletas cadastrados
     When eu tento adicionar um novo atleta com nome "Rodolfo", email "rjpm@cin.ufpe.br", telefone "987655562", CPF "08976898765", RG "87655565", altura "1,75", peso "70", posicao "goleiro", categoria "sub 17" e alojamento "true"
-    Then poderei ver os detalhes do atleta salvo no sistema
+    Then poderei ver o atleta salvo na lista de atletas
     
   Scenario: Adicionar atleta duplicado web
     Given estou no menu de Atleta
     And o atleta o cpf "08976898765" aparece na lista de atletas cadastrados
-    When eu tento adicionar um atleta com CPF "08976898765"
+    When eu tento adicionar um atleta com nome "Rodolfo", email "rjpm@cin.ufpe.br", telefone "987655562", CPF "08976898765", RG "87655565", altura "1,75", peso "70", posicao "goleiro", categoria "sub 17" e alojamento "true"
     Then eu poderei ver uma mensagem de erro
 
   @ignore
