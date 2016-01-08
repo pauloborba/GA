@@ -88,11 +88,12 @@ Then(~/^o contrato nao sera salvo no sistema pois o contrato já existe$/) { ->
 Given(~'^o contrato aparece na lista de contratos cadastrados$') { ->
     at ContratoPage
 }
-When(~/^preencho os detalhes com contratante "([^"]*)", contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)",valor "([^"]*)"$/) { String contratante, String contratado, String inicio, String termino, String valor ->
+
+When(~'^eu tento adicionar um contrato com contratante "([^"]*)", contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)",valor "([^"]*)"$') { String contratante, String contratado, String inicio, String termino, String valor ->
+    to CreateContratoPage
     at CreateContratoPage
     page.fillContratoDetails(contratante,contratado,inicio,termino,valor)
-}
-When(~/^seleciono a opção Create$/) { ->
+
     page.selectCreateContrato()
 }
 
@@ -104,6 +105,7 @@ Then(~'^aparecera uma mensagem de erro na tela$') { ->
     assert hashMessage !=null
 
     }
+
 
 
 
