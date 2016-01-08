@@ -77,15 +77,18 @@ Given(~'^existe o contrato com contratante "([^"]*)" e o contratado "([^"]*)" co
 }
 When(~'^eu adicionar o contrato com o contratante "([^"]*)" e o contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)"$') { String contratante, String contratado, String data_inicio, String data_fim ->
    salvo = ContratoTestDataAndOperations.createContrato(contratante,contratado,data_inicio,data_fim)
+    contratt = contratante
+    contratd = contratado
+    inicio = data_inicio
+    fim = data_fim
+
 
 }
-
-Then(~/^o contrato nao sera salvo no sistema pois ja existe um contrato valido com o contratante "(.*?)" e contratado "(.*?)"com data de inicio "(.*?)" e data de termino "(.*?)"$/) { String arg1, String arg2, String arg3, String arg4 ->
-
-    assert Contrato.findByContratante(arg1) !=null && !salvo
-    assert Contrato.findByContratado(arg2) != null &&  !salvo
-    assert Contrato.findByData_inicio(arg3) !=null && !salvo
-    assert Contrato.findByData_termino(arg4) !=null && !salvo
+Then(~/^o contrato nao sera salvo no sistema pois o contrato já existe$/) { ->
+    assert contratt != null && !salvo
+    assert contratd !=null && !salvo
+    assert inicio !=null && !salvo
+    assert fim !=null && !salvo
 }
 
 Given(~'^o contrato aparece na lista de contratos cadastrados$') { ->
