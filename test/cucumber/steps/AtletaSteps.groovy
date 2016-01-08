@@ -63,7 +63,7 @@ Given(~'^estou no menu de Atleta$') { ->
     to AtletaPage
     at AtletaPage
 }
-Given(~'^o atleta nao aparece na lista de atletas cadastrados$') { ->
+Given(~'^  o atleta com o cpf "([^"]*)" nao aparece na lista de atletas cadastrados$') { String arg1->
     at AtletaPage
 }
 
