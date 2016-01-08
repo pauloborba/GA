@@ -9,9 +9,9 @@ Feature: Atleta
     Then o atleta com o CPF "09719992836" esta devidamente armazenado pelo sistema
 
   Scenario: Adicionar atleta duplicado
-    Given o atleta esta armazenado no sistema com o CPF "08976898765"
-    When eu adicionar o atleta com o CPF "08976898765"
-    Then o atleta com o CPF "08976898765" nao e armazenado duas vezes
+    Given o atleta esta armazenado no sistema com o CPF "09719992836"
+    When eu adicionar o atleta com o CPF "09719992836"
+    Then o atleta com o CPF "09719992836" nao e armazenado duas vezes
 
   Scenario: Adicionar Atleta novo web
     Given estou no menu de Atleta
