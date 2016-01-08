@@ -92,12 +92,7 @@ Then(~/^o atleta com o CPF "([^"]*)" nao e armazenado duas vezes$/) { String arg
     assert Atleta.findByCpf(arg1) != null && !saved
 }
 
-Given(~/^estou no menu de Atletas$/) { ->
-    to AtletaPage
-    at AtletaPage
-
-}
-Given(~/^o atleta aparece na lista de atletas cadastrados$/) { ->
+Given(~/^o atleta com o cpf "([^"]*)" aparece na lista de atletas cadastrados$/) { String arg1 ->
     at AtletaPage
 
 }
@@ -105,6 +100,5 @@ Then(~/^eu poderei ver uma mensagem de erro$/) { ->
     to CreateAtletaPage
     at CreateAtletaPage
     def hasMessage = page.hasMessage()
-
     assert hasMessage != null
 }
