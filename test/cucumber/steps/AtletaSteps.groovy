@@ -28,12 +28,11 @@ Given(~'^o sistema possui um atleta com cpf "([^"]*)"$') { String arg1->
     atleta = Atleta.findByCpf(arg1)
     assert atleta != null
 }
-
 When(~/^eu edito o cpf para "(.*?)"/) { String novoCpf ->
     cpf = novoCpf
     AtletaTestDataAndOperations.editAtletaCpf(cpf, atleta)
-}
 
+}
 Then(~'^O sistema deve armazenar o atleta com a nova informacao de cpf no banco de dados$') {->
     assert Atleta.findByCpf(cpf) != null
 }
@@ -64,48 +63,21 @@ Given(~'^estou no menu de Atleta$') { ->
     to AtletaPage
     at AtletaPage
 }
-Given(~'^o atleta nao aparece na lista de atletas cadastrados$') { ->
+Given(~'^o atleta com o cpf "([^"]*)" nao aparece na lista de atletas cadastrados$') { String arg1 ->
     at AtletaPage
+    assert AtletaTestDataAndOperations.findAtletaByCpf(arg1) == null
 }
 
-When(~'^eu seleciono a opcao New Atleta$') {  ->
+When(~'^eu tento adicionar um novo atleta com nome "([^"]*)", email "([^"]*)", telefone "([^"]*)", CPF "([^"]*)", RG "([^"]*)", altura "([^"]*)", peso "([^"]*)", posicao "([^"]*)", categoria "([^"]*)" e alojamento "([^"]*)"$') { String nome, String email, String telefone, String cpf, String rg, String altura, String peso, String posicao, String categoria, boolean alojamento ->
     to CreateAtletaPage
     at CreateAtletaPage
-}
-
-When(~'^eu preencho os dados do atleta com nome "([^"]*)", email "([^"]*)", telefone "([^"]*)", CPF "([^"]*)", RG "([^"]*)", altura "([^"]*)", peso "([^"]*)", posicao "([^"]*)", categoria "([^"]*)" e alojamento "([^"]*)"$') { String nome, String email, String telefone, String cpf, String rg, String altura, String peso, String posicao, String categoria, boolean alojamento ->
-    at CreateAtletaPage
     page.fillAtletaDetails(nome, email, telefone, cpf, rg, altura, peso, posicao, categoria, alojamento)
-}
-
-When(~'^eu seleciono a opcao Create$') { ->
     page.selectCreateAtleta()
 }
 
-Then(~'^poderei ver os detalhes do atleta salvo no sistema$') { ->
+Then(~'^poderei ver o atleta salvo na lista de atletas$') { ->
     to AtletaPage
     at AtletaPage
-}
-
-//-------CAMPOS OBRIGATORIOS EM BRANCO-------
-
-When(~'^eu nao preencho o campo cpf$'){ ->
-    nullCpf = null
-}
-
-And(~'^confirmo minhas mudancas$'){ ->
-    AtletaTestDataAndOperations.editAtletaCpf(nullCpf, atleta)
-}
-
-Then(~'^O sistema nao devera armazenar as mudancas'){ ->
-    assert Atleta.findByCpf(cpf) != null
-}
-//-------Edição Falha WEB-------
-
-Then(~'^eu devo ver uma mensagem indicando que um erro aconteceu$'){ ->
-    at AtletaEditPage
-    def errorBoolean = page.hasInvalidMessage()
-    assert errorBoolean != false
 }
 
 Given(~/^o atleta esta armazenado no sistema com o CPF "([^"]*)"$/) { String arg1 ->
@@ -120,12 +92,7 @@ Then(~/^o atleta com o CPF "([^"]*)" nao e armazenado duas vezes$/) { String arg
     assert Atleta.findByCpf(arg1) != null && !saved
 }
 
-Given(~/^estou no menu de Atletas$/) { ->
-    to AtletaPage
-    at AtletaPage
-
-}
-Given(~/^o atleta aparece na lista de atletas cadastrados$/) { ->
+Given(~/^o atleta com o cpf "([^"]*)" aparece na lista de atletas cadastrados$/) { String arg1 ->
     at AtletaPage
 
 }
@@ -133,6 +100,5 @@ Then(~/^eu poderei ver uma mensagem de erro$/) { ->
     to CreateAtletaPage
     at CreateAtletaPage
     def hasMessage = page.hasMessage()
-
     assert hasMessage != null
 }
