@@ -43,28 +43,22 @@ Given(~'^eu estou na pagina de Contrato$') { ->
 Given(~'eu visualizo a lista de todos os contratos$') { ->
 
     at ContratoPage
+    contratos = Contrato.findAll()
+    assert contratos != null
 }
-
-When(~'^eu seleciono a opção New Contrato$') { ->
+When(~/^eu tento adicionar um contrato com contratante "(.*?)",contratado "(.*?)", data de início "(.*?)" ,data de termino "(.*?)", valor "(.*?)"$/) { String contratante, String contratado, String data_inicio, String data_termino, String valor ->
     to CreateContratoPage
     at CreateContratoPage
-}
 
-When(~'^preencho os detalhes com contratante "([^"]*)",contratado "([^"]*)", data de início "([^"]*)" ,data de termino "([^"]*)", valor "([^"]*)"$')
-        { String contratante, String contratado, String data_inicio, String data_termino, String valor ->
-
-            at CreateContratoPage
-            page.fillContratoDetails(contratante,contratado,data_inicio,data_termino,valor)
-
-
-        }
-When(~'^eu seleciono a opção Create$') { ->
+    page.fillContratoDetails(contratante,contratado,data_inicio,data_termino,valor)
     page.selectCreateContrato()
 }
-Then(~'^poderei ver os detalhes do contrato salvos no sistema$') { ->
+
+Then(~/^poderei ver o contrato salvo na lista de contratos$/) { ->
     to ContratoPage
     at ContratoPage
 }
+
 
 Given(~'^existe o contrato com contratante "([^"]*)" e o contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)"$') {
     String contratante, String contratado, String inicio, String fim  ->
@@ -77,25 +71,29 @@ Given(~'^existe o contrato com contratante "([^"]*)" e o contratado "([^"]*)" co
 }
 When(~'^eu adicionar o contrato com o contratante "([^"]*)" e o contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)"$') { String contratante, String contratado, String data_inicio, String data_fim ->
     salvo = ContratoTestDataAndOperations.createContrato(contratante,contratado,data_inicio,data_fim)
+    contratt = contratante
+    contratd = contratado
+    inicio = data_inicio
+    fim = data_fim
+
 
 }
-
-Then(~/^o contrato nao sera salvo no sistema pois ja existe um contrato valido com o contratante "(.*?)" e contratado "(.*?)"com data de inicio "(.*?)" e data de termino "(.*?)"$/) { String arg1, String arg2, String arg3, String arg4 ->
-
-    assert Contrato.findByContratante(arg1) !=null && !salvo
-    assert Contrato.findByContratado(arg2) != null &&  !salvo
-    assert Contrato.findByData_inicio(arg3) !=null && !salvo
-    assert Contrato.findByData_termino(arg4) !=null && !salvo
+Then(~/^o contrato nao sera salvo no sistema pois o contrato já existe$/) { ->
+    assert contratt != null && !salvo
+    assert contratd !=null && !salvo
+    assert inicio !=null && !salvo
+    assert fim !=null && !salvo
 }
 
 Given(~'^o contrato aparece na lista de contratos cadastrados$') { ->
     at ContratoPage
 }
-When(~/^preencho os detalhes com contratante "([^"]*)", contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)",valor "([^"]*)"$/) { String contratante, String contratado, String inicio, String termino, String valor ->
+
+When(~'^eu tento adicionar um contrato com contratante "([^"]*)", contratado "([^"]*)" com data de inicio "([^"]*)" e data de termino "([^"]*)",valor "([^"]*)"$') { String contratante, String contratado, String inicio, String termino, String valor ->
+    to CreateContratoPage
     at CreateContratoPage
     page.fillContratoDetails(contratante,contratado,inicio,termino,valor)
-}
-When(~/^seleciono a opção Create$/) { ->
+
     page.selectCreateContrato()
 }
 
@@ -107,5 +105,6 @@ Then(~'^aparecera uma mensagem de erro na tela$') { ->
     assert hashMessage !=null
 
 }
+
 
 
