@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ee9c426-8a1d-47aa-a5d1-7d6d97b793b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config.class" afterPath="$PROJECT_DIR$/target/classes/Config.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CucumberConfig.class" afterPath="$PROJECT_DIR$/target/classes/CucumberConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource.class" afterPath="$PROJECT_DIR$/target/classes/DataSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/functional/GebConfig.class" afterPath="$PROJECT_DIR$/target/test-classes/functional/GebConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UrlMappings.class" afterPath="$PROJECT_DIR$/target/classes/UrlMappings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources.class" afterPath="$PROJECT_DIR$/target/classes/resources.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/Atleta.feature" afterPath="$PROJECT_DIR$/test/cucumber/Atleta.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/Contrato.feature" afterPath="$PROJECT_DIR$/test/cucumber/Contrato.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/steps/ContratoSteps.groovy" afterPath="$PROJECT_DIR$/test/cucumber/steps/ContratoSteps.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/steps/ContratoTestDataAndOperations.groovy" afterPath="$PROJECT_DIR$/test/functional/steps/ContratoTestDataAndOperations.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/pages/CreateContratoPage.groovy" afterPath="$PROJECT_DIR$/test/functional/pages/CreateContratoPage.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GA-grailsPlugins.iml" afterPath="$PROJECT_DIR$/GA-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GA.iml" afterPath="$PROJECT_DIR$/GA.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/GebConfig.groovy" afterPath="$PROJECT_DIR$/test/functional/GebConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GA.iws" />
@@ -68,12 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GebConfig.groovy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/functional/GebConfig.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7761194">
+              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,11 +113,11 @@
         <option value="$PROJECT_DIR$/test/functional/pages/CreateContratoPage.groovy" />
         <option value="$PROJECT_DIR$/test/cucumber/Contrato.feature" />
         <option value="$PROJECT_DIR$/test/cucumber/steps/ContratoSteps.groovy" />
-        <option value="$PROJECT_DIR$/test/functional/GebConfig.groovy" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
         <option value="$PROJECT_DIR$/test/cucumber/Atleta.feature" />
         <option value="$PROJECT_DIR$/test/cucumber/steps/AtletaSteps.groovy" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/test/functional/GebConfig.groovy" />
       </list>
     </option>
   </component>
@@ -200,6 +195,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functional" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -606,12 +619,12 @@
       <workItem from="1448750402977" duration="338000" />
       <workItem from="1452275883455" duration="114000" />
       <workItem from="1452565146589" duration="4576000" />
-      <workItem from="1452570054565" duration="1365000" />
+      <workItem from="1452570054565" duration="1735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14857000" />
+    <option name="totallyTimeSpent" value="15227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
@@ -1043,14 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/functional/GebConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3432836">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9946524">
@@ -1064,6 +1069,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/functional/GebConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7761194">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
