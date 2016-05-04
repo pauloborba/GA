@@ -1,34 +1,34 @@
-Feature: Cota de jogos e salário
-As a: Usuário do sistema
-I want: Modificar cota de jogos e salário
+Feature: Cota de jogos e salÃ¡rio
+As a: UsuÃ¡rio do sistema
+I want: Modificar cota de jogos e salÃ¡rio
 So that: Eu possa gerenciar os custos de cada jogador
 
 Scenario: Jogos como Titular
-Given: Que o contrato do jogador “Kuki” está ativo
-And: E “Kuki” tem “8” jogos como titular
-When: “Kuki” é escalado como titular
-Then: Defina o número de jogos como titular de “Kuki” como “9”
+Given: O contrato do jogador â€œKukiâ€ estÃ¡ ativo
+And: E â€œKukiâ€ tem â€œ8â€ jogos como titular
+When: â€œKukiâ€ Ã© escalado como titular
+Then: O Sistema altera o nÃºmero de jogos como titular de â€œKukiâ€ para â€œ9â€
 
-Scenario: Modificar acréscimo de salário
-Given: Estou no menu de edição de salário
-And: O acréscimo de salário para “Kuki” seja de “R$ 5.000,00”
-When: Eu tento modificar para “R$ 4.000,00”
-Then: O acréscimo de salário é atualizado com sucesso
+Scenario: Modificar acrÃ©scimo de salÃ¡rio
+Given: Estou no menu de "ediÃ§Ã£o de salÃ¡rio"
+And: O acrÃ©scimo de salÃ¡rio para â€œKukiâ€ seja de â€œR$ 5.000,00â€
+When: Eu tento modificar o acrÃ©scimo de salÃ¡rio de "Kuki" para â€œR$ 4.000,00â€
+Then: O acrÃ©scimo de salÃ¡rio Ã© atualizado com sucesso
 
-Scenario: Modificar acréscimo de salário
-Given: Estou no menu de edição de salário
-And: O acréscimo de salário para “Kuki” seja de “R$ 6.000,00”
-When: Eu tento modificar para “R$ -3.000,00”
+Scenario: Modificar acrÃ©scimo de salÃ¡rio sem sucesso
+Given: Estou no menu de "ediÃ§Ã£o de salÃ¡rio"
+And: O acrÃ©scimo de salÃ¡rio para â€œKukiâ€ seja de â€œR$ 6.000,00â€
+When: Eu tento modificar o acrÃ©scimo de salÃ¡rio de "Kuki" para â€œR$ -3.000,00â€
 Then: Recebo uma mensagem de erro
 
 Scenario: Modificar cota de jogos
-Given: Estou no menu de edição de cota de jogos
-And: A cota de jogos como titular de “Kuki” seja “10”
-When: Eu tento modificar para “8”
-Then: A cota de jogos é atualizada com sucesso
+Given: Estou no menu de "ediÃ§Ã£o de cota de jogos"
+And: A cota de jogos como titular de â€œKukiâ€ seja â€œ10â€
+When: Eu tento modificar a cota de jogos como titular de â€œKukiâ€ para â€œ8â€
+Then: A cota de jogos Ã© atualizada com sucesso
 
-Scenario: Modificar cota de jogos
-Given: Estou no menu de edição de cota de jogos
-And: A cota de jogos como titular de “Kuki” seja “10”
-When: Eu tento modificar para “-15”
+Scenario: Modificar cota de jogos sem sucesso
+Given: Estou no menu de "ediÃ§Ã£o de cota de jogos"
+And: A cota de jogos como titular de â€œKukiâ€ seja â€œ10â€
+When: Eu tento modificar a cota de jogos como titular de â€œKukiâ€ para â€œ-15â€
 Then: Recebo uma mensagem de erro
