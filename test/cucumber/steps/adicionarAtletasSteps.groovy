@@ -1,3 +1,23 @@
+package steps
+
+import cucumber.api.PendingException
+import gaatleta.AtletaController
+import gaatleta.Atleta
+
+Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
+    atleta = Atleta.findByCPF(cpf)
+    assert atleta == null
+}
+
+When(~'^Eu adiciono o atleta de CPF"([^"]*)"$') { String cpf ->
+    Atletas.addAtleta(null, cpf, null, null)
+}
+
+Then(~'^O sistema adiciona o atleta com sucesso$') { String cpf ->
+    atleta = Atletas.findByCPF(cpf)
+    assert atleta != null
+}
+
 Given(~'^Estou no menu de Atletas$') { ->
     at AtletasPage
 }
@@ -20,16 +40,3 @@ Then(~'^Eu posso ver uma mensagem de sucesso e o nome "([^"]*)" e CPF "([^"]*)"$
     assert ConfirmationPage.selectCpf(cpf) == true
 }
 
-Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
-    atleta = Atletas.findByCPF(cpf)
-    assert atleta == null
-}
-
-When(~'^Eu adiciono o atleta de CPF"([^"]*)"$') { String cpf ->
-    Atletas.addAtleta(null, cpf, null, null)
-}
-
-Then(~'^O sistema adiciona o atleta com sucesso$') { String cpf ->
-    atleta = Atletas.findByCPF(cpf)
-    assert atleta != null
-}
