@@ -2783,3 +2783,727 @@ http://localhost:8080/book/list
 	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
 	at Book_Steps$_run_closure1.doCall(Book_Steps.groovy:6)
 	at ✽.Given I open the book tracker(NewBook.feature:7)
+2016-05-20 17:25:04,591 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:467)
+	at org.codehaus.groovy.grails.commons.spring.DefaultRuntimeSpringConfiguration.getApplicationContext(DefaultRuntimeSpringConfiguration.java:156)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.initializeContext(GrailsRuntimeConfigurator.java:188)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:168)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:127)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.configureWebApplicationContext(GrailsConfigUtils.java:126)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoaderListener.initWebApplicationContext(GrailsContextLoaderListener.java:109)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4992)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5490)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.initialize(TransactionManagerPostProcessor.java:74)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.setBeanFactory(TransactionManagerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	... 24 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 38 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:55)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:78)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:133)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:324)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1207)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1016)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at groovy.lang.Closure.call(Closure.java:417)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluateConstraints(DefaultConstraintEvaluator.java:105)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluate(DefaultConstraintEvaluator.java:298)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.initializeConstraints(DefaultGrailsDomainClass.java:756)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.getConstrainedProperties(DefaultGrailsDomainClass.java:747)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClassProperty.isOptional(DefaultGrailsDomainClassProperty.java:215)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindColumn(AbstractGrailsDomainBinder.java:2768)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2674)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2615)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleId(AbstractGrailsDomainBinder.java:2448)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindIdentity(AbstractGrailsDomainBinder.java:1740)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRootPersistentClassCommonValues(AbstractGrailsDomainBinder.java:1719)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRoot(AbstractGrailsDomainBinder.java:1412)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindClass(AbstractGrailsDomainBinder.java:1224)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.secondPassCompile(GrailsAnnotationConfiguration.java:167)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.buildSessionFactory(GrailsAnnotationConfiguration.java:372)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.doBuildSessionFactory(ConfigurableLocalSessionFactoryBean.java:479)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.buildSessionFactory(ConfigurableLocalSessionFactoryBean.java:473)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.afterPropertiesSet(ConfigurableLocalSessionFactoryBean.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 45 more
+2016-05-20 17:25:04,623 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.initialize(TransactionManagerPostProcessor.java:74)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.setBeanFactory(TransactionManagerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:467)
+	at org.codehaus.groovy.grails.commons.spring.DefaultRuntimeSpringConfiguration.getApplicationContext(DefaultRuntimeSpringConfiguration.java:156)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.initializeContext(GrailsRuntimeConfigurator.java:188)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:168)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:127)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.configureWebApplicationContext(GrailsConfigUtils.java:126)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoaderListener.initWebApplicationContext(GrailsContextLoaderListener.java:109)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4992)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5490)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 38 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:55)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:78)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:133)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:324)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1207)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1016)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at groovy.lang.Closure.call(Closure.java:417)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluateConstraints(DefaultConstraintEvaluator.java:105)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluate(DefaultConstraintEvaluator.java:298)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.initializeConstraints(DefaultGrailsDomainClass.java:756)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.getConstrainedProperties(DefaultGrailsDomainClass.java:747)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClassProperty.isOptional(DefaultGrailsDomainClassProperty.java:215)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindColumn(AbstractGrailsDomainBinder.java:2768)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2674)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2615)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleId(AbstractGrailsDomainBinder.java:2448)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindIdentity(AbstractGrailsDomainBinder.java:1740)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRootPersistentClassCommonValues(AbstractGrailsDomainBinder.java:1719)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRoot(AbstractGrailsDomainBinder.java:1412)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindClass(AbstractGrailsDomainBinder.java:1224)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.secondPassCompile(GrailsAnnotationConfiguration.java:167)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.buildSessionFactory(GrailsAnnotationConfiguration.java:372)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.doBuildSessionFactory(ConfigurableLocalSessionFactoryBean.java:479)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.buildSessionFactory(ConfigurableLocalSessionFactoryBean.java:473)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.afterPropertiesSet(ConfigurableLocalSessionFactoryBean.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 45 more
+2016-05-20 17:25:04,632 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.initialize(TransactionManagerPostProcessor.java:74)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.setBeanFactory(TransactionManagerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:467)
+	at org.codehaus.groovy.grails.commons.spring.DefaultRuntimeSpringConfiguration.getApplicationContext(DefaultRuntimeSpringConfiguration.java:156)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.initializeContext(GrailsRuntimeConfigurator.java:188)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:168)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:127)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.configureWebApplicationContext(GrailsConfigUtils.java:126)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoaderListener.initWebApplicationContext(GrailsContextLoaderListener.java:109)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4992)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5490)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:55)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:78)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:133)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:324)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1207)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1016)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at groovy.lang.Closure.call(Closure.java:417)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluateConstraints(DefaultConstraintEvaluator.java:105)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluate(DefaultConstraintEvaluator.java:298)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.initializeConstraints(DefaultGrailsDomainClass.java:756)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.getConstrainedProperties(DefaultGrailsDomainClass.java:747)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClassProperty.isOptional(DefaultGrailsDomainClassProperty.java:215)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindColumn(AbstractGrailsDomainBinder.java:2768)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2674)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2615)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleId(AbstractGrailsDomainBinder.java:2448)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindIdentity(AbstractGrailsDomainBinder.java:1740)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRootPersistentClassCommonValues(AbstractGrailsDomainBinder.java:1719)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRoot(AbstractGrailsDomainBinder.java:1412)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindClass(AbstractGrailsDomainBinder.java:1224)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.secondPassCompile(GrailsAnnotationConfiguration.java:167)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.buildSessionFactory(GrailsAnnotationConfiguration.java:372)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.doBuildSessionFactory(ConfigurableLocalSessionFactoryBean.java:479)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.buildSessionFactory(ConfigurableLocalSessionFactoryBean.java:473)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.afterPropertiesSet(ConfigurableLocalSessionFactoryBean.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 45 more
+2016-05-20 17:25:04,638 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:55)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:78)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:133)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:324)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1207)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1110)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1016)
+	at groovy.lang.Closure.call(Closure.java:423)
+	at groovy.lang.Closure.call(Closure.java:417)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluateConstraints(DefaultConstraintEvaluator.java:105)
+	at org.codehaus.groovy.grails.validation.DefaultConstraintEvaluator.evaluate(DefaultConstraintEvaluator.java:298)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.initializeConstraints(DefaultGrailsDomainClass.java:756)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass.getConstrainedProperties(DefaultGrailsDomainClass.java:747)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsDomainClassProperty.isOptional(DefaultGrailsDomainClassProperty.java:215)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindColumn(AbstractGrailsDomainBinder.java:2768)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2674)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleValue(AbstractGrailsDomainBinder.java:2615)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindSimpleId(AbstractGrailsDomainBinder.java:2448)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindIdentity(AbstractGrailsDomainBinder.java:1740)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRootPersistentClassCommonValues(AbstractGrailsDomainBinder.java:1719)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindRoot(AbstractGrailsDomainBinder.java:1412)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.AbstractGrailsDomainBinder.bindClass(AbstractGrailsDomainBinder.java:1224)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.secondPassCompile(GrailsAnnotationConfiguration.java:167)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1844)
+	at org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration.buildSessionFactory(GrailsAnnotationConfiguration.java:372)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.doBuildSessionFactory(ConfigurableLocalSessionFactoryBean.java:479)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.buildSessionFactory(ConfigurableLocalSessionFactoryBean.java:473)
+	at org.codehaus.groovy.grails.orm.hibernate.ConfigurableLocalSessionFactoryBean.afterPropertiesSet(ConfigurableLocalSessionFactoryBean.java:387)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.initialize(TransactionManagerPostProcessor.java:74)
+	at org.codehaus.groovy.grails.orm.support.TransactionManagerPostProcessor.setBeanFactory(TransactionManagerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:467)
+	at org.codehaus.groovy.grails.commons.spring.DefaultRuntimeSpringConfiguration.getApplicationContext(DefaultRuntimeSpringConfiguration.java:156)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.initializeContext(GrailsRuntimeConfigurator.java:188)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:168)
+	at org.codehaus.groovy.grails.commons.spring.GrailsRuntimeConfigurator.configure(GrailsRuntimeConfigurator.java:127)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.configureWebApplicationContext(GrailsConfigUtils.java:126)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoaderListener.initWebApplicationContext(GrailsContextLoaderListener.java:109)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4992)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5490)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-20 17:25:04,640 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,647 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,654 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,658 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,661 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-20 17:25:04,662 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,670 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,675 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,679 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,682 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-20 17:25:04,683 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,749 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,750 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,751 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,752 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-20 17:25:04,752 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,753 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,755 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,755 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,756 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-20 17:25:04,756 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,766 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,768 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,770 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more
+2016-05-20 17:25:04,771 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-20 17:25:04,771 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	... 4 more
+Caused by: groovy.lang.MissingMethodException: No signature of method: gaatleta.Atleta.cpf() is applicable for argument types: (java.util.LinkedHashMap) values: [[blank:false]]
+Possible solutions: any(), get(java.io.Serializable), use([Ljava.lang.Object;), any(groovy.lang.Closure), is(java.lang.Object), wait()
+	at gaatleta.Atleta$__clinit__closure1.doCall(Atleta.groovy:12)
+	... 4 more

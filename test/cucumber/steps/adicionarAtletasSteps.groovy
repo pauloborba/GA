@@ -4,39 +4,51 @@ import cucumber.api.PendingException
 import gaatleta.AtletaController
 import gaatleta.Atleta
 
+import pages.AtletasPage
+import pages.VerAtleta
+import pages.CreateAtleta
+
+this.metaClass.mixin(cucumber.api.groovy.Hooks)
+this.metaClass.mixin(cucumber.api.groovy.EN)
+
 Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
-    atleta = Atleta.findByCPF(cpf)
-    assert atleta == null
+    assert Atleta.findByCPF(cpf) == null
 }
 
-When(~'^Eu adiciono o atleta de CPF"([^"]*)"$') { String cpf ->
-    Atletas.addAtleta(null, cpf, null, null)
+When(~'^Eu cadastro o atleta de CPF"([^"]*)"$') { String cpf ->
+    def controlador = new AtletaController()
+    cadastrarAtleta(cpf,controlador)
 }
 
 Then(~'^O sistema adiciona o atleta com sucesso$') { String cpf ->
-    atleta = Atletas.findByCPF(cpf)
-    assert atleta != null
+    assert Atleta.findByCPF(cpf) != null
+}
+
+def cadastrarAtleta(String cpf, AtletaController controlador) {
+    controlador.params << [cpf: cpf, nome: "", dataNascimento: null]
+    controlador.save()
+    controlador.response.reset()
 }
 
 Given(~'^Estou no menu de Atletas$') { ->
+    to AtletasPage
     at AtletasPage
 }
 
-And(~'^O atleta de CPF "([^"]*)" não esta na lista de atletas$') {String cpf->
+And(~'^O atleta de CPF "([^"]*)" não esta na lista de atletas$') {String nome, cpf->
     at AtletasPage
-    assert AtletasPage.selectAtleta(cpf) == false
+    assert !(page.atletaNaLista(nome, cpf))
 }
 
 When(~'^Eu tento cadastrar o atleta "([^"]*)" com o CPF "([^"]*)"$') { String nome, cpf ->
-    at AtletasPage
-    AtletasPage.fillNome(nome)
-    AtletasPage.fillCpf(cpf)
+    to CreateAtleta
+    at CreateAtleta
+    page.cadastrarAtleta(nome, cpf)
 }
 
-Then(~'^Eu posso ver uma mensagem de sucesso e o nome "([^"]*)" e CPF "([^"]*)"$') { String nome, cpf
-    at AtletasPage
-    at ConfirmationPage
-    assert ConfirmationPage.selectNome(nome) == true
-    assert ConfirmationPage.selectCpf(cpf) == true
+Then(~'^Eu posso ver a tela de visualização de atleta e o nome "([^"]*)" e CPF "([^"]*)"$') { String nome, cpf ->
+    at VerAtleta
+    assert page.temNome(nome) == true
+    assert page.temCpf(cpf) == true
 }
 

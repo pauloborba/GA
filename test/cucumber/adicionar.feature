@@ -19,11 +19,11 @@ Then: Vejo uma mensagem erro “Este CPF já está cadastrado”
 
 Scenario Adicionar Atleta no sistema com sucesso web
 Given Estou no menu de “Atletas”
-And o atleta de CPF “01234567890” não esta na lista de atletas
-When eu tento cadastrar o atleta “Pedro” com o CPF “01234567890”
-Then eu posso ver uma mensagem de sucesso e o nome “Pedro” e CPF “01234567890”
+And O atleta de CPF “01234567890” não esta na lista de atletas
+When Eu tento cadastrar o atleta “Pedro” com o CPF “01234567890”
+Then Eu posso ver a tela de visualização de atleta e o nome “Pedro” e CPF “01234567890”
 
 Scenario Adicionar Atleta no sistema com sucesso
-Given o atleta de CPF “01234567890” não está cadastrado no sistema
-When eu adiciono o atleta de CPF “0123456789”
+Given O atleta de CPF “01234567890” não está cadastrado no sistema
+When Eu cadastro o atleta de CPF “0123456789”
 Then O sistema adiciona o atleta com sucesso
