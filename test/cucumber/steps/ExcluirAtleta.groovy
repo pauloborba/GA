@@ -7,7 +7,7 @@ import steps.AtletaTestAndDataOperations
 import static cucumber.api.groovy.EN.Given
 
 Given (~'^O sistema tem um atleta com o CPF "([^"]*)" e o nome "([^"]*)" $'){
-    String cpf, nome -> AtletaTestAndDataOperations.createAtleta(nome, cpf)
+    String cpf, nome -> AtletaTestAndDataOperations.createAtleta(nome, cpf, null, null, 0)
         atleta = atleta.findByCPF(cpf)
         assert atleta != null
 
