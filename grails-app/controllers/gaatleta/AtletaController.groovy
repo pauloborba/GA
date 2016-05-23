@@ -20,20 +20,6 @@ class AtletaController {
         list(max)
     }
 
-    def select(Long id) {
-//        def atleta = Atleta.get(id)
-//        if (!atleta) {
-//            flash.message = message(code: 'default.not.found.message', args: [message(code: 'vaga.label', default: 'Vaga'), id])
-//            redirect(action: "overview")
-//            return
-//        }
-//        atleta.select()
-//        if (!atleta.save(flush: true)) {
-//            flash.message = "Vaga não pode ser reservada! Problema interno na gravação!\n" + atleta.errors
-//        }
-//        redirect(action: "overview")
-    }
-
     def create() {
         respond new Atleta(params)       //  [vagaInstance: new Vaga(params)]
     }
