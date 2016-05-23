@@ -5,7 +5,7 @@ package gaatleta
  */
 class Atleta {
     String nome
-    String CPF
+    String cpf
     Date dataNascimento
 
     static constraints = {
