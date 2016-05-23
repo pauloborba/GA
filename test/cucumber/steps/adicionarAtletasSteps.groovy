@@ -30,23 +30,23 @@ def cadastrarAtleta(String cpf, AtletaController controlador) {
     controlador.response.reset()
 }
 
-Given(~'^Estou no menu de Atletas$') { ->
+Given(~/^Estou no menu de Atletas$') { ->
     to AtletasPage
     at AtletasPage
 }
 
-And(~'^O atleta de CPF "([^"]*)" não esta na lista de atletas$') {String nome, cpf->
+And(~/^O atleta de CPF "([^"]*)" não esta na lista de atletas$') {String nome, cpf->
     at AtletasPage
     assert !(page.atletaNaLista(nome, cpf))
 }
 
-When(~'^Eu tento cadastrar o atleta "([^"]*)" com o CPF "([^"]*)"$') { String nome, cpf ->
+When(~/^Eu tento cadastrar o atleta "([^"]*)" com o CPF "([^"]*)"$') { String nome, cpf ->
     to CreateAtleta
     at CreateAtleta
     page.cadastrarAtleta(nome, cpf)
 }
 
-Then(~'^Eu posso ver a tela de visualização de atleta e o nome "([^"]*)" e CPF "([^"]*)"$') { String nome, cpf ->
+Then(~/^Eu posso ver a tela de visualização de atleta e o nome "([^"]*)" e CPF "([^"]*)"$') { String nome, cpf ->
     at VerAtleta
     assert page.temNome(nome) == true
     assert page.temCpf(cpf) == true
