@@ -15,8 +15,4 @@ class AtletasPage extends Page{
     boolean atletaNaLista(nome, cpf) {
         $("td", text: nome).has("a",text: cpf)
     }
-
-    def selecionarVaga(vaga) {
-        $("a",text: vaga).click()
-    }
 }
