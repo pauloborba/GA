@@ -8,4 +8,8 @@ class AtletasPage extends Page {
 	static at = {
 		title ==~ /Lista de Atletas/
 	}
+	
+	boolean atletaNaLista(nome, cpf) {
+        $("td", text: nome).has("a",text: cpf)
+    }
 }
