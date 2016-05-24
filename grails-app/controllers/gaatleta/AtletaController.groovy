@@ -12,8 +12,8 @@ class AtletaController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [vagaInstanceList: Vaga.list(params),
-         vagaInstanceTotal: Vaga.count()]
+        [atletaInstanceList: Atleta.list(params),
+         atletaInstanceTotal: Atleta.count()]
     }
 
     def overview(Integer max) {
