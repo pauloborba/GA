@@ -1,117 +1,83 @@
-// locations to search for config files that get merged into the main config;
-// config files can be ConfigSlurper scripts, Java properties files, or classes
-// in the classpath in ConfigSlurper format
+grails.servlet.version = "3.0" // Change depending on target container compliance (2.5 or 3.0)
+grails.project.class.dir = "target/classes"
+grails.project.test.class.dir = "target/test-classes"
+grails.project.test.reports.dir = "target/test-reports"
+grails.project.work.dir = "target/work"
+grails.project.target.level = 1.6
+grails.project.source.level = 1.6
+grails.server.port.http = 8070
+//grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-// grails.config.locations = [ "classpath:${appName}-config.properties",
-//                             "classpath:${appName}-config.groovy",
-//                             "file:${userHome}/.grails/${appName}-config.properties",
-//                             "file:${userHome}/.grails/${appName}-config.groovy"]
 
-// if (System.properties["${appName}.config.location"]) {
-//    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
-// }
 
-grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+grails.project.dependency.resolver = "maven" // or ivy
+grails.project.dependency.resolution = {
+    // inherit Grails' default dependencies
+    inherits("global") {
+        // specify dependency exclusions here; for example, uncomment this to disable ehcache:
+        // excludes 'ehcache'
+    }
+    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    checksums true // Whether to verify checksums on resolve
+    legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
-// The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
-grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
-grails.mime.types = [ // the first one is the default format
-    all:           '*/*', // 'all' maps to '*' or the first available format in withFormat
-    atom:          'application/atom+xml',
-    css:           'text/css',
-    csv:           'text/csv',
-    form:          'application/x-www-form-urlencoded',
-    html:          ['text/html','application/xhtml+xml'],
-    js:            'text/javascript',
-    json:          ['application/json', 'text/json'],
-    multipartForm: 'multipart/form-data',
-    rss:           'application/rss+xml',
-    text:          'text/plain',
-    hal:           ['application/hal+json','application/hal+xml'],
-    xml:           ['text/xml', 'application/xml']
-]
+    repositories {
+        inherits true // Whether to inherit repository definitions from plugins
 
-// URL Mapping Cache Max Size, defaults to 5000
-//grails.urlmapping.cache.maxsize = 1000
+        grailsPlugins()
+        grailsHome()
+        mavenLocal()
+        grailsCentral()
+        mavenCentral()
+        // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
+        mavenRepo "http://repository.codehaus.org"
+        mavenRepo "http://download.java.net/maven/2/"
+        mavenRepo "http://repository.jboss.com/maven2/"
 
-// Legacy setting for codec used to encode data with ${}
-grails.views.default.codec = "html"
+        // Repositorios adicionados
+        mavenRepo "http://snapshots.repository.codehaus.org"
+        mavenRepo "https://repo.grails.org/grails/plugins"
+        mavenRepo "http://dl.bintray.com/alkemist/maven/"
+    }
 
-// The default scope for controllers. May be prototype, session or singleton.
-// If unspecified, controllers are prototype scoped.
-grails.controllers.defaultScope = 'singleton'
+    dependencies {
+        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
+        // runtime 'mysql:mysql-connector-java:5.1.29'
+        // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
+        test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
 
-// GSP settings
-grails {
-    views {
-        gsp {
-            encoding = 'UTF-8'
-            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
-            codecs {
-                expression = 'html' // escapes values inside ${}
-                scriptlet = 'html' // escapes output from scriptlets in GSPs
-                taglib = 'none' // escapes output from taglibs
-                staticparts = 'none' // escapes output from static template parts
-            }
+        // Dependencias adicionadas
+        compile "org.spockframework:spock-grails-support:0.7-groovy-1.8"
+        test "org.gebish:geb-junit4:0.9.2"
+        test "org.seleniumhq.selenium:selenium-support:2.39.0"
+        test "org.seleniumhq.selenium:selenium-chrome-driver:2.39.0"
+        test "org.seleniumhq.selenium:selenium-firefox-driver:2.39.0"
+    }
+
+    plugins {
+        // plugins for the build system only
+        build ":tomcat:7.0.55"
+
+        // plugins for the compile step
+        compile ":scaffolding:2.1.2"
+        compile ':cache:1.1.7'
+        compile ":asset-pipeline:1.9.6"
+
+        // plugins needed at runtime but not for compilation
+        runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.17"
+        runtime ":database-migration:1.4.0"
+        runtime ":jquery:1.11.1"
+
+        // Uncomment these to enable additional asset-pipeline capabilities
+        //compile ":sass-asset-pipeline:1.9.0"
+        //compile ":less-asset-pipeline:1.10.0"
+        //compile ":coffee-asset-pipeline:1.8.0"
+        //compile ":handlebars-asset-pipeline:1.3.0.3"
+
+        // Plugins adicionados
+        test(":cucumber:1.1.0") {
+            exclude "spock-core"
         }
-        // escapes all not-encoded output at final stage of outputting
-        // filteringCodecForContentType.'text/html' = 'html'
+        test ":geb:0.9.2"
     }
-}
-
-
-grails.converters.encoding = "UTF-8"
-// scaffolding templates configuration
-grails.scaffolding.templates.domainSuffix = 'Instance'
-
-// Set to false to use the new Grails 1.2 JSONBuilder in the render method
-grails.json.legacy.builder = false
-// enabled native2ascii conversion of i18n properties files
-grails.enable.native2ascii = true
-// packages to include in Spring bean scanning
-grails.spring.bean.packages = []
-// whether to disable processing of multi part requests
-grails.web.disable.multipart=false
-
-// request parameters to mask when logging exceptions
-grails.exceptionresolver.params.exclude = ['password']
-
-// configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
-grails.hibernate.cache.queries = false
-
-// configure passing transaction's read-only attribute to Hibernate session, queries and criterias
-// set "singleSession = false" OSIV mode in hibernate configuration after enabling
-grails.hibernate.pass.readonly = false
-// configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
-grails.hibernate.osiv.readonly = false
-
-environments {
-    development {
-        grails.logging.jul.usebridge = true
-    }
-    production {
-        grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
-    }
-}
-
-// log4j configuration
-log4j.main = {
-    // Example of changing the log pattern for the default console appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
-
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
-           'org.codehaus.groovy.grails.web.pages',          // GSP
-           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-           'org.codehaus.groovy.grails.commons',            // core / classloading
-           'org.codehaus.groovy.grails.plugins',            // plugins
-           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
 }
