@@ -1,11 +1,11 @@
 package steps
 
 import cucumber.api.PendingException
-import gaatleta.AtletaController
-import gaatleta.Atleta
+import ga.AtletaController
+import ga.Atleta
 
-import pages.AtletasPage
-import pages.CreateAtleta
+import page.AtletasPage
+import page.CreateAtleta
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 //Scenario: Adicionar Atleta sem sucesso
@@ -45,7 +45,7 @@ def verificaAtleta(String nome, String cpf, AtletaController controlador) {
 }
 
 //web
-Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado no sistema$'){ String cpf ->
+Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
 	to CreateAtleta
 	at CreateAtleta
 	page.createAtleta("Jankaukas", cpf)
@@ -68,7 +68,7 @@ And(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)$'){ String no
 	page.verificaAtleta(nome, cpf)
 }
 
-Then(~'Eu posso ver que na página de Atletas o no atleta não foi adicionado$'){->
+Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionado$'){->
 	to AtletasPage
 	at AtletasPage
 }
