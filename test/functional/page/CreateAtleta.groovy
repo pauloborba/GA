@@ -12,6 +12,7 @@ class CreateAtleta extends Page {
     boolean cadastrarAtleta(nome, cpf) {
         $("form").nome = nome
         $("form").cpf = cpf
+		$("form").dataNascimento = date
         $("input", name: "Cadastrar").click()
     }
 }

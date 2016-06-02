@@ -15,13 +15,13 @@ Run configurations:
 
 Grails:GA
 
-run-app
+-noreloading run-app
 
 Cucumber:GA
 
 (IntelliJ) Para rodar os testes, crie uma configuração do grails com a seguinte linha de comando:
 
-test-app -Dgeb.env=chrome functional:cucumber
+-noreloading test-app -Dgeb.env=chrome functional:cucumber
 
 Produção: https://ess-ga.herokuapp.com/
 
