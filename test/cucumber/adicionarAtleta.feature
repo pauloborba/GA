@@ -15,4 +15,13 @@ Feature: Adicionar Atleta
     And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-34"
     Then Vejo uma mensagem erro "Este CPF já está cadastrado"
 
+  Scenario: Adicionar Atleta no sistema com sucesso
+    Given O atleta de CPF "01234567890" não esta cadastrado no sistema
+    When Eu cadastro o atleta de CPF "01234567890"
+    Then O sistema adiciona o atleta de CPF "01234567890" com sucesso
 
+  Scenario: Adicionar Atleta no sistema com sucesso web
+    Given Estou no menu de Atletas
+    And O atleta de CPF "01234567890" e nome "Pedro" não esta na lista de atletas
+    When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"
+    Then Eu posso ver a tela de visualização de Atleta e o nome "Pedro" e CPF "01234567890"
