@@ -1,5 +1,6 @@
 package steps
 
+import ga.Atleta
 import ga.AtletaController
 
 class AtletaTestAndDataOperations {
@@ -10,11 +11,10 @@ class AtletaTestAndDataOperations {
 
     ]
 
-
-    public static def findByCpf(String cpf){
-        atleta.find{    atleta ->
-                atleta.cpf == cpf
-        }
+    public static Atleta findByCpf(String cpf){
+        atleta.find{
+            atleta ->  atleta.cpf == cpf
+        } as Atleta
     }
 
     public static createAtleta(String nome, String cpf , String data_nascimento, String contrato){
@@ -22,7 +22,7 @@ class AtletaTestAndDataOperations {
         controller.params << [nome: nome, cpf: cpf, data_nascimento: data_nascimento, contrato: contrato]
 
         controller.request.setContent(new byte[1000])
-        controller.saveAtleta(controller.criarAtleta())
+        controller.save()
         controller.response.reset()
     }
 
