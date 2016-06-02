@@ -2,7 +2,7 @@
  * Created by ess on 17/05/16.
  */
 
-import steps.AtletaTestAndDataOperations
+/*import steps.AtletaTestAndDataOperations
 
 import static cucumber.api.groovy.EN.Given
 
@@ -17,14 +17,14 @@ When(~'^ Eu excluo o atleta de CPF "([^"]*)" $'){
     String cpf -> AtletaTestAndDataOperations.removeAtleta(cpf)
 }
 
-Then(~'^ O atleta de cpf ([^"]*)" é devidamente removido do sistema $'){
+Then(~'^ O atleta de cpf ([^"]*)" ï¿½ devidamente removido do sistema $'){
     String cpf -> atleta = atleta.findByCpf(cpf)
         assert atleta == null
 }
 
 
 
-Given (~'^o atleta de CPF "([^"]*)" está cadastrado no sistema$') {
+Given (~'^o atleta de CPF "([^"]*)" estï¿½ cadastrado no sistema$') {
     String usercpf -> AtletaTestAndDataOperations.createAtleta(usercpf)
         cpf = Cpf.findByCpf(cpf);
         assert cpf != null
