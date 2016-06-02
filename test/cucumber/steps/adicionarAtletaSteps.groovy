@@ -12,7 +12,7 @@ this.metaClass.mixin(cucumber.api.groovy.EN)
 //edymir---------------------------------------------------------------------------------------------------------------------------
 Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado no sistema$') { String cpf ->
 	def controlador = new AtletaController()
-	cadastrarAtleta("Edinaldo", cpf, controlador)
+	cadastrAtleta("Edinaldo", cpf, null, controlador)
 	assert Atleta.findByCpf(cpf) != null
 }
 
@@ -26,16 +26,16 @@ Then(~'^O sistema não permite o cadastro duplicado do CPF "([^"]*)"$') { String
 	assert atletas.size()==1
 }
 
-def createAtleta(String nome, String cpf, AtletaController controlador) {
-	controlador.params << [cpf: cpf, nome: nome]
-	controlador.save()
+def cadastrAtleta(String nome, String cpf, Date dataNascimento, AtletaController controlador) {
+	controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
+	controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
 	controlador.response.reset()
 }
 
 def verificaAtleta(String nome, String cpf, AtletaController controlador) {
 	if (Atleta.findByCpf(cpf)==null) {
-		controlador.params << [cpf: cpf, nome: nome]
-		controlador.save()
+		controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
+		controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
 		controlador.response.reset()
 	}
 	else{
