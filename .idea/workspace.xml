@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ee9c426-8a1d-47aa-a5d1-7d6d97b793b3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/cucumber/buscarAtleta.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/cucumber/excluirAtleta.feature" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/cucumber/steps/buscarAtletaSteps.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/cucumber/steps/excluirAtleta.groovy" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/steps/buscarAtletaSteps.groovy" afterPath="$PROJECT_DIR$/test/cucumber/steps/buscarAtletaSteps.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/steps/excluirAtleta.groovy" afterPath="$PROJECT_DIR$/test/cucumber/steps/excluirAtleta.groovy" />
     </list>
     <ignored path="GA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,46 +53,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adicionarAtletaSteps.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adicionarAtletaSteps.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buscarAtleta.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/cucumber/buscarAtleta.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-143">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="excluirAtleta.groovy" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/cucumber/steps/excluirAtleta.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buscarAtletaSteps.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/cucumber/steps/buscarAtletaSteps.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -175,9 +143,9 @@
         <option value="$PROJECT_DIR$/test/functional/page/AtletasPage.groovy" />
         <option value="$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature" />
         <option value="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" />
-        <option value="$PROJECT_DIR$/test/cucumber/buscarAtleta.feature" />
         <option value="$PROJECT_DIR$/test/cucumber/steps/buscarAtletaSteps.groovy" />
         <option value="$PROJECT_DIR$/test/cucumber/steps/excluirAtleta.groovy" />
+        <option value="$PROJECT_DIR$/test/cucumber/buscarAtleta.feature" />
       </list>
     </option>
   </component>
@@ -839,7 +807,7 @@
       <workItem from="1441385300926" duration="7000" />
       <workItem from="1464721100725" duration="892000" />
       <workItem from="1464722835943" duration="3951000" />
-      <workItem from="1464825476310" duration="5722000" />
+      <workItem from="1464825476310" duration="5926000" />
     </task>
     <task id="LOCAL-00001" summary="teste commit">
       <created>1464721336142</created>
@@ -911,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464884518376</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="comentando testes mal escritos para testar">
+      <created>1464884911452</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1464884911452</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19029000" />
+    <option name="totallyTimeSpent" value="19233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1284,14 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/ga/Atleta.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
@@ -1311,21 +1278,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/cucumber/buscarAtleta.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-143">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/cucumber/steps/buscarAtletaSteps.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,9 +1290,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cucumber/buscarAtleta.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
