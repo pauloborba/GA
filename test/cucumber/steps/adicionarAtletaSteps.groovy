@@ -10,7 +10,7 @@ this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 //Scenario: Adicionar Atleta sem sucesso
 
-Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado no sistema$') { String nome, cpf ->
+Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado no sistema$') { String cpf ->
 	def controlador = new AtletaController()
 	createAtleta("Edinaldo", cpf, controlador)
 	assert Atleta.findByCpf(cpf) != null

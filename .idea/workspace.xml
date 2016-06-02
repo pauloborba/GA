@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ee9c426-8a1d-47aa-a5d1-7d6d97b793b3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-reports/TEST-functional-cucumber-new book entry.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-reports/html/0_new book entry.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-reports/plain/TEST-functional-cucumber-new book entry-err.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-reports/plain/TEST-functional-cucumber-new book entry-out.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-reports/plain/TEST-functional-cucumber-new book entry.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/functional/GebConfig$_run_closure1.class" afterPath="$PROJECT_DIR$/target/test-classes/functional/GebConfig$_run_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/functional/GebConfig.class" afterPath="$PROJECT_DIR$/target/test-classes/functional/GebConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GA-grailsPlugins.iml" afterPath="$PROJECT_DIR$/GA-grailsPlugins.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/TESTS-TestSuites.xml" afterPath="$PROJECT_DIR$/target/test-reports/TESTS-TestSuites.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/all.html" afterPath="$PROJECT_DIR$/target/test-reports/html/all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/failed.html" afterPath="$PROJECT_DIR$/target/test-reports/html/failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/index.html" afterPath="$PROJECT_DIR$/target/test-reports/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/resources/web.xml" afterPath="$PROJECT_DIR$/target/work/resources/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/work/web.xml.tmp" afterPath="$PROJECT_DIR$/target/work/web.xml.tmp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature" afterPath="$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" afterPath="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" />
     </list>
     <ignored path="GA.iws" />
@@ -56,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adicionarAtleta.feature" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adicionarAtleta.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -66,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adicionarAtletaSteps.groovy" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adicionarAtletaSteps.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="70" column="79" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="79" />
+            <state relative-caret-position="204">
+              <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
               <folding>
                 <element signature="e#15#51#0" expanded="true" />
               </folding>
@@ -186,8 +170,8 @@
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/CucumberConfig.groovy" />
         <option value="$PROJECT_DIR$/test/functional/page/AtletasPage.groovy" />
-        <option value="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" />
         <option value="$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature" />
+        <option value="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" />
       </list>
     </option>
   </component>
@@ -835,7 +819,7 @@
       <workItem from="1441385300926" duration="7000" />
       <workItem from="1464721100725" duration="892000" />
       <workItem from="1464722835943" duration="3951000" />
-      <workItem from="1464825476310" duration="3004000" />
+      <workItem from="1464825476310" duration="3704000" />
     </task>
     <task id="LOCAL-00001" summary="teste commit">
       <created>1464721336142</created>
@@ -879,11 +863,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464795604778</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="aplicação rodando e teste também (não passaram)">
+      <created>1464836117282</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1464836117282</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16311000" />
+    <option name="totallyTimeSpent" value="17011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -945,7 +936,8 @@
     <MESSAGE value="teste2 commit" />
     <MESSAGE value="ajustatando as configurações para rodar a aplicação e os testes" />
     <MESSAGE value="aplicação rodando e teste também (com erros)" />
-    <option name="LAST_COMMIT_MESSAGE" value="aplicação rodando e teste também (com erros)" />
+    <MESSAGE value="aplicação rodando e teste também (não passaram)" />
+    <option name="LAST_COMMIT_MESSAGE" value="aplicação rodando e teste também (não passaram)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1261,21 +1253,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="70" column="79" selection-start-line="70" selection-start-column="7" selection-end-line="70" selection-end-column="79" />
-          <folding>
-            <element signature="e#15#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/cucumber/adicionarAtleta.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
+          <folding>
+            <element signature="e#15#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
