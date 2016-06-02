@@ -33,4 +33,4 @@ Then(~'^Aparece na tela o atleta de cpf "([^"]*)"$') { String cpf->
     at atletaPage
 	assert page.temAtleta(cpf)
 }
-//criar menuAtletaPage, loginPage, selectBuscarAtletaNome
+//criar menuAtletaPage, loginPage, selectBuscarAtletaNome*/

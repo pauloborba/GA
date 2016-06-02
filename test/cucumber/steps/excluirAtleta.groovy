@@ -37,4 +37,4 @@ When(~'^ tento excluir o atleta de CPF "([^"]*)" $') {
 Then(~'^O sistema remove o atleta "([^"]*)" com sucesso$') {
     String usercpf -> cpf = cpf.findByCpf(cpf)
         assert cpf == null
-}
+}*/
