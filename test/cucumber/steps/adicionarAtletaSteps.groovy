@@ -8,8 +8,8 @@ import page.AtletasPage
 import page.CreateAtleta
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
-//Scenario: Adicionar Atleta sem sucesso
 
+//edymir
 Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado no sistema$') { String cpf ->
 	def controlador = new AtletaController()
 	createAtleta("Edinaldo", cpf, controlador)
@@ -30,7 +30,6 @@ def createAtleta(String nome, String cpf, AtletaController controlador) {
 	controlador.params << [cpf: cpf, nome: nome]
 	controlador.save()
 	controlador.response.reset()
-	// eddy tromba
 }
 
 def verificaAtleta(String nome, String cpf, AtletaController controlador) {
@@ -72,7 +71,7 @@ Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionad
 	to AtletasPage
 	at AtletasPage
 }
-
+//edymir-end
 //Abaixo, steps de silvaemanuel
 
 Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
