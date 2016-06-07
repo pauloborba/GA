@@ -1,11 +1,10 @@
 package steps
 
-import cucumber.api.PendingException
 import ga.AtletaController
 import ga.Atleta
 
-import page.AtletasPage
-import page.CreateAtleta
+import pages.AtletasPage
+import pages.CreateAtleta
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
@@ -18,28 +17,22 @@ Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado no sistema$') { Strin
 
 When(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)"$') { String nome, cpf ->
 	def controlador = new AtletaController()
-	verificaAtleta  (nome, cpf, controlador)
+	cadastrAtleta (nome, cpf, null, controlador)
 }
 
 Then(~'^O sistema não permite o cadastro duplicado do CPF "([^"]*)"$') { String cpf ->
-	atleta = Atleta.findAllByCpf(cpf)
+	atletas = Atleta.findAllByCpf(cpf)
 	assert atletas.size()==1
 }
 
 def cadastrAtleta(String nome, String cpf, Date dataNascimento, AtletaController controlador) {
-	controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
-	controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
-	controlador.response.reset()
-}
-
-def verificaAtleta(String nome, String cpf, AtletaController controlador) {
-	if (Atleta.findByCpf(cpf)==null) {
+	if (Atleta.findByCpf(cpf)!= null){
+		controlador.duplicado()
+	}
+	else {
 		controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
 		controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
 		controlador.response.reset()
-	}
-	else{
-		flash.message = "CPF já cadastrado"
 	}
 }
 

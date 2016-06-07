@@ -19,6 +19,10 @@ class AtletaController {
     def create() {
         respond new Atleta(params)
     }
+    def duplicado(){
+        flash.message = "O jogador já está cadastrado"
+        redirect(action: "index")
+    }
 
     @Transactional
     def save(Atleta atletaInstance) {

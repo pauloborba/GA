@@ -8,8 +8,10 @@ class Atleta {
     static constraints = {
 		nome blank : false
         cpf blank: false
-		cpf unique : true
+        cpf unique: true
         dataNascimento nullable: true
     }
+
+
 }
 
