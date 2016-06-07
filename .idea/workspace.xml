@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ee9c426-8a1d-47aa-a5d1-7d6d97b793b3" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/functional/page/AtletasPage.groovy" afterPath="$PROJECT_DIR$/test/functional/pages/AtletasPage.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/functional/page/CreateAtleta.groovy" afterPath="$PROJECT_DIR$/test/functional/pages/CreateAtleta.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/functional/page/VerAtleta.groovy" afterPath="$PROJECT_DIR$/test/functional/pages/VerAtleta.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/ga/AtletaController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/ga/AtletaController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/ga/Atleta.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/ga/Atleta.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/TESTS-TestSuites.xml" afterPath="$PROJECT_DIR$/target/test-reports/TESTS-TestSuites.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/all.html" afterPath="$PROJECT_DIR$/target/test-reports/html/all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/failed.html" afterPath="$PROJECT_DIR$/target/test-reports/html/failed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-reports/html/index.html" afterPath="$PROJECT_DIR$/target/test-reports/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" afterPath="$PROJECT_DIR$/test/cucumber/steps/adicionarAtletaSteps.groovy" />
     </list>
     <ignored path="GA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -810,7 +799,7 @@
       <workItem from="1464722835943" duration="3951000" />
       <workItem from="1464825476310" duration="12661000" />
       <workItem from="1465169041528" duration="586000" />
-      <workItem from="1465305894858" duration="6747000" />
+      <workItem from="1465305894858" duration="6818000" />
     </task>
     <task id="LOCAL-00001" summary="teste commit">
       <created>1464721336142</created>
@@ -903,7 +892,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464885572538</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="teste aplicação ok">
+      <created>1465316977500</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1465316977500</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -939,11 +935,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33301000" />
+    <option name="totallyTimeSpent" value="33372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33865815" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
@@ -1007,7 +1003,8 @@
     <MESSAGE value="comentando testes mal escritos para testar" />
     <MESSAGE value="pagando testes mal escritos para testar as minhas" />
     <MESSAGE value="modificação em createAtleta" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificação em createAtleta" />
+    <MESSAGE value="teste aplicação ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="teste aplicação ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
