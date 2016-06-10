@@ -9,10 +9,10 @@ Feature: Adicionar Atleta
     Then O sistema não permite o cadastro duplicado do CPF "863923834-34"
 
   Scenario: Adicionar Atleta Sem sucesso web
-    Given Um atleta de CPF "863923834-34" se encontra cadastrado
+    Given Um atleta de CPF "863923834-94" se encontra cadastrado
     And Estou no menu Atletas
     When Seleciono a opção Adicionar Atleta
-    And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-34"
+    And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-94"
     Then Eu posso ver que na página de Atletas que o no atleta não foi adicionado
 
   Scenario: Adicionar Atleta no sistema com sucesso

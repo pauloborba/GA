@@ -3,10 +3,10 @@ package pages
 import geb.Page
 
 class AtletasPage extends Page {
-	static url = "/GA/atleta/overview/"
+	static url = "/GA/atleta/index/"
 
 	static at = {
-		title ==~ /Lista de Atletas/
+		title ==~ /Atleta Listagem/
 	}
 	
 		boolean atletaNaLista(nome, cpf) {

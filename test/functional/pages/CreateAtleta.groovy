@@ -6,13 +6,13 @@ class CreateAtleta extends Page {
     static url = "/GA/atleta/create/"
 
     static at =  {
-        title ==~ /Cadastrar Atleta/
+        title ==~ /Criar Atleta/
     }
 
-    boolean cadastrarAtleta(nome, cpf) {
+    boolean cadastrAtleta(nome, cpf) {
         $("form").nome = nome
         $("form").cpf = cpf
-		$("form").dataNascimento = date
-        $("input", name: "Cadastrar").click()
+		/*$("form").dataNascimento = 10/02/1990/ */
+        $("input", name: "Criar").click()
     }
 }

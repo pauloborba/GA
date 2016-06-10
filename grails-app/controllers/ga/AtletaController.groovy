@@ -19,19 +19,16 @@ class AtletaController {
     def create() {
         respond new Atleta(params)
     }
-    def duplicado(){
-        flash.message = "O jogador já está cadastrado"
-        redirect(action: "index")
-    }
 
     @Transactional
     def save(Atleta atletaInstance) {
         if (atletaInstance == null) {
-            notFound()
+             notFound()
             return
         }
 
         if (atletaInstance.hasErrors()) {
+            flash.message= "Já existe um atleta cadastrado com o CPF informado"
             respond atletaInstance.errors, view: 'create'
             return
         }

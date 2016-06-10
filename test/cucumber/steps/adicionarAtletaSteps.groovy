@@ -26,21 +26,16 @@ Then(~'^O sistema não permite o cadastro duplicado do CPF "([^"]*)"$') { String
 }
 
 def cadastrAtleta(String nome, String cpf, Date dataNascimento, AtletaController controlador) {
-	if (Atleta.findByCpf(cpf)!= null){
-		controlador.duplicado()
-	}
-	else {
 		controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
 		controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
 		controlador.response.reset()
-	}
 }
 
 //web
 Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
 	to CreateAtleta
 	at CreateAtleta
-	page.createAtleta("Jankaukas", cpf)
+	page.cadastrAtleta("Jankaukas", cpf)
 }
 
 And(~'^Estou no menu Atletas$'){->
@@ -57,7 +52,7 @@ When(~'^Seleciono a opção Adicionar Atleta$'){->
 And(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)$'){ String nome, cpf ->
 	to CreateAtleta
 	at CreateAtleta
-	page.verificaAtleta(nome, cpf)
+	page.cadastrAtleta(nome, cpf)
 }
 
 Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionado$'){->
@@ -65,6 +60,7 @@ Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionad
 	at AtletasPage
 }
 //edymir-end--------------------------------------------------------------------------------------------------------------------
+
 //Abaixo, steps de silvaemanuel
 
 Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->

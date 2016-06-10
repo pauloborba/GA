@@ -1,131 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="3" failures="0" hostname="EdyESPC" id="0" name="Adicionar Atleta" package="" tests="4" time="3.713" timestamp="2016-06-07T16:27:01">
+  <testsuite errors="2" failures="0" hostname="EdyESPC" id="0" name="Adicionar Atleta" package="" tests="4" time="26.081" timestamp="2016-06-09T17:35:51">
       <properties />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso" time="1.781" />
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso" time="2.096" />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso web" time="0.562">
-          <error message="failed to create driver from callback &apos;script14653168241561647889053$_run_closure2_closure3_closure5@5f828c49&apos;" type="geb.driver.DriverCreationException">geb.driver.DriverCreationException: failed to create driver from callback &apos;script14653168241561647889053$_run_closure2_closure3_closure5@5f828c49&apos;
-	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
-	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-	at geb.Configuration.createDriver(Configuration.groovy:354)
-	at geb.Configuration.getDriver(Configuration.groovy:343)
-	at geb.Browser.getDriver(Browser.groovy:105)
-	at geb.Browser.go(Browser.groovy:394)
-	at geb.Page.to(Page.groovy:184)
-	at geb.Browser.via(Browser.groovy:475)
-	at geb.Browser.to(Browser.groovy:434)
-	at geb.Browser.to(Browser.groovy:412)
-	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:41)
-	at ✽.Given Um atleta de CPF &quot;863923834-34&quot; se encontra cadastrado(adicionarAtleta.feature:12)
-Caused by: java.lang.IllegalStateException: The driver executable does not exist: C:\Users\Edymir\IdeaProjects\GA\chromedrivers\chromedriverlinux64
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:177)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:117)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:112)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:75)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
-	at script14653168241561647889053$_run_closure2_closure3_closure5.doCall(script14653168241561647889053.groovy:17)
-	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
-	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-	at geb.Configuration.createDriver(Configuration.groovy:354)
-	at geb.Configuration.getDriver(Configuration.groovy:343)
-	at geb.Browser.getDriver(Browser.groovy:105)
-	at geb.Browser.go(Browser.groovy:394)
-	at geb.Page.to(Page.groovy:184)
-	at geb.Browser.via(Browser.groovy:475)
-	at geb.Browser.to(Browser.groovy:434)
-	at geb.Browser.to(Browser.groovy:412)
-	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:41)
-	at cucumber.runtime.groovy.GroovyBackend.invoke(GroovyBackend.java:155)
-	at cucumber.runtime.groovy.GroovyStepDefinition$1.call(GroovyStepDefinition.java:71)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.groovy.GroovyStepDefinition.execute(GroovyStepDefinition.java:68)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
-	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
-	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
-	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
-	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
-	at _GrailsTest$_run_closure1.doCall(_GrailsTest.groovy:102)
-	at TestApp$_run_closure1.doCall(TestApp.groovy:32)
-</error>
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso web" time="20.816" />
 
-      </testcase>
-
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta no sistema com sucesso" time="0.235">
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta no sistema com sucesso" time="0.264">
           <error message="No property found for name [cPF] for class [class ga.Atleta]" type="org.codehaus.groovy.grails.exceptions.InvalidPropertyException">org.codehaus.groovy.grails.exceptions.InvalidPropertyException: No property found for name [cPF] for class [class ga.Atleta]
 	at org.grails.datastore.gorm.GormStaticApi.methodMissing(GormStaticApi.groovy:104)
-	at steps.adicionarAtletaSteps$_run_closure9.doCall(adicionarAtletaSteps.groovy:71)
+	at steps.adicionarAtletaSteps$_run_closure9.doCall(adicionarAtletaSteps.groovy:67)
 	at ✽.Given O atleta de CPF &quot;01234567890&quot; não esta cadastrado no sistema(adicionarAtleta.feature:19)
 </error>
 
       </testcase>
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta no sistema com sucesso web" time="0.086">
-          <error message="failed to create driver from callback &apos;script14653168250251647889053$_run_closure2_closure3_closure5@33d2e469&apos;" type="geb.driver.DriverCreationException">geb.driver.DriverCreationException: failed to create driver from callback &apos;script14653168250251647889053$_run_closure2_closure3_closure5@33d2e469&apos;
-	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
-	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-	at geb.Configuration.createDriver(Configuration.groovy:354)
-	at geb.Configuration.getDriver(Configuration.groovy:343)
-	at geb.Browser.getDriver(Browser.groovy:105)
-	at geb.Browser.go(Browser.groovy:394)
-	at geb.Page.to(Page.groovy:184)
-	at geb.Browser.via(Browser.groovy:475)
-	at geb.Browser.to(Browser.groovy:434)
-	at geb.Browser.to(Browser.groovy:412)
-	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-	at steps.adicionarAtletaSteps$_run_closure12.doCall(adicionarAtletaSteps.groovy:90)
-	at ✽.Given Estou no menu de Atletas(adicionarAtleta.feature:24)
-Caused by: java.lang.IllegalStateException: The driver executable does not exist: C:\Users\Edymir\IdeaProjects\GA\chromedrivers\chromedriverlinux64
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:177)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:117)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:112)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:75)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:107)
-	at script14653168250251647889053$_run_closure2_closure3_closure5.doCall(script14653168250251647889053.groovy:17)
-	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
-	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-	at geb.Configuration.createDriver(Configuration.groovy:354)
-	at geb.Configuration.getDriver(Configuration.groovy:343)
-	at geb.Browser.getDriver(Browser.groovy:105)
-	at geb.Browser.go(Browser.groovy:394)
-	at geb.Page.to(Page.groovy:184)
-	at geb.Browser.via(Browser.groovy:475)
-	at geb.Browser.to(Browser.groovy:434)
-	at geb.Browser.to(Browser.groovy:412)
-	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-	at steps.adicionarAtletaSteps$_run_closure12.doCall(adicionarAtletaSteps.groovy:90)
-	at cucumber.runtime.groovy.GroovyBackend.invoke(GroovyBackend.java:155)
-	at cucumber.runtime.groovy.GroovyStepDefinition$1.call(GroovyStepDefinition.java:71)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-	at cucumber.runtime.groovy.GroovyStepDefinition.execute(GroovyStepDefinition.java:68)
-	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
-	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
-	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
-	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
-	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
-	at _GrailsTest$_run_closure1.doCall(_GrailsTest.groovy:102)
-	at TestApp$_run_closure1.doCall(TestApp.groovy:32)
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta no sistema com sucesso web" time="1.783">
+          <error message="No signature of method: geb.navigator.NonEmptyNavigator.cadastrarAtleta() is applicable for argument types: (java.lang.String, java.lang.String) values: [Pedro, 01234567890]" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: geb.navigator.NonEmptyNavigator.cadastrarAtleta() is applicable for argument types: (java.lang.String, java.lang.String) values: [Pedro, 01234567890]
+	at geb.navigator.NonEmptyNavigator.methodMissing(NonEmptyNavigator.groovy:463)
+	at geb.content.NavigableSupport.methodMissing(NavigableSupport.groovy:123)
+	at steps.adicionarAtletaSteps$_run_closure14.doCall(adicionarAtletaSteps.groovy:98)
+	at ✽.When Eu tento cadastrar o atleta &quot;Pedro&quot; com o CPF &quot;01234567890&quot;(adicionarAtleta.feature:26)
 </error>
 
       </testcase>
@@ -144,216 +40,38 @@ Caused by: java.lang.IllegalStateException: The driver executable does not exist
 
 --Output from Adicionar Atleta no sistema com sucesso--
   Scenario: Adicionar Atleta Sem sucesso web                                      # adicionarAtleta.feature:11
-    Given Um atleta de CPF "863923834-34" se encontra cadastrado                  # adicionarAtletaSteps.groovy:40
-      geb.driver.DriverCreationException: failed to create driver from callback 'script14653168241561647889053$_run_closure2_closure3_closure5@5f828c49'
-      	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy)
-      	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-      	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-      	at geb.Configuration.createDriver(Configuration.groovy:354)
-      	at geb.Configuration.getDriver(Configuration.groovy:343)
-      	at geb.Browser.getDriver(Browser.groovy:105)
-      	at geb.Browser.go(Browser.groovy:394)
-      	at geb.Browser$go$3.call(Unknown Source)
-      	at geb.Page.to(Page.groovy:184)
-      	at geb.Browser.via(Browser.groovy:475)
-      	at geb.Browser$via$2.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:434)
-      	at geb.Browser$to$1.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:412)
-      	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-      	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:41)
-      	at ✽.Given Um atleta de CPF "863923834-34" se encontra cadastrado(adicionarAtleta.feature:12)
-      Caused by: java.lang.IllegalStateException: The driver executable does not exist: C:\Users\Edymir\IdeaProjects\GA\chromedrivers\chromedriverlinux64
-      	at com.google.common.base.Preconditions.checkState(Preconditions.java:177)
-      	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:117)
-      	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:112)
-      	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:75)
-      	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:107)
-      	at script14653168241561647889053$_run_closure2_closure3_closure5.doCall(script14653168241561647889053.groovy:17)
-      	at script14653168241561647889053$_run_closure2_closure3_closure5.doCall(script14653168241561647889053.groovy)
-      	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy)
-      	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-      	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-      	at geb.Configuration.createDriver(Configuration.groovy:354)
-      	at geb.Configuration.getDriver(Configuration.groovy:343)
-      	at geb.Browser.getDriver(Browser.groovy:105)
-      	at geb.Browser.go(Browser.groovy:394)
-      	at geb.Browser$go$3.call(Unknown Source)
-      	at geb.Page.to(Page.groovy:184)
-      	at geb.Browser.via(Browser.groovy:475)
-      	at geb.Browser$via$2.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:434)
-      	at geb.Browser$to$1.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:412)
-      	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-      	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:41)
-      	at cucumber.runtime.groovy.GroovyBackend.invoke(GroovyBackend.java:155)
-      	at cucumber.runtime.groovy.GroovyStepDefinition$1.call(GroovyStepDefinition.java:71)
-      	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-      	at cucumber.runtime.groovy.GroovyStepDefinition.execute(GroovyStepDefinition.java:68)
-      	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-      	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-      	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-      	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-      	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-      	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
-      	at cucumber.runtime.model.CucumberFeature$run$0.call(Unknown Source)
-      	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
-      	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
-      	at grails.plugin.cucumber.Cucumber$run$1.call(Unknown Source)
-      	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
-      	at grails.plugin.cucumber.CucumberTestType.this$3$runFeatures(CucumberTestType.groovy)
-      	at grails.plugin.cucumber.CucumberTestType$this$3$runFeatures$3.callCurrent(Unknown Source)
-      	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
-      	at _GrailsTest$_run_closure1.doCall(_GrailsTest.groovy:102)
-      	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:133)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding.withTargetEvent(GantBinding.groovy:90)
-      	at org.codehaus.gant.GantBinding.this$4$withTargetEvent(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy)
-      	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:133)
-      	at TestApp$_run_closure1.doCall(TestApp.groovy:32)
-      	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:133)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding.withTargetEvent(GantBinding.groovy:90)
-      	at org.codehaus.gant.GantBinding.this$4$withTargetEvent(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy)
-      	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
-      	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
-      	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
-      	at gant.Gant.withBuildListeners(Gant.groovy:427)
-      	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
-      	at gant.Gant$this$2$withBuildListeners$0.callCurrent(Unknown Source)
-      	at gant.Gant.dispatch(Gant.groovy:415)
-      	at gant.Gant.this$2$dispatch(Gant.groovy)
-      	at gant.Gant.invokeMethod(Gant.groovy)
-      	at gant.Gant.executeTargets(Gant.groovy:591)
-      	at gant.Gant.executeTargets(Gant.groovy:590)
-
-    And Estou no menu Atletas                                                     # adicionarAtletaSteps.groovy:46
-    When Seleciono a opção Adicionar Atleta                                       # adicionarAtletaSteps.groovy:52
-    And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-34"            # adicionarAtletaSteps.groovy:18
-    Then Eu posso ver que na página de Atletas que o no atleta não foi adicionado # adicionarAtletaSteps.groovy:63
+    Given Um atleta de CPF "863923834-94" se encontra cadastrado                  # adicionarAtletaSteps.groovy:35
+    And Estou no menu Atletas                                                     # adicionarAtletaSteps.groovy:41
+    When Seleciono a opção Adicionar Atleta                                       # adicionarAtletaSteps.groovy:47
+    And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-94"            # adicionarAtletaSteps.groovy:18
+    Then Eu posso ver que na página de Atletas que o no atleta não foi adicionado # adicionarAtletaSteps.groovy:58
 
 --Output from Adicionar Atleta no sistema com sucesso web--
   Scenario: Adicionar Atleta no sistema com sucesso                    # adicionarAtleta.feature:18
-    Given O atleta de CPF "01234567890" não esta cadastrado no sistema # adicionarAtletaSteps.groovy:70
+    Given O atleta de CPF "01234567890" não esta cadastrado no sistema # adicionarAtletaSteps.groovy:66
       org.codehaus.groovy.grails.exceptions.InvalidPropertyException: No property found for name [cPF] for class [class ga.Atleta]
       	at org.grails.datastore.gorm.finders.FinderMethod$invoke$0.call(Unknown Source)
       	at org.grails.datastore.gorm.GormStaticApi.methodMissing(GormStaticApi.groovy:104)
       	at ga.Atleta.$static_methodMissing(Atleta.groovy)
-      	at steps.adicionarAtletaSteps$_run_closure9.doCall(adicionarAtletaSteps.groovy:71)
+      	at steps.adicionarAtletaSteps$_run_closure9.doCall(adicionarAtletaSteps.groovy:67)
       	at ✽.Given O atleta de CPF "01234567890" não esta cadastrado no sistema(adicionarAtleta.feature:19)
 
-    When Eu cadastro o atleta de CPF "01234567890"                     # adicionarAtletaSteps.groovy:74
-    Then O sistema adiciona o atleta de CPF "01234567890" com sucesso  # adicionarAtletaSteps.groovy:79
+    When Eu cadastro o atleta de CPF "01234567890"                     # adicionarAtletaSteps.groovy:70
+    Then O sistema adiciona o atleta de CPF "01234567890" com sucesso  # adicionarAtletaSteps.groovy:75
 
   Scenario: Adicionar Atleta no sistema com sucesso web                                     # adicionarAtleta.feature:23
-    Given Estou no menu de Atletas                                                          # adicionarAtletaSteps.groovy:89
-      geb.driver.DriverCreationException: failed to create driver from callback 'script14653168250251647889053$_run_closure2_closure3_closure5@33d2e469'
-      	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:35)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy)
-      	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-      	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-      	at geb.Configuration.createDriver(Configuration.groovy:354)
-      	at geb.Configuration.getDriver(Configuration.groovy:343)
-      	at geb.Browser.getDriver(Browser.groovy:105)
-      	at geb.Browser.go(Browser.groovy:394)
-      	at geb.Browser$go$3.call(Unknown Source)
-      	at geb.Page.to(Page.groovy:184)
-      	at geb.Browser.via(Browser.groovy:475)
-      	at geb.Browser$via$2.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:434)
-      	at geb.Browser$to$1.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:412)
-      	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-      	at steps.adicionarAtletaSteps$_run_closure12.doCall(adicionarAtletaSteps.groovy:90)
-      	at ✽.Given Estou no menu de Atletas(adicionarAtleta.feature:24)
-      Caused by: java.lang.IllegalStateException: The driver executable does not exist: C:\Users\Edymir\IdeaProjects\GA\chromedrivers\chromedriverlinux64
-      	at com.google.common.base.Preconditions.checkState(Preconditions.java:177)
-      	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:117)
-      	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:112)
-      	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:75)
-      	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:107)
-      	at script14653168250251647889053$_run_closure2_closure3_closure5.doCall(script14653168250251647889053.groovy:17)
-      	at script14653168250251647889053$_run_closure2_closure3_closure5.doCall(script14653168250251647889053.groovy)
-      	at geb.driver.CallbackDriverFactory.getDriver(CallbackDriverFactory.groovy:29)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy:80)
-      	at geb.driver.CachingDriverFactory$_getDriver_closure3.doCall(CachingDriverFactory.groovy)
-      	at geb.driver.CachingDriverFactory$SimpleCache.get(CachingDriverFactory.groovy:30)
-      	at geb.driver.CachingDriverFactory.getDriver(CachingDriverFactory.groovy:79)
-      	at geb.Configuration.createDriver(Configuration.groovy:354)
-      	at geb.Configuration.getDriver(Configuration.groovy:343)
-      	at geb.Browser.getDriver(Browser.groovy:105)
-      	at geb.Browser.go(Browser.groovy:394)
-      	at geb.Browser$go$3.call(Unknown Source)
-      	at geb.Page.to(Page.groovy:184)
-      	at geb.Browser.via(Browser.groovy:475)
-      	at geb.Browser$via$2.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:434)
-      	at geb.Browser$to$1.callCurrent(Unknown Source)
-      	at geb.Browser.to(Browser.groovy:412)
-      	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
-      	at steps.adicionarAtletaSteps$_run_closure12.doCall(adicionarAtletaSteps.groovy:90)
-      	at cucumber.runtime.groovy.GroovyBackend.invoke(GroovyBackend.java:155)
-      	at cucumber.runtime.groovy.GroovyStepDefinition$1.call(GroovyStepDefinition.java:71)
-      	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
-      	at cucumber.runtime.groovy.GroovyStepDefinition.execute(GroovyStepDefinition.java:68)
-      	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
-      	at cucumber.runtime.Runtime.runStep(Runtime.java:298)
-      	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
-      	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
-      	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
-      	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
-      	at cucumber.runtime.model.CucumberFeature$run$0.call(Unknown Source)
-      	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
-      	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
-      	at grails.plugin.cucumber.Cucumber$run$1.call(Unknown Source)
-      	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
-      	at grails.plugin.cucumber.CucumberTestType.this$3$runFeatures(CucumberTestType.groovy)
-      	at grails.plugin.cucumber.CucumberTestType$this$3$runFeatures$3.callCurrent(Unknown Source)
-      	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
-      	at _GrailsTest$_run_closure1.doCall(_GrailsTest.groovy:102)
-      	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:133)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding.withTargetEvent(GantBinding.groovy:90)
-      	at org.codehaus.gant.GantBinding.this$4$withTargetEvent(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy)
-      	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:133)
-      	at TestApp$_run_closure1.doCall(TestApp.groovy:32)
-      	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:133)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding.withTargetEvent(GantBinding.groovy:90)
-      	at org.codehaus.gant.GantBinding.this$4$withTargetEvent(GantBinding.groovy)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy:185)
-      	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy)
-      	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
-      	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
-      	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
-      	at gant.Gant.withBuildListeners(Gant.groovy:427)
-      	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
-      	at gant.Gant$this$2$withBuildListeners$0.callCurrent(Unknown Source)
-      	at gant.Gant.dispatch(Gant.groovy:415)
-      	at gant.Gant.this$2$dispatch(Gant.groovy)
-      	at gant.Gant.invokeMethod(Gant.groovy)
-      	at gant.Gant.executeTargets(Gant.groovy:591)
-      	at gant.Gant.executeTargets(Gant.groovy:590)
+    Given Estou no menu de Atletas                                                          # adicionarAtletaSteps.groovy:85
+    And O atleta de CPF "01234567890" e nome "Pedro" não esta na lista de atletas           # adicionarAtletaSteps.groovy:90
+    When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"                        # adicionarAtletaSteps.groovy:95
+      groovy.lang.MissingMethodException: No signature of method: geb.navigator.NonEmptyNavigator.cadastrarAtleta() is applicable for argument types: (java.lang.String, java.lang.String) values: [Pedro, 01234567890]
+      	at geb.navigator.NonEmptyNavigator.methodMissing(NonEmptyNavigator.groovy:463)
+      	at geb.content.NavigableSupport.methodMissing(NavigableSupport.groovy:123)
+      	at geb.content.NavigableSupport$methodMissing$1.call(Unknown Source)
+      	at geb.Page.methodMissing(Page.groovy)
+      	at steps.adicionarAtletaSteps$_run_closure14.doCall(adicionarAtletaSteps.groovy:98)
+      	at ✽.When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"(adicionarAtleta.feature:26)
 
-    And O atleta de CPF "01234567890" e nome "Pedro" não esta na lista de atletas           # adicionarAtletaSteps.groovy:94
-    When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"                        # adicionarAtletaSteps.groovy:99
-    Then Eu posso ver a tela de visualização de Atleta e o nome "Pedro" e CPF "01234567890" # adicionarAtletaSteps.groovy:105
+    Then Eu posso ver a tela de visualização de Atleta e o nome "Pedro" e CPF "01234567890" # adicionarAtletaSteps.groovy:101
 ]]></system-out>
 
       <system-err><![CDATA[
