@@ -23,11 +23,12 @@ class AtletaController {
     @Transactional
     def save(Atleta atletaInstance) {
         if (atletaInstance == null) {
-            notFound()
+             notFound()
             return
         }
 
         if (atletaInstance.hasErrors()) {
+            flash.message= "Já existe um atleta cadastrado com o CPF informado"
             respond atletaInstance.errors, view: 'create'
             return
         }

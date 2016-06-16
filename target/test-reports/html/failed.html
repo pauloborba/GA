@@ -14,9 +14,13 @@
         Unit Test Results
      - Failed tests</h1>
 <p class="intro">
-                        A single test executed
+                        Executed
+                        2
+                        tests
                     
-                        without a single error or failure!
+                        with
+                        one error
+                        .
                     </p>
 </div>
 <div class="grid_2 omega">
@@ -39,6 +43,91 @@
 </nav>
 </div>
 <div class="clear"></div>
+<div class="testsuite error">
+<div class="header">
+<h2>Adicionar Atleta</h2>
+<h3>
+                        Executed
+                        2
+                        tests
+                    
+                        with
+                        one error
+                        .
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar Atleta Sem sucesso">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adicionar Atleta Sem sucesso</b>
+</p>
+<p class="summary">Executed in 1.763 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="Adicionar Atleta Sem sucesso web">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">Adicionar Atleta Sem sucesso web</b>
+</p>
+<p class="summary">Executed in 27.491 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+Possible solutions: existeCPF(java.lang.Object)</b>
+</p>
+<pre>groovy.lang.MissingMethodException: No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+Possible solutions: existeCPF(java.lang.Object)
+	at pages.CreateAtleta.cadastrAtleta(CreateAtleta.groovy:13)
+	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:38)
+	at ✽.Given Um atleta de CPF "863923834-94" se encontra cadastrado(adicionarAtleta.feature:12)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">Feature: Adicionar Atleta
+  As a Usu&aacute;rio do sistema
+  I want Adicionar um atleta
+  So that Ter o cadastro do atleta no sistema
+
+--Output from Adicionar Atleta Sem sucesso--
+--Output from Adicionar Atleta Sem sucesso web--
+  Scenario: Adicionar Atleta Sem sucesso                                    # adicionarAtleta.feature:6
+    Given Um atleta de CPF "863923834-34" se encontra cadastrado no sistema # adicionarAtletaSteps.groovy:12
+    When Tento cadastrar um novo atleta "Grafite" com o CPF "863923834-34"  # adicionarAtletaSteps.groovy:18
+    Then O sistema n&atilde;o permite o cadastro duplicado do CPF "863923834-34"   # adicionarAtletaSteps.groovy:23
+
+  Scenario: Adicionar Atleta Sem sucesso web                                      # adicionarAtleta.feature:11
+    Given Um atleta de CPF "863923834-94" se encontra cadastrado                  # adicionarAtletaSteps.groovy:35
+      groovy.lang.MissingMethodException: No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+      Possible solutions: existeCPF(java.lang.Object)
+      	at pages.CreateAtleta.cadastrAtleta(CreateAtleta.groovy:13)
+      	at pages.CreateAtleta$cadastrAtleta.call(Unknown Source)
+      	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:38)
+      	at ✽.Given Um atleta de CPF "863923834-94" se encontra cadastrado(adicionarAtleta.feature:12)
+
+    And Estou no menu Atletas                                                     # adicionarAtletaSteps.groovy:44
+    When Seleciono a op&ccedil;&atilde;o Adicionar Atleta                                       # adicionarAtletaSteps.groovy:50
+    And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-94"            # adicionarAtletaSteps.groovy:18
+    Then Eu posso ver que na p&aacute;gina de Atletas que o no atleta n&atilde;o foi adicionado # adicionarAtletaSteps.groovy:61
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">
+--Output from Adicionar Atleta Sem sucesso--
+--Output from Adicionar Atleta Sem sucesso web--</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
 <div class="clear"></div>
 </div>
 <!--
