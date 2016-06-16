@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="2" failures="0" hostname="EdyESPC" id="0" name="Adicionar Atleta" package="" tests="4" time="26.081" timestamp="2016-06-09T17:35:51">
+  <testsuite errors="1" failures="0" hostname="EdyESPC" id="0" name="Adicionar Atleta" package="" tests="2" time="30.39" timestamp="2016-06-14T19:21:42">
       <properties />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso" time="2.096" />
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso" time="1.763" />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso web" time="20.816" />
-
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta no sistema com sucesso" time="0.264">
-          <error message="No property found for name [cPF] for class [class ga.Atleta]" type="org.codehaus.groovy.grails.exceptions.InvalidPropertyException">org.codehaus.groovy.grails.exceptions.InvalidPropertyException: No property found for name [cPF] for class [class ga.Atleta]
-	at org.grails.datastore.gorm.GormStaticApi.methodMissing(GormStaticApi.groovy:104)
-	at steps.adicionarAtletaSteps$_run_closure9.doCall(adicionarAtletaSteps.groovy:67)
-	at ✽.Given O atleta de CPF &quot;01234567890&quot; não esta cadastrado no sistema(adicionarAtleta.feature:19)
-</error>
-
-      </testcase>
-
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta no sistema com sucesso web" time="1.783">
-          <error message="No signature of method: geb.navigator.NonEmptyNavigator.cadastrarAtleta() is applicable for argument types: (java.lang.String, java.lang.String) values: [Pedro, 01234567890]" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: geb.navigator.NonEmptyNavigator.cadastrarAtleta() is applicable for argument types: (java.lang.String, java.lang.String) values: [Pedro, 01234567890]
-	at geb.navigator.NonEmptyNavigator.methodMissing(NonEmptyNavigator.groovy:463)
-	at geb.content.NavigableSupport.methodMissing(NavigableSupport.groovy:123)
-	at steps.adicionarAtletaSteps$_run_closure14.doCall(adicionarAtletaSteps.groovy:98)
-	at ✽.When Eu tento cadastrar o atleta &quot;Pedro&quot; com o CPF &quot;01234567890&quot;(adicionarAtleta.feature:26)
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso web" time="27.491">
+          <error message="No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]&#xa;Possible solutions: existeCPF(java.lang.Object)" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+Possible solutions: existeCPF(java.lang.Object)
+	at pages.CreateAtleta.cadastrAtleta(CreateAtleta.groovy:13)
+	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:38)
+	at ✽.Given Um atleta de CPF &quot;863923834-94&quot; se encontra cadastrado(adicionarAtleta.feature:12)
 </error>
 
       </testcase>
@@ -38,47 +27,24 @@
     When Tento cadastrar um novo atleta "Grafite" com o CPF "863923834-34"  # adicionarAtletaSteps.groovy:18
     Then O sistema não permite o cadastro duplicado do CPF "863923834-34"   # adicionarAtletaSteps.groovy:23
 
---Output from Adicionar Atleta no sistema com sucesso--
   Scenario: Adicionar Atleta Sem sucesso web                                      # adicionarAtleta.feature:11
     Given Um atleta de CPF "863923834-94" se encontra cadastrado                  # adicionarAtletaSteps.groovy:35
-    And Estou no menu Atletas                                                     # adicionarAtletaSteps.groovy:41
-    When Seleciono a opção Adicionar Atleta                                       # adicionarAtletaSteps.groovy:47
+      groovy.lang.MissingMethodException: No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+      Possible solutions: existeCPF(java.lang.Object)
+      	at pages.CreateAtleta.cadastrAtleta(CreateAtleta.groovy:13)
+      	at pages.CreateAtleta$cadastrAtleta.call(Unknown Source)
+      	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:38)
+      	at ✽.Given Um atleta de CPF "863923834-94" se encontra cadastrado(adicionarAtleta.feature:12)
+
+    And Estou no menu Atletas                                                     # adicionarAtletaSteps.groovy:44
+    When Seleciono a opção Adicionar Atleta                                       # adicionarAtletaSteps.groovy:50
     And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-94"            # adicionarAtletaSteps.groovy:18
-    Then Eu posso ver que na página de Atletas que o no atleta não foi adicionado # adicionarAtletaSteps.groovy:58
-
---Output from Adicionar Atleta no sistema com sucesso web--
-  Scenario: Adicionar Atleta no sistema com sucesso                    # adicionarAtleta.feature:18
-    Given O atleta de CPF "01234567890" não esta cadastrado no sistema # adicionarAtletaSteps.groovy:66
-      org.codehaus.groovy.grails.exceptions.InvalidPropertyException: No property found for name [cPF] for class [class ga.Atleta]
-      	at org.grails.datastore.gorm.finders.FinderMethod$invoke$0.call(Unknown Source)
-      	at org.grails.datastore.gorm.GormStaticApi.methodMissing(GormStaticApi.groovy:104)
-      	at ga.Atleta.$static_methodMissing(Atleta.groovy)
-      	at steps.adicionarAtletaSteps$_run_closure9.doCall(adicionarAtletaSteps.groovy:67)
-      	at ✽.Given O atleta de CPF "01234567890" não esta cadastrado no sistema(adicionarAtleta.feature:19)
-
-    When Eu cadastro o atleta de CPF "01234567890"                     # adicionarAtletaSteps.groovy:70
-    Then O sistema adiciona o atleta de CPF "01234567890" com sucesso  # adicionarAtletaSteps.groovy:75
-
-  Scenario: Adicionar Atleta no sistema com sucesso web                                     # adicionarAtleta.feature:23
-    Given Estou no menu de Atletas                                                          # adicionarAtletaSteps.groovy:85
-    And O atleta de CPF "01234567890" e nome "Pedro" não esta na lista de atletas           # adicionarAtletaSteps.groovy:90
-    When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"                        # adicionarAtletaSteps.groovy:95
-      groovy.lang.MissingMethodException: No signature of method: geb.navigator.NonEmptyNavigator.cadastrarAtleta() is applicable for argument types: (java.lang.String, java.lang.String) values: [Pedro, 01234567890]
-      	at geb.navigator.NonEmptyNavigator.methodMissing(NonEmptyNavigator.groovy:463)
-      	at geb.content.NavigableSupport.methodMissing(NavigableSupport.groovy:123)
-      	at geb.content.NavigableSupport$methodMissing$1.call(Unknown Source)
-      	at geb.Page.methodMissing(Page.groovy)
-      	at steps.adicionarAtletaSteps$_run_closure14.doCall(adicionarAtletaSteps.groovy:98)
-      	at ✽.When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"(adicionarAtleta.feature:26)
-
-    Then Eu posso ver a tela de visualização de Atleta e o nome "Pedro" e CPF "01234567890" # adicionarAtletaSteps.groovy:101
+    Then Eu posso ver que na página de Atletas que o no atleta não foi adicionado # adicionarAtletaSteps.groovy:61
 ]]></system-out>
 
       <system-err><![CDATA[
 --Output from Adicionar Atleta Sem sucesso--
---Output from Adicionar Atleta Sem sucesso web--
---Output from Adicionar Atleta no sistema com sucesso--
---Output from Adicionar Atleta no sistema com sucesso web--]]></system-err>
+--Output from Adicionar Atleta Sem sucesso web--]]></system-err>
 
   </testsuite>
 </testsuites>

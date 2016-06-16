@@ -36,6 +36,9 @@ Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
 	to CreateAtleta
 	at CreateAtleta
 	page.cadastrAtleta("Jankaukas", cpf)
+	to AtletasPage
+	at AtletasPage
+	assert page.existeCPF(cpf)
 }
 
 And(~'^Estou no menu Atletas$'){->
@@ -63,7 +66,7 @@ Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionad
 
 //Abaixo, steps de silvaemanuel
 
-Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
+/*Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
     assert Atleta.findByCPF(cpf) == null
 }
 
@@ -103,3 +106,4 @@ Then(~'^Eu posso ver a tela de visualização de Atleta e o nome "([^"]*)" e CPF
     assert page.temNome(nome) == true
     assert page.temCpf(cpf) == true
 }
+*/

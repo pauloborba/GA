@@ -31,4 +31,8 @@ class AtletasPage extends Page {
     boolean temAtleta(cpf){
         $("div", class: "cpf").has("h1",text: cpf)
     }
+
+    boolean existeCPF(cpf){
+        $("tbody").has("td", text: cpf)
+    }
 }

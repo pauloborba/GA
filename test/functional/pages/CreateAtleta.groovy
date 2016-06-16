@@ -10,9 +10,13 @@ class CreateAtleta extends Page {
     }
 
     boolean cadastrAtleta(nome, cpf) {
-        $("form").nome = nome
-        $("form").cpf = cpf
-		/*$("form").dataNascimento = 10/02/1990/ */
-        $("input", name: "Criar").click()
+        if (AtletasPage.existeCPF(cpf)) {
+        }
+        else{
+            $("form").nome = nome
+            $("form").cpf = cpf
+            /*$("form").dataNascimento = 10/02/1990/ */
+            $("input", name: "Criar").click()
+        }
     }
 }
