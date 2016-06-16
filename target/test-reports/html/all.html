@@ -14,7 +14,9 @@
         Unit Test Results
      - All tests </h1>
 <p class="intro">
-                        A single test executed
+                        Executed
+                        2
+                        tests
                     
                         without a single error or failure!
                     </p>
@@ -41,19 +43,19 @@
 <div class="clear"></div>
 <div class="testsuite success">
 <div class="header">
-<h2>new book entry</h2>
+<h2>Adicionar Atleta</h2>
 <h3>
                         A single test executed
                     
                         without a single error or failure!
                     </h3>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="new book">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar Atleta Sem sucesso">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">new book</b>
+<span class="icon success"></span><b class="testname message success">Adicionar Atleta Sem sucesso</b>
 </p>
-<p class="summary">Executed in 5.377 seconds.</p>
+<p class="summary">Executed in 0.642 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -61,22 +63,64 @@
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">Feature: new book entry
-  As a book owner
-  I want to add books I own to the book tracker
-  so that I do not have to remember them by myself
+<pre class="stdout">Feature: Adicionar Atleta
+  As a Usu&aacute;rio do sistema
+  I want Adicionar um atleta
+  So that Ter o cadastro do atleta no sistema
 
---Output from new book--
-  Scenario: new book                               # NewBook.feature:6
-    Given I open the book tracker                  # Book_Steps.groovy:5
-    When I add "Specification by Example"          # Book_Steps.groovy:10
-    Then I see "Specification by Example"s details # Book_Steps.groovy:14
+--Output from Adicionar Atleta Sem sucesso--
+  Scenario: Adicionar Atleta Sem sucesso                                    # adicionarAtleta.feature:6
+    Given Um atleta de CPF "863923834-34" se encontra cadastrado no sistema # adicionarAtletaSteps.groovy:10
+    When Tento cadastrar um novo atleta "Grafite" com o CPF "863923834-34"  # adicionarAtletaSteps.groovy:16
+    Then O sistema n&atilde;o permite o cadastro duplicado do CPF "863923834-34"   # adicionarAtletaSteps.groovy:21
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
 <pre class="syserr">
---Output from new book--</pre>
+--Output from Adicionar Atleta Sem sucesso--</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testsuite success">
+<div class="header">
+<h2>Excluir Atleta</h2>
+<h3>
+                        A single test executed
+                    
+                        without a single error or failure!
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Excluir Atleta Novo no Sistema com sucesso">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Excluir Atleta Novo no Sistema com sucesso</b>
+</p>
+<p class="summary">Executed in 0.056 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">Feature: Excluir Atleta
+  As a usu?rio do sistema
+  I want remover um atleta
+  So that eu posso remover os dados do atletas de um clube
+
+--Output from Excluir Atleta Novo no Sistema com sucesso--
+  Scenario: Excluir Atleta Novo no Sistema com sucesso                    # excluirAtleta.feature:7
+    Given o atleta de CPF "863923834-34" esta cadastrado no sistema       # excluirAtleta.groovy:10
+    When tento excluir o atleta de CPF "863923834-34"                     # excluirAtleta.groovy:14
+    Then O atleta de cpf "863923834-34" e devidamente removido do sistema # excluirAtleta.groovy:20
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">
+--Output from Excluir Atleta Novo no Sistema com sucesso--</pre>
 </div>
 </div>
 <div class="clear"></div>

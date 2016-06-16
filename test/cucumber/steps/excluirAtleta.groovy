@@ -1,54 +1,51 @@
 package steps
 
+import cucumber.api.PendingException
 import ga.AtletaController
+import page.AtletasPage
 import steps.AtletaTestAndDataOperations
 import ga.Atleta
 import static cucumber.api.groovy.EN.*
 
-Given (~'^O sistema tem um atleta com o CPF "([^"]*)"  e nome "([^"]*)" $') {
-    String cpf, nome ->
-        def controlador = new AtletaController()
-        def data = "01/02/1991"
-        createAtleta(cpf, nome, data, controlador)
 
-        def atleta = AtletaTestAndDataOperations.findByCpf(cpf)
-        assert atleta != null
+Given(~/^o atleta de CPF "([^"]*)" esta cadastrado no sistema$/) { String cpf ->
+    assert Atleta.findByCpf(cpf) != null
 }
 
-When(~'^ Eu excluo o atleta de CPF "([^"]*)" $'){
-    String cpf -> AtletaTestAndDataOperations.removeAtleta(cpf)
+When(~/^tento excluir o atleta de CPF "([^"]*)"$/) { String cpf ->
+    def controller = new AtletaController()
+    Atleta atleta = Atleta.findByCpf(cpf)
+    AtletaTestAndDataOperations.removeAtleta(cpf)
 }
 
-Then(~'^ O atleta de cpf "([^"]*)" eh devidamente removido do sistema $'){
-    String cpf -> atleta = AtletaTestAndDataOperations.findByCpf(cpf)
-        assert atleta == null
+Then(~/^O atleta de cpf "([^"]*)" e devidamente removido do sistema$/) { String cpf ->
+    assert Atleta.findByCpf(cpf) == null
 }
 
 
+Given(~/^eu estou na pagina de atletas$/) { ->
+   to AtletasPage
+   at AtletasPage
+}
 
-def createAtleta(String cpf, String nome, String data, AtletaController controlador) {
-    controlador.params << [cpf: cpf, nome: nome, dataNascimento: data ]
-    controlador.save()
-    controlador.response.reset()
-    // eddy tromba
+And(~/^eu visualizo a lista de todos os atletas$/) { ->
+   at AtletasPage
+   atletas = Atleta.findAll()
+   assert atletas != null
+}
+
+When(~/^eu tento remover o atleta de CPF "([^"]*)"$/) { String cpf ->
+    to DeleteAtletaPage
+    at DeleteAtletaPage
+    
+    page.fillAtletaDetails(nome,cpf,data_nascimento)
+    page.selectDeleteAtleta()
 }
 
 
+Then(~/^eu poderei ver uma mensagem de confirmacao na tela$/) { ->
+   at DeleteAtletaPage
+   def hasMessage = page.hasMessage()
+   assert hasMessage != null
 
-
-
-Given (~'^o atleta de CPF "([^"]*)" estah cadastrado no sistema$') {
-    String usercpf -> AtletaTestAndDataOperations.createAtleta(usercpf)
-        cpf =  AtletaTestAndDataOperations.findByCpf(usercpf);
-        assert cpf != null
-}
-
-When(~'^ tento excluir o atleta de CPF "([^"]*)" $') {
-    String usercpf -> AtletaTestAndDataOperations.removeAtleta(usercpf)
-}
-
-Then(~'^O sistema remove o atleta "([^"]*)" com sucesso$') {
-    String usercpf ->
-        cpf = AtletaTestAndDataOperations.findByCpf(usercpf)
-        assert usercpf == null
 }
