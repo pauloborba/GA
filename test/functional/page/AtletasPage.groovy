@@ -6,24 +6,24 @@ class AtletasPage extends Page {
 	static url = "/GA/atleta/overview/"
 
 	static at = {
-		title ==~ /Lista de Atletas/
+		title ==~ "Lista de Atletas"
 	}
 
-	boolean atletaNaLista(nome, cpf) {
+	boolean atletaNaLista(String nome, String cpf) {
 		$("td", text: nome).has("a",text: cpf)
 	}
 
-	boolean buscarAtletaNome(nome){
+	boolean buscarAtletaNome(String nome){
 		$("form").nome = nome
 		$("input", name: "search").click()
 	}
 
-	boolean buscarAtletaCpf(cpf){
+	boolean buscarAtletaCpf(String cpf){
 		$("form").cpf = cpf
 		$("input", cpf: "search").click()
 	}
 
-	boolean removerAtleta(cpf){
+	def removerAtleta(String cpf){
 		$("fomr").cpf = cpf
 		$("input", name: "delete").click()
 	}

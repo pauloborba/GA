@@ -2,7 +2,7 @@ package steps
 
 import cucumber.api.PendingException
 import ga.AtletaController
-import page.AtletasPage
+import page.*
 import steps.AtletaTestAndDataOperations
 import ga.Atleta
 import static cucumber.api.groovy.EN.*
@@ -22,7 +22,7 @@ Then(~/^O atleta de cpf "([^"]*)" e devidamente removido do sistema$/) { String 
     assert Atleta.findByCpf(cpf) == null
 }
 
-
+//---------------------------------------------------------//
 Given(~/^eu estou na pagina de atletas$/) { ->
    to AtletasPage
    at AtletasPage
