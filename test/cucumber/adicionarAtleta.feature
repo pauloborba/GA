@@ -20,8 +20,8 @@ Feature: Adicionar Atleta
     When Eu cadastro o atleta de CPF "01234567890"
     Then O sistema adiciona o atleta de CPF "01234567890" com sucesso
 
-  Scenario: Adicionar Atleta no sistema com sucesso web
-    Given Estou no menu de Atletas
-    And O atleta de CPF "01234567890" e nome "Pedro" não esta na lista de atletas
-    When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"
-    Then Eu posso ver o nome "Pedro" e CPF "01234567890" na lista de atletas
+#  Scenario: Adicionar Atleta no sistema com sucesso web
+#    Given Estou no menu de Atletas
+#    And O atleta de CPF "01234567890" e nome "Pedro" não esta na lista de atletas
+#    When Eu tento cadastrar o atleta "Pedro" com o CPF "01234567890"
+#    Then Eu posso ver o nome "Pedro" e CPF "01234567890" na lista de atletas

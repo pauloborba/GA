@@ -7,11 +7,25 @@ class AtletaController {
 
     static allowedMethods = [update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Atleta.list(params), model: [atletaInstanceCount: Atleta.count()]
+//    def index(Integer max) {
+//        params.max = Math.min(max ?: 10, 100)
+//        respond Atleta.list(params), model: [atletaInstanceCount: Atleta.count()]
+//    }
+    //Redefinição do metodo index e list de acordo com o Toy
+    def index() {
+        redirect(action: "list", params: params)
     }
 
+    def list(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        [atletaInstanceList: Atleta.list(params),
+         atletaInstanceTotal: Atleta.count()]
+    }
+
+    def overview(Integer max) {
+        list(max)
+    }
+    // Fim da redefinição
     def show(Atleta atletaInstance) {
         respond atletaInstance
     }

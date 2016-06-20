@@ -71,14 +71,20 @@ Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String c
 }
 
 When(~'^Eu cadastro o atleta de CPF "([^"]*)"$') { String cpf ->
-    def controlador = new AtletaController()
-	cadastrAtleta ("", cpf, null, controlador)
+    def contrlador = new AtletaController()
+	cadAtletaComCpf("Edinaldo", cpf, null, contrlador)
 }
 
 Then(~'^O sistema adiciona o atleta de CPF "([^"]*)" com sucesso$') { String cpf ->
-    assert Atleta.findByCpf(cpf) != false
+	atlta = Atleta.findByCpf(cpf)
+	assert atlta.cpf == cpf
 }
 
+def cadAtletaComCpf(String nome, String cpf, Date dataNascimento, AtletaController controlador) {
+	controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
+	controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
+	controlador.response.reset()
+}
 Given(~'^Estou no menu de Atletas$') { ->
     to AtletasPage
     at AtletasPage
@@ -86,7 +92,7 @@ Given(~'^Estou no menu de Atletas$') { ->
 
 And(~'^O atleta de CPF "([^"]*)" e nome "([^"]*)" não esta na lista de atletas$') {String nome, cpf->
     at AtletasPage
-    assert !(page.atletaNaLista(nome, cpf))
+    assert !(page.temAtleta(cpf))
 }
 
 When(~'^Eu tento cadastrar o atleta "([^"]*)" com o CPF "([^"]*)"$') { String nome, cpf ->
