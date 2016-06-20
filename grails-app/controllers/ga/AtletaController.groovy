@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class AtletaController {
 
-    static allowedMethods = [update: "PUT", delete: "DELETE"]
+    static allowedMethods = [/*update: "PUT", delete: "DELETE"*/]
 
 //    def index(Integer max) {
 //        params.max = Math.min(max ?: 10, 100)
