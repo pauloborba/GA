@@ -1,24 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Hugos-MacBook-Air.local" id="0" name="new book entry" package="" tests="1" time="5.862" timestamp="2015-09-04T16:37:50">
+  <testsuite errors="1" failures="0" hostname="EdyESPC" id="0" name="Adicionar Atleta" package="" tests="2" time="30.39" timestamp="2016-06-14T19:21:42">
       <properties />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="new book" time="5.377" />
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso" time="1.763" />
 
-      <system-out><![CDATA[Feature: new book entry
-  As a book owner
-  I want to add books I own to the book tracker
-  so that I do not have to remember them by myself
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar Atleta Sem sucesso web" time="27.491">
+          <error message="No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]&#xa;Possible solutions: existeCPF(java.lang.Object)" type="groovy.lang.MissingMethodException">groovy.lang.MissingMethodException: No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+Possible solutions: existeCPF(java.lang.Object)
+	at pages.CreateAtleta.cadastrAtleta(CreateAtleta.groovy:13)
+	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:38)
+	at ✽.Given Um atleta de CPF &quot;863923834-94&quot; se encontra cadastrado(adicionarAtleta.feature:12)
+</error>
 
---Output from new book--
-  Scenario: new book                               # NewBook.feature:6
-    Given I open the book tracker                  # Book_Steps.groovy:5
-    When I add "Specification by Example"          # Book_Steps.groovy:10
-    Then I see "Specification by Example"s details # Book_Steps.groovy:14
+      </testcase>
+
+      <system-out><![CDATA[Feature: Adicionar Atleta
+  As a Usuário do sistema
+  I want Adicionar um atleta
+  So that Ter o cadastro do atleta no sistema
+
+--Output from Adicionar Atleta Sem sucesso--
+--Output from Adicionar Atleta Sem sucesso web--
+  Scenario: Adicionar Atleta Sem sucesso                                    # adicionarAtleta.feature:6
+    Given Um atleta de CPF "863923834-34" se encontra cadastrado no sistema # adicionarAtletaSteps.groovy:12
+    When Tento cadastrar um novo atleta "Grafite" com o CPF "863923834-34"  # adicionarAtletaSteps.groovy:18
+    Then O sistema não permite o cadastro duplicado do CPF "863923834-34"   # adicionarAtletaSteps.groovy:23
+
+  Scenario: Adicionar Atleta Sem sucesso web                                      # adicionarAtleta.feature:11
+    Given Um atleta de CPF "863923834-94" se encontra cadastrado                  # adicionarAtletaSteps.groovy:35
+      groovy.lang.MissingMethodException: No signature of method: static pages.AtletasPage.existeCPF() is applicable for argument types: (java.lang.String) values: [863923834-94]
+      Possible solutions: existeCPF(java.lang.Object)
+      	at pages.CreateAtleta.cadastrAtleta(CreateAtleta.groovy:13)
+      	at pages.CreateAtleta$cadastrAtleta.call(Unknown Source)
+      	at steps.adicionarAtletaSteps$_run_closure4.doCall(adicionarAtletaSteps.groovy:38)
+      	at ✽.Given Um atleta de CPF "863923834-94" se encontra cadastrado(adicionarAtleta.feature:12)
+
+    And Estou no menu Atletas                                                     # adicionarAtletaSteps.groovy:44
+    When Seleciono a opção Adicionar Atleta                                       # adicionarAtletaSteps.groovy:50
+    And Tento cadastrar um novo atleta "Ryan" com o CPF "863923834-94"            # adicionarAtletaSteps.groovy:18
+    Then Eu posso ver que na página de Atletas que o no atleta não foi adicionado # adicionarAtletaSteps.groovy:61
 ]]></system-out>
 
       <system-err><![CDATA[
---Output from new book--]]></system-err>
+--Output from Adicionar Atleta Sem sucesso--
+--Output from Adicionar Atleta Sem sucesso web--]]></system-err>
 
   </testsuite>
 </testsuites>
