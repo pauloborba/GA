@@ -1,3 +1,5 @@
+
+<%@ page import="ga.Atleta" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,11 +23,11 @@
 			</g:if>
 			<ol class="property-list atleta">
 			
-				<g:if test="${atletaInstance?.dataNascimento}">
+				<g:if test="${atletaInstance?.nome}">
 				<li class="fieldcontain">
-					<span id="dataNascimento-label" class="property-label"><g:message code="atleta.dataNascimento.label" default="Data Nascimento" /></span>
+					<span id="nome-label" class="property-label"><g:message code="atleta.nome.label" default="Nome" /></span>
 					
-						<span class="property-value" aria-labelledby="dataNascimento-label"><g:formatDate date="${atletaInstance?.dataNascimento}" /></span>
+						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${atletaInstance}" field="nome"/></span>
 					
 				</li>
 				</g:if>
@@ -39,11 +41,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${atletaInstance?.nome}">
+				<g:if test="${atletaInstance?.dataNascimento}">
 				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="atleta.nome.label" default="Nome" /></span>
+					<span id="dataNascimento-label" class="property-label"><g:message code="atleta.dataNascimento.label" default="Data Nascimento" /></span>
 					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${atletaInstance}" field="nome"/></span>
+						<span class="property-value" aria-labelledby="dataNascimento-label"><g:formatDate date="${atletaInstance?.dataNascimento}" /></span>
 					
 				</li>
 				</g:if>

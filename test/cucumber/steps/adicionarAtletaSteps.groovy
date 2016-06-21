@@ -3,8 +3,8 @@ package steps
 import ga.AtletaController
 import ga.Atleta
 
-import pages.AtletasPage
-import pages.CreateAtleta
+import page.AtletasPage
+import page.CreateAtleta
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
@@ -32,59 +32,59 @@ def cadastrAtleta(String nome, String cpf, Date dataNascimento, AtletaController
 }
 
 //web
-Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
-	to CreateAtleta
-	at CreateAtleta
-	page.cadastrAtleta("Jankaukas", cpf)
-	to AtletasPage
-	at AtletasPage
-	assert page.existeCPF(cpf)
-}
-
-And(~'^Estou no menu Atletas$'){->
-	to AtletasPage
-	at AtletasPage
-}
-
-
-When(~'^Seleciono a opção Adicionar Atleta$'){->
-	to CreateAtleta
-    at CreateAtleta
-}
-
-And(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)$'){ String nome, cpf ->
-	to CreateAtleta
-	at CreateAtleta
-	page.cadastrAtleta(nome, cpf)
-}
-
-Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionado$'){->
-	to AtletasPage
-	at AtletasPage
-}
+//Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
+//	to CreateAtleta
+//	at CreateAtleta
+//	page.cadastrAtleta("Jankaukas", cpf)
+//	to AtletasPage
+//	at AtletasPage
+//	assert page.existeCPF(cpf)
+//}
+//
+//And(~'^Estou no menu Atletas$'){->
+//	to AtletasPage
+//	at AtletasPage
+//}
+//
+//
+//When(~'^Seleciono a opção Adicionar Atleta$'){->
+//	to CreateAtleta
+//    at CreateAtleta
+//}
+//
+//And(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)$'){ String nome, cpf ->
+//	to CreateAtleta
+//	at CreateAtleta
+//	page.cadastrAtleta(nome, cpf)
+//}
+//
+//Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionado$'){->
+//	to AtletasPage
+//	at AtletasPage
+//}
 //edymir-end--------------------------------------------------------------------------------------------------------------------
 
 //Abaixo, steps de silvaemanuel
 
-/*Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
-    assert Atleta.findByCPF(cpf) == null
+Given(~'^O atleta de CPF "([^"]*)" não esta cadastrado no sistema$') { String cpf ->
+    assert Atleta.findByCpf(cpf) == null
 }
 
 When(~'^Eu cadastro o atleta de CPF "([^"]*)"$') { String cpf ->
-    def controlador = new AtletaController()
-    cadastrarAtleta(cpf,controlador)
+    def contrlador = new AtletaController()
+	cadAtletaComCpf("Edinaldo", cpf, null, contrlador)
 }
 
 Then(~'^O sistema adiciona o atleta de CPF "([^"]*)" com sucesso$') { String cpf ->
-    assert Atleta.findByCPF(cpf) != null
+	atlta = Atleta.findByCpf(cpf)
+	assert atlta.cpf == cpf
 }
 
-def cadastrarAtleta(String cpf, AtletaController controlador) {
-    controlador.params << [cpf: cpf, nome: "", dataNascimento: null]
-    controlador.save()
-    controlador.response.reset()
+def cadAtletaComCpf(String nome, String cpf, Date dataNascimento, AtletaController controlador) {
+	controlador.params << [cpf: cpf, nome: nome, dataNascimento: dataNascimento]
+	controlador.save(new Atleta(cpf: cpf, nome: nome, dataNascimento: dataNascimento))
+	controlador.response.reset()
 }
-
 Given(~'^Estou no menu de Atletas$') { ->
     to AtletasPage
     at AtletasPage
@@ -92,7 +92,7 @@ Given(~'^Estou no menu de Atletas$') { ->
 
 And(~'^O atleta de CPF "([^"]*)" e nome "([^"]*)" não esta na lista de atletas$') {String nome, cpf->
     at AtletasPage
-    assert !(page.atletaNaLista(nome, cpf))
+    assert !(page.temAtleta(cpf))
 }
 
 When(~'^Eu tento cadastrar o atleta "([^"]*)" com o CPF "([^"]*)"$') { String nome, cpf ->
@@ -101,9 +101,8 @@ When(~'^Eu tento cadastrar o atleta "([^"]*)" com o CPF "([^"]*)"$') { String no
     page.cadastrarAtleta(nome, cpf)
 }
 
-Then(~'^Eu posso ver a tela de visualização de Atleta e o nome "([^"]*)" e CPF "([^"]*)"$') { String nome, cpf ->
+Then(~'^Eu posso ver o nome "([^"]*)" e CPF "([^"]*)"$ na lista de atletas') { String nome, cpf ->
     at VerAtleta
     assert page.temNome(nome) == true
     assert page.temCpf(cpf) == true
 }
-*/

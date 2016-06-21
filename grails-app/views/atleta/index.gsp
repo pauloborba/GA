@@ -1,5 +1,5 @@
 
-
+<%@ page import="ga.Atleta" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,11 +24,11 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="dataNascimento" title="${message(code: 'atleta.dataNascimento.label', default: 'Data Nascimento')}" />
+						<g:sortableColumn property="nome" title="${message(code: 'atleta.nome.label', default: 'Nome')}" />
 					
 						<g:sortableColumn property="cpf" title="${message(code: 'atleta.cpf.label', default: 'Cpf')}" />
 					
-						<g:sortableColumn property="nome" title="${message(code: 'atleta.nome.label', default: 'Nome')}" />
+						<g:sortableColumn property="dataNascimento" title="${message(code: 'atleta.dataNascimento.label', default: 'Data Nascimento')}" />
 					
 					</tr>
 				</thead>
@@ -36,11 +36,11 @@
 				<g:each in="${atletaInstanceList}" status="i" var="atletaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${atletaInstance.id}">${fieldValue(bean: atletaInstance, field: "dataNascimento")}</g:link></td>
+						<td><g:link action="show" id="${atletaInstance.id}">${fieldValue(bean: atletaInstance, field: "nome")}</g:link></td>
 					
 						<td>${fieldValue(bean: atletaInstance, field: "cpf")}</td>
 					
-						<td>${fieldValue(bean: atletaInstance, field: "nome")}</td>
+						<td><g:formatDate date="${atletaInstance.dataNascimento}" /></td>
 					
 					</tr>
 				</g:each>
