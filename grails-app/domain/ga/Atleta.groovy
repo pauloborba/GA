@@ -11,7 +11,5 @@ class Atleta {
         cpf unique: true
         dataNascimento nullable: true
     }
-
-
 }
 
