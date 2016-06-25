@@ -7,7 +7,6 @@ class AtletaController {
 
     static allowedMethods = [update: "PUT", delete: "DELETE"]
 
-    //Redefinição do metodo index e list de acordo com o Toy
     def index() {
         redirect(action: "list", params: params)
     }
@@ -21,7 +20,7 @@ class AtletaController {
     def overview(Integer max) {
         list(max)
     }
-    // Fim da redefinição
+
     def show(Atleta atletaInstance) {
         respond atletaInstance
     }
@@ -38,7 +37,7 @@ class AtletaController {
         }
 
         if (atletaInstance.hasErrors()) {
-            flash.message= "Já existe um atleta cadastrado com o CPF informado"
+            flash.message= "Existe um atleta cadastrado com esse CPF!"
             respond atletaInstance.errors, view: 'create'
             return
         }

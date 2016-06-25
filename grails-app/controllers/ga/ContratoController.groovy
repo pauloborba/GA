@@ -7,7 +7,6 @@ class ContratoController {
 
     static allowedMethods = [update: "PUT", delete: "DELETE"]
 
-    //Redefinição do metodo index e list de acordo com o Toy
     def index() {
         redirect(action: "list", params: params)
     }
@@ -21,7 +20,7 @@ class ContratoController {
     def overview(Integer max) {
         list(max)
     }
-    // Fim da redefinição
+
     def show(Contrato contratoInstance) {
         respond contratoInstance
     }
@@ -38,7 +37,7 @@ class ContratoController {
         }
 
         if (contratoInstance.hasErrors()) {
-            flash.message= "Já existe um atleta cadastrado com o CPF informado"
+            flash.message= "Há um contrato válido para esse atleta."
             respond contratoInstance.errors, view: 'create'
             return
         }
