@@ -5,10 +5,10 @@ Feature: Contratos
 
 Scenario: Criar contrato
     Given O atleta de cpf "01234567890" não possui contratos cadastrados
-    When Eu tento cadastrar um contrato para o atleta de cpf "0123456789"
-    Then O sistema cadastra corretamente o contrato para o atleta de cpf "0123456789"
+    When Eu tento cadastrar um contrato para o atleta de cpf "01234567890"
+    Then O sistema cadastra corretamente o contrato para o atleta de cpf "01234567890"
 
 Scenario: Criar contrato sem sucesso
   Given O atleta de cpf "01234567890" já possui contratos cadastrados
-  When Eu tento cadastrar um contrato para o atleta de cpf "0123456789"
-  Then O sistema não cadastra o contrato para o atleta de cpf "0123456789"
+  When Eu tento criar um contrato para o atleta de cpf "01234567890"
+  Then O sistema não cadastra o contrato para o atleta de cpf "01234567890"
