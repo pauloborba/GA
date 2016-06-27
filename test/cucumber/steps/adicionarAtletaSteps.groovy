@@ -106,4 +106,3 @@ Then(~'^Eu posso ver o nome "([^"]*)" e CPF "([^"]*)"$ na lista de atletas') { S
     assert page.temNome(nome) == true
     assert page.temCpf(cpf) == true
 }
-
