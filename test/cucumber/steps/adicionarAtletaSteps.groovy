@@ -32,36 +32,36 @@ def cadastrAtleta(String nome, String cpf, Date dataNascimento, AtletaController
 }
 
 //web
-//Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
-//	to CreateAtleta
-//	at CreateAtleta
-//	page.cadastrAtleta("Jankaukas", cpf)
-//	to AtletasPage
-//	at AtletasPage
-//	assert page.existeCPF(cpf)
-//}
-//
-//And(~'^Estou no menu Atletas$'){->
-//	to AtletasPage
-//	at AtletasPage
-//}
-//
-//
-//When(~'^Seleciono a opção Adicionar Atleta$'){->
-//	to CreateAtleta
-//    at CreateAtleta
-//}
-//
-//And(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)$'){ String nome, cpf ->
-//	to CreateAtleta
-//	at CreateAtleta
-//	page.cadastrAtleta(nome, cpf)
-//}
-//
-//Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionado$'){->
-//	to AtletasPage
-//	at AtletasPage
-//}
+Given(~'^Um atleta de CPF "([^"]*)" se encontra cadastrado$'){ String cpf ->
+	to CreateAtleta
+	at CreateAtleta
+	page.cadastrAtleta("Jankaukas", cpf)
+	to AtletasPage
+	at AtletasPage
+	assert page.existeCPF(cpf)
+}
+
+And(~'^Estou no menu Atletas$'){->
+	to AtletasPage
+	at AtletasPage
+}
+
+
+When(~'^Seleciono a opção Adicionar Atleta$'){->
+	to CreateAtleta
+    at CreateAtleta
+}
+
+And(~'^Tento cadastrar um novo atleta "([^"]*)" com o CPF "([^"]*)$'){ String nome, cpf ->
+	to CreateAtleta
+	at CreateAtleta
+	page.cadastrAtleta(nome, cpf)
+}
+
+Then(~'Eu posso ver que na página de Atletas que o no atleta não foi adicionado$'){->
+	to AtletasPage
+	at AtletasPage
+}
 //edymir-end--------------------------------------------------------------------------------------------------------------------
 
 //Abaixo, steps de silvaemanuel
