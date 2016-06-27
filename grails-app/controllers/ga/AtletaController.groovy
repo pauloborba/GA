@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class AtletaController {
 
-    static allowedMethods = [update: "PUT", delete: "DELETE"]
+    static allowedMethods = [/*update: "PUT", delete: "DELETE"*/]
 
     def index() {
         redirect(action: "list", params: params)
