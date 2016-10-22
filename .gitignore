@@ -11,7 +11,9 @@ stacktrace.log
 /cobertura.ser
 .DS_Store
 /target/
+target/
 /out/
+out/
 /web-app/plugins
 /web-app/WEB-INF/classes
 /.link_to_grails_plugins/
@@ -28,6 +30,7 @@ web-app/WEB-INF/tld/fmt.tld
 /*.tmproj
 /ivy*
 /eclipse
+.slcache/
 
 # Itellij Idea Workspace
 .idea/dictionaries/*
@@ -35,6 +38,7 @@ web-app/WEB-INF/tld/fmt.tld
 .idea/workspace.xml
 .idea/misc.xml
 .idea/gradle_settings2_config.xml
+.idea/
 
 # Gradle files
 .gradle/*
