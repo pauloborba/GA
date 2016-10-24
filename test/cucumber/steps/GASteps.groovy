@@ -12,22 +12,41 @@ def adicionarJogador(String nome, JogadorController controlador){
 //    controlador.response.reset()
 }
 
+def adicionarContrato(String atleta, nomeContrato, JogadorController controlador){
+    def contrato = new Contrato(valido: true, nome: nomeContrato)
+
+}
+
+def buscaContrato(String atleta, contrato, JogadorController controlador){
+
+}
+
+def removerJogador(String atleta, JogadorController controlador){
+
+}
 
 Given(~/^o atleta "([^"]*)" está cadastrado$/) { String atleta ->
     def controlador = new JogadorController()
     adicionarJogador(atleta, controlador)
     assert Jogador.findByNome(atleta) //se não encontra atleta com nome atleta lança exceção
 }
-And(~/^"([^"]*)" tem o contrato "([^"]*)"$/) { String arg1, String arg2 ->
+And(~/^"([^"]*)" tem o contrato "([^"]*)"$/) { String atleta, contrato ->
     // Write code here that turns the phrase above into concrete actions
+    def controlador = new JogadorController()
+    adicionarContrato(atleta, contrato, controlador)
+    assert buscaContrato(atleta, contrato, controlador)
+}
+When(~/^"([^"]*)" é removido$/) { String atleta ->
+    def controlador = new JogadorController()
+    removerJogador(atleta, controlador)
+    assert Jogador.findByNome(atleta) == null
+}
 
-}
-When(~/^"([^"]*)" é removido$/) { String arg1 ->
+Then(~/^o contrato "([^"]*)" é inativado$/) { String contrato ->
     // Write code here that turns the phrase above into concrete actions
+    assert Contrato.findByNome(contrato).valido == false
 }
-Then(~/^o contrato "([^"]*)" é inativado$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
-}
+
 Given(~/^estou na página de remoção$/) { ->
     // Write code here that turns the phrase above into concrete actions
 }
