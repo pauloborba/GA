@@ -8,7 +8,12 @@ class Jogador {
     String posicao
     int golsFeitos
     Date dataDeNascimento
-    Contrato[] contratos
+    //static hasMany = [contratos: Contrato]
+    boolean ativo
+
+    Jogador() {
+        contratos = []
+    }
 
     static constraints = {
         nome blank: false, nullable: false
@@ -18,6 +23,7 @@ class Jogador {
     }
 
     static mapping = {
-        cpf name: 'code'
+        golsFeitos defaultValue: 0
+        ativo defaultValue: true
     }
 }
