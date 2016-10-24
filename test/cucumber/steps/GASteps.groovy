@@ -1,5 +1,7 @@
 package steps
 
+import ga.Contrato
+import ga.ContratoController
 import ga.Jogador
 import ga.JogadorController
 
@@ -12,17 +14,20 @@ def adicionarJogador(String nome, JogadorController controlador){
 //    controlador.response.reset()
 }
 
-def adicionarContrato(String atleta, nomeContrato, JogadorController controlador){
-    def contrato = new Contrato(valido: true, nome: nomeContrato)
-
+def adicionarContrato(String nomeContrato, nomeAtleta, ContratoController controlador){
+    def atleta = Jogador.findByNome(nomeAtleta)
+    def contrato = new Contrato(valido: true, nome: nomeContrato, jogador: atleta)
+    controlador.save(contrato)
 }
 
-def buscaContrato(String atleta, contrato, JogadorController controlador){
-
+def verContrato(String nomeContrato, nomeAtleta){ //retorna se contrato tem determinado atleta
+    def contrato = Contrato.findByNome(nomeContrato)
+    return contrato.jogador.nome == nomeAtleta
 }
 
-def removerJogador(String atleta, JogadorController controlador){
-
+def removerJogador(String nomeAtleta, JogadorController controlador){
+    def atleta = Jogador.findByNome(nomeAtleta)
+    controlador.delete(atleta)
 }
 
 Given(~/^o atleta "([^"]*)" está cadastrado$/) { String atleta ->
@@ -31,10 +36,9 @@ Given(~/^o atleta "([^"]*)" está cadastrado$/) { String atleta ->
     assert Jogador.findByNome(atleta) //se não encontra atleta com nome atleta lança exceção
 }
 And(~/^"([^"]*)" tem o contrato "([^"]*)"$/) { String atleta, contrato ->
-    // Write code here that turns the phrase above into concrete actions
-    def controlador = new JogadorController()
-    adicionarContrato(atleta, contrato, controlador)
-    assert buscaContrato(atleta, contrato, controlador)
+    def controlador = new ContratoController()
+    adicionarContrato(contrato, atleta, controlador)
+    assert verContrato(contrato, atleta)
 }
 When(~/^"([^"]*)" é removido$/) { String atleta ->
     def controlador = new JogadorController()
@@ -42,9 +46,10 @@ When(~/^"([^"]*)" é removido$/) { String atleta ->
     assert Jogador.findByNome(atleta) == null
 }
 
-Then(~/^o contrato "([^"]*)" é inativado$/) { String contrato ->
+Then(~/^o contrato "([^"]*)" é inativado$/) { String nomeContrato ->
     // Write code here that turns the phrase above into concrete actions
-    assert Contrato.findByNome(contrato).valido == false
+    def contrato = Contrato.findByNome(nomeContrato)
+    assert !contrato.valido
 }
 
 Given(~/^estou na página de remoção$/) { ->
