@@ -1,0 +1,62 @@
+Feature: Notificações
+  As a presidente de um time de futebol
+  I Want to receber notificações sobre o meu time na minha caixa de email
+  So that  alguma clausula do contrato de algum jogador for disparada ou quando o contrato do jogador estiver perto de expirar
+
+
+#  Senarios de GUI
+
+  Scenario: dados incorretos
+
+    Given eu estou na página de "adicionar novo usuário" para receber notificações
+    When eu preencho o campo "email" com "email@cin"
+    And o campo "nome" com "nome"
+    And eu solicito para salvar as alterações feitas em "notificações"
+    Then eu posso ver uma mensagem informando que o "email@cin" é incorreto
+
+
+  Scenario: Adicionar usuário para receber notificações
+
+    Given eu estou na página de "adicionar novo usuário" para receber notificações
+    And o usuário "João Dantas" ainda não está cadastrado para receber notificações
+    When eu preencho o campo "nome" com "João Dantas"
+    And o campo "email" com "email@cin"
+    And eu escolho confirmar
+    Then é exibido uma mensagem de confirmação
+
+
+  Scenario: usuário já cadastrado para receber notificações
+
+    Given eu estou na página de "adicionar novo usuário" para receber notificações
+    And o usuário "João Dantas" já está cadastrado para receber notificações
+    When eu adiciono "João Dantas" nas pessoas que vão receber notificações
+    Then é exibido uma mensagem de erro dizendo que "João Dantas" já esta cadastrado para receber notificações
+
+
+#    Senarios de controler
+
+  Scenario: adicionar novo usuário para receber notificações
+
+    Given o sistema não tem o usuário "João Dantas" cadastrado para receber notificações
+    When eu adiciono "João Dantas" no sistema de notificações
+    Then o usuário "João Dantas" é adicionado nas pessoas que vão receber as notificações
+
+  Scenario: usuário duplicado
+
+    Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações
+    When eu adiciono "João Dantas" no sistema de notificações
+    Then o sistema não é modificado
+
+  Scenario: notificação de fim de contrato
+
+    Given o contrato de "José Santos" falta 30 dias para seu termino
+    And o usuário "João Dantas" está cadastrado para receber notificações
+    When na verificação diária o sistema verifica que o contrato de "José Santos" falta 30 dias para ser encerrado
+    Then um email é enviado para "João Dantas"
+
+  Scenario: notificação de fim de contrato não enviada
+
+    Given o contrato de "José Santos" falta 30 dias para seu termino
+    And o usuário "João Dantas" não está cadastrado para receber notificações de fim de contrato
+    When na verificação diária o sistema verifica que o contrato de "José Santos" falta 30 dias para ser encerrado
+    Then não é enviado um email para "João Dantas"
