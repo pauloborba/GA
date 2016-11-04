@@ -12,14 +12,14 @@ class Jogador {
     boolean ativo
 
     Jogador() {
-        contratos = []
+    //    contratos = []
     }
 
     static constraints = {
         nome blank: false, nullable: false
         cpf blank: false, unique: true
         dataDeNascimento blank: true
-        posicao blank: true, unique: ['goleiro', 'atacante', 'centro']
+        posicao inList: ["goleiro", "atacante", "centro"]
     }
 
     static mapping = {
