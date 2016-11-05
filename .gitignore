@@ -39,6 +39,8 @@ web-app/WEB-INF/tld/fmt.tld
 .idea/misc.xml
 .idea/gradle_settings2_config.xml
 .idea/
+grailsw.bat
+grailsw
 
 # Gradle files
 .gradle/*
