@@ -17,9 +17,10 @@ class Jogador {
 
     static constraints = {
         nome blank: false, nullable: false
-        cpf blank: false, unique: true
-        dataDeNascimento blank: true
-        posicao inList: ["goleiro", "atacante", "centro"]
+        cpf nullable: false, blank: true, unique: true
+        dataDeNascimento nullable: true, blank: true
+        posicao nullable: true, inList: ["goleiro", "atacante", "centro"]
+
     }
 
     static mapping = {

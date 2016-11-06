@@ -9,20 +9,22 @@ this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
 def adicionarJogador(String nome, JogadorController controlador){
-    def jogador = new Jogador([nome: nome])
+    def jogador = new Jogador([nome: nome, cpf: "12312312321"])
+    println("Vjogador: " + jogador)
     controlador.save(jogador)
 //    controlador.response.reset()
 }
 
 def adicionarContrato(String nomeContrato, nomeAtleta, ContratoController controlador){
     def atleta = Jogador.findByNome(nomeAtleta)
-    def contrato = new Contrato(valido: true, nome: nomeContrato, jogador: atleta)
+    def contrato = new Contrato(valido: true, nome: nomeContrato, jogador: atleta, salario: 1230)
     controlador.save(contrato)
 }
 
 def verContrato(String nomeContrato, nomeAtleta){ //retorna se contrato tem determinado atleta
     def contrato = Contrato.findByNome(nomeContrato)
-    return contrato.jogador.nome == nomeAtleta
+    println("contrato nome: " +  contrato.getNome())
+    return contrato.getJogador().nome == nomeAtleta
 }
 
 def removerJogador(String nomeAtleta, JogadorController controlador){
@@ -43,7 +45,7 @@ And(~/^"([^"]*)" tem o contrato "([^"]*)"$/) { String atleta, contrato ->
 When(~/^"([^"]*)" é removido$/) { String atleta ->
     def controlador = new JogadorController()
     removerJogador(atleta, controlador)
-    assert Jogador.findByNome(atleta) == null
+    assert Jogador.findByNome(atleta).ativo == false
 }
 
 Then(~/^o contrato "([^"]*)" é inativado$/) { String nomeContrato ->
