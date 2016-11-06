@@ -6,10 +6,11 @@ class Usuario {
     boolean contrato_expira
     boolean clausula_gols
 
-    //static belongsTo = [notificacoes:Notification]
+    static belongsTo = [notificacoes:Notification]
 
     static constraints = {
         nome blank: false, nullable: false
         email email: true, unique: true
+        notificacoes nullable: true
     }
 }
