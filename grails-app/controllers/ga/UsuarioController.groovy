@@ -26,11 +26,6 @@ class UsuarioController {
     @Transactional
     def save(Usuario usuarioInstance) {
 
-        println("teste inicio")
-        println(usuarioInstance)
-        println("teste fim")
-
-
         if (usuarioInstance == null) {
             notFound()
             return
@@ -38,7 +33,6 @@ class UsuarioController {
 
         if (usuarioInstance.hasErrors()) {
             respond usuarioInstance.errors, view:'create'
-            println("Errors")
             return
         }
 
