@@ -74,7 +74,7 @@ class JogadorController {
     }
 
     @Transactional
-    def delete(Jogador jogadorInstance) {
+    def desative(Jogador jogadorInstance) {
 
 
 
@@ -92,6 +92,34 @@ class JogadorController {
         contratos.each { contrato ->
             contrato.valido = false
             contrato.save flush:true
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'jogador.label', default: 'Jogador'), jogadorInstance.id])
+                redirect action:"index", method:"POST"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
+    }
+
+
+    def delete(Jogador jogadorInstance, boolean vorf) {
+
+        if (jogadorInstance == null) {
+            notFound()
+            return
+        }
+
+        if (vorf) jogadorInstance.delete flush:true
+        else {
+            jogadorInstance.ativo = false
+            jogadorInstance.save flush:true //desativa jogador
+            def contratos = Contrato.findAllByJogador(jogadorInstance)
+            contratos.each { contrato ->
+                contrato.valido = false
+                contrato.save flush:true
+            }
         }
 
         request.withFormat {

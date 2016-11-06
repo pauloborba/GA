@@ -9,7 +9,7 @@ class Jogador {
     int golsFeitos
     Date dataDeNascimento
     //static hasMany = [contratos: Contrato]
-    boolean ativo
+    boolean ativo = true
 
     Jogador() {
     //    contratos = []
@@ -20,7 +20,6 @@ class Jogador {
         cpf nullable: false, blank: true, unique: true
         dataDeNascimento nullable: true, blank: true
         posicao nullable: true, inList: ["goleiro", "atacante", "centro"]
-
     }
 
     static mapping = {

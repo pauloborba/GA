@@ -3,14 +3,14 @@
     I want to remover um atleta
     So that retirar um ser como atleta do sistema
 
-
+    #Controller
     Scenario: Remover atleta com contrato
       Given o atleta "Paulo Alberto" está cadastrado
       And "Paulo Alberto" tem o contrato "Contrato de Paulo Alberto"
       When "Paulo Alberto" é removido
       Then o contrato "Contrato de Paulo Alberto" é inativado
 
-
+    #GUI
     Scenario: Confirmação de remoção de atleta
       Given estou na página de remoção
       And "João Luís" foi marcado para ser removido

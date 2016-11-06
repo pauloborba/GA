@@ -4,13 +4,14 @@ import ga.Contrato
 import ga.ContratoController
 import ga.Jogador
 import ga.JogadorController
+import pages.RemocaoPage
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
 def adicionarJogador(String nome, JogadorController controlador){
     def jogador = new Jogador([nome: nome, cpf: "12312312321"])
-    println("Vjogador: " + jogador)
+//    println("Vjogador: " + jogador)
     controlador.save(jogador)
 //    controlador.response.reset()
 }
@@ -23,7 +24,7 @@ def adicionarContrato(String nomeContrato, nomeAtleta, ContratoController contro
 
 def verContrato(String nomeContrato, nomeAtleta){ //retorna se contrato tem determinado atleta
     def contrato = Contrato.findByNome(nomeContrato)
-    println("contrato nome: " +  contrato.getNome())
+//    println("contrato nome: " +  contrato.getNome())
     return contrato.getJogador().nome == nomeAtleta
 }
 
@@ -45,7 +46,7 @@ And(~/^"([^"]*)" tem o contrato "([^"]*)"$/) { String atleta, contrato ->
 When(~/^"([^"]*)" é removido$/) { String atleta ->
     def controlador = new JogadorController()
     removerJogador(atleta, controlador)
-    assert Jogador.findByNome(atleta).ativo == false
+    assert !Jogador.findByNome(atleta).ativo
 }
 
 Then(~/^o contrato "([^"]*)" é inativado$/) { String nomeContrato ->
@@ -55,20 +56,25 @@ Then(~/^o contrato "([^"]*)" é inativado$/) { String nomeContrato ->
 }
 
 Given(~/^estou na página de remoção$/) { ->
-    // Write code here that turns the phrase above into concrete actions
+    to RemocaoPage
+    at RemocaoPage
 }
-And(~/^"([^"]*)" foi marcado para ser removido$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+And(~/^"([^"]*)" foi marcado para ser removido$/) { String atleta ->
+    at RemocaoPage
+    page.marcaAtleta(atleta)
 }
 When(~/^eu solicito a remoção dos marcados$/) { ->
-    // Write code here that turns the phrase above into concrete actions
+    at RemocaoPage
+    page.removerMarcados()
 }
-Then(~/^vejo uma página de confirmação da remoção de "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+Then(~/^vejo uma página de confirmação da remoção de "([^"]*)"$/) { String atleta ->
+    at RemocaoConfimacaoPage
+    assert page.atletasMarcados() == atleta
 }
 And(~/^em seguida vejo uma página com uma nova lista sem "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+
 }
+
 Given(~/^estou na página de confirmação de remoção de "([^"]*)" e "([^"]*)"$/) { String arg1, String arg2 ->
     // Write code here that turns the phrase above into concrete actions
 }
