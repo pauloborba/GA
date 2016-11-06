@@ -2783,3 +2783,623 @@ http://localhost:8080/book/list
 	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
 	at Book_Steps$_run_closure1.doCall(Book_Steps.groovy:6)
 	at ✽.Given I open the book tracker(NewBook.feature:7)
+2016-11-05 20:49:33,944 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:49:33,947 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:49:33,952 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:49:33,952 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:49:34,036 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:49:34,036 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:49:34,037 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:49:34,037 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:42)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:52:00,734 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:52:00,737 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:52:00,741 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:52:00,741 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:52:00,831 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:52:00,832 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:52:00,832 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:52:00,832 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:55:29,820 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:55:29,823 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:55:29,827 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:55:29,827 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 20:55:29,912 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:55:29,912 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:55:29,913 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 20:55:29,913 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               []        0      |  0       1
+                                false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:00:11,717 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:00:11,722 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:00:11,728 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:00:11,728 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:43)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:03:38,785 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at ga.UsuarioController$_save_closure4.doCall(UsuarioController.groovy)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController$save.call(Unknown Source)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:03:38,787 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:03:38,792 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:03:38,792 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:03:38,880 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at ga.UsuarioController$_save_closure4.doCall(UsuarioController.groovy)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController$save.call(Unknown Source)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:03:38,880 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:03:38,881 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:03:38,881 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:05:44,158 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at ga.UsuarioController$_save_closure4.doCall(UsuarioController.groovy)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController$save.call(Unknown Source)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:05:44,160 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:05:44,164 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:05:44,164 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:41)
+2016-11-05 21:05:44,248 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at ga.UsuarioController$_save_closure4.doCall(UsuarioController.groovy)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController.save(UsuarioController.groovy)
+	at ga.UsuarioController$save.call(Unknown Source)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:05:44,249 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:05:44,249 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:05:44,249 [main] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at ga.UsuarioController.$tt__save(UsuarioController.groovy:30)
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:53)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:07:10,237 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:44)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:07:10,240 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:44)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:07:10,244 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:44)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:07:10,245 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:44)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:08:49,157 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:45)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:08:49,161 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:45)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:08:49,165 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:45)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:08:49,165 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findAll().size() == usuarios+1
+               |         |      |  |       |
+               |         1      |  1       2
+               [ga.Usuario : 1] false
+
+	at steps.NotificationsSteps$_run_closure13.doCall(NotificationsSteps.groovy:45)
+	at ✽.When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"(Notifications.feature:47)
+2016-11-05 21:25:44,600 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:58)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:25:44,603 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:58)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:25:44,607 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:58)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:25:44,608 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:58)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:27:56,744 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:27:56,747 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:27:56,751 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:27:56,752 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:29:56,190 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:29:56,193 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:29:56,197 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:29:56,198 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps$_run_closure15.doCall(NotificationsSteps.groovy:60)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:34:36,709 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:48)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:34:36,712 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:48)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:34:36,716 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:48)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
+2016-11-05 21:34:36,716 [main] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert Usuario.findByEmail(email) != null
+               |           |      |
+               null        |      false
+                           email@gmail.com
+
+	at steps.NotificationsSteps.createUser(NotificationsSteps.groovy:48)
+	at ✽.Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"(Notifications.feature:46)
