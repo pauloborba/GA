@@ -24,7 +24,7 @@ Feature: Notificações
     And eu escolho confirmar
     Then é exibido uma mensagem de confirmação
 
-
+  @ignore
   Scenario: usuário já cadastrado para receber notificações
 
     Given eu estou na página de "adicionar novo usuário" para receber notificações
@@ -37,26 +37,27 @@ Feature: Notificações
 
   Scenario: adicionar novo usuário para receber notificações
 
-    Given o sistema não tem o usuário "João Dantas" cadastrado para receber notificações
-    When eu adiciono "João Dantas" no sistema de notificações
-    Then o usuário "João Dantas" é adicionado nas pessoas que vão receber as notificações
+    Given o sistema não tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"
+    When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"
+    Then o usuário "João Dantas" é adicionado nas pessoas que vão receber as notificações com o email "email@gmail.com"
 
   Scenario: usuário duplicado
 
-    Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações
-    When eu adiciono "João Dantas" no sistema de notificações
+    Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"
+    When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"
     Then o sistema não é modificado
 
+  @ignore
   Scenario: notificação de fim de contrato
 
-    Given o contrato de "José Santos" falta 30 dias para seu termino
+    Given o contrato de "José Santos" falta "30" dias para seu termino
     And o usuário "João Dantas" está cadastrado para receber notificações
-    When na verificação diária o sistema verifica que o contrato de "José Santos" falta 30 dias para ser encerrado
+    When na verificação diária o sistema verifica que o contrato de "José Santos" falta "30" dias para ser encerrado
     Then um email é enviado para "João Dantas"
-
+  @ignore
   Scenario: notificação de fim de contrato não enviada
 
-    Given o contrato de "José Santos" falta 30 dias para seu termino
+    Given o contrato de "José Santos" falta "30" dias para seu termino
     And o usuário "João Dantas" não está cadastrado para receber notificações de fim de contrato
-    When na verificação diária o sistema verifica que o contrato de "José Santos" falta 30 dias para ser encerrado
+    When na verificação diária o sistema verifica que o contrato de "José Santos" falta "30" dias para ser encerrado
     Then não é enviado um email para "João Dantas"
