@@ -6,7 +6,7 @@ class Contrato {
     Date termino
     double salario
     Jogador jogador
-    boolean valido
+    boolean valido = true
 
     static constraints = {
         nome blank: false, nullable: false
@@ -14,7 +14,6 @@ class Contrato {
         salario nullable: false
         inicial nullable: true
         termino nullable: true
-
     }
 
     static mapping = {

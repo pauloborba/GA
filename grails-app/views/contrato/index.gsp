@@ -23,37 +23,43 @@
 			<table>
 			<thead>
 					<tr>
-					
+
 						<g:sortableColumn property="nome" title="${message(code: 'contrato.nome.label', default: 'Nome')}" />
-					
+
 						<th><g:message code="contrato.jogador.label" default="Jogador" /></th>
-					
+
 						<g:sortableColumn property="salario" title="${message(code: 'contrato.salario.label', default: 'Salario')}" />
-					
+
 						<g:sortableColumn property="inicial" title="${message(code: 'contrato.inicial.label', default: 'Inicial')}" />
-					
+
 						<g:sortableColumn property="termino" title="${message(code: 'contrato.termino.label', default: 'Termino')}" />
-					
+
 						<g:sortableColumn property="valido" title="${message(code: 'contrato.valido.label', default: 'Valido')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${contratoInstanceList}" status="i" var="contratoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
+
 						<td><g:link action="show" id="${contratoInstance.id}">${fieldValue(bean: contratoInstance, field: "nome")}</g:link></td>
-					
+
 						<td>${fieldValue(bean: contratoInstance, field: "jogador")}</td>
-					
+
 						<td>${fieldValue(bean: contratoInstance, field: "salario")}</td>
-					
+
 						<td><g:formatDate date="${contratoInstance.inicial}" /></td>
-					
+
 						<td><g:formatDate date="${contratoInstance.termino}" /></td>
-					
-						<td><g:formatBoolean boolean="${contratoInstance.valido}" /></td>
-					
+
+						<!-- <td><g:formatBoolean boolean="${contratoInstance.valido}" /></td> -->
+						<g:if test="${contratoInstance?.valido}">
+							<td><p>Sim</p></td>
+						</g:if>
+						<g:else>
+							<td><p>Não</p></td>
+						</g:else>
+
 					</tr>
 				</g:each>
 				</tbody>

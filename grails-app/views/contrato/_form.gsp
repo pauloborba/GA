@@ -32,7 +32,7 @@
 <div class="fieldcontain ${hasErrors(bean: contratoInstance, field: 'inicial', 'error')} ">
 	<label for="inicial">
 		<g:message code="contrato.inicial.label" default="Inicial" />
-		
+
 	</label>
 	<g:datePicker name="inicial" precision="day"  value="${contratoInstance?.inicial}" default="none" noSelection="['': '']" />
 
@@ -41,18 +41,17 @@
 <div class="fieldcontain ${hasErrors(bean: contratoInstance, field: 'termino', 'error')} ">
 	<label for="termino">
 		<g:message code="contrato.termino.label" default="Termino" />
-		
+
 	</label>
 	<g:datePicker name="termino" precision="day"  value="${contratoInstance?.termino}" default="none" noSelection="['': '']" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: contratoInstance, field: 'valido', 'error')} ">
+<!-- <div class="fieldcontain ${hasErrors(bean: contratoInstance, field: 'valido', 'error')} ">
 	<label for="valido">
 		<g:message code="contrato.valido.label" default="Valido" />
-		
+
 	</label>
 	<g:checkBox name="valido" value="${contratoInstance?.valido}" />
 
-</div>
-
+</div> -->
