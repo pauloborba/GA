@@ -8,7 +8,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class JogadorController {
 
-    static allowedMethods = [/*save: "POST", update: "PUT", delete: "DELETE"*/]
+    static allowedMethods = [/*save: "POST", update: "PUT", */delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -83,8 +83,6 @@ class JogadorController {
             return
         }
 
-
-
         //jogadorInstance.delete flush:true
         jogadorInstance.ativo = false
         jogadorInstance.save flush:true //desativa jogador
@@ -96,7 +94,7 @@ class JogadorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'jogador.label', default: 'Jogador'), jogadorInstance.id])
+                flash.message = message(code: 'default.desatived.message', args: [message(code: 'jogador.label', default: 'Jogador'), jogadorInstance.id])
                 redirect action:"index", method:"POST"
             }
             '*'{ render status: NO_CONTENT }
@@ -104,23 +102,25 @@ class JogadorController {
     }
 
 
-    def delete(Jogador jogadorInstance, boolean vorf) {
+    def delete(Jogador jogadorInstance) {
+
+        // vorf = new Bool(params)
 
         if (jogadorInstance == null) {
             notFound()
             return
         }
 
-        if (vorf) jogadorInstance.delete flush:true
-        else {
-            jogadorInstance.ativo = false
-            jogadorInstance.save flush:true //desativa jogador
-            def contratos = Contrato.findAllByJogador(jogadorInstance)
-            contratos.each { contrato ->
-                contrato.valido = false
-                contrato.save flush:true
-            }
-        }
+        /*if (vorf) */jogadorInstance.delete flush:true
+        //  else {
+        //     jogadorInstance.ativo = false
+        //     jogadorInstance.save flush:true //desativa jogador
+        //     def contratos = Contrato.findAllByJogador(jogadorInstance)
+        //     contratos.each { contrato ->
+        //         contrato.valido = false
+        //         contrato.save flush:true
+        //     }
+        // }
 
         request.withFormat {
             form multipartForm {

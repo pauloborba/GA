@@ -7,7 +7,7 @@
     Scenario: Remover atleta com contrato
       Given o atleta "Paulo Alberto" está cadastrado
       And "Paulo Alberto" tem o contrato "Contrato de Paulo Alberto"
-      When "Paulo Alberto" é removido
+      When "Paulo Alberto" é desativado
       Then o contrato "Contrato de Paulo Alberto" é inativado
 
     #GUI

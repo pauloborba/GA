@@ -82,15 +82,14 @@
 		<g:form url="[resource:jogadorInstance, action:'desative']" method="DELETE">
 			<fieldset class="buttons">
 				<g:link class="edit" action="edit" resource="${jogadorInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-				<g:actionSubmit class="delete" action="delete" params="['vorf': false]" value="${message(code: 'default.button.fakedelete.label', default: 'Desative')}" onclick="return confirm('${message(code: 'default.button.fakedelete.confirm.message', default: 'Are you sure?')}');" />
+				<g:actionSubmit class="delete" action="desative" value="${message(code: 'default.button.fakedelete.label', default: 'Desative')}" onclick="return confirm('${message(code: 'default.button.fakedelete.confirm.message', default: 'Are you sure?')}');" />
 			</fieldset>
 		</g:form>
 	</g:if>
 	<g:else>
 		<g:form url="[resource:jogadorInstance, action:'delete']" method="DELETE">
 			<fieldset class="buttons">
-				<g:actionSubmit class="delete" action="delete" params="['vorf' : true]" value="${message(code: 'default.button.realdelete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.realdelete.confirm.message', default: 'Are you sure?')}');" />
-
+				<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.realdelete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.realdelete.confirm.message', default: 'Are you sure?')}');" />
 			</fieldset>
 		</g:form>
 	</g:else>
