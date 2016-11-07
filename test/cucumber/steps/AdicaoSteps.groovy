@@ -13,7 +13,11 @@ def adicionarJogador(String CPF,String NOME , JogadorController controlador){
     controlador.save(jogador)
 }
 
-  
+
+def adicionarJogadorg(String CPF,String NOME ,int gols , JogadorController controlador){
+    def jogador = new Jogador([nome: NOME, cpf: CPF , golsFeitos: gols])
+    controlador.save(jogador)
+}
   
 
 Given(~/^O Jogador com CPF “(\d{11})” e com nome "([^"]*)" Já está cadastrado$/){ long CPF , String nome ->
@@ -38,6 +42,23 @@ Then(~/^O Jogador “(\d{11})” , "([^"]*)" não será inserido$/) { long CPF ,
 
 Then(~/^O jogador "([^"]*)" existente continua na lista$/) { String nome ->
     assert Jogador.findByNome(nome)
+}
+
+Given(~/^O sistema está esperando uma ação do usuário$/){ ->
+        
+}
+
+When(~/^Tenta inserir um jogador com nome "(.*?)" , CPF "(.*?)" , golsfeitos “(-\d+)”$/) { String arg1, String arg2, int arg3 ->
+    def controlador = new JogadorController()
+    adicionarJogadorg(arg2, arg1, arg3 ,controlador)
+    assert arg3 < 0
+}
+
+
+
+Then(~/^Jogador com CPF “(\d{11})" não é inserido$/) { long CPF ->
+    SCPF = String.valueOf(CPF)
+    assert !Jogador.findByCpf(SCPF);
 }
 
 
