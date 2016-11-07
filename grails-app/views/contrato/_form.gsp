@@ -16,8 +16,8 @@
 		<g:message code="contrato.jogador.label" default="Jogador" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="jogador" name="jogador.id" from="${ga.Jogador.list()}" optionKey="id" required="" value="${contratoInstance?.jogador?.id}" class="many-to-one"/>
-
+	%{--<g:select id="jogador" name="jogador.nome" from="${ga.Jogador.findAllByAtivo(true)}" optionKey="nome" required="" value="${ga?.jogador?.nome}" class="many-to-one">${contratoInstance?.jogador?.nome}</g:select>--}%
+	<g:select id="jogador" name="jogador.id" from="${ga.Jogador.findAllByAtivo(true)}" optionKey="id" required="" value="${contratoInstance?.jogador?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: contratoInstance, field: 'salario', 'error')} required">
@@ -25,7 +25,7 @@
 		<g:message code="contrato.salario.label" default="Salario" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="salario" value="${fieldValue(bean: contratoInstance, field: 'salario')}" required=""/>
+	<g:field name="salario" value="${fieldValue(bean: contratoInstance, field: 'salario')}" required="" type=""/>
 
 </div>
 
