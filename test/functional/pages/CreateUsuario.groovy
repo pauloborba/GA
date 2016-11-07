@@ -26,21 +26,19 @@ class CreateUsuario extends Page{
         $("input[name='create']").click()
     }
 
-    def messegeError(String email){
+    def boolean messegeError(String email){
         def error = $("div.alert.alert-danger>p").text()
 
-        if(error.contains(email)){
-            return true
-        }
-        return false
+        return error?.contains(email)
     }
 
-    def messegeSuccess(){
-        def error = $("div.alert.alert-success").text()
+    def boolean messegeSuccess(){
+        def success = $("div.alert.alert-success").text()
 
-        if(error.contains("created")){
-            return true
-        }
-        return false
+        InternationalizationHelper helper = InternationalizationHelper.instance
+
+        String usuario = "Usuario"
+        String create = helper.getMessage("default.created.message", usuario)
+        return success?.contains(create)
     }
 }

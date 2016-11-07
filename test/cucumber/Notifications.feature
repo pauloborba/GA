@@ -24,12 +24,12 @@ Feature: Notificações
     And eu solicito para adicionar novo usuário para receber notificações
     Then é exibido uma mensagem de confirmação
 
-  @ignore
+
   Scenario: usuário já cadastrado para receber notificações
 
     Given eu estou na página de adicionar novo usuário para receber notificações
     And o usuário "João Dantas" já está cadastrado para receber notificações com o email "email@gmail.com"
-    When eu adiciono "João Dantas" nas pessoas que vão receber notificações
+    When eu adiciono "João Dantas" nas pessoas que vão receber notificações com o email "email@gmail.com"
     Then é exibido uma mensagem de erro dizendo que "João Dantas" já esta cadastrado para receber notificações com o email "email@gmail.com"
 
 
@@ -47,7 +47,7 @@ Feature: Notificações
     When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"
     Then o sistema não é modificado
 
-  @ignore
+
   Scenario: notificação de fim de contrato
 
     Given o contrato de "José Santos" falta "30" dias para seu termino

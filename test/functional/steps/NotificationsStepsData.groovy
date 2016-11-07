@@ -10,6 +10,7 @@ class NotificationsStepsData {
     static def deleteUser(String email){
         def controller = new UsuarioController()
         controller.delete(Usuario.findByEmail(email))
+        controller.response.reset()
         assert Usuario.findByEmail(email) == null
     }
 
