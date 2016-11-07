@@ -8,22 +8,22 @@ class Jogador {
     String posicao
     int golsFeitos
     Date dataDeNascimento
-    //static hasMany = [contratos: Contrato]
-    boolean ativo = true
+    boolean ativo
+
 
     Jogador() {
-    //    contratos = []
+        golsFeitos = 0
+        ativo = true
     }
 
     static constraints = {
         nome blank: false, nullable: false
         cpf nullable: false, blank: true, unique: true
         dataDeNascimento nullable: true, blank: true
-        posicao nullable: true, inList: ["goleiro", "atacante", "centro"]
+        posicao nullable: true, inList: ["goleiro", "atacante", "centro", "other"]
     }
 
-    static mapping = {
-        golsFeitos defaultValue: 0
-        ativo defaultValue: true
+    def String toString(){
+        return nome + ":" + cpf
     }
 }

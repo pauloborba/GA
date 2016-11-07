@@ -12,8 +12,11 @@ class JogadorController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
+
         respond Jogador.list(params), model:[jogadorInstanceCount: Jogador.count()]
     }
+
+
 
     def show(Jogador jogadorInstance) {
         respond jogadorInstance
@@ -104,31 +107,32 @@ class JogadorController {
 
     def delete(Jogador jogadorInstance) {
 
-        // vorf = new Bool(params)
-
         if (jogadorInstance == null) {
             notFound()
             return
         }
+        def contratos = Contrato.findAllByJogador(jogadorInstance)
+        if (!contratos) {  //somente se não existir nenhum contrato ligado ao jogador ele pode ser deletado
+            jogadorInstance.delete flush: true
 
-        /*if (vorf) */jogadorInstance.delete flush:true
-        //  else {
-        //     jogadorInstance.ativo = false
-        //     jogadorInstance.save flush:true //desativa jogador
-        //     def contratos = Contrato.findAllByJogador(jogadorInstance)
-        //     contratos.each { contrato ->
-        //         contrato.valido = false
-        //         contrato.save flush:true
-        //     }
-        // }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'jogador.label', default: 'Jogador'), jogadorInstance.id])
-                redirect action:"index", method:"GET"
+            request.withFormat {
+                form multipartForm {
+                    flash.message = message(code: 'default.deleted.message', args: [message(code: 'jogador.label', default: 'Jogador'), jogadorInstance.id])
+                    redirect action:"index", method:"GET"
+                }
+                '*'{ render status: NO_CONTENT }
             }
-            '*'{ render status: NO_CONTENT }
+        } else{
+            request.withFormat {
+                form multipartForm {
+                    flash.message = message(code: 'default.naoepossiveldeletar.message', args: [message(code: 'jogador.label', default: 'Jogador'), jogadorInstance.id])
+                    redirect action: "index", method: "GET"
+                }
+                '*'{ render status: NO_CONTENT }
+            }
         }
+
+
     }
 
     protected void notFound() {
