@@ -83,7 +83,7 @@
 					<div class="col-md-offset-4 col-md-8">
 						<g:form url="[resource:usuarioInstance, action:'delete']" method="DELETE">
 							<g:link class="btn btn-success btn-raised" action="edit" resource="${usuarioInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-							<g:actionSubmit class="btn btn-danger btn-raised" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+							<g:actionSubmit class="btn btn-danger btn-raised" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" />
 						</g:form>
 					</div>
 				</div>

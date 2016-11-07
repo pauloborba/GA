@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils" xmlns:lxslt="http://xml.apache.org/xslt">
+<!DOCTYPE html><html xmlns:lxslt="http://xml.apache.org/xslt" xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils">
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>
@@ -15,7 +15,7 @@
      - All tests </h1>
 <p class="intro">
                         Executed
-                        4
+                        5
                         tests
                     
                         without a single error or failure!
@@ -46,7 +46,7 @@
 <h2>Notifica&ccedil;&otilde;es</h2>
 <h3>
                         Executed
-                        4
+                        5
                         tests
                     
                         without a single error or failure!
@@ -57,7 +57,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">dados incorretos</b>
 </p>
-<p class="summary">Executed in 5.953 seconds.</p>
+<p class="summary">Executed in 4.159 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -67,7 +67,17 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Adicionar usu&aacute;rio para receber notifica&ccedil;&otilde;es</b>
 </p>
-<p class="summary">Executed in 1.602 seconds.</p>
+<p class="summary">Executed in 1.619 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="usu&aacute;rio j&aacute; cadastrado para receber notifica&ccedil;&otilde;es">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">usu&aacute;rio j&aacute; cadastrado para receber notifica&ccedil;&otilde;es</b>
+</p>
+<p class="summary">Executed in 1.866 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -77,7 +87,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es</b>
 </p>
-<p class="summary">Executed in 0.124 seconds.</p>
+<p class="summary">Executed in 0.177 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -87,7 +97,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">usu&aacute;rio duplicado</b>
 </p>
-<p class="summary">Executed in 0.026 seconds.</p>
+<p class="summary">Executed in 0.019 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -104,32 +114,39 @@
 --Output from Adicionar usu&aacute;rio para receber notifica&ccedil;&otilde;es--
   #  Senarios de GUI
   Scenario: dados incorretos                                                     # Notifications.feature:9
-    Given eu estou na p&aacute;gina de adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es # NotificationsSteps.groovy:12
-    When eu preencho o campo "email" com "email@cin"                             # NotificationsSteps.groovy:16
-    And o campo "nome" com "nome"                                                # NotificationsSteps.groovy:19
-    And eu solicito para adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es        # NotificationsSteps.groovy:22
-    Then eu posso ver uma mensagem informando que o "email@cin" &eacute; incorreto      # NotificationsSteps.groovy:25
+    Given eu estou na p&aacute;gina de adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es # NotificationsSteps.groovy:14
+    When eu preencho o campo "email" com "email@cin"                             # NotificationsSteps.groovy:17
+    And o campo "nome" com "nome"                                                # NotificationsSteps.groovy:20
+    And eu solicito para adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es        # NotificationsSteps.groovy:23
+    Then eu posso ver uma mensagem informando que o "email@cin" &eacute; incorreto      # NotificationsSteps.groovy:26
+
+--Output from usu&aacute;rio j&aacute; cadastrado para receber notifica&ccedil;&otilde;es--
+  Scenario: Adicionar usu&aacute;rio para receber notifica&ccedil;&otilde;es                                                           # Notifications.feature:18
+    Given eu estou na p&aacute;gina de adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es                                  # NotificationsSteps.groovy:14
+    And o usu&aacute;rio "Jo&atilde;o Dantas" ainda n&atilde;o est&aacute; cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:32
+    When eu preencho o campo "nome" com "Jo&atilde;o Dantas"                                                             # NotificationsSteps.groovy:17
+    And o campo "email" com "email@gmail.com"                                                                     # NotificationsSteps.groovy:20
+    And eu solicito para adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es                                         # NotificationsSteps.groovy:23
+    Then &eacute; exibido uma mensagem de confirma&ccedil;&atilde;o                                                                    # NotificationsSteps.groovy:46
 
 --Output from adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es--
-  Scenario: Adicionar usu&aacute;rio para receber notifica&ccedil;&otilde;es                                                           # Notifications.feature:18
-    Given eu estou na p&aacute;gina de adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es                                  # NotificationsSteps.groovy:12
-    And o usu&aacute;rio "Jo&atilde;o Dantas" ainda n&atilde;o est&aacute; cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:31
-    When eu preencho o campo "nome" com "Jo&atilde;o Dantas"                                                             # NotificationsSteps.groovy:16
-    And o campo "email" com "email@gmail.com"                                                                     # NotificationsSteps.groovy:19
-    And eu solicito para adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es                                         # NotificationsSteps.groovy:22
-    Then &eacute; exibido uma mensagem de confirma&ccedil;&atilde;o                                                                    # NotificationsSteps.groovy:34
+  Scenario: usu&aacute;rio j&aacute; cadastrado para receber notifica&ccedil;&otilde;es                                                                                  # Notifications.feature:28
+    Given eu estou na p&aacute;gina de adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es                                                             # NotificationsSteps.groovy:14
+    And o usu&aacute;rio "Jo&atilde;o Dantas" j&aacute; est&aacute; cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com"                                   # NotificationsSteps.groovy:51
+    When eu adiciono "Jo&atilde;o Dantas" nas pessoas que v&atilde;o receber notifica&ccedil;&otilde;es com o email "email@gmail.com"                                    # NotificationsSteps.groovy:62
+    Then &eacute; exibido uma mensagem de erro dizendo que "Jo&atilde;o Dantas" j&aacute; esta cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:67
 
 --Output from usu&aacute;rio duplicado--
   #    Senarios de controler
   Scenario: adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es                                                            # Notifications.feature:38
-    Given o sistema n&atilde;o tem o usu&aacute;rio "Jo&atilde;o Dantas" cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com"  # NotificationsSteps.groovy:39
-    When eu adiciono "Jo&atilde;o Dantas" no sistema de notifica&ccedil;&otilde;es com o email "email@gmail.com"                             # NotificationsSteps.groovy:43
-    Then o usu&aacute;rio "Jo&atilde;o Dantas" &eacute; adicionado nas pessoas que v&atilde;o receber as notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:47
+    Given o sistema n&atilde;o tem o usu&aacute;rio "Jo&atilde;o Dantas" cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com"  # NotificationsSteps.groovy:72
+    When eu adiciono "Jo&atilde;o Dantas" no sistema de notifica&ccedil;&otilde;es com o email "email@gmail.com"                             # NotificationsSteps.groovy:76
+    Then o usu&aacute;rio "Jo&atilde;o Dantas" &eacute; adicionado nas pessoas que v&atilde;o receber as notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:80
 
   Scenario: usu&aacute;rio duplicado                                                                                      # Notifications.feature:44
-    Given o sistema tem o usu&aacute;rio "Jo&atilde;o Dantas" cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:54
-    When eu adiciono "Jo&atilde;o Dantas" no sistema de notifica&ccedil;&otilde;es com o email "email@gmail.com"                        # NotificationsSteps.groovy:43
-    Then o sistema n&atilde;o &eacute; modificado                                                                                # NotificationsSteps.groovy:58
+    Given o sistema tem o usu&aacute;rio "Jo&atilde;o Dantas" cadastrado para receber notifica&ccedil;&otilde;es com o email "email@gmail.com" # NotificationsSteps.groovy:87
+    When eu adiciono "Jo&atilde;o Dantas" no sistema de notifica&ccedil;&otilde;es com o email "email@gmail.com"                        # NotificationsSteps.groovy:76
+    Then o sistema n&atilde;o &eacute; modificado                                                                                # NotificationsSteps.groovy:91
 </pre>
 </div>
 <div class="syserr">
@@ -137,6 +154,7 @@
 <pre class="syserr">
 --Output from dados incorretos--
 --Output from Adicionar usu&aacute;rio para receber notifica&ccedil;&otilde;es--
+--Output from usu&aacute;rio j&aacute; cadastrado para receber notifica&ccedil;&otilde;es--
 --Output from adicionar novo usu&aacute;rio para receber notifica&ccedil;&otilde;es--
 --Output from usu&aacute;rio duplicado--</pre>
 </div>

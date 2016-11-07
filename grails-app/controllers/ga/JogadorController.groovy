@@ -12,7 +12,12 @@ class JogadorController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Jogador.list(params), model:[jogadorInstanceCount: Jogador.count()]
+        respond Jogador.list(params), model: [jogadorInstanceCount: Jogador.count()]
+    }
+
+    def listContrato(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Jogador.list(params), model: [jogadorInstanceCount: Jogador.count()]
     }
 
     def show(Jogador jogadorInstance) {
