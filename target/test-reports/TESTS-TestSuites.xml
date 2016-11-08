@@ -1,24 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Hugos-MacBook-Air.local" id="0" name="new book entry" package="" tests="1" time="5.862" timestamp="2015-09-04T16:37:50">
+  <testsuite errors="0" failures="0" hostname="dias" id="0" name="Notificações" package="" tests="5" time="8.108" timestamp="2016-11-07T23:10:49">
       <properties />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="new book" time="5.377" />
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="dados incorretos" time="4.159" />
 
-      <system-out><![CDATA[Feature: new book entry
-  As a book owner
-  I want to add books I own to the book tracker
-  so that I do not have to remember them by myself
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adicionar usuário para receber notificações" time="1.619" />
 
---Output from new book--
-  Scenario: new book                               # NewBook.feature:6
-    Given I open the book tracker                  # Book_Steps.groovy:5
-    When I add "Specification by Example"          # Book_Steps.groovy:10
-    Then I see "Specification by Example"s details # Book_Steps.groovy:14
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="usuário já cadastrado para receber notificações" time="1.866" />
+
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="adicionar novo usuário para receber notificações" time="0.177" />
+
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="usuário duplicado" time="0.019" />
+
+      <system-out><![CDATA[Feature: Notificações
+  As a presidente de um time de futebol
+  I Want to receber notificações sobre o meu time na minha caixa de email
+  So that  alguma clausula do contrato de algum jogador for disparada ou quando o contrato do jogador estiver perto de expirar
+
+--Output from dados incorretos--
+--Output from Adicionar usuário para receber notificações--
+  #  Senarios de GUI
+  Scenario: dados incorretos                                                     # Notifications.feature:9
+    Given eu estou na página de adicionar novo usuário para receber notificações # NotificationsSteps.groovy:14
+    When eu preencho o campo "email" com "email@cin"                             # NotificationsSteps.groovy:17
+    And o campo "nome" com "nome"                                                # NotificationsSteps.groovy:20
+    And eu solicito para adicionar novo usuário para receber notificações        # NotificationsSteps.groovy:23
+    Then eu posso ver uma mensagem informando que o "email@cin" é incorreto      # NotificationsSteps.groovy:26
+
+--Output from usuário já cadastrado para receber notificações--
+  Scenario: Adicionar usuário para receber notificações                                                           # Notifications.feature:18
+    Given eu estou na página de adicionar novo usuário para receber notificações                                  # NotificationsSteps.groovy:14
+    And o usuário "João Dantas" ainda não está cadastrado para receber notificações com o email "email@gmail.com" # NotificationsSteps.groovy:32
+    When eu preencho o campo "nome" com "João Dantas"                                                             # NotificationsSteps.groovy:17
+    And o campo "email" com "email@gmail.com"                                                                     # NotificationsSteps.groovy:20
+    And eu solicito para adicionar novo usuário para receber notificações                                         # NotificationsSteps.groovy:23
+    Then é exibido uma mensagem de confirmação                                                                    # NotificationsSteps.groovy:46
+
+--Output from adicionar novo usuário para receber notificações--
+  Scenario: usuário já cadastrado para receber notificações                                                                                  # Notifications.feature:28
+    Given eu estou na página de adicionar novo usuário para receber notificações                                                             # NotificationsSteps.groovy:14
+    And o usuário "João Dantas" já está cadastrado para receber notificações com o email "email@gmail.com"                                   # NotificationsSteps.groovy:51
+    When eu adiciono "João Dantas" nas pessoas que vão receber notificações com o email "email@gmail.com"                                    # NotificationsSteps.groovy:62
+    Then é exibido uma mensagem de erro dizendo que "João Dantas" já esta cadastrado para receber notificações com o email "email@gmail.com" # NotificationsSteps.groovy:67
+
+--Output from usuário duplicado--
+  #    Senarios de controler
+  Scenario: adicionar novo usuário para receber notificações                                                            # Notifications.feature:38
+    Given o sistema não tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"  # NotificationsSteps.groovy:72
+    When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"                             # NotificationsSteps.groovy:76
+    Then o usuário "João Dantas" é adicionado nas pessoas que vão receber as notificações com o email "email@gmail.com" # NotificationsSteps.groovy:80
+
+  Scenario: usuário duplicado                                                                                      # Notifications.feature:44
+    Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com" # NotificationsSteps.groovy:87
+    When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"                        # NotificationsSteps.groovy:76
+    Then o sistema não é modificado                                                                                # NotificationsSteps.groovy:91
 ]]></system-out>
 
       <system-err><![CDATA[
---Output from new book--]]></system-err>
+--Output from dados incorretos--
+--Output from Adicionar usuário para receber notificações--
+--Output from usuário já cadastrado para receber notificações--
+--Output from adicionar novo usuário para receber notificações--
+--Output from usuário duplicado--]]></system-err>
 
   </testsuite>
 </testsuites>

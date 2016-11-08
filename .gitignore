@@ -39,3 +39,5 @@ web-app/WEB-INF/tld/fmt.tld
 # Gradle files
 .gradle/*
 /build/
+.idea/*
+.slcache/
