@@ -14,8 +14,17 @@ before_install:
 - source "/home/travis/.sdkman/bin/sdkman-init.sh"
 - sdk install grails 2.4.3 
 
+ - export CHROME_BIN=/usr/bin/google-chrome
+ - export DISPLAY=:99.0
+ - sh -e /etc/init.d/xvfb start
+ - sudo apt-get update
+ - sudo apt-get install -y libappindicator1 fonts-liberation
+ - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+ - sudo dpkg -i google-chrome*.deb
+
+
 branches:
   only:
     - master
 
-script: grails -Dgeb.env=firefox test-app --non-interactive --stacktrace
+script: grails test-app -Dgeb.env=chrome functional:cucumber --stacktrace --verbose
