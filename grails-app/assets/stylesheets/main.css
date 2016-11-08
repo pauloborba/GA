@@ -11,12 +11,12 @@ h1, h2, h3, h4, h5, h6 {
 /* BASE LAYOUT */
 
 html {
-	background-color: #ddd;
-	background-image: -moz-linear-gradient(center top, #aaa, #ddd);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
-	background-image: linear-gradient(top, #aaa, #ddd);
+	background: url(http://w.droidrave.com/images/back.png) repeat;
+	/*background-image: -moz-linear-gradient(center top, #aaa, #ddd);*/
+	/*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));*/
+	/*background-image: linear-gradient(top, #aaa, #ddd);*/
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;*/
 	height: 100%;
 	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
 	-webkit-box-sizing: border-box;
@@ -28,9 +28,9 @@ html.no-cssgradients {
 	background-color: #aaa;
 }
 
-.ie6 html {
-	height: 100%;
-}
+/*.ie6 html {*/
+	/*height: 100%;*/
+/*}*/
 
 html * {
 	margin: 0;
@@ -42,27 +42,41 @@ body {
 	margin: 0 auto;
 	max-width: 960px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	   -moz-box-shadow: 0 0 0.3em #255b17;
-	-webkit-box-shadow: 0 0 0.3em #255b17;
-	        box-shadow: 0 0 0.3em #255b17;
+	   -moz-box-shadow: 0 0 0.3em #1f285b;
+	-webkit-box-shadow: 0 0 0.3em #21325b;
+	        box-shadow: 0 0 0.3em #3a445b;
 }
 
 #grailsLogo {
-	background-color: #abbf78;
+	background-color: #d6d7da;
+	text-transform: uppercase;
+	font-size: 22px;
+	text-align: center;
+	font-family: bold;
+
 }
 
+.regimage{
+	max-height: 50px;
+	max-height: 50px;
+	margin-right: 15px;
+	border-bottom-right-radius: 32px;
+	border-top-right-radius: 32px;
+	border-bottom-left-radius: 32px;
+	border-top-left-radius: 32px;
+}
 /* replace with .no-boxshadow body if you have modernizr available */
-.ie6 body,
-.ie7 body,
-.ie8 body {
-	border-color: #255b17;
-	border-style: solid;
-	border-width: 0 1px;
-}
+/*.ie6 body,*/
+/*.ie7 body,*/
+/*.ie8 body {*/
+	/*border-color: #255b17;*/
+	/*border-style: solid;*/
+	/*border-width: 0 1px;*/
+/*}*/
 
-.ie6 body {
-	height: 100%;
-}
+/*.ie6 body {*/
+	/*height: 100%;*/
+/*}*/
 
 a:link, a:visited, a:hover {
 	color: #48802c;
@@ -108,7 +122,7 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+	background: #242729;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -119,6 +133,16 @@ img {
 
 .footer a {
 	color: #255b17;
+}
+
+.footer p{
+	color: #9fa6ad;
+	font-size: 12px;
+}
+
+.cresce, .tudo{
+	min-height: 100%;
+	overflow : auto;
 }
 
 .spinner {
@@ -297,10 +321,10 @@ ul.one-to-many {
 	vertical-align: top;
 }
 
-.ie6 ul.one-to-many, .ie7 ul.one-to-many {
-	display: inline;
-	zoom: 1;
-}
+/*.ie6 ul.one-to-many, .ie7 ul.one-to-many {*/
+	/*display: inline;*/
+	/*zoom: 1;*/
+/*}*/
 
 ul.one-to-many li.add {
 	list-style-type: none;
@@ -573,10 +597,10 @@ th:hover, tr:hover {
 	text-indent: 25px;
 }
 
-.ie6 .buttons input.delete, .ie6 .buttons input.edit, .ie6 .buttons input.save,
-.ie7 .buttons input.delete, .ie7 .buttons input.edit, .ie7 .buttons input.save {
-	padding-left: 36px;
-}
+/*.ie6 .buttons input.delete, .ie6 .buttons input.edit, .ie6 .buttons input.save,*/
+/*.ie7 .buttons input.delete, .ie7 .buttons input.edit, .ie7 .buttons input.save {*/
+	/*padding-left: 36px;*/
+/*}*/
 
 .buttons .delete {
 	background-image: url(../images/skin/database_delete.png);
