@@ -64,37 +64,37 @@ Then(~/^Jogador com CPF “(\d{11})" não é inserido$/) { long CPF ->
 
 Given(~/^Estou na tela de listagem de jogadores$/) { ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 When(~/^Vou para o menu de cadastrar jogadores$/) { ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 When(~/^preencho os campos CPF e Nome$/) { ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 When(~/^Então confirmo a criação$/) { ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 Then(~/^Vou para o menu de confirmação de criação de jogador$/) { ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 Given(~/^Estou na tela Show jogador de um jogador com nome "(.*?)" e CPF "(.*?)"$/) { String arg1, String arg2 ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 When(~/^Tento remover o jogador "(.*?)"$/) { String arg1 ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 When(~/^Confirmo que desejo remover$/) { ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+
 }
 Then(~/^Não visualizo o nome do jogador "(.*?)" na pagina de listagem de jogador$/) { String arg1 ->
     // Write code here that turns the phrase above into concrete actions
-    throw new PendingException()
+    
 }
