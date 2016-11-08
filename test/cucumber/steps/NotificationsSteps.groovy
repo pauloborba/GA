@@ -97,7 +97,7 @@ Then(~/^o sistema não é modificado$/) { ->
 
 //notificação de fim de contrato
 Given(~/^o contrato de "([^"]*)" falta "([^"]*)" dias para seu termino$/) { String arg1, String arg2 ->
-    
+
 }
 And(~/^o usuário "([^"]*)" está cadastrado para receber notificações com o email "([^"]*)"$/) { String arg1, String arg2 ->
     // Write code here that turns the phrase above into concrete actions
