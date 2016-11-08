@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns:lxslt="http://xml.apache.org/xslt" xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils">
+<!DOCTYPE html><html xmlns:stringutils="xalan://org.apache.tools.ant.util.StringUtils" xmlns:lxslt="http://xml.apache.org/xslt">
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>
@@ -14,9 +14,16 @@
         Unit Test Results
      - Failed tests</h1>
 <p class="intro">
-                        A single test executed
+                        Executed
+                        11
+                        tests
                     
-                        without a single error or failure!
+                        with
+                        2 errors
+
+                        and
+                        4 failures
+                        .
                     </p>
 </div>
 <div class="grid_2 omega">
@@ -39,6 +46,527 @@
 </nav>
 </div>
 <div class="clear"></div>
+<div class="testsuite failure">
+<div class="header">
+<h2>Cadastro de jogadores</h2>
+<h3>
+                        Executed
+                        4
+                        tests
+                    
+                        with
+                        3 failures
+                        .
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adicionar Jogador J&aacute; cadastrado">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adicionar Jogador J&aacute; cadastrado</b>
+</p>
+<p class="summary">Executed in 0.374 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="Adicionar Jogador com gols negativos">
+<div class="grid_3 alpha">
+<p>
+<span class="icon failure"></span><b class="testname message failure">Adicionar Jogador com gols negativos</b>
+</p>
+<p class="summary">Executed in 0.14 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Undefined Step: Given O sistema est&aacute; esperando uma a&ccedil;&atilde;o do usu&aacute;rio</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: Given O sistema est&aacute; esperando uma a&ccedil;&atilde;o do usu&aacute;rio
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: When Tenta inserir um jogador com nome "j3" , CPF "12345678911" , golsfeitos &ldquo;-16&rdquo;</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: When Tenta inserir um jogador com nome "j3" , CPF "12345678911" , golsfeitos &ldquo;-16&rdquo;
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: Then Jogador com CPF &ldquo;12345678911" n&atilde;o &eacute; inserido</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: Then Jogador com CPF &ldquo;12345678911" n&atilde;o &eacute; inserido
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="Adicionar Jogador">
+<div class="grid_3 alpha">
+<p>
+<span class="icon failure"></span><b class="testname message failure">Adicionar Jogador</b>
+</p>
+<p class="summary">Executed in 0.132 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Undefined Step: Given Estou na tela de listagem de jogadores</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: Given Estou na tela de listagem de jogadores
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: When Vou para o menu de cadastrar jogadores</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: When Vou para o menu de cadastrar jogadores
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: And preencho os campos CPF e Nome</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: And preencho os campos CPF e Nome
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: And Ent&atilde;o confirmo a cria&ccedil;&atilde;o</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: And Ent&atilde;o confirmo a cria&ccedil;&atilde;o
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: Then Vou para o menu de confirma&ccedil;&atilde;o de cria&ccedil;&atilde;o de jogador</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: Then Vou para o menu de confirma&ccedil;&atilde;o de cria&ccedil;&atilde;o de jogador
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="Remover Jogador">
+<div class="grid_3 alpha">
+<p>
+<span class="icon failure"></span><b class="testname message failure">Remover Jogador</b>
+</p>
+<p class="summary">Executed in 0.028 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Undefined Step: Given Estou na tela Show jogador de um jogador com nome "j1" e CPF "12345678910"</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: Given Estou na tela Show jogador de um jogador com nome "j1" e CPF "12345678910"
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: When Tento remover o jogador "j1"</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: When Tento remover o jogador "j1"
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: And Confirmo que desejo remover</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: And Confirmo que desejo remover
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+<div class="details">
+<p>
+<b class="message">Undefined Step: Then N&atilde;o visualizo o nome do jogador "j1" na pagina de listagem de jogador</b>
+</p>
+<pre>cucumber.runtime.UndefinedStepException: Undefined Step: Then N&atilde;o visualizo o nome do jogador "j1" na pagina de listagem de jogador
+	at grails.plugin.cucumber.CucumberFormatter.resultUndefined(CucumberFormatter.groovy:250)
+	at grails.plugin.cucumber.CucumberFormatter.result(CucumberFormatter.groovy:215)
+	at cucumber.runtime.Utils$1.call(Utils.java:37)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)
+	at cucumber.runtime.Utils.invoke(Utils.java:31)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:243)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:280)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:48)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:163)
+	at grails.plugin.cucumber.Cucumber$_run_closure2.doCall(Cucumber.groovy:59)
+	at grails.plugin.cucumber.Cucumber.run(Cucumber.groovy:58)
+	at grails.plugin.cucumber.CucumberTestType.runFeatures(CucumberTestType.groovy:148)
+	at grails.plugin.cucumber.CucumberTestType.doRun(CucumberTestType.groovy:58)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">Feature: Cadastro de jogadores
+  As a user of the system,
+  I Will be alowed to register athletes,
+  So see theyr informations like CPF, Full name, Position and other personal information.
+
+--Output from Adicionar Jogador J&aacute; cadastrado--
+--Output from Adicionar Jogador com gols negativos--
+  #Controller
+  Scenario: Adicionar Jogador J&aacute; cadastrado                                                    # Adicao.feature:10
+    Given O Jogador com CPF &ldquo;12345678910&rdquo; e com nome "j1" J&aacute; est&aacute; cadastrado                   # AdicaoSteps.groovy:19
+    When Tentar inserir um jogador com CPF &ldquo;12345678910&rdquo; e com nome "j2" na lista de jogadores # AdicaoSteps.groovy:27
+    Then O Jogador &ldquo;12345678910&rdquo; , "j2" n&atilde;o ser&aacute; inserido                                      # AdicaoSteps.groovy:34
+    And O jogador "j1" existente continua na lista                                             # AdicaoSteps.groovy:39
+
+--Output from Adicionar Jogador--
+  Scenario: Adicionar Jogador com gols negativos                                       # Adicao.feature:19
+    Given O sistema est&aacute; esperando uma a&ccedil;&atilde;o do usu&aacute;rio
+    When Tenta inserir um jogador com nome "j3" , CPF "12345678911" , golsfeitos &ldquo;-16&rdquo;
+    Then Jogador com CPF &ldquo;12345678911" n&atilde;o &eacute; inserido
+
+--Output from Remover Jogador--
+  #GUI
+  Scenario: Adicionar Jogador                                 # Adicao.feature:28
+    Given Estou na tela de listagem de jogadores
+    When Vou para o menu de cadastrar jogadores
+    And preencho os campos CPF e Nome
+    And Ent&atilde;o confirmo a cria&ccedil;&atilde;o
+    Then Vou para o menu de confirma&ccedil;&atilde;o de cria&ccedil;&atilde;o de jogador
+
+  Scenario: Remover Jogador                                                          # Adicao.feature:38
+    Given Estou na tela Show jogador de um jogador com nome "j1" e CPF "12345678910"
+    When Tento remover o jogador "j1"
+    And Confirmo que desejo remover
+    Then N&atilde;o visualizo o nome do jogador "j1" na pagina de listagem de jogador
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">
+--Output from Adicionar Jogador J&aacute; cadastrado--
+--Output from Adicionar Jogador com gols negativos--
+--Output from Adicionar Jogador--
+--Output from Remover Jogador--</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testsuite error">
+<div class="header">
+<h2>JogadorControllerSpec</h2>
+<h3>
+                        Executed
+                        7
+                        tests
+                    
+                        with
+                        2 errors
+
+                        and
+                        one failure
+                        .
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Test the index action returns the correct model">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Test the index action returns the correct model</b>
+</p>
+<p class="summary">Executed in 3.879 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Test the create action returns the correct model">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Test the create action returns the correct model</b>
+</p>
+<p class="summary">Executed in 0.107 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="Test the save action correctly persists an instance">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">Test the save action correctly persists an instance</b>
+</p>
+<p class="summary">Executed in 0.428 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Cannot redirect for object [ga.Jogador : (unsaved)] it is not a domain or has no identifier. Use an explicit redirect instead </b>
+</p>
+<pre>org.codehaus.groovy.grails.web.servlet.mvc.exceptions.CannotRedirectException: Cannot redirect for object [ga.Jogador : (unsaved)] it is not a domain or has no identifier. Use an explicit redirect instead 
+	at ga.JogadorController.tt__save_closure9_closure14(JogadorController.groovy:43)
+	at ga.JogadorController.$tt__save(JogadorController.groovy:40)
+	at ga.JogadorControllerSpec.Test the save action correctly persists an instance(JogadorControllerSpec.groovy:54)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Test that the show action returns the correct model">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Test that the show action returns the correct model</b>
+</p>
+<p class="summary">Executed in 0.045 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Test that the edit action returns the correct model">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Test that the edit action returns the correct model</b>
+</p>
+<p class="summary">Executed in 0.048 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="Test the update action performs an update on a valid domain instance">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">Test the update action performs an update on a valid domain instance</b>
+</p>
+<p class="summary">Executed in 0.077 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Cannot get property 'id' on null object</b>
+</p>
+<pre>java.lang.NullPointerException: Cannot get property 'id' on null object
+	at ga.JogadorControllerSpec.Test the update action performs an update on a valid domain instance(JogadorControllerSpec.groovy:122)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="Test that the delete action deletes an instance if it exists">
+<div class="grid_3 alpha">
+<p>
+<span class="icon failure"></span><b class="testname message failure">Test that the delete action deletes an instance if it exists</b>
+</p>
+<p class="summary">Executed in 0.052 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Condition not satisfied:
+
+Jogador.count() == 1
+        |       |
+        0       false
+</b>
+</p>
+<pre>junit.framework.AssertionFailedError: Condition not satisfied:
+
+Jogador.count() == 1
+        |       |
+        0       false
+
+	at ga.JogadorControllerSpec.Test that the delete action deletes an instance if it exists(JogadorControllerSpec.groovy:142)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
 <div class="clear"></div>
 </div>
 <!--

@@ -4,7 +4,7 @@ jdk:
 - oraclejdk7
 
 before_script:
-- "export DISPLAY=:99.0" 
+- "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"
 
 before_install:
@@ -12,7 +12,7 @@ before_install:
 - source "$HOME/.sdkman/bin/sdkman-init.sh"
 - echo sdkman_auto_answer=true > ~/.sdkman/etc/config
 - source "/home/travis/.sdkman/bin/sdkman-init.sh"
-- sdk install grails 2.4.3 
+- sdk install grails 2.4.3
 
 branches:
   only:
