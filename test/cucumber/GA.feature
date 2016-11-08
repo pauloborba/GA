@@ -21,15 +21,15 @@ Feature: Remoção de atletas
     #GUI
   Scenario: Remover atleta sem contrato
     Given estou na página de atletas
-    And vejo "Paulo Alberto" na lista de jogadores
-    And vejo que "Paulo Alberto" está desativado
-    When seleciono "Paulo Alberto"
-    And tento remover "Paulo Alberto"
-    Then vejo a página de atletas sem "Paulo Alberto"
+    And criei um atleta com cpf "763.595.811-93"
+    And desativei o atleta selecionado
+    When seleciono o atleta de cpf "763.595.811-93"
+    And tento remover o atleta selecionado
+    Then vejo a página de atletas sem "763.595.811-93"
 
   Scenario: Tentativa de editar atleta desativado
     Given estou na página de atletas
-    And vejo "Paulo Alberto" na lista de jogadores
-    And vejo que "Paulo Alberto" está desativado
-    When seleciono "Paulo Alberto"
+    And criei um atleta com cpf "763.595.811-92"
+    And desativei o atleta selecionado
+    When seleciono o atleta de cpf "763.595.811-92"
     Then vejo que não há opção para editá-lo
