@@ -47,7 +47,7 @@ Feature: Notificações
     When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"
     Then o sistema não é modificado
 
-
+  @ignore
   Scenario: notificação de fim de contrato
 
     Given o contrato de "José Santos" falta "30" dias para seu termino
