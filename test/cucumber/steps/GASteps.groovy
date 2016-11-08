@@ -4,49 +4,55 @@ import ga.Contrato
 import ga.ContratoController
 import ga.Jogador
 import ga.JogadorController
-import pages.RemocaoPage
+import pages.AtletaCreate
+import pages.AtletaShow
+import pages.AtletasPage
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
-def adicionarJogador(String nome, JogadorController controlador){
-    def jogador = new Jogador([nome: nome, cpf: "12312312321"])
-//    println("Vjogador: " + jogador)
+def adicionarJogador(String cpf, JogadorController controlador){
+    def jogador = new Jogador([nome: "nome", cpf: cpf])
     controlador.save(jogador)
-//    controlador.response.reset()
 }
 
-def adicionarContrato(String nomeContrato, nomeAtleta, ContratoController controlador){
-    def atleta = Jogador.findByNome(nomeAtleta)
+def adicionarContrato(String nomeContrato, cpfAtleta, ContratoController controlador){
+    def atleta = Jogador.findByCpf(cpfAtleta)
     def contrato = new Contrato(valido: true, nome: nomeContrato, jogador: atleta, salario: 1230)
     controlador.save(contrato)
 }
 
-def verContrato(String nomeContrato, nomeAtleta){ //retorna se contrato tem determinado atleta
+def verContrato(String nomeContrato, cpfAtleta){ //retorna se o contrato especificado tem determinado atleta
     def contrato = Contrato.findByNome(nomeContrato)
-//    println("contrato nome: " +  contrato.getNome())
-    return contrato.getJogador().nome == nomeAtleta
+    return contrato.getJogador().cpf == cpfAtleta
 }
 
-def desativarJogador(String nomeAtleta, JogadorController controlador){
-    def atleta = Jogador.findByNome(nomeAtleta)
+def desativarJogador(String cpfAtleta, JogadorController controlador){
+    def atleta = Jogador.findByCpf(cpfAtleta)
     controlador.desative(atleta)
 }
 
-Given(~/^o atleta "([^"]*)" está cadastrado$/) { String atleta ->
+def removerJogador(String cpfAtleta, JogadorController controlador){
+    def atleta = Jogador.findByCpf(cpfAtleta)
+    controlador.delete(atleta)
+}
+
+Given(~/^o atleta com cpf "([^"]*)" está cadastrado$/) { String atleta ->
     def controlador = new JogadorController()
     adicionarJogador(atleta, controlador)
-    assert Jogador.findByNome(atleta) //se não encontra atleta com nome atleta lança exceção
+    assert Jogador.findByCpf(atleta) //
 }
+
 And(~/^"([^"]*)" tem o contrato "([^"]*)"$/) { String atleta, contrato ->
     def controlador = new ContratoController()
     adicionarContrato(contrato, atleta, controlador)
     assert verContrato(contrato, atleta)
 }
+
 When(~/^"([^"]*)" é desativado$/) { String atleta ->
     def controlador = new JogadorController()
     desativarJogador(atleta, controlador)
-    assert !Jogador.findByNome(atleta).ativo
+    assert !Jogador.findByCpf(atleta).ativo
 }
 
 Then(~/^o contrato "([^"]*)" é inativado$/) { String nomeContrato ->
@@ -55,53 +61,62 @@ Then(~/^o contrato "([^"]*)" é inativado$/) { String nomeContrato ->
     assert !contrato.valido
 }
 
-Given(~/^estou na página de remoção$/) { ->
-    // to RemocaoPage
-    // at RemocaoPage
-}
-And(~/^"([^"]*)" foi marcado para ser removido$/) { String atleta ->
-    // at RemocaoPage
-    // page.marcaAtleta(atleta)
-}
-When(~/^eu solicito a remoção dos marcados$/) { ->
-    // at RemocaoPage
-    // page.removerMarcados()
-}
-Then(~/^vejo uma página de confirmação da remoção de "([^"]*)"$/) { String atleta ->
-    // at RemocaoConfimacaoPage
-    // assert page.atletasMarcados() == atleta
-}
-And(~/^em seguida vejo uma página com uma nova lista sem "([^"]*)"$/) { String arg1 ->
-
+When(~/^é tentado remover "([^"]*)"$/) { String atleta ->
+    def controlador = new JogadorController()
+    removerJogador(atleta, controlador)
 }
 
-Given(~/^estou na página de confirmação de remoção de "([^"]*)" e "([^"]*)"$/) { String arg1, String arg2 ->
-    // Write code here that turns the phrase above into concrete actions
+Then(~/^"([^"]*)" não é removido$/) { String atleta ->
+    assert Jogador.findByCpf(atleta) != null
 }
-And(~/^seleciono apenas "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+
+
+
+Given(~/^estou na página de atletas$/) { ->
+    to AtletasPage
+    at AtletasPage
 }
-When(~/^solicito a remoção$/) { ->
-    // Write code here that turns the phrase above into concrete actions
+
+And(~/^criei um atleta com cpf "([^"]*)"$/) { String atleta ->
+    at AtletasPage
+    to AtletaCreate
+    at AtletaCreate
+    page.adicionarAtleta("nome", atleta)
+    at AtletaShow
+//    to AtletasPage
+//    at AtletasPage
+//    assert page.atletaNaLista(atleta)
 }
-Then(~/^vejo uma mensagem de remoção realizada com sucesso$/) { ->
-    // Write code here that turns the phrase above into concrete actions
+
+
+And(~/^desativei o atleta selecionado$/){ ->
+//    at AtletasPage
+//    to AtletaShow
+    at AtletaShow
+    page.desativarAtleta()
+    at AtletasPage
 }
-Given(~/^estou na página de confirmação de remoção de "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+
+When(~/^seleciono o atleta de cpf "([^"]*)"$/) { String atleta ->
+    at AtletasPage
+    page.selecionarAtleta(atleta)
+    at AtletaShow
 }
-And(~/^não seleciono "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+
+And(~/^tento remover o atleta selecionado$/) { ->
+    at AtletaShow
+    page.removerAtleta()
+    at AtletasPage
 }
-Then(~/^vejo uma mensagem informando que "([^"]*)" não foi removido$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
+
+
+Then(~/^vejo a página de atletas sem "([^"]*)"$/) { String atleta ->
+    at AtletasPage
+    assert !page.procurarAtleta(atleta)
 }
-And(~/^em seguida vejo uma página com uma lista com "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
-}
-Given(~/^que ninguém foi marcado para ser removido$/) { ->
-    // Write code here that turns the phrase above into concrete actions
-}
-Then(~/^vejo uma mensagem de aviso$/) { ->
-    // Write code here that turns the phrase above into concrete actions
+
+
+Then(~/^vejo que não há opção para editá-lo$/) { ->
+    at AtletaShow
+    assert !page.atletaEditavel()
 }
