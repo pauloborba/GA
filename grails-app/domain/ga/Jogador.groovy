@@ -10,7 +10,6 @@ class Jogador {
     Date dataDeNascimento
     boolean ativo
 
-
     Jogador() {
         golsFeitos = 0
         ativo = true

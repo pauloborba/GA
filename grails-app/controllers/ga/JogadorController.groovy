@@ -87,11 +87,11 @@ class JogadorController {
         }
 
         //jogadorInstance.delete flush:true
-        jogadorInstance.ativo = false
-        jogadorInstance.save flush:true //desativa jogador
+        jogadorInstance.ativo = false    //desativando
+        jogadorInstance.save flush:true  //jogador
         def contratos = Contrato.findAllByJogador(jogadorInstance)
-        contratos.each { contrato ->
-            contrato.valido = false
+        contratos.each { contrato ->                                 //E deixando invalidos
+            contrato.valido = false                                  // seus contratos
             contrato.save flush:true
         }
 

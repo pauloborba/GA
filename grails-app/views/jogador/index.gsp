@@ -23,10 +23,10 @@
 			<table>
 			<thead>
 					<tr>
-					
-						<g:sortableColumn property="nome" title="${message(code: 'jogador.nome.label', default: 'Nome')}" />
-					
+
 						<g:sortableColumn property="cpf" title="${message(code: 'jogador.cpf.label', default: 'Cpf')}" />
+
+						<g:sortableColumn property="nome" title="${message(code: 'jogador.nome.label', default: 'Nome')}" />
 					
 						<g:sortableColumn property="dataDeNascimento" title="${message(code: 'jogador.dataDeNascimento.label', default: 'Data De Nascimento')}" />
 					
@@ -43,9 +43,9 @@
 
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${jogadorInstance.id}">${fieldValue(bean: jogadorInstance, field: "nome")}</g:link></td>
-					
-						<td>${fieldValue(bean: jogadorInstance, field: "cpf")}</td>
+						<td><g:link action="show" id="${jogadorInstance.id}">${fieldValue(bean: jogadorInstance, field: "cpf")}</g:link></td>
+
+						<td>${fieldValue(bean: jogadorInstance, field: "nome")}</td>
 					
 						<td><g:formatDate date="${jogadorInstance.dataDeNascimento}" /></td>
 					

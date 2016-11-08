@@ -81,11 +81,11 @@
 	<g:form url="[resource:jogadorInstance, action:'desative']" method="DELETE">
 		<fieldset class="buttons">
 			<g:if test="${jogadorInstance?.ativo}">
-				<g:link class="edit" action="edit" resource="${jogadorInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-				<g:actionSubmit class="delete" action="desative" value="${message(code: 'default.button.fakedelete.label', default: 'Desative')}" onclick="return confirm('${message(code: 'default.button.fakedelete.confirm.message', default: 'Are you sure?')}');" />
+				<g:link id="edit" class="edit" action="edit" resource="${jogadorInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+				<g:actionSubmit id="desative" class="delete" action="desative" value="${message(code: 'default.button.fakedelete.label', default: 'Desative')}" />
 			</g:if>
 			<g:else>
-				<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.realdelete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.realdelete.confirm.message', default: 'Are you sure?')}');" />
+				<g:actionSubmit id="delete" class="delete" action="delete" value="${message(code: 'default.button.realdelete.label', default: 'Delete')}" />
 			</g:else>
 		</fieldset>
 	</g:form>
