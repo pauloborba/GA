@@ -12,12 +12,11 @@ class Contrato {
         termino nullable: false
     }
 
-    static mapping = {
-        valido defaultsValue: true
+    public Contrato(){
+        valido = true
     }
 
     def addClausula(Clausula c) {
         this.addToClausulas(c)
-        this.save(flush: true)
     }
 }
