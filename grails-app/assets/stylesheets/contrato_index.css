@@ -1,0 +1,10 @@
+body #novocontrato h2 {
+  margin: 0px; }
+
+body #novocontrato form {
+  margin-top: 1em; }
+  body #novocontrato form .btn {
+    margin-top: 1em;
+    float: right; }
+  body #novocontrato form input[type='checkbox'] {
+    margin-right: 1em; }
