@@ -15,20 +15,24 @@ class CreateUsuario extends Page{
         title ==~ pageTitle
     }
 
+    // utilizado para preencher um campo do formulario (email ou nome)
     def fillField(String nome, String value){
         $("input[name=" + nome + "]").value(value)
     }
 
+    // utilizado para clicar no botão de criar usuário
     def create(){
         $("input[name='create']").click()
     }
 
+    // utilizado para verificar se tem o email (email) na mensagem de erro
     def boolean messegeError(String email){
         def error = $("div.alert.alert-danger>p").text()
 
         return error?.contains(email)
     }
 
+    // utilizado para verificar se tem uma mensagem de sucesso na tela
     def boolean messegeSuccess(){
         def success = $("div.alert.alert-success").text()
 

@@ -15,6 +15,7 @@ class ShowUsuario extends Page{
         title ==~ pageTitle
     }
 
+    // utilizado para deletar o usuário
     def delete(){
         $("input[name='_action_delete']").click()
     }

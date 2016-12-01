@@ -1,6 +1,7 @@
 package steps
 
-import cucumber.api.PendingException
+import ga.Jogador
+import ga.NotificacaoController
 import ga.Usuario
 import pages.CreateUsuario
 import pages.ListUsuario
@@ -73,12 +74,12 @@ Then(~/^é exibido uma mensagem de erro dizendo que "([^"]*)" já esta cadastrad
 
 //adicionar novo usuário para receber notificações
 Given(~/^o sistema não tem o usuário "([^"]*)" cadastrado para receber notificações com o email "([^"]*)"$/) { String usuario, String email ->
-    NotificationsStepsData.deleteUser(email)
+    UsuarioStepsData.deleteUser(email)
 }
 usuarios_email = 0;
 When(~/^eu adiciono "([^"]*)" no sistema de notificações com o email "([^"]*)"$/) { String usuario, String email->
     usuarios_email = Usuario.findAll().size()
-    NotificationsStepsData.createUser(usuario,email)
+    UsuarioStepsData.createUser(usuario,email)
 }
 Then(~/^o usuário "([^"]*)" é adicionado nas pessoas que vão receber as notificações com o email "([^"]*)"$/) { String usuario, String email ->
     assert Usuario.findByNome(usuario) != null
@@ -88,26 +89,33 @@ Then(~/^o usuário "([^"]*)" é adicionado nas pessoas que vão receber as notif
 
 //usuário duplicado
 Given(~/^o sistema tem o usuário "([^"]*)" cadastrado para receber notificações com o email "([^"]*)"$/) { String nome, String email ->
-    NotificationsStepsData.deleteUser(email)
-    NotificationsStepsData.createUser(nome,email)
+    UsuarioStepsData.deleteUser(email)
+    UsuarioStepsData.createUser(nome,email)
 }
 Then(~/^o sistema não é modificado$/) { ->
     assert usuarios_email == Usuario.findAll().size()
 }
 
 //notificação de fim de contrato
-Given(~/^o contrato de "([^"]*)" falta "([^"]*)" dias para seu termino$/) { String arg1, String arg2 ->
-
+String cpf_jogador = ""
+Given(~/^o contrato de "([^"]*)" e cpf "([^"]*)" falta "([^"]*)" dias para seu termino$/) { String jogador, String cpf, int dias ->
+    cpf_jogador = cpf
+    JogadorStepsData.createJogador(jogador,cpf,"goleiro",(new Date(System.currentTimeMillis()) - dias*20).format("dd/MM/yyyy"))
+    ContratoStepsData.createContrato((new Date(System.currentTimeMillis())-dias*2).format("dd/MM/yyyy"), (new Date(System.currentTimeMillis()) + dias).format("dd/MM/yyyy"),5000.0,cpf)
+    assert Jogador.findByCpf(cpf).contratos.last().diasRestantes() == dias
 }
-And(~/^o usuário "([^"]*)" está cadastrado para receber notificações com o email "([^"]*)"$/) { String arg1, String arg2 ->
-    // Write code here that turns the phrase above into concrete actions
-//    throw new PendingException()
+int mensagens_enviadas = 0
+String usuarios_email = ""
+And(~/^o usuário "([^"]*)" está cadastrado para receber notificações com o email "([^"]*)"$/) { String nome, String email ->
+    usuarios_email = email
+    UsuarioStepsData.createUser(nome, email)
+    mensagens_enviadas = Usuario.findByEmail(email).getMensagens_enviadas()
 }
-When(~/^na verificação diária o sistema verifica que o contrato de "([^"]*)" falta "([^"]*)" dias para ser encerrado$/) { String arg1, String arg2 ->
-    // Write code here that turns the phrase above into concrete actions
-//    throw new PendingException()
+When(~/^na verificação diária o sistema verifica que o contrato de "([^"]*)" falta "([^"]*)" dias para ser encerrado$/) { String jogador, int dias ->
+    assert Jogador.findByCpf(cpf_jogador).contratos.last().diasRestantes() <= dias
+    def controller = new NotificacaoController()
+    controller.verifica_dias_fim(dias)
 }
-Then(~/^um email é enviado para "([^"]*)"$/) { String arg1 ->
-    // Write code here that turns the phrase above into concrete actions
-//    throw new PendingException()
+Then(~/^um email é enviado para "([^"]*)"$/) { String usuario ->
+    assert Usuario.findByEmail(usuarios_email).getMensagens_enviadas() == mensagens_enviadas + 1
 }
