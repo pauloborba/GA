@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="2" failures="0" hostname="Matheus-PC" id="0" name="Partidas" package="" tests="4" time="7.488" timestamp="2016-12-01T04:53:39">
+  <testsuite errors="2" failures="0" hostname="Matheus-PC" id="0" name="Partidas" package="" tests="4" time="7.572" timestamp="2016-12-01T05:01:49">
       <properties />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida sem jogadores escalados" time="5.969">
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida sem jogadores escalados" time="6.117">
           <error message="No message found under code &apos;main.title&apos; for locale &apos;pt_BR&apos;." type="org.springframework.context.NoSuchMessageException">org.springframework.context.NoSuchMessageException: No message found under code &apos;main.title&apos; for locale &apos;pt_BR&apos;.
 	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy:12)
 	at pages.CadastrarPartida$__clinit__closure1.doCall(CadastrarPartida.groovy:14)
@@ -20,7 +20,7 @@
 
       </testcase>
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida com jogadores escalados" time="0.92">
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida com jogadores escalados" time="0.905">
           <error message="No message found under code &apos;main.title&apos; for locale &apos;pt_BR&apos;." type="org.springframework.context.NoSuchMessageException">org.springframework.context.NoSuchMessageException: No message found under code &apos;main.title&apos; for locale &apos;pt_BR&apos;.
 	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy:12)
 	at pages.CadastrarJogador$__clinit__closure1.doCall(CadastrarJogador.groovy:14)
@@ -37,9 +37,9 @@
 
       </testcase>
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida não cadastrada no sistema" time="0.158" />
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida não cadastrada no sistema" time="0.125" />
 
-      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida já existente no sistema" time="0.049" />
+      <testcase classname="grails.plugin.cucumber.CucumberTest" name="Adição de partida já existente no sistema" time="0.064" />
 
       <system-out><![CDATA[Feature: Partidas
   As a usuário do software de GA
@@ -123,7 +123,7 @@ _____________________ [ga.Jogador : 1]
 ]]></system-out>
 
       <system-err><![CDATA[
---Output from Adição de partida sem jogadores escalados--Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 20607
+--Output from Adição de partida sem jogadores escalados--Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 48794
 Only local connections are allowed.
 
 --Output from Adição de partida com jogadores escalados--
