@@ -54,13 +54,13 @@
                 <g:message code="contrato.atributos.salary"></g:message>:
               </label>
               <div class="col-xs-4">
-                <input type="number" step="0.01" name="txt_salario" class="form-control"/>
+                <input type="text" name="txt_salario" class="form-control"/>
               </div>
               <label for="txt_vigencia" class="col-xs-2 col-form-label">
                 <g:message code="contrato.cadastrar.validity"></g:message>:
               </label>
               <div class="col-xs-4">
-                <input type="number" value="12" name="txt_vigencia" v-model="meses" class="form-control"/>
+                <input type="text" value="12" name="txt_vigencia" v-model="meses" class="form-control"/>
               </div>
             </div>
             <div class="form-group row">
