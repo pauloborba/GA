@@ -23,7 +23,7 @@ class ContratoController {
         def Contrato c = new Contrato();
         c.inicial = Date.parse("dd/MM/yyyy", params.txt_datainicio)
         c.termino = Date.parse("dd/MM/yyyy", params.txt_datafinal)
-        c.salario = params.txt_salario as double
+        c.salario = Double.parseDouble(params.txt_salario)
         c.valido = true
         params.list('clausulas[]').eachWithIndex { it, k  ->
             if(it == "on") {
