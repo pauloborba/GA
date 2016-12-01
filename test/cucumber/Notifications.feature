@@ -41,16 +41,17 @@ Feature: Notificações
     When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"
     Then o usuário "João Dantas" é adicionado nas pessoas que vão receber as notificações com o email "email@gmail.com"
 
+
   Scenario: usuário duplicado
 
     Given o sistema tem o usuário "João Dantas" cadastrado para receber notificações com o email "email@gmail.com"
     When eu adiciono "João Dantas" no sistema de notificações com o email "email@gmail.com"
     Then o sistema não é modificado
 
-  @ignore
+
   Scenario: notificação de fim de contrato
 
-    Given o contrato de "José Santos" falta "30" dias para seu termino
-    And o usuário "João Dantas" está cadastrado para receber notificações com o email "email@gmail.com"
+    Given o contrato de "José Santos" e cpf "123.456.789-01" falta "30" dias para seu termino
+    And o usuário "João Dantas" está cadastrado para receber notificações com o email "email@email.com"
     When na verificação diária o sistema verifica que o contrato de "José Santos" falta "30" dias para ser encerrado
     Then um email é enviado para "João Dantas"
