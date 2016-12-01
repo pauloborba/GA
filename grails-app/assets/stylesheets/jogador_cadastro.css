@@ -1,0 +1,8 @@
+body #novojogador h2 {
+  margin: 0px; }
+
+body #novojogador form {
+  margin-top: 1em; }
+  body #novojogador form .btn {
+    margin-top: 1em;
+    float: right; }
