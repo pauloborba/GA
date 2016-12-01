@@ -16,7 +16,8 @@ class Contrato {
         valido = true
     }
 
-    def addClausula(Clausula c) {
-        this.addToClausulas(c)
+    // utilizado para pegar a quantidade de dias que falta para o termino do contrato
+    public int diasRestantes(){
+        return (termino - (new Date(System.currentTimeMillis())))
     }
 }

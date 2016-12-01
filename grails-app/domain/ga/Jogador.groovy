@@ -5,8 +5,9 @@ class Jogador {
     String cpf
     String posicao
     Date dataDeNascimento
+    int gols
     static hasMany = [contratos: Contrato,notificacaos: Notificacao]
-    boolean ativo = true
+    boolean ativo
 
     static constraints = {
         nome blank: false, nullable: false
@@ -17,16 +18,11 @@ class Jogador {
 
     public Jogador(){
         ativo = true
+        gols = 0
     }
 
     static mapping = {
         contratos cascade: 'all-delete-orphan'
-    }
-
-    def addContrato(Contrato contrato) {
-        this.addToContratos(contrato)
-        this.save(flush: true)
-        Notificacao.verificaLimiarSalario(contrato, this.nome) //plus de notificação
     }
 }
 
