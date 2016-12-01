@@ -1,0 +1,10 @@
+body #menucontratos {
+  background-color: #e6e6e6; }
+  body #menucontratos ul {
+    list-style-type: none;
+    padding: 0.5em 0px 0px 0px; }
+    body #menucontratos ul li {
+      padding: 0.5em; }
+      body #menucontratos ul li a {
+        color: #333333;
+        text-decoration: none; }

@@ -1,25 +1,73 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
-		<g:layoutHead/>
-	</head>
-	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
-		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>
+      <g:layoutTitle default="Gestão de Atletas"></g:layoutTitle>
+    </title>
+    <asset:stylesheet href="bootstrap/bootstrap.css"></asset:stylesheet>
+    <asset:stylesheet href="main.css"></asset:stylesheet>
+    <asset:javascript src="jquery-3.1.1.min.js"></asset:javascript>
+    <asset:javascript src="vue.min.js"></asset:javascript>
+    <g:layoutHead></g:layoutHead>
+  </head>
+  <body>
+    <header>
+      <div id="logo" class="container-fluid">
+        <div id="logo-inside" class="row">
+          <div style="position: relative;" class="columns col-sm-12 col-md-12 col-lg-12">
+            <asset:image src="layout/ga.png"></asset:image>
+          </div>
+        </div>
+      </div>
+      <div id="menu" class="container-fluid">
+        <div id="menu-inside" class="row">
+          <div class="columns col-sm-12 col-md-12 col-lg-12">
+            <ul class="menu">
+              <li>
+                <g:if test="${controllerName == null}"><a href="/GA" class="ativado">
+                    <g:message code="main.menu.home"></g:message></a></g:if>
+                <g:else><a href="/GA">
+                    <g:message code="main.menu.home"></g:message></a></g:else>
+              </li>
+              <li>
+                <g:if test="${controllerName == 'jogador'}"><a href="#" class="ativado">
+                    <g:message code="main.menu.players"></g:message></a></g:if>
+                <g:else><a href="#">
+                    <g:message code="main.menu.players"></g:message></a></g:else>
+                <ul class="submenu">
+                  <li> <a href="/GA/jogador/cadastro">
+                      <g:message code="main.menu.newplayer"></g:message></a></li>
+                  <li> <a href="/GA/jogador/procurar">
+                      <g:message code="main.menu.searchplayer"></g:message></a></li>
+                </ul>
+              </li>
+              <li>
+                <g:if test="${controllerName == 'contrato'}"><a href="#" class="ativado">
+                    <g:message code="main.menu.contract"></g:message></a></g:if>
+                <g:else><a href="#">
+                    <g:message code="main.menu.contract"></g:message></a></g:else>
+                <ul class="submenu">
+                  <li> <a href="/GA/contrato/cadastrar">
+                      <g:message code="main.menu.newcontract"></g:message></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="content" class="container-fluid">
+      <div id="content-inside" class="row">
+        <div class="columns col-sm-12 col-md-12 col-lg-12">
+          <g:layoutBody></g:layoutBody>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="footer-inside" class="row">
+        <div class="columns col-sm-12 col-md-12 col-lg-12"></div>
+      </div>
+    </footer>
+  </body>
 </html>
