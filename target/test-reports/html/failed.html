@@ -14,8 +14,14 @@
         Unit Test Results
      - Failed tests</h1>
 <p class="intro">
-                No tests executed.
-            </p>
+                        Executed
+                        4
+                        tests
+                    
+                        with
+                        2 errors
+                        .
+                    </p>
 </div>
 <div class="grid_2 omega">
 <nav id="navigationlinks">
@@ -37,6 +43,194 @@
 </nav>
 </div>
 <div class="clear"></div>
+<div class="testsuite error">
+<div class="header">
+<h2>Partidas</h2>
+<h3>
+                        Executed
+                        4
+                        tests
+                    
+                        with
+                        2 errors
+                        .
+                    </h3>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="Adi&ccedil;&atilde;o de partida sem jogadores escalados">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">Adi&ccedil;&atilde;o de partida sem jogadores escalados</b>
+</p>
+<p class="summary">Executed in 5.969 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">No message found under code 'main.title' for locale 'pt_BR'.</b>
+</p>
+<pre>org.springframework.context.NoSuchMessageException: No message found under code 'main.title' for locale 'pt_BR'.
+	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy:12)
+	at pages.CadastrarPartida$__clinit__closure1.doCall(CadastrarPartida.groovy:14)
+	at geb.Page.verifyThisPageAtOnly(Page.groovy:165)
+	at geb.Page.verifyAt(Page.groovy:133)
+	at geb.Browser.doAt(Browser.groovy:358)
+	at geb.Browser.at(Browser.groovy:289)
+	at geb.Browser.to(Browser.groovy:436)
+	at geb.Browser.to(Browser.groovy:412)
+	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
+	at steps.PartidaSteps$_run_closure1.doCall(PartidaSteps.groovy:23)
+	at ✽.Given eu estou na p&aacute;gina de cadastro de partida(Partida.feature:7)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="Adi&ccedil;&atilde;o de partida com jogadores escalados">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">Adi&ccedil;&atilde;o de partida com jogadores escalados</b>
+</p>
+<p class="summary">Executed in 0.92 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">No message found under code 'main.title' for locale 'pt_BR'.</b>
+</p>
+<pre>org.springframework.context.NoSuchMessageException: No message found under code 'main.title' for locale 'pt_BR'.
+	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy:12)
+	at pages.CadastrarJogador$__clinit__closure1.doCall(CadastrarJogador.groovy:14)
+	at geb.Page.verifyThisPageAtOnly(Page.groovy:165)
+	at geb.Page.verifyAt(Page.groovy:133)
+	at geb.Browser.doAt(Browser.groovy:358)
+	at geb.Browser.at(Browser.groovy:289)
+	at geb.Browser.to(Browser.groovy:436)
+	at geb.Browser.to(Browser.groovy:412)
+	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
+	at steps.PartidaSteps$_run_closure6.doCall(PartidaSteps.groovy:47)
+	at ✽.Given o atleta "Carlinhos Bala" de CPF "123.132.123.45", data de nascimento "10/10/1980" e posi&ccedil;&atilde;o "atacante" est&aacute; cadastrado no sistema(Partida.feature:13)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adi&ccedil;&atilde;o de partida n&atilde;o cadastrada no sistema">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adi&ccedil;&atilde;o de partida n&atilde;o cadastrada no sistema</b>
+</p>
+<p class="summary">Executed in 0.158 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Adi&ccedil;&atilde;o de partida j&aacute; existente no sistema">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Adi&ccedil;&atilde;o de partida j&aacute; existente no sistema</b>
+</p>
+<p class="summary">Executed in 0.049 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">Feature: Partidas
+  As a usu&aacute;rio do software de GA
+  I want manter um hist&oacute;rico de partidas, a escala&ccedil;&atilde;o e os gols das mesmas
+  So that eu consigo acompanhar a evolu&ccedil;&atilde;o do clube na temporada
+
+--Output from Adi&ccedil;&atilde;o de partida sem jogadores escalados--
+--Output from Adi&ccedil;&atilde;o de partida com jogadores escalados--
+  Scenario: Adi&ccedil;&atilde;o de partida sem jogadores escalados                                                                        # Partida.feature:6
+    Given eu estou na p&aacute;gina de cadastro de partida                                                                          # PartidaSteps.groovy:22
+      org.springframework.context.NoSuchMessageException: No message found under code 'main.title' for locale 'pt_BR'.
+      	at org.springframework.context.support.AbstractMessageSource.getMessage(AbstractMessageSource.java:159)
+      	at org.springframework.context.MessageSource$getMessage.call(Unknown Source)
+      	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy:12)
+      	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy)
+      	at steps.InternationalizationHelper$getMessage.call(Unknown Source)
+      	at pages.CadastrarPartida$__clinit__closure1.doCall(CadastrarPartida.groovy:14)
+      	at pages.CadastrarPartida$__clinit__closure1.doCall(CadastrarPartida.groovy)
+      	at geb.Page.verifyThisPageAtOnly(Page.groovy:165)
+      	at geb.Page.verifyAt(Page.groovy:133)
+      	at geb.Page$verifyAt$3.call(Unknown Source)
+      	at geb.Browser.doAt(Browser.groovy:358)
+      	at geb.Browser.this$2$doAt(Browser.groovy)
+      	at geb.Browser$this$2$doAt$9.callCurrent(Unknown Source)
+      	at geb.Browser.at(Browser.groovy:289)
+      	at geb.Browser.to(Browser.groovy:436)
+      	at geb.Browser$to$0.callCurrent(Unknown Source)
+      	at geb.Browser.to(Browser.groovy:412)
+      	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
+      	at steps.PartidaSteps$_run_closure1.doCall(PartidaSteps.groovy:23)
+      	at ✽.Given eu estou na p&aacute;gina de cadastro de partida(Partida.feature:7)
+
+    When eu cadastro uma partida para o jogo contra o "Atl&eacute;tico mineiro", no dia "20/06/2016" em que o clube sofreu "2" gols # PartidaSteps.groovy:27
+    Then eu vou para a p&aacute;gina de confirma&ccedil;&atilde;o de cadastro de partida                                                          # PartidaSteps.groovy:36
+    And eu vejo uma mensagem de erro informando que pelo menos 1 jogador deveria ter sido escalado                           # PartidaSteps.groovy:40
+
+--Output from Adi&ccedil;&atilde;o de partida n&atilde;o cadastrada no sistema--
+  Scenario: Adi&ccedil;&atilde;o de partida com jogadores escalados                                                                                                              # Partida.feature:12
+    Given o atleta "Carlinhos Bala" de CPF "123.132.123.45", data de nascimento "10/10/1980" e posi&ccedil;&atilde;o "atacante" est&aacute; cadastrado no sistema                       # PartidaSteps.groovy:46
+      org.springframework.context.NoSuchMessageException: No message found under code 'main.title' for locale 'pt_BR'.
+      	at org.springframework.context.support.AbstractMessageSource.getMessage(AbstractMessageSource.java:159)
+      	at org.springframework.context.MessageSource$getMessage.call(Unknown Source)
+      	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy:12)
+      	at steps.InternationalizationHelper.getMessage(InternationalizationHelper.groovy)
+      	at steps.InternationalizationHelper$getMessage.call(Unknown Source)
+      	at pages.CadastrarJogador$__clinit__closure1.doCall(CadastrarJogador.groovy:14)
+      	at pages.CadastrarJogador$__clinit__closure1.doCall(CadastrarJogador.groovy)
+      	at geb.Page.verifyThisPageAtOnly(Page.groovy:165)
+      	at geb.Page.verifyAt(Page.groovy:133)
+      	at geb.Page$verifyAt$3.call(Unknown Source)
+      	at geb.Page$verifyAt$3.call(Unknown Source)
+      	at geb.Browser.doAt(Browser.groovy:358)
+      	at geb.Browser.this$2$doAt(Browser.groovy)
+      	at geb.Browser$this$2$doAt$9.callCurrent(Unknown Source)
+      	at geb.Browser$this$2$doAt$9.callCurrent(Unknown Source)
+      	at geb.Browser.at(Browser.groovy:289)
+      	at geb.Browser.to(Browser.groovy:436)
+      	at geb.Browser$to$0.callCurrent(Unknown Source)
+      	at geb.Browser.to(Browser.groovy:412)
+      	at geb.binding.BindingUpdater$InvocationForwarding.doCall(BindingUpdater.groovy:72)
+      	at steps.PartidaSteps$_run_closure6.doCall(PartidaSteps.groovy:47)
+      	at ✽.Given o atleta "Carlinhos Bala" de CPF "123.132.123.45", data de nascimento "10/10/1980" e posi&ccedil;&atilde;o "atacante" est&aacute; cadastrado no sistema(Partida.feature:13)
+
+    And eu estou na p&aacute;gina de cadastro de partida                                                                                                                  # PartidaSteps.groovy:22
+    When eu cadastro uma partida para o jogo contra o "Corinthians", no dia "30/07/2016" em que o clube sofreu "2" gols com o atleta "Carlinhos Bala" como titular # PartidaSteps.groovy:58
+    Then eu vou para a p&aacute;gina de confirma&ccedil;&atilde;o de cadastro de partida                                                                                                # PartidaSteps.groovy:36
+    And eu vejo uma mensagem de confirma&ccedil;&atilde;o de partida cadastrada com sucesso                                                                                      # PartidaSteps.groovy:64
+
+--Output from Adi&ccedil;&atilde;o de partida j&aacute; existente no sistema--
+  #Controlador
+  Scenario: Adi&ccedil;&atilde;o de partida n&atilde;o cadastrada no sistema                                                       # Partida.feature:21
+    Given o sistema n&atilde;o possua nenhuma partida no dia "22/05/2016"                                            # PartidaSteps.groovy:101
+    When eu crio uma partida no dia "22/05/2016", contra o "Atl&eacute;tico mineiro", em que o clube sofreu "2" gols # PartidaSteps.groovy:105
+    Then a partida do dia "22/05/2016" &eacute; salva no sistema                                                     # PartidaSteps.groovy:109
+Romario
+_____________________ [ga.Jogador : 1]
+  Scenario: Adi&ccedil;&atilde;o de partida j&aacute; existente no sistema                                                         # Partida.feature:26
+    Given o sistema possui uma partida no dia "22/06/2016"                                                    # PartidaSteps.groovy:113
+    When eu crio uma partida no dia "22/06/2016", contra o "Atl&eacute;tico mineiro", em que o clube sofreu "2" gols # PartidaSteps.groovy:105
+    Then o sistema s&oacute; armazena uma partida para o dia "22/06/2016"                                            # PartidaSteps.groovy:122
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">
+--Output from Adi&ccedil;&atilde;o de partida sem jogadores escalados--Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 20607
+Only local connections are allowed.
+
+--Output from Adi&ccedil;&atilde;o de partida com jogadores escalados--
+--Output from Adi&ccedil;&atilde;o de partida n&atilde;o cadastrada no sistema--
+--Output from Adi&ccedil;&atilde;o de partida j&aacute; existente no sistema--</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
 <div class="clear"></div>
 </div>
 <!--
