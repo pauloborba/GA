@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="900963ae-c893-4f42-9a83-e02d6ffffd2a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/GA_war_exploded.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap$_closure1.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap$_closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap$_closure2.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap$_closure2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config$_run_closure1_closure4_closure5.class" afterPath="$PROJECT_DIR$/target/classes/Config$_run_closure1_closure4_closure5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config$_run_closure1_closure4_closure5_closure6.class" afterPath="$PROJECT_DIR$/target/classes/Config$_run_closure1_closure4_closure5_closure6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config.class" afterPath="$PROJECT_DIR$/target/classes/Config.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CucumberConfig$_run_closure1.class" afterPath="$PROJECT_DIR$/target/classes/CucumberConfig$_run_closure1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CucumberConfig.class" afterPath="$PROJECT_DIR$/target/classes/CucumberConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource.class" afterPath="$PROJECT_DIR$/target/classes/DataSource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UrlMappings.class" afterPath="$PROJECT_DIR$/target/classes/UrlMappings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chromedrivers/Readme.md" afterPath="$PROJECT_DIR$/chromedrivers/Readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/CucumberConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/CucumberConfig.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/GebConfig.groovy" afterPath="$PROJECT_DIR$/test/functional/GebConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GA-grailsPlugins.iml" afterPath="$PROJECT_DIR$/GA-grailsPlugins.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GA.iml" afterPath="$PROJECT_DIR$/GA.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/ga/PartidaController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/ga/PartidaController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/cucumber/steps/PartidaSteps.groovy" afterPath="$PROJECT_DIR$/test/cucumber/steps/PartidaSteps.groovy" />
     </list>
     <ignored path="GA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,9 +57,11 @@
       <file leaf-file-name="PartidaSteps.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/cucumber/steps/PartidaSteps.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="2074">
+              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+              <folding>
+                <element signature="e#15#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -666,12 +672,20 @@
       <workItem from="1480540321016" duration="7351000" />
       <workItem from="1480564586118" duration="40000" />
       <workItem from="1480565102974" duration="635000" />
-      <workItem from="1480566965246" duration="218000" />
+      <workItem from="1480566965246" duration="624000" />
     </task>
+    <task id="LOCAL-00001" summary="adição de páginas, testes e configurações">
+      <created>1480567239025</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1480567239025</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8365000" />
+    <option name="totallyTimeSpent" value="8771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="916" extended-state="6" />
@@ -720,6 +734,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adição de páginas, testes e configurações" />
+    <option name="LAST_COMMIT_MESSAGE" value="adição de páginas, testes e configurações" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -907,9 +925,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/cucumber/steps/PartidaSteps.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="2074">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+          <folding>
+            <element signature="e#15#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
