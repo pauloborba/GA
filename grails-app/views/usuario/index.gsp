@@ -51,6 +51,7 @@
 						<td><g:formatBoolean boolean="${usuarioInstance.clausula_gols}" /></td>
 					
 						<td><g:formatBoolean boolean="${usuarioInstance.contrato_expira}" /></td>
+
 						<td><g:link action="edit" id="${usuarioInstance.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></g:link></td>
 					</tr>
 				</g:each>
