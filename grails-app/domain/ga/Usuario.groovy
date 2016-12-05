@@ -21,13 +21,6 @@ class Usuario {
         contrato_expira = false
     }
 
-    public Usuario(String nome, String email, boolean contrato, boolean clausula){
-        this.nome = nome
-        this.email = email
-        this.contrato_expira = contrato
-        this.clausula_gols = clausula
-    }
-
     // utilizado para enviar um email para este usuário
     public void sendCriterion(String mensagem, String assunto){
 

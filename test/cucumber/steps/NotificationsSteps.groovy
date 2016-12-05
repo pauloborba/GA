@@ -11,6 +11,8 @@ this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
 
+//#if($Notifications)
+
 //dados incorretos
 Given(~/^eu estou na página de adicionar novo usuário para receber notificações$/) {->
     toClass(CreateUsuario)
@@ -87,15 +89,12 @@ Then(~/^o sistema não é modificado$/) { ->
 }
 
 //notificação de fim de contrato
-String cpf_jogador = ""
 Given(~/^o contrato de "([^"]*)" e cpf "([^"]*)" falta "([^"]*)" dias para seu termino$/) { String jogador, String cpf, int dias ->
     cpf_jogador = cpf
     JogadorStepsData.createJogador(jogador,cpf,"goleiro",(new Date(System.currentTimeMillis()) - dias*20).format("dd/MM/yyyy"))
     ContratoStepsData.createContrato((new Date(System.currentTimeMillis())-dias*2).format("dd/MM/yyyy"), (new Date(System.currentTimeMillis()) + dias).format("dd/MM/yyyy"),5000.0,cpf)
     assert Jogador.findByCpf(cpf).contratos.last().diasRestantes() == dias
 }
-int mensagens_enviadas = 0
-String usuarios_email = ""
 And(~/^o usuário "([^"]*)" está cadastrado para receber notificações com o email "([^"]*)"$/) { String nome, String email ->
     usuarios_email = email
     UsuarioStepsData.createUser(nome, email)
@@ -109,3 +108,5 @@ When(~/^na verificação diária o sistema verifica que o contrato de "([^"]*)" 
 Then(~/^um email é enviado para "([^"]*)"$/) { String usuario ->
     assert Usuario.findByEmail(usuarios_email).getMensagens_enviadas() == mensagens_enviadas + 1
 }
+
+//#end
