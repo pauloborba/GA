@@ -9,9 +9,7 @@ Feature: Notificações
   Scenario: dados incorretos
 
     Given eu estou na página de adicionar novo usuário para receber notificações
-    When eu preencho o campo "email" com "email@cin"
-    And o campo "nome" com "nome"
-    And eu solicito para adicionar novo usuário para receber notificações
+    When eu adiciono "João Dantas" nas pessoas que vão receber notificações com o email "email@cin"
     Then eu posso ver uma mensagem informando que o "email@cin" é incorreto
 
 
@@ -19,9 +17,7 @@ Feature: Notificações
 
     Given eu estou na página de adicionar novo usuário para receber notificações
     And o usuário "João Dantas" ainda não está cadastrado para receber notificações com o email "email@gmail.com"
-    When eu preencho o campo "nome" com "João Dantas"
-    And o campo "email" com "email@gmail.com"
-    And eu solicito para adicionar novo usuário para receber notificações
+    When eu adiciono "João Dantas" nas pessoas que vão receber notificações com o email "email@gmail.com"
     Then é exibido uma mensagem de confirmação
 
 

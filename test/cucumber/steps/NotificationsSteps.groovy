@@ -15,13 +15,13 @@ this.metaClass.mixin(cucumber.api.groovy.EN)
 Given(~/^eu estou na página de adicionar novo usuário para receber notificações$/) {->
     toClass(CreateUsuario)
 }
-When(~/^eu preencho o campo "([^"]*)" com "([^"]*)"$/) { String campo, String valor ->
-    page.fillField(campo,valor)
+def fillCreate(String nome, String email) {
+    page.fillField("nome", nome)
+    page.fillField("email", email)
 }
-And(~/^o campo "([^"]*)" com "([^"]*)"$/) { String campo, String valor ->
-    page.fillField(campo,valor)
-}
-And(~/^eu solicito para adicionar novo usuário para receber notificações$/) { ->
+
+When(~/^eu adiciono "([^"]*)" nas pessoas que vão receber notificações com o email "([^"]*)"$/) { String nome, String email ->
+    fillCreate(nome,email)
     page.create()
 }
 Then(~/^eu posso ver uma mensagem informando que o "([^"]*)" é incorreto$/) { String email ->
@@ -59,15 +59,6 @@ And(~/^o usuário "([^"]*)" já está cadastrado para receber notificações com
     toClass(CreateUsuario)
 }
 
-def fillCreate(String nome, String email) {
-    page.fillField("nome", nome)
-    page.fillField("email", email)
-}
-
-When(~/^eu adiciono "([^"]*)" nas pessoas que vão receber notificações com o email "([^"]*)"$/) { String nome, String email ->
-    fillCreate(nome,email)
-    page.create()
-}
 Then(~/^é exibido uma mensagem de erro dizendo que "([^"]*)" já esta cadastrado para receber notificações com o email "([^"]*)"$/) { String nome, String email ->
     assert page.messegeError(email)
 }
@@ -76,7 +67,6 @@ Then(~/^é exibido uma mensagem de erro dizendo que "([^"]*)" já esta cadastrad
 Given(~/^o sistema não tem o usuário "([^"]*)" cadastrado para receber notificações com o email "([^"]*)"$/) { String usuario, String email ->
     UsuarioStepsData.deleteUser(email)
 }
-usuarios_email = 0;
 When(~/^eu adiciono "([^"]*)" no sistema de notificações com o email "([^"]*)"$/) { String usuario, String email->
     usuarios_email = Usuario.findAll().size()
     UsuarioStepsData.createUser(usuario,email)

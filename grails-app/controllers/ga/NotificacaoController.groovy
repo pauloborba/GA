@@ -2,7 +2,6 @@ package ga
 
 import grails.util.Holders
 import org.springframework.context.i18n.LocaleContextHolder
-import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
@@ -21,17 +20,35 @@ class NotificacaoController {
     def verifica_dias_fim(int dias){
         Jogador.findAll().each { jogador ->
             if(jogador.contratos.last().diasRestantes() <= dias) {
-                Notificacao notificacao = new Notificacao("Notificação de Fim de Contrato",messageSource.getMessage("notificacao.email.contrato",[jogador.getNome(),dias].toArray(),LocaleContextHolder.getLocale()))
-                notificacao.save()
-                Usuario.findAll().each { usuario ->
-                    if(usuario.contrato_expira) {
-                        notificacao.addToUsuarios(usuario)
-                    }
-                }
-                notificacao.enviarNotificacao()
+                criar_notificação(1,jogador.getNome(),dias)
             }
         }
         redirect action: "index", method: "GET"
+    }
+
+    void criar_notificação(int tipo, String jogador, int gols_dias, double bonus=0){
+        String subject, descricao
+        if(tipo == 1){
+            subject ="Notificação de Fim de Contrato"
+            descricao = messageSource.getMessage("notificacao.email.contrato",[jogador,gols_dias].toArray(),LocaleContextHolder.getLocale())
+        } else {
+            subject ="Notificação de Clausula de Gols"
+            descricao = messageSource.getMessage("notificacao.email.clausula.gol",[jogador,gols_dias,bonus].toArray(),LocaleContextHolder.getLocale())
+        }
+        Notificacao notificacao = new Notificacao(subject,descricao)
+        notificacao.save()
+        Usuario.findAll().each { usuario ->
+            if (tipo == 1) {
+                if (usuario.contrato_expira) {
+                    notificacao.addToUsuarios(usuario)
+                }
+            } else {
+                if(usuario.clausula_gols){
+                    notificacao.addToUsuarios(usuario)
+                }
+            }
+        }
+        notificacao.enviarNotificacao()
     }
 
     // utilizado para a verificação se alguma clausula do contrato foi disparada
@@ -39,14 +56,7 @@ class NotificacaoController {
         Jogador.findAll().each { jogador ->
             jogador.contratos.last().clausulas.each { clausula ->
                 if(jogador.getGols()>=clausula.getGols()){
-                    Notificacao notificacao = new Notificacao("Notificação de Clausula de Gols",messageSource.getMessage("notificacao.email.clausula.gol",[jogador.getNome(),gols,clausula.getBonus()].toArray(),LocaleContextHolder.getLocale()))
-                    notificacao.save()
-                    Usuario.findAll().each {usuario ->
-                        if(usuario.clausula_gols){
-                            notificacao.addToUsuarios(usuario)
-                        }
-                    }
-                    notificacao.enviarNotificacao()
+                    criar_notificação(2,jogador.getNome(),jogador.getGols(),clausula.getBonus())
                 }
             }
         }
